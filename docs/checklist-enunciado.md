@@ -11,47 +11,47 @@ Estados: Pendiente · En curso · Cumplido.
 | ID | Requisito literal | Dónde se cumple | Estado |
 | --- | --- | --- | --- |
 | OE-1 | Identificar y clasificar al menos 5 riesgos de confidencialidad (R-CONF) asociados a motores de BD (Oracle). | Artefacto, tabla de riesgos | Pendiente |
-| OE-2 | Mapear al menos 12 tareas críticas del DBA (gestión de usuarios, privilegios, autenticación, cifrado TDE, masking, backup, auditoría, parcheo, listener, eliminación segura, logs, clones DEV/TEST). | Artefacto, tabla de tareas | Pendiente |
-| OE-3 | Seleccionar y justificar controles del Anexo A 2022 pertinentes (A5.12, A5.15, A5.16, A5.17, A5.18, A5.33, A8.2, A8.3, A8.5, A8.10, A8.11, A8.12, A8.13, A8.15, A8.20). | Artefacto, mapeo de controles | Pendiente |
-| OE-4 | Diseñar una Matriz de Evaluación con criterios de madurez 0-4, evidencia y estado (Cumple/No cumple/Parcial). | Artefacto, matriz | Pendiente |
-| OE-5 | Proponer y ejecutar pruebas técnicas (consultas SQL, revisión de configuraciones, auditorías) que demuestren la efectividad de los controles. | `sql/` y artefacto, batería de pruebas | Pendiente |
+| OE-2 | Mapear al menos 12 tareas críticas del DBA (gestión de usuarios, privilegios, autenticación, cifrado TDE, masking, backup, auditoría, parcheo, listener, eliminación segura, logs, clones DEV/TEST). | Artefacto, tabla de tareas | En curso: las 12 tareas tienen script de verificación, corrección y prueba (ver tabla); falta la tabla del artefacto |
+| OE-3 | Seleccionar y justificar controles del Anexo A 2022 pertinentes (A5.12, A5.15, A5.16, A5.17, A5.18, A5.33, A8.2, A8.3, A8.5, A8.10, A8.11, A8.12, A8.13, A8.15, A8.20). | Artefacto, mapeo de controles | En curso: los 15 tienen verificación (`sql/verificacion`), corrección (`sql/correccion`) y procedimiento (`docs/procedimientos.md`, borrador); falta la justificación en el artefacto |
+| OE-4 | Diseñar una Matriz de Evaluación con criterios de madurez 0-4, evidencia y estado (Cumple/No cumple/Parcial). | Artefacto, matriz | En curso: `scripts/evaluar.ps1` calcula estado y madurez 0-4; la evidencia definitiva sale en la Fase 3 |
+| OE-5 | Proponer y ejecutar pruebas técnicas (consultas SQL, revisión de configuraciones, auditorías) que demuestren la efectividad de los controles. | `sql/` y artefacto, batería de pruebas | En curso: 19 pruebas en `sql/pruebas` (al menos una por control); la evidencia definitiva sale en la Fase 3 |
 
 Tareas nombradas en OE-2 (las 12 deben aparecer):
 
 | # | Tarea | Estado |
 | --- | --- | --- |
-| 1 | Gestión de usuarios | Pendiente |
-| 2 | Privilegios | Pendiente |
-| 3 | Autenticación | Pendiente |
-| 4 | Cifrado TDE | Pendiente |
-| 5 | Masking | Pendiente |
-| 6 | Backup | Pendiente |
-| 7 | Auditoría | Pendiente |
-| 8 | Parcheo | Pendiente |
-| 9 | Listener | Pendiente |
-| 10 | Eliminación segura | Pendiente |
-| 11 | Logs | Pendiente |
-| 12 | Clones DEV/TEST | Pendiente |
+| 1 | Gestión de usuarios | En curso (V03, C05, P01, P02) |
+| 2 | Privilegios | En curso (V02, V07, C04, P03, P04) |
+| 3 | Autenticación | En curso (V04, V09, C05, P07, P17) |
+| 4 | Cifrado TDE | En curso (V16, C01-C03, P09) |
+| 5 | Masking | En curso (V11, C07, P05) |
+| 6 | Backup | En curso (V13, C13, P10) |
+| 7 | Auditoría | En curso (V14, C11, C14, P15) |
+| 8 | Parcheo | En curso (V17, C14 (riesgo aceptado), P18) |
+| 9 | Listener | En curso (V15, C12, P11) |
+| 10 | Eliminación segura | En curso (V10, C09, P14) |
+| 11 | Logs | En curso (V06, C11, C15, P13, P19) |
+| 12 | Clones DEV/TEST | En curso (V11, C10, P12) |
 
 Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
 
 | # | Control | Estado |
 | --- | --- | --- |
-| 1 | A5.12 | Pendiente |
-| 2 | A5.15 | Pendiente |
-| 3 | A5.16 | Pendiente |
-| 4 | A5.17 | Pendiente |
-| 5 | A5.18 | Pendiente |
-| 6 | A5.33 | Pendiente |
-| 7 | A8.2 | Pendiente |
-| 8 | A8.3 | Pendiente |
-| 9 | A8.5 | Pendiente |
-| 10 | A8.10 | Pendiente |
-| 11 | A8.11 | Pendiente |
-| 12 | A8.12 | Pendiente |
-| 13 | A8.13 | Pendiente |
-| 14 | A8.15 | Pendiente |
-| 15 | A8.20 | Pendiente |
+| 1 | A5.12 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
+| 2 | A5.15 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
+| 3 | A5.16 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
+| 4 | A5.17 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
+| 5 | A5.18 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
+| 6 | A5.33 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
+| 7 | A8.2 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
+| 8 | A8.3 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
+| 9 | A8.5 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
+| 10 | A8.10 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
+| 11 | A8.11 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
+| 12 | A8.12 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
+| 13 | A8.13 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
+| 14 | A8.15 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
+| 15 | A8.20 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
 
 ## Marco teórico (sección 5): investigar y sintetizar brevemente (2-3 páginas)
 
@@ -76,7 +76,7 @@ Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
 | AR-4 | Lista de 15 controles observables por auditor externo. | Pendiente |
 | AR-5 | Matriz de evaluación (Tarea \| Riesgo \| Control \| Criterio 0-4 \| Evidencia \| Estado). | Pendiente |
 | AR-6 | Batería de pruebas (ID, Tipo, Procedimiento, Resultado esperado, Herramienta). | Pendiente |
-| AR-7 | Obligatorio incluir scripts de verificación. | Pendiente |
+| AR-7 | Obligatorio incluir scripts de verificación. | En curso (18 scripts en `sql/verificacion`) |
 
 ## Herramienta y metodología (sección 7)
 
@@ -101,7 +101,7 @@ Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
 | ID | Entregable literal | Estado |
 | --- | --- | --- |
 | EN-1 | Informe PDF con artefacto (o link a artefacto interactivo) | Pendiente |
-| EN-2 | Scripts .sql de verificación | Pendiente |
+| EN-2 | Scripts .sql de verificación | En curso (`sql/verificacion`, `sql/correccion`, `sql/pruebas`) |
 | EN-3 | Repositorio Git | En curso (https://github.com/Adrian123CRff/BD-ISO27001) |
 | EN-4 | Video 5 minutos | Pendiente |
 | EN-5 | Tabla de uso de IA firmada | Pendiente |

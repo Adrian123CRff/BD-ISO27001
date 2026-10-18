@@ -95,7 +95,7 @@ Criterios de aceptación: Cada corrección tiene su causa explicada y cada pendi
 Entregable: Una tabla fallo → causa → corrección → script, los scripts corregidos y un commit de sql/ y scripts/. Registra este prompt textual en docs/uso-ia.md.
 ```
 
-## Fase 2. Completar la cobertura: procedimientos, logs y pruebas
+## Fase 2. Completar la cobertura: procedimientos, logs y pruebas · hecha el 18/10/2026
 
 ```
 Rol: Auditor ISO/IEC 27001:2022 y DBA Oracle.

@@ -2,6 +2,8 @@
 -- Une el mundo administrativo con la base: cada control tiene su procedimiento (docs/procedimientos.md) registrado
 -- en SEGURIDAD.PROCEDIMIENTOS, y una tarea semanal deja en SEGURIDAD.BITACORA_REVISION el reporte de AUDIT que
 -- describió el profesor (intentos fallidos, accesos denegados, lecturas de datos personales, cambios de privilegios).
+-- Registra los procedimientos como APROBADO: ejecutarlo solo cuando docs/procedimientos.md esté aprobado (deja de
+-- estar en BORRADOR); de lo contrario la madurez 3 ("documentado") no tendría respaldo.
 -- Ejecutar como SYSDBA en XEPDB1:  -Como sys
 whenever sqlerror exit failure
 

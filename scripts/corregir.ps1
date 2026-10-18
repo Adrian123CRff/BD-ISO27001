@@ -61,4 +61,6 @@ Paso-Sql 'C11-auditoria.sql' 'sys'
 Paso-Sh 'C12-red.sh'
 Paso-Sh 'C13-respaldo.sh'
 Paso-Sql 'C14-gobierno.sql' 'sys'
+# Al final, para que también queden protegidos los respaldos y archive logs que creó C13.
+Paso-Sh 'C15-proteccion-logs.sh'
 Write-Host 'Correcciones aplicadas. Siguiente: .\scripts\pruebas.ps1 -Fase despues y .\scripts\evaluar.ps1 -Fase despues'

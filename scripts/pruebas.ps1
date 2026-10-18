@@ -10,7 +10,7 @@ $Raiz = Split-Path -Parent $PSScriptRoot
 $Carpeta = Join-Path $Raiz "evidencia\$Fase\pruebas"
 New-Item -ItemType Directory -Force $Carpeta | Out-Null
 $archivos = Get-ChildItem (Join-Path $Raiz 'sql\pruebas') -File | Where-Object { $_.Name -match '^P\d{2}-' } | Sort-Object Name
-if ($archivos.Count -ne 15) { throw "Se esperaban 15 pruebas y hay $($archivos.Count)" }
+if ($archivos.Count -ne 19) { throw "Se esperaban 19 pruebas y hay $($archivos.Count)" }
 $campos = 'PRUEBA', 'TIPO', 'CONTROL', 'RIESGO', 'COMO', 'PROCEDIMIENTO', 'ESPERADO', 'PATRON', 'HERRAMIENTA'
 
 function Leer-Cabecera($Archivo) {

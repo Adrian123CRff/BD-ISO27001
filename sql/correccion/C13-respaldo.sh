@@ -2,6 +2,8 @@
 # C13 · Respaldo cifrado con RMAN. PHVA: HACER. Control: A8.13.
 # Activa ARCHIVELOG (respaldo en caliente), configura el cifrado transparente de RMAN con el monedero de TDE,
 # el autorespaldo del controlfile y la retención, y toma un respaldo completo con sus archive logs.
+# Después hace la prueba de restauración sin sobrescribir la base (RESTORE DATABASE VALIDATE): RMAN lee y descifra
+# cada pieza. Un respaldo que no se puede leer es un fallo de control (docs/procedimientos.md#a813).
 # Se ejecuta dentro del contenedor como el usuario oracle (scripts/corregir.ps1).
 set -euo pipefail
 
@@ -28,6 +30,7 @@ configure encryption algorithm 'AES256';
 configure controlfile autobackup on;
 configure retention policy to redundancy 2;
 backup database plus archivelog;
+restore database validate;
 list backup summary;
 EOF
 echo "=== Respaldo cifrado completado ==="
