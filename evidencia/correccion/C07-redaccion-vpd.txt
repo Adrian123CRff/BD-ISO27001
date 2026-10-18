@@ -1,0 +1,41 @@
+-- Evidencia: C07-redaccion-vpd.sql | ejecutado como sys | 2026-10-18 10:37:53
+=== Data Redaction sobre FINANZAS.CLIENTES ===
+
+PL/SQL procedure successfully completed.
+
+=== VPD: cartera por analista ===
+
+Table created.
+
+
+1 row created.
+
+
+Commit complete.
+
+
+Grant succeeded.
+
+
+Function created.
+
+
+PL/SQL procedure successfully completed.
+
+
+COLUMN_NAME	 FUNCTION_TYPE
+---------------- --------------------
+NUMERO_TARJETA	 PARTIAL REDACTION
+CEDULA		 PARTIAL REDACTION
+SALARIO 	 FULL REDACTION
+
+3 rows selected.
+
+
+POLICY_NAME		       ENA
+------------------------------ ---
+VPD_CARTERA_ANALISTA	       YES
+
+1 row selected.
+
+=== Redacción y VPD activas ===

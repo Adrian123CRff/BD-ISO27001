@@ -1,0 +1,39 @@
+-- Evidencia: C11-auditoria.sql | ejecutado como sys | 2026-10-18 10:38:35
+
+Audit succeeded.
+
+
+Audit succeeded.
+
+
+Audit succeeded.
+
+
+Audit succeeded.
+
+
+Audit succeeded.
+
+
+Audit succeeded.
+
+
+Audit succeeded.
+
+
+Audit succeeded.
+
+
+AUDIT_OPTION	     SUCCESS	FAILURE
+-------------------- ---------- ----------
+CREATE SESSION	     BY ACCESS	BY ACCESS
+DELETE ANY TABLE     BY ACCESS	BY ACCESS
+NOT EXISTS	     BY ACCESS	BY ACCESS
+ROLE		     BY ACCESS	BY ACCESS
+SYSTEM GRANT	     BY ACCESS	BY ACCESS
+UPDATE ANY TABLE     BY ACCESS	BY ACCESS
+USER		     BY ACCESS	BY ACCESS
+
+7 rows selected.
+
+=== Auditoría configurada ===

@@ -1,0 +1,111 @@
+-- Evidencia: 01-escenario.sql | ejecutado como sys | 2026-10-18 10:35:55
+=== Tablespace de datos del negocio (sin cifrar) ===
+
+Tablespace created.
+
+=== Esquema dueño de los datos ===
+
+User created.
+
+
+Grant succeeded.
+
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+=== Datos sintéticos: 200 clientes, 300 cuentas, 3000 movimientos (ciclos acotados por LEVEL) ===
+
+199 rows created.
+
+
+1 row created.
+
+
+300 rows created.
+
+
+3000 rows created.
+
+
+Commit complete.
+
+=== Cuentas de usuario de la situación inicial ===
+
+User created.
+
+
+User created.
+
+
+User created.
+
+
+User created.
+
+
+User created.
+
+
+Grant succeeded.
+
+=== Debilidades de privilegios ===
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+=== Debilidad de autenticación: perfil DEFAULT sin límites ===
+
+Profile altered.
+
+=== Debilidad de fuga de datos: exportación sin control ===
+
+Directory created.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+=== Debilidad de registros: soporte puede borrar la pista de auditoría ===
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+=== Debilidad de clones DEV/TEST: copia completa con datos reales ===
+
+User created.
+
+
+Table created.
+
+
+Grant succeeded.
+
+=== Debilidad de eliminación: tabla con datos personales borrada pero recuperable ===
+
+Table created.
+
+
+Table dropped.
+
+=== Escenario creado. Riesgo inherente listo para evaluar. ===

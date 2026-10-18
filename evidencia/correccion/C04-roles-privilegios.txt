@@ -1,0 +1,88 @@
+-- Evidencia: C04-roles-privilegios.sql | ejecutado como sys | 2026-10-18 10:37:48
+=== Retiro de privilegios excesivos ===
+
+Revoke succeeded.
+
+
+Revoke succeeded.
+
+
+Revoke succeeded.
+
+
+Revoke succeeded.
+
+
+Revoke succeeded.
+
+
+Revoke succeeded.
+
+
+Revoke succeeded.
+
+
+Revoke succeeded.
+
+=== Roles de negocio (necesidad de conocer) ===
+
+Role created.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Role created.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Role created.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+=== Cuentas dueñas de esquema sin inicio de sesión ===
+
+User altered.
+
+
+User altered.
+
+=== Privilegios resultantes ===
+
+GRANTEE 	       TABLE_NAME     PRIVILEGE
+---------------------- -------------- ------------
+ROL_ANALISTA_CREDITO   CLIENTES       SELECT
+ROL_ANALISTA_CREDITO   CUENTAS	      SELECT
+ROL_APP_WEB	       CLIENTES       UPDATE
+ROL_APP_WEB	       CLIENTES       INSERT
+ROL_APP_WEB	       CLIENTES       SELECT
+ROL_APP_WEB	       CUENTAS	      INSERT
+ROL_APP_WEB	       CUENTAS	      SELECT
+ROL_APP_WEB	       CUENTAS	      UPDATE
+ROL_APP_WEB	       MOVIMIENTOS    INSERT
+ROL_APP_WEB	       MOVIMIENTOS    SELECT
+ROL_DESARROLLO	       CLIENTES       SELECT
+
+11 rows selected.
+

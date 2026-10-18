@@ -1,0 +1,86 @@
+-- Evidencia: C05-identidades-perfiles.sql | ejecutado como sys | 2026-10-18 10:37:51
+=== Esquema de control SEGURIDAD (sin inicio de sesión, datos en el tablespace cifrado) ===
+
+User created.
+
+
+Grant succeeded.
+
+
+Table created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+Commit complete.
+
+=== Bajas: cuentas bloqueadas ===
+
+User altered.
+
+
+User altered.
+
+
+User altered.
+
+=== Perfil de contraseñas para cuentas de personas, servicios y auditoría ===
+
+Profile created.
+
+
+User altered.
+
+
+User altered.
+
+
+User altered.
+
+
+User altered.
+
+
+User altered.
+
+
+User altered.
+
+
+Profile altered.
+
+
+Grant succeeded.
+
+=== Identidades registradas y perfiles aplicados ===

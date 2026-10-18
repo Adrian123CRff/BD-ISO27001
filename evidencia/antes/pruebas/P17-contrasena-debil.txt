@@ -1,0 +1,6 @@
+-- Evidencia: P17-contrasena-debil.sql | ejecutado como sys | 2026-10-18 10:37:10
+Perfil del analista: DEFAULT
+RESULTADO: CLAVE INSEGURA ACEPTADA
+
+PL/SQL procedure successfully completed.
+

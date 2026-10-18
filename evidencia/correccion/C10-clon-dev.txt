@@ -1,0 +1,39 @@
+-- Evidencia: C10-clon-dev.sql | ejecutado como sys | 2026-10-18 10:38:33
+
+Table truncated.
+
+
+200 rows created.
+
+
+Commit complete.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Table created.
+
+
+Procedure created.
+
+
+PL/SQL procedure successfully completed.
+
+
+View created.
+
+
+Grant succeeded.
+
+
+FILAS_REALES FILAS_PRODUCCION
+------------ ----------------
+	   0		  200
+
+1 row selected.
+
+=== Clon DEV regenerado con datos ficticios y control del clon registrado ===

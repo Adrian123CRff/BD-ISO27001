@@ -1,0 +1,26 @@
+-- Evidencia: C02-tde-monedero.sql | ejecutado como sys-cdb | 2026-10-18 10:37:39
+
+System altered.
+
+
+keystore altered.
+
+
+keystore altered.
+
+
+keystore altered.
+
+
+keystore altered.
+
+
+    CON_ID WRL_PARAMETER			    STATUS     WALLET_TYPE
+---------- ---------------------------------------- ---------- ----------------
+	 1 /opt/oracle/oradata/wallet/tde/	    OPEN       PASSWORD
+	 2					    OPEN       PASSWORD
+	 3					    OPEN       PASSWORD
+
+3 rows selected.
+
+=== Monedero de TDE abierto y con clave maestra en CDB$ROOT y XEPDB1 ===

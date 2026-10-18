@@ -1,0 +1,88 @@
+-- Evidencia: C14-gobierno.sql | ejecutado como sys | 2026-10-18 10:40:35
+
+Table created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+Commit complete.
+
+
+Table created.
+
+
+Grant succeeded.
+
+
+Procedure created.
+
+
+PL/SQL procedure successfully completed.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+ID_REVISION FECHA	       INTENTOS_FALLIDOS ACCESOS_DENEGADOS
+----------- ------------------ ----------------- -----------------
+LECTURAS_CLIENTES CAMBIOS_PRIVILEGIOS
+----------------- -------------------
+	  1 18-OCT-26			       0		 0
+		0		    0
+
+
+1 row selected.
+
+=== Procedimientos registrados y primera revisión semanal ejecutada ===

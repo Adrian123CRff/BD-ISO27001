@@ -1,0 +1,855 @@
+{
+  "fase": "antes",
+  "fecha": "2026-10-18T10:36:46",
+  "motor": "Oracle Database 21c Express Edition 21.3.0.0.0 (contenedor iso-lab, XEPDB1)",
+  "ejecutadoComo": "ISO_AUDITOR (solo lectura del diccionario)",
+  "controles": [
+    {
+      "control": "A5.12",
+      "estado": "No cumple",
+      "madurez": 0,
+      "cumplidos": 0,
+      "total": 3,
+      "documentado": false,
+      "verificado": false,
+      "falloDeControl": false,
+      "criterios": [
+        {
+          "id": "a",
+          "ok": false,
+          "criterio": "Existe un inventario de clasificación de datos (SEGURIDAD.CLASIFICACION_DATOS)",
+          "observado": "0 inventario(s)",
+          "script": "V01-A5.12-clasificacion.sql"
+        },
+        {
+          "id": "b",
+          "ok": false,
+          "criterio": "Las 5 columnas personales de CLIENTES (cédula, correo, teléfono, salario, tarjeta) llevan etiqueta de clasificación",
+          "observado": "0 de 5 etiquetadas",
+          "script": "V01-A5.12-clasificacion.sql"
+        },
+        {
+          "id": "c",
+          "ok": false,
+          "criterio": "Las 3 tablas de negocio (clientes, cuentas, movimientos) tienen nivel de clasificación",
+          "observado": "0 de 3 clasificadas",
+          "script": "V01-A5.12-clasificacion.sql"
+        }
+      ],
+      "gobierno": [
+        {
+          "id": "DOC",
+          "ok": false,
+          "criterio": "Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS",
+          "observado": "0 procedimiento(s)",
+          "script": "V90-gobierno.sql"
+        },
+        {
+          "id": "VER",
+          "ok": false,
+          "criterio": "Revisión semanal programada con registro en los últimos 7 días",
+          "observado": "tarea inexistente, 0 registro(s) en bitácora",
+          "script": "V90-gobierno.sql"
+        }
+      ]
+    },
+    {
+      "control": "A5.15",
+      "estado": "No cumple",
+      "madurez": 0,
+      "cumplidos": 0,
+      "total": 3,
+      "documentado": false,
+      "verificado": false,
+      "falloDeControl": false,
+      "criterios": [
+        {
+          "id": "a",
+          "ok": false,
+          "criterio": "Ningún privilegio sobre datos de negocio está concedido a PUBLIC",
+          "observado": "2 privilegio(s) a PUBLIC",
+          "script": "V02-A5.15-control-acceso.sql"
+        },
+        {
+          "id": "b",
+          "ok": false,
+          "criterio": "Las personas no reciben privilegios directos sobre FINANZAS: el acceso pasa por roles",
+          "observado": "1 privilegio(s) directo(s) a usuarios",
+          "script": "V02-A5.15-control-acceso.sql"
+        },
+        {
+          "id": "c",
+          "ok": false,
+          "criterio": "Existen roles de negocio (ROL_*) con privilegios definidos sobre FINANZAS",
+          "observado": "0 rol(es) de negocio con privilegios",
+          "script": "V02-A5.15-control-acceso.sql"
+        }
+      ],
+      "gobierno": [
+        {
+          "id": "DOC",
+          "ok": false,
+          "criterio": "Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS",
+          "observado": "0 procedimiento(s)",
+          "script": "V90-gobierno.sql"
+        },
+        {
+          "id": "VER",
+          "ok": false,
+          "criterio": "Revisión semanal programada con registro en los últimos 7 días",
+          "observado": "tarea inexistente, 0 registro(s) en bitácora",
+          "script": "V90-gobierno.sql"
+        }
+      ]
+    },
+    {
+      "control": "A5.16",
+      "estado": "No cumple",
+      "madurez": 0,
+      "cumplidos": 0,
+      "total": 2,
+      "documentado": false,
+      "verificado": false,
+      "falloDeControl": false,
+      "criterios": [
+        {
+          "id": "a",
+          "ok": false,
+          "criterio": "Toda cuenta está registrada con su responsable en SEGURIDAD.REGISTRO_IDENTIDADES",
+          "observado": "No existe registro de identidades",
+          "script": "V03-A5.16-identidades.sql"
+        },
+        {
+          "id": "b",
+          "ok": false,
+          "criterio": "No hay cuentas genéricas o compartidas abiertas (SOPORTE, ADMIN, TEST, GUEST, TEMP)",
+          "observado": "1 cuenta(s) genérica(s) abierta(s)",
+          "script": "V03-A5.16-identidades.sql"
+        }
+      ],
+      "gobierno": [
+        {
+          "id": "DOC",
+          "ok": false,
+          "criterio": "Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS",
+          "observado": "0 procedimiento(s)",
+          "script": "V90-gobierno.sql"
+        },
+        {
+          "id": "VER",
+          "ok": false,
+          "criterio": "Revisión semanal programada con registro en los últimos 7 días",
+          "observado": "tarea inexistente, 0 registro(s) en bitácora",
+          "script": "V90-gobierno.sql"
+        }
+      ]
+    },
+    {
+      "control": "A5.17",
+      "estado": "Parcial",
+      "madurez": 1,
+      "cumplidos": 1,
+      "total": 4,
+      "documentado": false,
+      "verificado": false,
+      "falloDeControl": false,
+      "criterios": [
+        {
+          "id": "a",
+          "ok": false,
+          "criterio": "Toda cuenta abierta tiene función de complejidad de contraseña",
+          "observado": "9 cuenta(s) sin verificación",
+          "script": "V04-A5.17-informacion-autenticacion.sql"
+        },
+        {
+          "id": "b",
+          "ok": false,
+          "criterio": "La vigencia de la contraseña es de 90 días o menos",
+          "observado": "9 cuenta(s) con vigencia mayor o ilimitada",
+          "script": "V04-A5.17-informacion-autenticacion.sql"
+        },
+        {
+          "id": "c",
+          "ok": false,
+          "criterio": "Se impide reutilizar contraseñas (REUSE_MAX y REUSE_TIME limitados)",
+          "observado": "9 cuenta(s) que pueden reutilizar",
+          "script": "V04-A5.17-informacion-autenticacion.sql"
+        },
+        {
+          "id": "d",
+          "ok": true,
+          "criterio": "Ninguna cuenta abierta usa contraseña por defecto (DBA_USERS_WITH_DEFPWD)",
+          "observado": "0 cuenta(s) con contraseña por defecto",
+          "script": "V04-A5.17-informacion-autenticacion.sql"
+        }
+      ],
+      "gobierno": [
+        {
+          "id": "DOC",
+          "ok": false,
+          "criterio": "Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS",
+          "observado": "0 procedimiento(s)",
+          "script": "V90-gobierno.sql"
+        },
+        {
+          "id": "VER",
+          "ok": false,
+          "criterio": "Revisión semanal programada con registro en los últimos 7 días",
+          "observado": "tarea inexistente, 0 registro(s) en bitácora",
+          "script": "V90-gobierno.sql"
+        }
+      ]
+    },
+    {
+      "control": "A5.18",
+      "estado": "Parcial",
+      "madurez": 1,
+      "cumplidos": 1,
+      "total": 3,
+      "documentado": false,
+      "verificado": false,
+      "falloDeControl": false,
+      "criterios": [
+        {
+          "id": "a",
+          "ok": false,
+          "criterio": "Hay una revisión de derechos de acceso registrada en los últimos 180 días",
+          "observado": "No existe registro de revisión",
+          "script": "V05-A5.18-derechos-acceso.sql"
+        },
+        {
+          "id": "b",
+          "ok": false,
+          "criterio": "Las cuentas dadas de baja (exfuncionarios) están bloqueadas",
+          "observado": "Sin registro: no se puede saber quién es baja",
+          "script": "V05-A5.18-derechos-acceso.sql"
+        },
+        {
+          "id": "c",
+          "ok": true,
+          "criterio": "No hay cuentas abiertas sin uso en más de 90 días",
+          "observado": "0 cuenta(s) inactiva(s) abierta(s)",
+          "script": "V05-A5.18-derechos-acceso.sql"
+        }
+      ],
+      "gobierno": [
+        {
+          "id": "DOC",
+          "ok": false,
+          "criterio": "Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS",
+          "observado": "0 procedimiento(s)",
+          "script": "V90-gobierno.sql"
+        },
+        {
+          "id": "VER",
+          "ok": false,
+          "criterio": "Revisión semanal programada con registro en los últimos 7 días",
+          "observado": "tarea inexistente, 0 registro(s) en bitácora",
+          "script": "V90-gobierno.sql"
+        }
+      ]
+    },
+    {
+      "control": "A5.33",
+      "estado": "No cumple",
+      "madurez": 0,
+      "cumplidos": 0,
+      "total": 3,
+      "documentado": false,
+      "verificado": false,
+      "falloDeControl": false,
+      "criterios": [
+        {
+          "id": "a",
+          "ok": false,
+          "criterio": "La pista de auditoría está habilitada (audit_trail distinto de NONE)",
+          "observado": "audit_trail = NONE",
+          "script": "V06-A5.33-proteccion-registros.sql"
+        },
+        {
+          "id": "b",
+          "ok": false,
+          "criterio": "Ninguna cuenta o rol ajeno a Oracle puede borrar la pista de auditoría",
+          "observado": "2 concesión(es) peligrosa(s)",
+          "script": "V06-A5.33-proteccion-registros.sql"
+        },
+        {
+          "id": "c",
+          "ok": false,
+          "criterio": "Se audita el uso de DELETE/UPDATE ANY TABLE y las operaciones de SYS (audit_sys_operations)",
+          "observado": "0 de 2 privilegios auditados, audit_sys_operations = FALSE",
+          "script": "V06-A5.33-proteccion-registros.sql"
+        }
+      ],
+      "gobierno": [
+        {
+          "id": "DOC",
+          "ok": false,
+          "criterio": "Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS",
+          "observado": "0 procedimiento(s)",
+          "script": "V90-gobierno.sql"
+        },
+        {
+          "id": "VER",
+          "ok": false,
+          "criterio": "Revisión semanal programada con registro en los últimos 7 días",
+          "observado": "tarea inexistente, 0 registro(s) en bitácora",
+          "script": "V90-gobierno.sql"
+        }
+      ]
+    },
+    {
+      "control": "A8.2",
+      "estado": "Parcial",
+      "madurez": 1,
+      "cumplidos": 1,
+      "total": 4,
+      "documentado": false,
+      "verificado": false,
+      "falloDeControl": false,
+      "criterios": [
+        {
+          "id": "a",
+          "ok": false,
+          "criterio": "El rol DBA solo lo tienen las cuentas administrativas (SYS, SYSTEM)",
+          "observado": "1 cuenta(s) adicional(es) con DBA",
+          "script": "V07-A8.2-acceso-privilegiado.sql"
+        },
+        {
+          "id": "b",
+          "ok": false,
+          "criterio": "Ninguna cuenta o rol de negocio tiene privilegios ANY",
+          "observado": "2 privilegio(s) ANY fuera de Oracle",
+          "script": "V07-A8.2-acceso-privilegiado.sql"
+        },
+        {
+          "id": "c",
+          "ok": true,
+          "criterio": "Solo SYS figura con privilegios administrativos en el archivo de contraseñas (V$PWFILE_USERS)",
+          "observado": "0 cuenta(s) adicional(es)",
+          "script": "V07-A8.2-acceso-privilegiado.sql"
+        },
+        {
+          "id": "d",
+          "ok": false,
+          "criterio": "Las cuentas dueñas de esquemas (FINANZAS, FINANZAS_DEV, SEGURIDAD) no permiten iniciar sesión",
+          "observado": "2 cuenta(s) dueña(s) abierta(s)",
+          "script": "V07-A8.2-acceso-privilegiado.sql"
+        }
+      ],
+      "gobierno": [
+        {
+          "id": "DOC",
+          "ok": false,
+          "criterio": "Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS",
+          "observado": "0 procedimiento(s)",
+          "script": "V90-gobierno.sql"
+        },
+        {
+          "id": "VER",
+          "ok": false,
+          "criterio": "Revisión semanal programada con registro en los últimos 7 días",
+          "observado": "tarea inexistente, 0 registro(s) en bitácora",
+          "script": "V90-gobierno.sql"
+        }
+      ]
+    },
+    {
+      "control": "A8.3",
+      "estado": "No cumple",
+      "madurez": 0,
+      "cumplidos": 0,
+      "total": 3,
+      "documentado": false,
+      "verificado": false,
+      "falloDeControl": false,
+      "criterios": [
+        {
+          "id": "a",
+          "ok": false,
+          "criterio": "Hay una política VPD activa que restringe por fila los datos de FINANZAS",
+          "observado": "0 política(s) activa(s)",
+          "script": "V08-A8.3-restriccion-acceso.sql"
+        },
+        {
+          "id": "b",
+          "ok": false,
+          "criterio": "Solo los roles de negocio (ROL_*) y el esquema de control SEGURIDAD (bloqueado) leen FINANZAS.CLIENTES",
+          "observado": "2 destinatario(s) no autorizado(s)",
+          "script": "V08-A8.3-restriccion-acceso.sql"
+        },
+        {
+          "id": "c",
+          "ok": false,
+          "criterio": "Ninguna cuenta o rol de negocio puede saltarse las políticas (EXEMPT ACCESS/REDACTION POLICY, SELECT ANY TABLE)",
+          "observado": "1 concesión(es) de excepción",
+          "script": "V08-A8.3-restriccion-acceso.sql"
+        }
+      ],
+      "gobierno": [
+        {
+          "id": "DOC",
+          "ok": false,
+          "criterio": "Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS",
+          "observado": "0 procedimiento(s)",
+          "script": "V90-gobierno.sql"
+        },
+        {
+          "id": "VER",
+          "ok": false,
+          "criterio": "Revisión semanal programada con registro en los últimos 7 días",
+          "observado": "tarea inexistente, 0 registro(s) en bitácora",
+          "script": "V90-gobierno.sql"
+        }
+      ]
+    },
+    {
+      "control": "A8.5",
+      "estado": "Parcial",
+      "madurez": 1,
+      "cumplidos": 2,
+      "total": 3,
+      "documentado": false,
+      "verificado": false,
+      "falloDeControl": false,
+      "criterios": [
+        {
+          "id": "a",
+          "ok": false,
+          "criterio": "La cuenta se bloquea tras 5 intentos fallidos o menos",
+          "observado": "9 cuenta(s) con intentos ilimitados o mayores",
+          "script": "V09-A8.5-autenticacion-segura.sql"
+        },
+        {
+          "id": "b",
+          "ok": true,
+          "criterio": "El bloqueo por intentos fallidos dura al menos 30 minutos",
+          "observado": "0 cuenta(s) con bloqueo menor",
+          "script": "V09-A8.5-autenticacion-segura.sql"
+        },
+        {
+          "id": "c",
+          "ok": true,
+          "criterio": "Ninguna cuenta conserva el verificador antiguo 10G (solo 11G/12C)",
+          "observado": "0 cuenta(s) con verificador 10G",
+          "script": "V09-A8.5-autenticacion-segura.sql"
+        }
+      ],
+      "gobierno": [
+        {
+          "id": "DOC",
+          "ok": false,
+          "criterio": "Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS",
+          "observado": "0 procedimiento(s)",
+          "script": "V90-gobierno.sql"
+        },
+        {
+          "id": "VER",
+          "ok": false,
+          "criterio": "Revisión semanal programada con registro en los últimos 7 días",
+          "observado": "tarea inexistente, 0 registro(s) en bitácora",
+          "script": "V90-gobierno.sql"
+        }
+      ]
+    },
+    {
+      "control": "A8.8",
+      "estado": "Parcial",
+      "madurez": 1,
+      "cumplidos": 2,
+      "total": 3,
+      "documentado": false,
+      "verificado": false,
+      "falloDeControl": false,
+      "criterios": [
+        {
+          "id": "a",
+          "ok": false,
+          "criterio": "El motor tiene aplicado al menos un parche de seguridad (Release Update)",
+          "observado": "0 parche(s) aplicado(s)",
+          "script": "V17-A8.8-vulnerabilidades.sql"
+        },
+        {
+          "id": "b",
+          "ok": true,
+          "criterio": "Las cuentas internas de Oracle que admiten contraseña, salvo SYS y SYSTEM, están cerradas",
+          "observado": "0 cuenta(s) interna(s) abierta(s)",
+          "script": "V17-A8.8-vulnerabilidades.sql"
+        },
+        {
+          "id": "c",
+          "ok": true,
+          "criterio": "Ninguna cuenta abierta conserva contraseña por defecto",
+          "observado": "0 cuenta(s)",
+          "script": "V17-A8.8-vulnerabilidades.sql"
+        }
+      ],
+      "gobierno": [
+        {
+          "id": "DOC",
+          "ok": false,
+          "criterio": "Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS",
+          "observado": "0 procedimiento(s)",
+          "script": "V90-gobierno.sql"
+        },
+        {
+          "id": "VER",
+          "ok": false,
+          "criterio": "Revisión semanal programada con registro en los últimos 7 días",
+          "observado": "tarea inexistente, 0 registro(s) en bitácora",
+          "script": "V90-gobierno.sql"
+        }
+      ]
+    },
+    {
+      "control": "A8.10",
+      "estado": "Parcial",
+      "madurez": 1,
+      "cumplidos": 1,
+      "total": 3,
+      "documentado": false,
+      "verificado": false,
+      "falloDeControl": false,
+      "criterios": [
+        {
+          "id": "a",
+          "ok": false,
+          "criterio": "La papelera de reciclaje no conserva objetos con datos de negocio",
+          "observado": "1 objeto(s) recuperable(s)",
+          "script": "V10-A8.10-eliminacion.sql"
+        },
+        {
+          "id": "b",
+          "ok": true,
+          "criterio": "No hay copias ad hoc de tablas de negocio (*RESPALDO*, *BAK*, *COPIA*)",
+          "observado": "0 copia(s)",
+          "script": "V10-A8.10-eliminacion.sql"
+        },
+        {
+          "id": "c",
+          "ok": false,
+          "criterio": "Hay una purga periódica programada y activa (PURGA_PAPELERA)",
+          "observado": "Sin tarea de purga",
+          "script": "V10-A8.10-eliminacion.sql"
+        }
+      ],
+      "gobierno": [
+        {
+          "id": "DOC",
+          "ok": false,
+          "criterio": "Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS",
+          "observado": "0 procedimiento(s)",
+          "script": "V90-gobierno.sql"
+        },
+        {
+          "id": "VER",
+          "ok": false,
+          "criterio": "Revisión semanal programada con registro en los últimos 7 días",
+          "observado": "tarea inexistente, 0 registro(s) en bitácora",
+          "script": "V90-gobierno.sql"
+        }
+      ]
+    },
+    {
+      "control": "A8.11",
+      "estado": "No cumple",
+      "madurez": 0,
+      "cumplidos": 0,
+      "total": 3,
+      "documentado": false,
+      "verificado": false,
+      "falloDeControl": false,
+      "criterios": [
+        {
+          "id": "a",
+          "ok": false,
+          "criterio": "Hay una política de Data Redaction activa sobre FINANZAS.CLIENTES",
+          "observado": "0 política(s) activa(s)",
+          "script": "V11-A8.11-enmascaramiento.sql"
+        },
+        {
+          "id": "b",
+          "ok": false,
+          "criterio": "La redacción cubre cédula, salario y número de tarjeta",
+          "observado": "0 de 3 columnas cubiertas",
+          "script": "V11-A8.11-enmascaramiento.sql"
+        },
+        {
+          "id": "c",
+          "ok": false,
+          "criterio": "El clon de desarrollo (FINANZAS_DEV) no contiene cédulas ni tarjetas reales",
+          "observado": "No existe control sobre el clon",
+          "script": "V11-A8.11-enmascaramiento.sql"
+        }
+      ],
+      "gobierno": [
+        {
+          "id": "DOC",
+          "ok": false,
+          "criterio": "Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS",
+          "observado": "0 procedimiento(s)",
+          "script": "V90-gobierno.sql"
+        },
+        {
+          "id": "VER",
+          "ok": false,
+          "criterio": "Revisión semanal programada con registro en los últimos 7 días",
+          "observado": "tarea inexistente, 0 registro(s) en bitácora",
+          "script": "V90-gobierno.sql"
+        }
+      ]
+    },
+    {
+      "control": "A8.12",
+      "estado": "No cumple",
+      "madurez": 0,
+      "cumplidos": 0,
+      "total": 3,
+      "documentado": false,
+      "verificado": false,
+      "falloDeControl": false,
+      "criterios": [
+        {
+          "id": "a",
+          "ok": false,
+          "criterio": "Ningún directorio del servidor es accesible para PUBLIC",
+          "observado": "2 privilegio(s) de directorio a PUBLIC",
+          "script": "V12-A8.12-fuga-datos.sql"
+        },
+        {
+          "id": "b",
+          "ok": false,
+          "criterio": "Los roles de exportación masiva no están concedidos a cuentas o roles de negocio",
+          "observado": "1 concesión(es)",
+          "script": "V12-A8.12-fuga-datos.sql"
+        },
+        {
+          "id": "c",
+          "ok": false,
+          "criterio": "PUBLIC no puede ejecutar paquetes de salida de datos (UTL_FILE, UTL_HTTP, UTL_TCP, UTL_SMTP)",
+          "observado": "4 paquete(s) abierto(s) a PUBLIC",
+          "script": "V12-A8.12-fuga-datos.sql"
+        }
+      ],
+      "gobierno": [
+        {
+          "id": "DOC",
+          "ok": false,
+          "criterio": "Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS",
+          "observado": "0 procedimiento(s)",
+          "script": "V90-gobierno.sql"
+        },
+        {
+          "id": "VER",
+          "ok": false,
+          "criterio": "Revisión semanal programada con registro en los últimos 7 días",
+          "observado": "tarea inexistente, 0 registro(s) en bitácora",
+          "script": "V90-gobierno.sql"
+        }
+      ]
+    },
+    {
+      "control": "A8.13",
+      "estado": "No cumple",
+      "madurez": 0,
+      "cumplidos": 0,
+      "total": 3,
+      "documentado": false,
+      "verificado": false,
+      "falloDeControl": false,
+      "criterios": [
+        {
+          "id": "a",
+          "ok": false,
+          "criterio": "RMAN está configurado para cifrar los respaldos (ENCRYPTION FOR DATABASE ON)",
+          "observado": "Cifrado no configurado",
+          "script": "V13-A8.13-respaldo.sql"
+        },
+        {
+          "id": "b",
+          "ok": false,
+          "criterio": "Hay al menos un respaldo completado en los últimos 7 días",
+          "observado": "0 pieza(s) de respaldo reciente(s)",
+          "script": "V13-A8.13-respaldo.sql"
+        },
+        {
+          "id": "c",
+          "ok": false,
+          "criterio": "Todas las piezas de respaldo disponibles están cifradas",
+          "observado": "No hay piezas de respaldo",
+          "script": "V13-A8.13-respaldo.sql"
+        }
+      ],
+      "gobierno": [
+        {
+          "id": "DOC",
+          "ok": false,
+          "criterio": "Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS",
+          "observado": "0 procedimiento(s)",
+          "script": "V90-gobierno.sql"
+        },
+        {
+          "id": "VER",
+          "ok": false,
+          "criterio": "Revisión semanal programada con registro en los últimos 7 días",
+          "observado": "tarea inexistente, 0 registro(s) en bitácora",
+          "script": "V90-gobierno.sql"
+        }
+      ]
+    },
+    {
+      "control": "A8.15",
+      "estado": "No cumple",
+      "madurez": 0,
+      "cumplidos": 0,
+      "total": 5,
+      "documentado": false,
+      "verificado": false,
+      "falloDeControl": false,
+      "criterios": [
+        {
+          "id": "a",
+          "ok": false,
+          "criterio": "La auditoría guarda el texto SQL (audit_trail = DB, EXTENDED)",
+          "observado": "audit_trail = NONE",
+          "script": "V14-A8.15-registro.sql"
+        },
+        {
+          "id": "b",
+          "ok": false,
+          "criterio": "Se auditan los inicios de sesión, exitosos y fallidos (CREATE SESSION)",
+          "observado": "No auditado",
+          "script": "V14-A8.15-registro.sql"
+        },
+        {
+          "id": "c",
+          "ok": false,
+          "criterio": "Se audita la lectura de datos personales (SELECT sobre FINANZAS.CLIENTES)",
+          "observado": "No auditado",
+          "script": "V14-A8.15-registro.sql"
+        },
+        {
+          "id": "d",
+          "ok": false,
+          "criterio": "Se auditan los cambios de cuentas y privilegios (USER, ROLE, SYSTEM GRANT)",
+          "observado": "0 de 3 opciones",
+          "script": "V14-A8.15-registro.sql"
+        },
+        {
+          "id": "e",
+          "ok": false,
+          "criterio": "La pista contiene registros de las últimas 24 horas",
+          "observado": "0 registro(s)",
+          "script": "V14-A8.15-registro.sql"
+        }
+      ],
+      "gobierno": [
+        {
+          "id": "DOC",
+          "ok": false,
+          "criterio": "Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS",
+          "observado": "0 procedimiento(s)",
+          "script": "V90-gobierno.sql"
+        },
+        {
+          "id": "VER",
+          "ok": false,
+          "criterio": "Revisión semanal programada con registro en los últimos 7 días",
+          "observado": "tarea inexistente, 0 registro(s) en bitácora",
+          "script": "V90-gobierno.sql"
+        }
+      ]
+    },
+    {
+      "control": "A8.20",
+      "estado": "No cumple",
+      "madurez": 0,
+      "cumplidos": 0,
+      "total": 2,
+      "documentado": false,
+      "verificado": false,
+      "falloDeControl": false,
+      "criterios": [
+        {
+          "id": "a",
+          "ok": false,
+          "criterio": "La sesión viaja cifrada con AES (cifrado nativo de Oracle Net)",
+          "observado": "Sin cifrado de red",
+          "script": "V15-A8.20-redes.sql"
+        },
+        {
+          "id": "b",
+          "ok": false,
+          "criterio": "La sesión tiene control de integridad criptográfico (SHA)",
+          "observado": "Sin control de integridad",
+          "script": "V15-A8.20-redes.sql"
+        }
+      ],
+      "gobierno": [
+        {
+          "id": "DOC",
+          "ok": false,
+          "criterio": "Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS",
+          "observado": "0 procedimiento(s)",
+          "script": "V90-gobierno.sql"
+        },
+        {
+          "id": "VER",
+          "ok": false,
+          "criterio": "Revisión semanal programada con registro en los últimos 7 días",
+          "observado": "tarea inexistente, 0 registro(s) en bitácora",
+          "script": "V90-gobierno.sql"
+        }
+      ]
+    },
+    {
+      "control": "A8.24",
+      "estado": "No cumple",
+      "madurez": 0,
+      "cumplidos": 0,
+      "total": 3,
+      "documentado": false,
+      "verificado": false,
+      "falloDeControl": false,
+      "criterios": [
+        {
+          "id": "a",
+          "ok": false,
+          "criterio": "El monedero (keystore) de TDE está abierto",
+          "observado": "NOT_AVAILABLE",
+          "script": "V16-A8.24-criptografia-tde.sql"
+        },
+        {
+          "id": "b",
+          "ok": false,
+          "criterio": "El monedero abre solo al reiniciar (AUTOLOGIN) o está gestionado por contraseña con procedimiento",
+          "observado": "UNKNOWN",
+          "script": "V16-A8.24-criptografia-tde.sql"
+        },
+        {
+          "id": "c",
+          "ok": false,
+          "criterio": "Todos los tablespaces con datos de negocio están cifrados con TDE",
+          "observado": "1 de 1 sin cifrar",
+          "script": "V16-A8.24-criptografia-tde.sql"
+        }
+      ],
+      "gobierno": [
+        {
+          "id": "DOC",
+          "ok": false,
+          "criterio": "Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS",
+          "observado": "0 procedimiento(s)",
+          "script": "V90-gobierno.sql"
+        },
+        {
+          "id": "VER",
+          "ok": false,
+          "criterio": "Revisión semanal programada con registro en los últimos 7 días",
+          "observado": "tarea inexistente, 0 registro(s) en bitácora",
+          "script": "V90-gobierno.sql"
+        }
+      ]
+    }
+  ]
+}

@@ -13,8 +13,8 @@ Estados: Pendiente · En curso · Cumplido.
 | OE-1 | Identificar y clasificar al menos 5 riesgos de confidencialidad (R-CONF) asociados a motores de BD (Oracle). | Artefacto, tabla de riesgos | Pendiente |
 | OE-2 | Mapear al menos 12 tareas críticas del DBA (gestión de usuarios, privilegios, autenticación, cifrado TDE, masking, backup, auditoría, parcheo, listener, eliminación segura, logs, clones DEV/TEST). | Artefacto, tabla de tareas | En curso: las 12 tareas tienen script de verificación, corrección y prueba (ver tabla); falta la tabla del artefacto |
 | OE-3 | Seleccionar y justificar controles del Anexo A 2022 pertinentes (A5.12, A5.15, A5.16, A5.17, A5.18, A5.33, A8.2, A8.3, A8.5, A8.10, A8.11, A8.12, A8.13, A8.15, A8.20). | Artefacto, mapeo de controles | En curso: los 15 tienen verificación (`sql/verificacion`), corrección (`sql/correccion`) y procedimiento (`docs/procedimientos.md`, borrador); falta la justificación en el artefacto |
-| OE-4 | Diseñar una Matriz de Evaluación con criterios de madurez 0-4, evidencia y estado (Cumple/No cumple/Parcial). | Artefacto, matriz | En curso: `scripts/evaluar.ps1` calcula estado y madurez 0-4; la evidencia definitiva sale en la Fase 3 |
-| OE-5 | Proponer y ejecutar pruebas técnicas (consultas SQL, revisión de configuraciones, auditorías) que demuestren la efectividad de los controles. | `sql/` y artefacto, batería de pruebas | En curso: 19 pruebas en `sql/pruebas` (al menos una por control); la evidencia definitiva sale en la Fase 3 |
+| OE-4 | Diseñar una Matriz de Evaluación con criterios de madurez 0-4, evidencia y estado (Cumple/No cumple/Parcial). | Artefacto, matriz | En curso: evaluación antes/después con evidencia (`app/src/datos/evaluacion-*.json`, `evidencia/antes`, `evidencia/despues`); falta presentarla en el artefacto |
+| OE-5 | Proponer y ejecutar pruebas técnicas (consultas SQL, revisión de configuraciones, auditorías) que demuestren la efectividad de los controles. | `sql/` y artefacto, batería de pruebas | En curso: 19 pruebas ejecutadas antes (0 de 19) y después (19 de 19), con evidencia en `evidencia/*/pruebas`; falta presentarlas en el artefacto |
 
 Tareas nombradas en OE-2 (las 12 deben aparecer):
 
@@ -37,21 +37,21 @@ Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
 
 | # | Control | Estado |
 | --- | --- | --- |
-| 1 | A5.12 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
-| 2 | A5.15 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
-| 3 | A5.16 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
-| 4 | A5.17 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
-| 5 | A5.18 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
-| 6 | A5.33 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
-| 7 | A8.2 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
-| 8 | A8.3 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
-| 9 | A8.5 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
-| 10 | A8.10 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
-| 11 | A8.11 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
-| 12 | A8.12 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
-| 13 | A8.13 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
-| 14 | A8.15 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
-| 15 | A8.20 | En curso (verificación, corrección, prueba y procedimiento; falta justificación y evidencia final) |
+| 1 | A5.12 | En curso (verificación, corrección, prueba y procedimiento; evidencia antes/después lista; falta la justificación en el artefacto) |
+| 2 | A5.15 | En curso (verificación, corrección, prueba y procedimiento; evidencia antes/después lista; falta la justificación en el artefacto) |
+| 3 | A5.16 | En curso (verificación, corrección, prueba y procedimiento; evidencia antes/después lista; falta la justificación en el artefacto) |
+| 4 | A5.17 | En curso (verificación, corrección, prueba y procedimiento; evidencia antes/después lista; falta la justificación en el artefacto) |
+| 5 | A5.18 | En curso (verificación, corrección, prueba y procedimiento; evidencia antes/después lista; falta la justificación en el artefacto) |
+| 6 | A5.33 | En curso (verificación, corrección, prueba y procedimiento; evidencia antes/después lista; falta la justificación en el artefacto) |
+| 7 | A8.2 | En curso (verificación, corrección, prueba y procedimiento; evidencia antes/después lista; falta la justificación en el artefacto) |
+| 8 | A8.3 | En curso (verificación, corrección, prueba y procedimiento; evidencia antes/después lista; falta la justificación en el artefacto) |
+| 9 | A8.5 | En curso (verificación, corrección, prueba y procedimiento; evidencia antes/después lista; falta la justificación en el artefacto) |
+| 10 | A8.10 | En curso (verificación, corrección, prueba y procedimiento; evidencia antes/después lista; falta la justificación en el artefacto) |
+| 11 | A8.11 | En curso (verificación, corrección, prueba y procedimiento; evidencia antes/después lista; falta la justificación en el artefacto) |
+| 12 | A8.12 | En curso (verificación, corrección, prueba y procedimiento; evidencia antes/después lista; falta la justificación en el artefacto) |
+| 13 | A8.13 | En curso (verificación, corrección, prueba y procedimiento; evidencia antes/después lista; falta la justificación en el artefacto) |
+| 14 | A8.15 | En curso (verificación, corrección, prueba y procedimiento; evidencia antes/después lista; falta la justificación en el artefacto) |
+| 15 | A8.20 | En curso (verificación, corrección, prueba y procedimiento; evidencia antes/después lista; falta la justificación en el artefacto) |
 
 ## Marco teórico (sección 5): investigar y sintetizar brevemente (2-3 páginas)
 
@@ -83,8 +83,8 @@ Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
 | ID | Requisito literal | Estado |
 | --- | --- | --- |
 | HM-1 | Motor: Oracle 19c/21c XE | Cumplido: Oracle Database 21c XE 21.3.0.0.0 en el contenedor `iso-lab` (evidencia: `sql/00-entorno.sql`) |
-| HM-2 | Metodología: PHVA (Planificar-Hacer-Verificar-Actuar). | Pendiente |
-| HM-3 | Herramientas: SQL Developer | Pendiente |
+| HM-2 | Metodología: PHVA (Planificar-Hacer-Verificar-Actuar). | En curso (Planificar: `sql/01-escenario.sql`; Hacer: `scripts/corregir.ps1`; Verificar: `scripts/evaluar.ps1` y `scripts/pruebas.ps1` antes/después; Actuar: revisión semanal de C14; falta explicarlo en el informe) |
+| HM-3 | Herramientas: SQL Developer | En curso (guía `docs/guia-sql-developer.md`; faltan las capturas en `evidencia/sql-developer/`) |
 | HM-4 | Documentación: APA 7 | Pendiente |
 | HM-5 | Repositorio Git institucional | En curso (https://github.com/Adrian123CRff/BD-ISO27001) |
 | HM-6 | Video explicativo 5 minutos | Pendiente |
@@ -101,7 +101,7 @@ Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
 | ID | Entregable literal | Estado |
 | --- | --- | --- |
 | EN-1 | Informe PDF con artefacto (o link a artefacto interactivo) | Pendiente |
-| EN-2 | Scripts .sql de verificación | En curso (`sql/verificacion`, `sql/correccion`, `sql/pruebas`) |
+| EN-2 | Scripts .sql de verificación | Cumplido: `sql/verificacion` (18), `sql/correccion` (15) y `sql/pruebas` (19), ejecutados en una corrida limpia con su salida en `evidencia/` |
 | EN-3 | Repositorio Git | En curso (https://github.com/Adrian123CRff/BD-ISO27001) |
 | EN-4 | Video 5 minutos | Pendiente |
 | EN-5 | Tabla de uso de IA firmada | Pendiente |

@@ -1,0 +1,35 @@
+-- Evidencia: V90-gobierno.sql | ejecutado como auditor | 2026-10-18 10:42:03
+GOBIERNO|A5.12|DOC|OK|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|1 procedimiento(s)
+GOBIERNO|A5.12|VER|OK|Revisión semanal programada con registro en los últimos 7 días|tarea activa, 1 registro(s) en bitácora
+GOBIERNO|A5.15|DOC|OK|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|1 procedimiento(s)
+GOBIERNO|A5.15|VER|OK|Revisión semanal programada con registro en los últimos 7 días|tarea activa, 1 registro(s) en bitácora
+GOBIERNO|A5.16|DOC|OK|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|1 procedimiento(s)
+GOBIERNO|A5.16|VER|OK|Revisión semanal programada con registro en los últimos 7 días|tarea activa, 1 registro(s) en bitácora
+GOBIERNO|A5.17|DOC|OK|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|1 procedimiento(s)
+GOBIERNO|A5.17|VER|OK|Revisión semanal programada con registro en los últimos 7 días|tarea activa, 1 registro(s) en bitácora
+GOBIERNO|A5.18|DOC|OK|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|1 procedimiento(s)
+GOBIERNO|A5.18|VER|OK|Revisión semanal programada con registro en los últimos 7 días|tarea activa, 1 registro(s) en bitácora
+GOBIERNO|A5.33|DOC|OK|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|1 procedimiento(s)
+GOBIERNO|A5.33|VER|OK|Revisión semanal programada con registro en los últimos 7 días|tarea activa, 1 registro(s) en bitácora
+GOBIERNO|A8.2|DOC|OK|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|1 procedimiento(s)
+GOBIERNO|A8.2|VER|OK|Revisión semanal programada con registro en los últimos 7 días|tarea activa, 1 registro(s) en bitácora
+GOBIERNO|A8.3|DOC|OK|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|1 procedimiento(s)
+GOBIERNO|A8.3|VER|OK|Revisión semanal programada con registro en los últimos 7 días|tarea activa, 1 registro(s) en bitácora
+GOBIERNO|A8.5|DOC|OK|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|1 procedimiento(s)
+GOBIERNO|A8.5|VER|OK|Revisión semanal programada con registro en los últimos 7 días|tarea activa, 1 registro(s) en bitácora
+GOBIERNO|A8.10|DOC|OK|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|1 procedimiento(s)
+GOBIERNO|A8.10|VER|OK|Revisión semanal programada con registro en los últimos 7 días|tarea activa, 1 registro(s) en bitácora
+GOBIERNO|A8.11|DOC|OK|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|1 procedimiento(s)
+GOBIERNO|A8.11|VER|OK|Revisión semanal programada con registro en los últimos 7 días|tarea activa, 1 registro(s) en bitácora
+GOBIERNO|A8.12|DOC|OK|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|1 procedimiento(s)
+GOBIERNO|A8.12|VER|OK|Revisión semanal programada con registro en los últimos 7 días|tarea activa, 1 registro(s) en bitácora
+GOBIERNO|A8.13|DOC|OK|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|1 procedimiento(s)
+GOBIERNO|A8.13|VER|OK|Revisión semanal programada con registro en los últimos 7 días|tarea activa, 1 registro(s) en bitácora
+GOBIERNO|A8.15|DOC|OK|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|1 procedimiento(s)
+GOBIERNO|A8.15|VER|OK|Revisión semanal programada con registro en los últimos 7 días|tarea activa, 1 registro(s) en bitácora
+GOBIERNO|A8.20|DOC|OK|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|1 procedimiento(s)
+GOBIERNO|A8.20|VER|OK|Revisión semanal programada con registro en los últimos 7 días|tarea activa, 1 registro(s) en bitácora
+GOBIERNO|A8.24|DOC|OK|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|1 procedimiento(s)
+GOBIERNO|A8.24|VER|OK|Revisión semanal programada con registro en los últimos 7 días|tarea activa, 1 registro(s) en bitácora
+GOBIERNO|A8.8|DOC|FALLA|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|0 procedimiento(s)
+GOBIERNO|A8.8|VER|OK|Revisión semanal programada con registro en los últimos 7 días|tarea activa, 1 registro(s) en bitácora

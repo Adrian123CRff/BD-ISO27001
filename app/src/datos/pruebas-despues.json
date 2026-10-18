@@ -1,0 +1,340 @@
+{
+  "fase": "despues",
+  "fecha": "2026-10-18T10:41:23",
+  "pruebas": [
+    {
+      "id": "P01",
+      "tipo": "Acceso no autorizado",
+      "control": "A5.18",
+      "riesgo": "R-CONF-01",
+      "procedimiento": "La exfuncionaria María Rojas inicia sesión con su cuenta y consulta FINANZAS.CLIENTES.",
+      "esperado": "La cuenta está bloqueada (ORA-28000) y no obtiene ningún dato.",
+      "herramienta": "SQL*Plus (equivalente en SQL Developer)",
+      "ejecutadoComo": "usuario:MROJAS",
+      "script": "P01-exfuncionaria.sql",
+      "paso": true,
+      "obtenido": [
+        "ERROR:",
+        "ORA-28000: The account is locked.",
+        "SP2-0640: Not connected"
+      ]
+    },
+    {
+      "id": "P02",
+      "tipo": "Acceso no autorizado",
+      "control": "A5.16",
+      "riesgo": "R-CONF-01",
+      "procedimiento": "Alguien del equipo de soporte entra con la cuenta genérica compartida SOPORTE.",
+      "esperado": "La cuenta genérica está bloqueada (ORA-28000): no quedan accesos sin un responsable identificable.",
+      "herramienta": "SQL*Plus",
+      "ejecutadoComo": "usuario:SOPORTE",
+      "script": "P02-cuenta-generica.sql",
+      "paso": true,
+      "obtenido": [
+        "ERROR:",
+        "ORA-28000: The account is locked.",
+        "SP2-0640: Not connected"
+      ]
+    },
+    {
+      "id": "P03",
+      "tipo": "Escalamiento de privilegios",
+      "control": "A5.15",
+      "riesgo": "R-CONF-02",
+      "procedimiento": "El analista de crédito intenta leer FINANZAS.MOVIMIENTOS, que su función no necesita.",
+      "esperado": "ORA-00942: la tabla no existe para él porque su rol no la incluye.",
+      "herramienta": "SQL*Plus",
+      "ejecutadoComo": "usuario:JPEREZ",
+      "script": "P03-minimo-privilegio.sql",
+      "paso": true,
+      "obtenido": [
+        "select count(*) as movimientos_leidos from finanzas.movimientos",
+        "                                                    *",
+        "ERROR at line 1:",
+        "ORA-00942: table or view does not exist"
+      ]
+    },
+    {
+      "id": "P04",
+      "tipo": "Escalamiento de privilegios",
+      "control": "A8.2",
+      "riesgo": "R-CONF-02",
+      "procedimiento": "Con la cuenta de la aplicación (credenciales robadas, por ejemplo por inyección SQL) se intenta crear un usuario nuevo.",
+      "esperado": "ORA-01031 privilegios insuficientes: la aplicación ya no tiene el rol DBA.",
+      "herramienta": "SQL*Plus",
+      "ejecutadoComo": "usuario:APP_WEB",
+      "script": "P04-privilegio-aplicacion.sql",
+      "paso": true,
+      "obtenido": [
+        "create user intruso identified by \"Desechable#Prueba2026\"",
+        "*",
+        "ERROR at line 1:",
+        "ORA-01031: insufficient privileges"
+      ]
+    },
+    {
+      "id": "P05",
+      "tipo": "Exposición de datos sensibles",
+      "control": "A8.11",
+      "riesgo": "R-CONF-03",
+      "procedimiento": "El analista consulta la cédula, el salario y la tarjeta de un cliente de su cartera.",
+      "esperado": "Ve los datos enmascarados por Data Redaction: tarjeta ****-****-****-NNNN, cédula *-****-NNNN, salario 0.",
+      "herramienta": "SQL*Plus",
+      "ejecutadoComo": "usuario:JPEREZ",
+      "script": "P05-enmascaramiento.sql",
+      "paso": true,
+      "obtenido": [
+        "CEDULA\t\t  SALARIO NUMERO_TARJETA",
+        "*-****-0091\t\t0 ****-****-****-0001"
+      ]
+    },
+    {
+      "id": "P06",
+      "tipo": "Restricción de acceso por fila",
+      "control": "A8.3",
+      "riesgo": "R-CONF-02",
+      "procedimiento": "El analista cuenta cuántos clientes puede ver en FINANZAS.CLIENTES.",
+      "esperado": "Solo ve los 50 clientes de su cartera (VPD), no los 200 de la cooperativa.",
+      "herramienta": "SQL*Plus",
+      "ejecutadoComo": "usuario:JPEREZ",
+      "script": "P06-vpd-cartera.sql",
+      "paso": true,
+      "obtenido": [
+        "CLIENTES_VISIBLES=50"
+      ]
+    },
+    {
+      "id": "P07",
+      "tipo": "Fuerza bruta",
+      "control": "A8.5",
+      "riesgo": "R-CONF-01",
+      "procedimiento": "Se prueban 6 contraseñas incorrectas contra DEV_USER y después la correcta.",
+      "esperado": "Tras 5 intentos fallidos la cuenta queda bloqueada (ORA-28000), aunque luego se use la contraseña correcta.",
+      "herramienta": "SQL*Plus",
+      "ejecutadoComo": "ninguno",
+      "script": "P07-fuerza-bruta.sql",
+      "paso": true,
+      "obtenido": [
+        "ORA-01017: invalid username/password; logon denied",
+        "ERROR:",
+        "ORA-01017: invalid username/password; logon denied",
+        "ERROR:",
+        "ORA-28000: The account is locked.",
+        "ERROR:",
+        "ORA-28000: The account is locked.",
+        "SP2-0640: Not connected"
+      ]
+    },
+    {
+      "id": "P08",
+      "tipo": "Fuga de datos",
+      "control": "A8.12",
+      "riesgo": "R-CONF-04",
+      "procedimiento": "El analista intenta escribir un archivo con datos en el directorio EXPORTES del servidor usando UTL_FILE.",
+      "esperado": "Falla (PLS-00201 / ORA-29289): ni el paquete ni el directorio están disponibles para él.",
+      "herramienta": "SQL*Plus (PL/SQL)",
+      "ejecutadoComo": "usuario:JPEREZ",
+      "script": "P08-fuga-archivo.sql",
+      "paso": true,
+      "obtenido": [
+        "    f utl_file.file_type;",
+        "      *",
+        "ERROR at line 2:",
+        "ORA-06550: line 2, column 7:",
+        "PLS-00201: identifier 'UTL_FILE' must be declared",
+        "ORA-06550: line 0, column 0:",
+        "PL/SQL: Compilation unit analysis terminated"
+      ]
+    },
+    {
+      "id": "P09",
+      "tipo": "Robo de archivos de datos",
+      "control": "A8.24",
+      "riesgo": "R-CONF-04",
+      "procedimiento": "Tras un checkpoint, se buscan los datos del cliente testigo dentro de los archivos .dbf del negocio, como haría quien copia el disco.",
+      "esperado": "Ninguna coincidencia: el archivo está cifrado con TDE (AES256) y el tablespace sin cifrar ya no existe.",
+      "herramienta": "grep sobre el archivo de datos (sistema operativo del servidor)",
+      "ejecutadoComo": "sh",
+      "script": "P09-tde-reposo.sh",
+      "paso": true,
+      "obtenido": [
+        "datos_fin_cif01.dbf: 0 coincidencia(s)",
+        "RESULTADO: SIN TEXTO CLARO"
+      ]
+    },
+    {
+      "id": "P10",
+      "tipo": "Robo de respaldos",
+      "control": "A8.13",
+      "riesgo": "R-CONF-04",
+      "procedimiento": "Se buscan los datos del cliente testigo dentro de las piezas de respaldo de RMAN (el \"BKP\" que alguien podría llevarse).",
+      "esperado": "Hay respaldos y ninguna pieza contiene texto claro (respaldo cifrado con AES256).",
+      "herramienta": "RMAN + grep sobre las piezas de respaldo",
+      "ejecutadoComo": "sh",
+      "script": "P10-respaldo-cifrado.sh",
+      "paso": true,
+      "obtenido": [
+        "Piezas revisadas: 6",
+        "RESULTADO: RESPALDO CIFRADO"
+      ]
+    },
+    {
+      "id": "P11",
+      "tipo": "Revisión de configuración",
+      "control": "A8.20",
+      "riesgo": "R-CONF-04",
+      "procedimiento": "Revisión de sqlnet.ora y listener.ora del servidor (el equivalente en Oracle del pg_hba.conf del enunciado).",
+      "esperado": "Cifrado AES256 e integridad SHA256 en modo REQUIRED y listener con ADMIN_RESTRICTIONS.",
+      "herramienta": "Revisión de archivos de configuración de Oracle Net",
+      "ejecutadoComo": "sh",
+      "script": "P11-red.sh",
+      "paso": true,
+      "obtenido": [
+        "/opt/oracle/homes/OraDBHome21cXE/network/admin/sqlnet.ora:SQLNET.ENCRYPTION_SERVER = REQUIRED",
+        "/opt/oracle/homes/OraDBHome21cXE/network/admin/sqlnet.ora:SQLNET.ENCRYPTION_TYPES_SERVER = (AES256)",
+        "/opt/oracle/homes/OraDBHome21cXE/network/admin/sqlnet.ora:SQLNET.CRYPTO_CHECKSUM_SERVER = REQUIRED",
+        "/opt/oracle/homes/OraDBHome21cXE/network/admin/sqlnet.ora:SQLNET.CRYPTO_CHECKSUM_TYPES_SERVER = (SHA256)",
+        "/opt/oracle/homes/OraDBHome21cXE/network/admin/sqlnet.ora:SQLNET.ALLOWED_LOGON_VERSION_SERVER = 12a",
+        "/opt/oracle/homes/OraDBHome21cXE/network/admin/listener.ora:ADMIN_RESTRICTIONS_LISTENER = ON",
+        "RESULTADO: RED CIFRADA"
+      ]
+    },
+    {
+      "id": "P12",
+      "tipo": "Exposición en entornos de prueba",
+      "control": "A8.11",
+      "riesgo": "R-CONF-03",
+      "procedimiento": "El desarrollador consulta en el clon FINANZAS_DEV el registro del cliente testigo.",
+      "esperado": "Solo encuentra datos ficticios (\"Cliente de prueba 200\"), nunca el nombre o la cédula reales.",
+      "herramienta": "SQL*Plus",
+      "ejecutadoComo": "usuario:DEV_USER",
+      "script": "P12-clon-dev.sql",
+      "paso": true,
+      "obtenido": [
+        "NOMBRE\t\t\t\t CEDULA",
+        "Cliente de prueba 200\t\t 0-0200-0000"
+      ]
+    },
+    {
+      "id": "P13",
+      "tipo": "Alteración de registros",
+      "control": "A5.33",
+      "riesgo": "R-CONF-05",
+      "procedimiento": "Con la cuenta de soporte se intenta borrar la pista de auditoría (DELETE sobre SYS.AUD$; la condición 1 = 0 evita borrar de verdad).",
+      "esperado": "No es posible: la cuenta está bloqueada o no tiene privilegios (ORA-28000 / ORA-01031 / ORA-00942).",
+      "herramienta": "SQL*Plus",
+      "ejecutadoComo": "usuario:SOPORTE",
+      "script": "P13-borrar-auditoria.sql",
+      "paso": true,
+      "obtenido": [
+        "ERROR:",
+        "ORA-28000: The account is locked.",
+        "SP2-0640: Not connected",
+        "SP2-0640: Not connected"
+      ]
+    },
+    {
+      "id": "P14",
+      "tipo": "Recuperación de datos eliminados",
+      "control": "A8.10",
+      "riesgo": "R-CONF-03",
+      "procedimiento": "Se comprueba si la tabla borrada CLIENTES_RESPALDO_2025 (u otra del negocio) todavía se puede recuperar con FLASHBACK TABLE ... TO BEFORE DROP.",
+      "esperado": "Nada recuperable en la papelera de los esquemas de negocio.",
+      "herramienta": "SQL*Plus (DBA_RECYCLEBIN)",
+      "ejecutadoComo": "auditor",
+      "script": "P14-papelera.sql",
+      "paso": true,
+      "obtenido": [
+        "RESULTADO: NADA RECUPERABLE"
+      ]
+    },
+    {
+      "id": "P15",
+      "tipo": "Trazabilidad",
+      "control": "A8.15",
+      "riesgo": "R-CONF-05",
+      "procedimiento": "Después de P01 a P14, el auditor revisa en DBA_AUDIT_TRAIL si quedaron registrados los intentos de la última hora.",
+      "esperado": "Aparecen los inicios de sesión fallidos o bloqueados, los accesos denegados y las lecturas de FINANZAS.CLIENTES.",
+      "herramienta": "SQL*Plus (DBA_AUDIT_TRAIL)",
+      "ejecutadoComo": "auditor",
+      "script": "P15-pista-auditoria.sql",
+      "paso": true,
+      "obtenido": [
+        "CATEGORIA\t\t\t\t     EVENTOS",
+        "Inicios de sesión fallidos o bloqueados           10",
+        "Accesos denegados (ORA-00942 / ORA-01031)\t   1",
+        "Lecturas de FINANZAS.CLIENTES\t\t\t   2",
+        "RESULTADO: EVENTOS REGISTRADOS"
+      ]
+    },
+    {
+      "id": "P16",
+      "tipo": "Revisión de clasificación",
+      "control": "A5.12",
+      "riesgo": "R-CONF-03",
+      "procedimiento": "Antes de usar los datos, el analista de crédito consulta desde su propia sesión el nivel de clasificación de las columnas personales de FINANZAS.CLIENTES (lo mismo que muestra SQL Developer en la descripción de la tabla).",
+      "esperado": "Las 5 columnas personales (cédula, correo, teléfono, salario y tarjeta) muestran su etiqueta CONFIDENCIAL o RESTRINGIDO.",
+      "herramienta": "SQL*Plus (equivalente en SQL Developer: pestaña Columnas, campo Comentarios)",
+      "ejecutadoComo": "usuario:JPEREZ",
+      "script": "P16-clasificacion-visible.sql",
+      "paso": true,
+      "obtenido": [
+        "ETIQUETADAS=5"
+      ]
+    },
+    {
+      "id": "P17",
+      "tipo": "Contraseña débil",
+      "control": "A5.17",
+      "riesgo": "R-CONF-01",
+      "procedimiento": "Se da de alta una cuenta de prueba con el mismo perfil que el analista de crédito y con la contraseña \"abc\", como haría quien elige una clave fácil de adivinar.",
+      "esperado": "Oracle rechaza la contraseña (ORA-28003): el perfil exige la función de complejidad ora12c_strong_verify_function.",
+      "herramienta": "SQL*Plus",
+      "ejecutadoComo": "sys",
+      "script": "P17-contrasena-debil.sql",
+      "paso": true,
+      "obtenido": [
+        "Perfil del analista: PERFIL_USUARIOS",
+        "RESULTADO: CLAVE RECHAZADA (ORA-28003: password verification for the specified",
+        "password failed)",
+        "PL/SQL procedure successfully completed."
+      ]
+    },
+    {
+      "id": "P18",
+      "tipo": "Revisión de vulnerabilidades",
+      "control": "A8.8",
+      "riesgo": "R-CONF-02",
+      "procedimiento": "El auditor compara la versión y los parches aplicados al motor con la decisión registrada por la cooperativa: un motor sin parches solo es aceptable si hay una aceptación formal del riesgo con medidas compensatorias.",
+      "esperado": "El motor tiene al menos un parche aplicado, o la falta de parches figura como RIESGO ACEPTADO en SEGURIDAD.PROCEDIMIENTOS (XE no recibe Release Updates).",
+      "herramienta": "SQL*Plus (DBA_REGISTRY_SQLPATCH y registro de procedimientos)",
+      "ejecutadoComo": "auditor",
+      "script": "P18-parcheo.sql",
+      "paso": true,
+      "obtenido": [
+        "Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production",
+        "Version",
+        "21.3.0.0.0",
+        "Parches aplicados: 0 | aceptación formal del riesgo: 1",
+        "RESULTADO: RIESGO ACEPTADO",
+        "PL/SQL procedure successfully completed."
+      ]
+    },
+    {
+      "id": "P19",
+      "tipo": "Revisión de configuración",
+      "control": "A5.33",
+      "riesgo": "R-CONF-05",
+      "procedimiento": "Se revisan los permisos del sistema operativo sobre los registros y los archivos que revelan la estructura de la base: alert log, trazas y log del listener (diag), auditoría de SYS (adump), y respaldos, archive logs, monedero y archivos de datos (oradata).",
+      "esperado": "Ningún archivo ni directorio da permisos a \"otros\" (lectura, escritura o ejecución): solo el dueño oracle y su grupo pueden abrirlos.",
+      "herramienta": "stat sobre los directorios de Oracle (sistema operativo del servidor)",
+      "ejecutadoComo": "sh",
+      "script": "P19-proteccion-logs.sh",
+      "paso": true,
+      "obtenido": [
+        "Revisados: 649 | con permisos para otros: 0",
+        "RESULTADO: REGISTROS PROTEGIDOS"
+      ]
+    }
+  ]
+}

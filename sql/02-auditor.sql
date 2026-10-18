@@ -16,7 +16,6 @@ grant select on sys.v_$parameter to iso_auditor;
 grant select on sys.v_$option to iso_auditor;
 grant select on sys.v_$version to iso_auditor;
 grant select on sys.v_$pwfile_users to iso_auditor;
-grant select on sys.v_$rman_backup_job_details to iso_auditor;
 grant select on sys.v_$backup_piece to iso_auditor;
 -- Pista de auditoría tradicional (solo lectura).
 grant select on sys.dba_audit_trail to iso_auditor;

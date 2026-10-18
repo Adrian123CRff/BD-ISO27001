@@ -1,0 +1,20 @@
+-- Evidencia: V04-A5.17-informacion-autenticacion.sql | ejecutado como auditor | 2026-10-18 10:36:20
+### Evidencia: política de contraseñas efectiva de cada cuenta abierta (DBA_PROFILES + DBA_USERS)
+
+USERNAME       PROFILE		VERIFICACION		 VIGENCIA   REUSO_MAX  REUSO_DIAS
+-------------- ---------------- ------------------------ ---------- ---------- ----------
+APP_WEB        DEFAULT		NULL			 UNLIMITED  UNLIMITED  UNLIMITED
+DEV_USER       DEFAULT		NULL			 UNLIMITED  UNLIMITED  UNLIMITED
+FINANZAS       DEFAULT		NULL			 UNLIMITED  UNLIMITED  UNLIMITED
+FINANZAS_DEV   DEFAULT		NULL			 UNLIMITED  UNLIMITED  UNLIMITED
+ISO_AUDITOR    DEFAULT		NULL			 UNLIMITED  UNLIMITED  UNLIMITED
+JPEREZ	       DEFAULT		NULL			 UNLIMITED  UNLIMITED  UNLIMITED
+MROJAS	       DEFAULT		NULL			 UNLIMITED  UNLIMITED  UNLIMITED
+PDBADMIN       DEFAULT		NULL			 UNLIMITED  UNLIMITED  UNLIMITED
+SOPORTE        DEFAULT		NULL			 UNLIMITED  UNLIMITED  UNLIMITED
+### Criterios
+
+CRITERIO|A5.17|a|FALLA|Toda cuenta abierta tiene función de complejidad de contraseña|9 cuenta(s) sin verificación
+CRITERIO|A5.17|b|FALLA|La vigencia de la contraseña es de 90 días o menos|9 cuenta(s) con vigencia mayor o ilimitada
+CRITERIO|A5.17|c|FALLA|Se impide reutilizar contraseñas (REUSE_MAX y REUSE_TIME limitados)|9 cuenta(s) que pueden reutilizar
+CRITERIO|A5.17|d|OK|Ninguna cuenta abierta usa contraseña por defecto (DBA_USERS_WITH_DEFPWD)|0 cuenta(s) con contraseña por defecto

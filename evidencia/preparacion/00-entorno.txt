@@ -1,0 +1,44 @@
+-- Evidencia: 00-entorno.sql | ejecutado como auditor | 2026-10-18 10:36:10
+=== Versión del motor ===
+
+BANNER_FULL
+--------------------------------------------------------------------------------
+Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+
+1 row selected.
+
+=== Contenedor actual (debe ser XEPDB1) ===
+
+CONTENEDOR
+--------------------
+XEPDB1
+
+1 row selected.
+
+=== Parámetros de auditoría tradicional (AUDIT / AUD$) ===
+
+NAME			       VALUE
+------------------------------ ----------------------------------------
+audit_sys_operations	       FALSE
+audit_trail		       NONE
+
+2 rows selected.
+
+=== ¿Auditoría unificada pura? (FALSE = modo mixto, se usa AUD$) ===
+
+UNIFIED_AUDITING
+----------------------------------------------------------------
+FALSE
+
+1 row selected.
+
+=== Monedero de TDE (v$encryption_wallet) ===
+
+WRL_TYPE   WRL_PARAMETER			    STATUS		 WALLET_TYPE
+---------- ---------------------------------------- -------------------- ---------------
+FILE						    NOT_AVAILABLE	 UNKNOWN
+
+1 row selected.
+

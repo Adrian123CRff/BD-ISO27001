@@ -102,7 +102,9 @@ alter profile default limit
 prompt === Debilidad de fuga de datos: exportación sin control ===
 -- Directorio de exportación de lectura y escritura para PUBLIC y rol de Data Pump al analista.
 --                                                                                  R-CONF-04 / A8.12
-create or replace directory exportes as '/opt/oracle/oradata/exportes';
+-- Apunta a la carpeta de Data Pump que ya trae la instalación: un objeto DIRECTORY no crea la carpeta en el sistema
+-- operativo, y sin ella UTL_FILE falla (ORA-29283) y la debilidad no se podría demostrar (prueba P08).
+create or replace directory exportes as '/opt/oracle/admin/XE/dpdump';
 grant read, write on directory exportes to public;
 grant datapump_exp_full_database to jperez;
 

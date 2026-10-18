@@ -55,8 +55,8 @@ create or replace procedure seguridad.registrar_revision is
     v_lecturas   number;
     v_cambios    number;
 begin
-    -- Refresca las huellas de producción que usa el control del clon DEV (A8.11).
-    seguridad.actualizar_huellas;
+    -- Repite el control del clon DEV contra producción (A8.11).
+    seguridad.controlar_clon_dev;
     select count(*) into v_fallidos from sys.dba_audit_trail
     where timestamp >= sysdate - 7 and action_name = 'LOGON' and returncode in (1017, 28000);
     select count(*) into v_denegados from sys.dba_audit_trail

@@ -1,0 +1,7 @@
+-- Evidencia: P13-borrar-auditoria.sql | ejecutado como usuario:SOPORTE | 2026-10-18 10:37:07
+
+0 rows deleted.
+
+
+Rollback complete.
+

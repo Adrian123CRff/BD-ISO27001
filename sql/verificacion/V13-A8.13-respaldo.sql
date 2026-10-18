@@ -16,12 +16,11 @@ column linea format a240
 prompt ### Evidencia: configuración de RMAN (V$RMAN_CONFIGURATION, vacía = valores por defecto)
 select name, value from v$rman_configuration fetch first 20 rows only;
 
-prompt ### Evidencia: últimos trabajos de respaldo
-select status, input_type, to_char(start_time, 'YYYY-MM-DD HH24:MI') as inicio
-from v$rman_backup_job_details order by start_time desc fetch first 5 rows only;
-
-prompt ### Evidencia: piezas de respaldo cifradas y sin cifrar
-select encrypted, count(*) as piezas from v$backup_piece where status = 'A' group by encrypted;
+-- V$RMAN_BACKUP_JOB_DETAILS registra los trabajos de RMAN en CDB$ROOT y desde XEPDB1 aparece vacía; por eso la
+-- antigüedad del respaldo se mide con las piezas disponibles (V$BACKUP_PIECE), que sí son visibles en la PDB.
+prompt ### Evidencia: piezas de respaldo disponibles, cifradas y fecha de la más reciente
+select encrypted, count(*) as piezas, to_char(max(completion_time), 'YYYY-MM-DD HH24:MI') as inicio
+from v$backup_piece where status = 'A' group by encrypted;
 
 prompt ### Criterios
 set heading off
@@ -31,8 +30,8 @@ select 'CRITERIO|A8.13|a|' || case when n = 1 then 'OK' else 'FALLA' end
 from (select count(*) n from v$rman_configuration where name = 'ENCRYPTION FOR DATABASE' and value like 'ON%')
 union all
 select 'CRITERIO|A8.13|b|' || case when n >= 1 then 'OK' else 'FALLA' end
-       || '|Hay al menos un respaldo completado en los últimos 7 días|' || n || ' respaldo(s) reciente(s)'
-from (select count(*) n from v$rman_backup_job_details where status = 'COMPLETED' and end_time >= sysdate - 7)
+       || '|Hay al menos un respaldo completado en los últimos 7 días|' || n || ' pieza(s) de respaldo reciente(s)'
+from (select count(*) n from v$backup_piece where status = 'A' and completion_time >= sysdate - 7)
 union all
 select 'CRITERIO|A8.13|c|' || case when total > 0 and sin_cifrar = 0 then 'OK' else 'FALLA' end
        || '|Todas las piezas de respaldo disponibles están cifradas|'

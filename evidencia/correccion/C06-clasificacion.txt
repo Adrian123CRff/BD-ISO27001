@@ -1,0 +1,59 @@
+-- Evidencia: C06-clasificacion.sql | ejecutado como sys | 2026-10-18 10:37:52
+
+Table created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+Commit complete.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Grant succeeded.
+
+=== Inventario de clasificación creado y columnas etiquetadas ===

@@ -1,7 +1,7 @@
 # Procedimientos de control de confidencialidad
 
-**Estado: BORRADOR, pendiente de revisión y aprobación del estudiante.** No se ejecuta `sql/correccion/C14-gobierno.sql`
-(que registra estos procedimientos como `APROBADO` en `SEGURIDAD.PROCEDIMIENTOS`) hasta aprobar este documento.
+**Estado: APROBADO por Adrián Fernández Fernández, 18/10/2026.** `sql/correccion/C14-gobierno.sql` registra estos
+procedimientos como `APROBADO` en `SEGURIDAD.PROCEDIMIENTOS` (A8.8 como `RIESGO ACEPTADO`).
 
 Organización: Cooperativa Financiera del Valle (ficticia, escenario de `sql/01-escenario.sql`). Base: Oracle Database
 21c XE, PDB `XEPDB1`. Cada procedimiento indica su responsable y su frecuencia (los mismos que registra C14), los pasos,
@@ -169,8 +169,9 @@ Convenciones:
 - **Pasos**:
   1. Mantener la política de Data Redaction `RED_CLIENTES_DATOS_PERSONALES` sobre cédula, tarjeta y salario.
   2. Todo clon DEV/TEST se genera con datos ficticios del mismo formato, nunca con una copia de producción.
-  3. Después de cada clon, comprobar que `SEGURIDAD.V_CONTROL_CLON_DEV` da 0 filas con datos reales (comparación por
-     huellas SHA-256, sin mostrar ningún dato).
+  3. Después de cada clon (y cada semana, en la revisión de C14), el procedimiento `SEGURIDAD.CONTROLAR_CLON_DEV`
+     cuenta las filas del clon que coinciden con producción y guarda solo el número; `SEGURIDAD.V_CONTROL_CLON_DEV`
+     debe mostrar 0 filas con datos reales. No se copia ni se muestra ningún dato personal.
 - **Verificación**: V11; pruebas P05 y P12.
 - **Corrección**: C07 y C10.
 - **Evidencia**: `V11-A8.11-enmascaramiento.txt`, `P05-*.txt`, `P12-*.txt`.

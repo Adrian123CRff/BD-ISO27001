@@ -1,0 +1,8 @@
+-- Evidencia: P03-minimo-privilegio.sql | ejecutado como usuario:JPEREZ | 2026-10-18 10:36:48
+
+MOVIMIENTOS_LEIDOS
+------------------
+	      3000
+
+1 row selected.
+

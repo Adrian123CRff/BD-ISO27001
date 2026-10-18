@@ -1,0 +1,37 @@
+-- Evidencia: C08-fuga-datos.sql | ejecutado como sys | 2026-10-18 10:37:55
+
+INVALIDOS
+---------
+	0
+
+1 row selected.
+
+
+Revoke succeeded.
+
+
+Revoke succeeded.
+
+
+Revoke succeeded.
+
+
+Revoke succeeded.
+
+
+Revoke succeeded.
+
+
+Revoke succeeded.
+
+
+PL/SQL procedure successfully completed.
+
+
+INVALIDOS
+---------
+       23
+
+1 row selected.
+
+=== Vías de fuga cerradas ===

@@ -1,0 +1,26 @@
+-- Evidencia: V12-A8.12-fuga-datos.sql | ejecutado como auditor | 2026-10-18 10:41:51
+### Evidencia: privilegios sobre directorios y paquetes de salida
+
+GRANTEE 		     TABLE_NAME       PRIVILEGE 		   TYPE
+---------------------------- ---------------- ---------------------------- ----------
+EXP_FULL_DATABASE	     DATA_PUMP_DIR    READ			   DIRECTORY
+EXP_FULL_DATABASE	     DATA_PUMP_DIR    WRITE			   DIRECTORY
+IMP_FULL_DATABASE	     DATA_PUMP_DIR    READ			   DIRECTORY
+IMP_FULL_DATABASE	     DATA_PUMP_DIR    WRITE			   DIRECTORY
+### Evidencia: roles de exportación masiva
+
+GRANTEE 		     PRIVILEGE
+---------------------------- ----------------------------
+DATAPUMP_EXP_FULL_DATABASE   EXP_FULL_DATABASE
+DATAPUMP_IMP_FULL_DATABASE   EXP_FULL_DATABASE
+DBA			     DATAPUMP_EXP_FULL_DATABASE
+DBA			     EXP_FULL_DATABASE
+GSMADMIN_INTERNAL	     DATAPUMP_EXP_FULL_DATABASE
+GSMUSER_ROLE		     DATAPUMP_EXP_FULL_DATABASE
+SYS			     EXP_FULL_DATABASE
+SYS			     DATAPUMP_EXP_FULL_DATABASE
+### Criterios
+
+CRITERIO|A8.12|a|OK|Ningún directorio del servidor es accesible para PUBLIC|0 privilegio(s) de directorio a PUBLIC
+CRITERIO|A8.12|b|OK|Los roles de exportación masiva no están concedidos a cuentas o roles de negocio|0 concesión(es)
+CRITERIO|A8.12|c|OK|PUBLIC no puede ejecutar paquetes de salida de datos (UTL_FILE, UTL_HTTP, UTL_TCP, UTL_SMTP)|0 paquete(s) abierto(s) a PUBLIC

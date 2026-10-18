@@ -1,0 +1,3 @@
+-- Evidencia: P19-proteccion-logs.sh | 2026-10-18 10:41:23
+Revisados: 649 | con permisos para otros: 0
+RESULTADO: REGISTROS PROTEGIDOS

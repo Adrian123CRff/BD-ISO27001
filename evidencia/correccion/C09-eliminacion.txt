@@ -1,0 +1,29 @@
+-- Evidencia: C09-eliminacion.sql | ejecutado como sys | 2026-10-18 10:38:32
+
+DBA Recyclebin purged.
+
+
+Grant succeeded.
+
+
+PL/SQL procedure successfully completed.
+
+
+OWNER	     JOB_NAME		ENABL
+------------ ------------------ -----
+REPEAT_INTERVAL
+--------------------------------------------
+SEGURIDAD    PURGA_PAPELERA	TRUE
+FREQ=WEEKLY;BYDAY=SUN;BYHOUR=2;BYMINUTE=0
+
+
+1 row selected.
+
+
+OBJETOS_EN_PAPELERA
+-------------------
+		  0
+
+1 row selected.
+
+=== Papelera vacía y purga semanal programada ===

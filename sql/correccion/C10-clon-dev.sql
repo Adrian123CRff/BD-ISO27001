@@ -17,41 +17,47 @@ select level,
 from dual connect by level <= 200;
 commit;
 
--- Huellas SHA-256 de los datos reales (cédula, tarjeta, nombre): permiten detectar datos reales en el clon sin
--- guardar ni mostrar ningún dato personal. Las refresca el procedimiento y, cada semana, la revisión de C14.
+-- Control del clon: el esquema SEGURIDAD cuenta cuántas filas del clon coinciden (cédula, tarjeta o nombre) con
+-- producción y guarda solo ese número con su fecha. Es una consulta, no una copia: Data Redaction (C07) impide copiar
+-- columnas redactadas a otra tabla (ORA-28081), pero no altera las condiciones del WHERE, que se evalúan con los
+-- valores reales. El auditor no consulta producción directamente porque VPD (C07) le oculta todas las filas y el
+-- conteo daría siempre 0 (falso negativo); lee el resultado guardado. La revisión semanal de C14 lo repite.
 grant select on finanzas.clientes to seguridad;
-grant select on finanzas_dev.clientes to seguridad with grant option;
+grant select on finanzas_dev.clientes to seguridad;
 
-create table seguridad.huellas_produccion (
-    tipo    varchar2(8) not null,
-    huella  raw(32)     not null,
-    constraint pk_huellas primary key (tipo, huella)
+create table seguridad.control_clon_dev (
+    fecha             date   default sysdate not null,
+    filas_produccion  number not null,
+    filas_reales      number not null
 );
 
-create or replace procedure seguridad.actualizar_huellas is
+create or replace procedure seguridad.controlar_clon_dev is
+    v_produccion number;
+    v_reales     number;
 begin
-    delete from seguridad.huellas_produccion;
-    insert into seguridad.huellas_produccion (tipo, huella)
-    select 'CEDULA', standard_hash(cedula, 'SHA256') from finanzas.clientes
-    union
-    select 'TARJETA', standard_hash(numero_tarjeta, 'SHA256') from finanzas.clientes
-    union
-    select 'NOMBRE', standard_hash(nombre, 'SHA256') from finanzas.clientes;
+    -- Aserción (regla 5): si el control no ve producción, un 0 en el clon no probaría nada.
+    select count(*) into v_produccion from finanzas.clientes;
+    if v_produccion = 0 then
+        raise_application_error(-20010, 'El control del clon no ve los datos de producción (VPD o privilegios)');
+    end if;
+    select count(*) into v_reales
+    from finanzas_dev.clientes d
+    where exists (select 1 from finanzas.clientes p
+                  where p.cedula = d.cedula or p.numero_tarjeta = d.numero_tarjeta or p.nombre = d.nombre);
+    insert into seguridad.control_clon_dev (filas_produccion, filas_reales) values (v_produccion, v_reales);
     commit;
 end;
 /
 
-exec seguridad.actualizar_huellas
+exec seguridad.controlar_clon_dev
 
+-- El auditor ve solo el resultado más reciente (números y fecha, ningún dato personal).
 create or replace view seguridad.v_control_clon_dev as
-select count(*) as filas_reales
-from finanzas_dev.clientes d
-where exists (select 1 from seguridad.huellas_produccion h
-              where (h.tipo = 'CEDULA' and h.huella = standard_hash(d.cedula, 'SHA256'))
-                 or (h.tipo = 'TARJETA' and h.huella = standard_hash(d.numero_tarjeta, 'SHA256'))
-                 or (h.tipo = 'NOMBRE' and h.huella = standard_hash(d.nombre, 'SHA256')));
+select filas_reales, filas_produccion, fecha
+from seguridad.control_clon_dev
+order by fecha desc
+fetch first 1 row only;
 
 grant select on seguridad.v_control_clon_dev to iso_auditor;
-select count(*) as huellas from seguridad.huellas_produccion;
-select filas_reales from seguridad.v_control_clon_dev;
-prompt === Clon DEV regenerado con datos ficticios y control por huellas ===
+select filas_reales, filas_produccion from seguridad.v_control_clon_dev;
+prompt === Clon DEV regenerado con datos ficticios y control del clon registrado ===

@@ -1,0 +1,31 @@
+-- Evidencia: C03-tde-tablespace.sql | ejecutado como sys | 2026-10-18 10:37:42
+
+Tablespace created.
+
+
+User altered.
+
+
+User altered.
+
+4 tabla(s) movida(s) al tablespace cifrado
+
+PL/SQL procedure successfully completed.
+
+
+User altered.
+
+
+User altered.
+
+
+Tablespace dropped.
+
+
+TABLESPACE_NAME  ENCRYPTED
+---------------- ----------
+DATOS_FIN_CIF	 YES
+
+1 row selected.
+
+=== Datos de negocio cifrados en reposo ===

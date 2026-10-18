@@ -1,0 +1,41 @@
+-- Evidencia: 02-auditor.sql | ejecutado como sys | 2026-10-18 10:36:08
+
+User created.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+=== ISO_AUDITOR creado (solo lectura del diccionario) ===
