@@ -1,6 +1,7 @@
 -- V06 · A5.33 Protección de registros
 -- Pregunta del auditor: ¿la pista de auditoría existe y está protegida contra borrado o alteración?
 -- Ejecutar como ISO_AUDITOR.
+whenever sqlerror exit failure
 set linesize 250 pagesize 200 feedback off
 column grantee format a24
 column privilege format a20

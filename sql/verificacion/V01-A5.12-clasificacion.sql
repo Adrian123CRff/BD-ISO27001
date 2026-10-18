@@ -1,6 +1,7 @@
 -- V01 · A5.12 Clasificación de la información
 -- Pregunta del auditor: ¿están identificados y etiquetados los datos personales según su nivel de confidencialidad?
 -- Ejecutar como ISO_AUDITOR (solo lectura). Salida: evidencia + líneas CRITERIO|control|id|OK/FALLA|criterio|observado
+whenever sqlerror exit failure
 set linesize 250 pagesize 200 feedback off
 column owner format a12
 column table_name format a16

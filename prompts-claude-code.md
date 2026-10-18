@@ -12,7 +12,7 @@ Todos los prompts siguen la misma estructura: Rol, Contexto, Tarea, Restriccione
 Estado al 18/10/2026 (madrugada):
 - Una sesión de Claude Desktop siguió trabajando en segundo plano sin autorización: recreó `iso-lab`, copió el volumen de la base (`iso-lab-antes`) y descargó la imagen completa `gvenzl/oracle-xe:21`. El disco C: llegó a 0 GB libres y Docker se cayó.
 - Ya hecho: se borró la caché de npm (1,4 GB) y la caché de compilación de Docker (19,3 GB, de otros proyectos), y se reinició Docker Desktop. El contenedor `iso-lab` ya no existe.
-- Pendiente de la **Fase 1A (bloqueante)**: borrar los volúmenes `iso-lab-datos` (4,8 GB) e `iso-lab-antes` (2,9 GB) y la imagen `gvenzl/oracle-xe:21-slim` (2,6 GB), que ya no se usa, y compactar `docker_data.vhdx` (80,4 GB), que no se encoge solo.
+- **Fase 1A completada**: se borraron los volúmenes `iso-lab-datos` e `iso-lab-antes` y la imagen `gvenzl/oracle-xe:21-slim`, se ejecutó `fstrim` y se compactó `docker_data.vhdx` (de 80,4 a 54,3 GB). C: quedó con 30,7 GB libres y Docker responde. `rman-lab` y `recu-lab` no se tocaron.
 - Varias reparaciones de la Fase 1 ya están en el commit `68e93c1`, publicado en GitHub (ver la Fase 1 actualizada). La evidencia que hay en `evidencia/` y `app/src/datos/` es de corridas intermedias y se regenera completa en la Fase 3.
 
 ---
@@ -58,7 +58,7 @@ Criterios de aceptación: Cada requisito del checklist queda clasificado como Cu
 Entregable: Una tabla requisito → estado → evidencia/faltante, y una lista ordenada de próximos pasos. Al final, agrega este prompt textual como una fila nueva en docs/uso-ia.md.
 ```
 
-## Fase 1. Reparar el laboratorio y los scripts
+## Fase 1. Reparar el laboratorio y los scripts · hecha el 18/10/2026
 
 ```
 Rol: DBA Oracle senior especializado en hardening de confidencialidad.
@@ -125,7 +125,7 @@ Entregable: docs/procedimientos.md, los scripts nuevos o ajustados y un commit. 
 ```
 Rol: DBA Oracle senior y auditor que necesita evidencia reproducible.
 
-Contexto: La evidencia actual no corresponde a los scripts versionados: V06, V17, C07 y C10 cambiaron después de generarla, y los volúmenes del laboratorio quedaron dañados por la falta de disco. Para poder defender la matriz, toda la evidencia debe salir de una corrida limpia de los scripts del repositorio. Ya hay al menos 20 GB libres en C: (Fase 1A) y ya revisé y aprobé docs/procedimientos.md.
+Contexto: La evidencia actual no corresponde a los scripts versionados: C05, C07, C10, V04, V06, V09 y V17 cambiaron después de generarla, y todos los scripts de sql/verificacion ganaron WHENEVER SQLERROR, y los volúmenes del laboratorio quedaron dañados por la falta de disco. Para poder defender la matriz, toda la evidencia debe salir de una corrida limpia de los scripts del repositorio. Ya hay al menos 20 GB libres en C: (Fase 1A) y ya revisé y aprobé docs/procedimientos.md.
 
 Tarea:
 1. Pídeme confirmación explícita y después borra el contenedor iso-lab y los volúmenes iso-lab-datos e iso-lab-antes. Vacía también evidencia/ y los JSON de app/src/datos/, para que no se mezclen salidas viejas con las nuevas.

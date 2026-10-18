@@ -2,6 +2,7 @@
 -- Pregunta del auditor: ¿existen respaldos recientes y están cifrados, de modo que una copia robada no exponga los
 -- datos? (en clase: "con el log y el BKP se podría intentar abrir los tablespaces si no están cifrados").
 -- Ejecutar como ISO_AUDITOR.
+whenever sqlerror exit failure
 set linesize 250 pagesize 200 feedback off
 column name format a34
 column value format a40

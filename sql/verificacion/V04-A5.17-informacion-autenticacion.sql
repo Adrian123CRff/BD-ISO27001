@@ -2,6 +2,9 @@
 -- Pregunta del auditor: ¿las contraseñas cumplen complejidad, vigencia y no reutilización, y no hay contraseñas
 -- por defecto?
 -- Ejecutar como ISO_AUDITOR. Los límites "DEFAULT" de un perfil se resuelven con el perfil DEFAULT.
+-- Solo se evalúan las cuentas que se autentican con contraseña: los límites de contraseña del perfil no se aplican
+-- a las cuentas externas (OPS$ORACLE), cuya identidad y responsable se verifican en V03 (A5.16).
+whenever sqlerror exit failure
 set linesize 250 pagesize 200 feedback off
 column username format a14
 column profile format a16
@@ -22,7 +25,7 @@ select u.username, u.profile,
        max(case when l.resource_name = 'PASSWORD_REUSE_MAX' then l.valor end) as reuso_max,
        max(case when l.resource_name = 'PASSWORD_REUSE_TIME' then l.valor end) as reuso_dias
 from dba_users u join lim l on l.profile = u.profile
-where u.oracle_maintained = 'N' and u.account_status = 'OPEN'
+where u.oracle_maintained = 'N' and u.account_status = 'OPEN' and u.authentication_type = 'PASSWORD'
 group by u.username, u.profile
 order by u.username
 fetch first 40 rows only;
@@ -39,7 +42,7 @@ with lim as (
            max(case when l.resource_name = 'PASSWORD_REUSE_MAX' then l.valor end) as reuso_max,
            max(case when l.resource_name = 'PASSWORD_REUSE_TIME' then l.valor end) as reuso_dias
     from dba_users u join lim l on l.profile = u.profile
-    where u.oracle_maintained = 'N' and u.account_status = 'OPEN'
+    where u.oracle_maintained = 'N' and u.account_status = 'OPEN' and u.authentication_type = 'PASSWORD'
     group by u.username
 )
 select 'CRITERIO|A5.17|a|' || case when n = 0 then 'OK' else 'FALLA' end

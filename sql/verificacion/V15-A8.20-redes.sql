@@ -3,6 +3,7 @@
 -- se puedan leer los datos capturando la red?
 -- Ejecutar como ISO_AUDITOR (por TCP, como un cliente normal). La configuración del listener y de sqlnet.ora se
 -- revisa en la prueba P10 (revisión de configuración).
+whenever sqlerror exit failure
 set linesize 250 pagesize 200 feedback off
 column network_service_banner format a90
 column protocolo format a10

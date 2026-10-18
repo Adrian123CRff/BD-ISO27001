@@ -2,6 +2,7 @@
 -- Pregunta del auditor: ¿el acceso a los datos de negocio se concede por roles según la necesidad de conocer,
 -- y nunca a PUBLIC ni de forma directa a personas?
 -- Ejecutar como ISO_AUDITOR.
+whenever sqlerror exit failure
 set linesize 250 pagesize 200 feedback off
 column grantee format a24
 column owner format a14

@@ -10,7 +10,7 @@ grant create job to seguridad;
 
 create table seguridad.registro_identidades (
     usuario         varchar2(128) primary key,
-    tipo            varchar2(10)  not null check (tipo in ('PERSONA', 'SERVICIO', 'ESQUEMA', 'AUDITORIA')),
+    tipo            varchar2(10)  not null check (tipo in ('PERSONA', 'SERVICIO', 'ESQUEMA', 'AUDITORIA', 'PLATAFORMA')),
     responsable     varchar2(80)  not null,
     area            varchar2(40)  not null,
     estado          varchar2(6)   not null check (estado in ('ACTIVA', 'BAJA')),
@@ -28,11 +28,18 @@ insert into seguridad.registro_identidades values ('DEV_USER', 'PERSONA', 'Desar
 insert into seguridad.registro_identidades values ('ISO_AUDITOR', 'AUDITORIA', 'Auditoría Interna', 'Auditoría', 'ACTIVA', sysdate, sysdate, 'Solo lectura del diccionario');
 insert into seguridad.registro_identidades values ('MROJAS', 'PERSONA', 'María Rojas (ficticia)', 'Crédito', 'BAJA', date '2023-05-01', sysdate, 'Exfuncionaria: cuenta bloqueada y sin privilegios');
 insert into seguridad.registro_identidades values ('SOPORTE', 'SERVICIO', 'Sin responsable', 'Soporte', 'BAJA', date '2022-01-01', sysdate, 'Cuenta genérica compartida: retirada');
+-- Cuentas que crea la instalación, no el negocio; también necesitan responsable (A5.16).
+-- PDBADMIN: administrador local de la PDB creado por la instalación; el laboratorio no lo usa.
+insert into seguridad.registro_identidades values ('PDBADMIN', 'PLATAFORMA', 'DBA', 'Tecnología', 'BAJA', sysdate, sysdate, 'Administrador de la PDB sin uso: bloqueado (A8.2)');
+-- OPS$ORACLE: usuario común autenticado por el sistema operativo; lo usa el chequeo de salud del contenedor desde
+-- CDB$ROOT. No tiene contraseña ni acceso a datos de negocio (CONNECT y SELECT_CATALOG_ROLE).
+insert into seguridad.registro_identidades values ('OPS$ORACLE', 'PLATAFORMA', 'DBA', 'Tecnología', 'ACTIVA', sysdate, sysdate, 'Chequeo de salud del contenedor; autenticación externa, sin contraseña');
 commit;
 
 prompt === Bajas: cuentas bloqueadas ===
 alter user mrojas account lock;
 alter user soporte account lock;
+alter user pdbadmin account lock;
 
 prompt === Perfil de contraseñas para cuentas de personas, servicios y auditoría ===
 create profile perfil_usuarios limit

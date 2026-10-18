@@ -2,6 +2,7 @@
 -- Pregunta del auditor: ¿la información que ya no se necesita se elimina de forma definitiva, sin copias
 -- recuperables?
 -- Ejecutar como ISO_AUDITOR.
+whenever sqlerror exit failure
 set linesize 250 pagesize 200 feedback off
 column owner format a12
 column object_name format a32

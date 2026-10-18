@@ -5,6 +5,7 @@
 --   VER: existe la verificación semanal programada (SEGURIDAD.REVISION_SEMANAL activa) y dejó un registro en
 --        SEGURIDAD.BITACORA_REVISION en los últimos 7 días (madurez 4).
 -- Ejecutar como ISO_AUDITOR. Las tablas pueden no existir: SQL dinámico de texto fijo (regla 8).
+whenever sqlerror exit failure
 set linesize 250 pagesize 200 feedback off serveroutput on size unlimited
 set heading off
 

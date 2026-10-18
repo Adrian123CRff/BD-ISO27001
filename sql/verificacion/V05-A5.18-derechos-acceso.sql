@@ -2,6 +2,7 @@
 -- Pregunta del auditor: ¿los derechos se revisan periódicamente y se retiran a quien ya no los necesita
 -- (bajas, cuentas inactivas)?
 -- Ejecutar como ISO_AUDITOR. El registro de identidades puede no existir: SQL dinámico de texto fijo (regla 8).
+whenever sqlerror exit failure
 set linesize 250 pagesize 200 feedback off
 column username format a16
 column account_status format a20

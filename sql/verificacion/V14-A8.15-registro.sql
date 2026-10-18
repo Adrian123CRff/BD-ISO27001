@@ -2,6 +2,7 @@
 -- Pregunta del auditor: ¿se registran los inicios de sesión, el acceso a datos personales y los cambios de
 -- privilegios, con el texto SQL, y hay registros recientes?
 -- Ejecutar como ISO_AUDITOR. Auditoría tradicional (AUDIT / AUD$), la explicada en clase para 19c/21c.
+whenever sqlerror exit failure
 set linesize 250 pagesize 200 feedback off
 column name format a20
 column value format a20

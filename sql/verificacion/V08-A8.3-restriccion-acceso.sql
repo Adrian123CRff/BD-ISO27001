@@ -3,6 +3,7 @@
 -- debe demostrar cada parte: (a) restricción por fila con VPD, (b) nadie fuera de los roles de negocio lee los
 -- clientes, (c) nadie puede saltarse las políticas con privilegios de excepción.
 -- Ejecutar como ISO_AUDITOR.
+whenever sqlerror exit failure
 set linesize 250 pagesize 200 feedback off
 column object_owner format a12
 column object_name format a14

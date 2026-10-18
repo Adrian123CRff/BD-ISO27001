@@ -2,6 +2,7 @@
 -- Pregunta del auditor: ¿están cerradas las vías para sacar datos masivamente de la base (directorios, Data Pump,
 -- paquetes de archivos y red)?
 -- Ejecutar como ISO_AUDITOR.
+whenever sqlerror exit failure
 set linesize 250 pagesize 200 feedback off
 column grantee format a28
 column table_name format a16

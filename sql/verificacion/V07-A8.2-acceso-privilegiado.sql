@@ -2,6 +2,7 @@
 -- Pregunta del auditor: ¿los privilegios administrativos (DBA, privilegios ANY, SYSDBA) están restringidos a las
 -- cuentas administrativas autorizadas?
 -- Ejecutar como ISO_AUDITOR.
+whenever sqlerror exit failure
 set linesize 250 pagesize 200 feedback off
 column grantee format a20
 column privilege format a30

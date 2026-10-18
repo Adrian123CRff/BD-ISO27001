@@ -37,8 +37,16 @@ if ($Crear) {
 elseif ($Iniciar) { docker start $Nombre | Out-Null; Write-Host "$Nombre iniciado." }
 elseif ($Detener) { docker stop $Nombre | Out-Null; Write-Host "$Nombre detenido." }
 elseif ($Estado) {
-    docker ps -a --filter "name=^$Nombre$" --format '{{.Names}}  {{.Status}}  {{.Ports}}'
-    $listo = docker logs $Nombre 2>&1 | Select-String 'DATABASE IS READY TO USE' -Quiet
-    Write-Host ("Base lista: " + [bool]$listo)
+    $fila = docker ps -a --filter "name=^$Nombre$" --format '{{.Names}}  {{.Status}}  {{.Ports}}'
+    if (-not $fila) { Write-Host "No existe el contenedor $Nombre. Crearlo con: .\scripts\iso-lab.ps1 -Crear"; exit 1 }
+    Write-Host $fila
+    # Estado en vivo, no el historial del log: el chequeo de salud de la imagen confirma que XEPDB1 está en
+    # READ WRITE en este momento (un "DATABASE IS READY" de un arranque anterior no lo garantiza).
+    $listo = $false
+    if ((docker inspect -f '{{.State.Running}}' $Nombre) -eq 'true') {
+        docker exec $Nombre /opt/oracle/healthcheck.sh XEPDB1 2>&1 | Out-Null
+        $listo = $LASTEXITCODE -eq 0
+    }
+    Write-Host ("Base lista: " + $listo)
 }
 else { Get-Help $PSCommandPath; Write-Host 'Indicar -Crear, -Iniciar, -Estado o -Detener.' }

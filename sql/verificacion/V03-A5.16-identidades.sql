@@ -2,6 +2,7 @@
 -- Pregunta del auditor: ¿cada cuenta de la base corresponde a una persona o servicio identificado y con responsable?
 -- Ejecutar como ISO_AUDITOR. El registro de identidades puede no existir todavía: se consulta con SQL dinámico de
 -- texto fijo (sin datos del usuario), justificado según la regla 8 de docs/reglas-de-codigo.md.
+whenever sqlerror exit failure
 set linesize 250 pagesize 200 feedback off serveroutput on
 column username format a16
 column account_status format a20

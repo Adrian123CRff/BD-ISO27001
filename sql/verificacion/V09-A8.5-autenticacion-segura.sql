@@ -2,6 +2,9 @@
 -- Pregunta del auditor: ¿el inicio de sesión resiste ataques de fuerza bruta y usa verificadores de contraseña
 -- modernos?
 -- Ejecutar como ISO_AUDITOR. Los límites "DEFAULT" se resuelven con el perfil DEFAULT.
+-- Solo se evalúan las cuentas que se autentican con contraseña: el bloqueo por intentos fallidos y el verificador
+-- de contraseña no se aplican a las cuentas externas (OPS$ORACLE), que se verifican en V03 (A5.16).
+whenever sqlerror exit failure
 set linesize 250 pagesize 200 feedback off
 column username format a14
 column profile format a16
@@ -20,7 +23,7 @@ select u.username, u.profile,
        max(case when l.resource_name = 'PASSWORD_LOCK_TIME' then l.valor end) as bloqueo,
        u.password_versions
 from dba_users u join lim l on l.profile = u.profile
-where u.oracle_maintained = 'N' and u.account_status = 'OPEN'
+where u.oracle_maintained = 'N' and u.account_status = 'OPEN' and u.authentication_type = 'PASSWORD'
 group by u.username, u.profile, u.password_versions
 order by u.username
 fetch first 40 rows only;
@@ -35,7 +38,7 @@ with lim as (
            max(case when l.resource_name = 'FAILED_LOGIN_ATTEMPTS' then l.valor end) as intentos,
            max(case when l.resource_name = 'PASSWORD_LOCK_TIME' then l.valor end) as bloqueo
     from dba_users u join lim l on l.profile = u.profile
-    where u.oracle_maintained = 'N' and u.account_status = 'OPEN'
+    where u.oracle_maintained = 'N' and u.account_status = 'OPEN' and u.authentication_type = 'PASSWORD'
     group by u.username, u.password_versions
 )
 select 'CRITERIO|A8.5|a|' || case when n = 0 then 'OK' else 'FALLA' end

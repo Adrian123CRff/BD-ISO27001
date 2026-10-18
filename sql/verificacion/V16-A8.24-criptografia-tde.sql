@@ -2,6 +2,7 @@
 -- Pregunta del auditor: ¿los datos personales están cifrados en reposo con TDE y el monedero está abierto y
 -- configurado? (en clase: "prestar atención a v$encryption_wallet").
 -- Ejecutar como ISO_AUDITOR.
+whenever sqlerror exit failure
 set linesize 250 pagesize 200 feedback off
 column wrl_type format a8
 column wrl_parameter format a40

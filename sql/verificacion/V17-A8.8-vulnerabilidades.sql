@@ -2,6 +2,7 @@
 -- Pregunta del auditor: ¿el motor tiene aplicados los parches de seguridad y las cuentas por defecto están
 -- cerradas?
 -- Ejecutar como ISO_AUDITOR.
+whenever sqlerror exit failure
 set linesize 250 pagesize 200 feedback off
 column banner_full format a80
 column patch_id format 99999999

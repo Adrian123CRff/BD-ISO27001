@@ -2,6 +2,7 @@
 -- Pregunta del auditor: ¿los datos personales se muestran enmascarados a quien no necesita verlos completos, y los
 -- clones de desarrollo y pruebas no contienen datos reales?
 -- Ejecutar como ISO_AUDITOR. La vista de control del clon puede no existir: SQL dinámico de texto fijo (regla 8).
+whenever sqlerror exit failure
 set linesize 250 pagesize 200 feedback off
 column object_owner format a12
 column object_name format a14
