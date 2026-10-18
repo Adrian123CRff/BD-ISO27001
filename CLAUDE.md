@@ -34,6 +34,13 @@ Criterio 0-4 · Evidencia (script SQL) · Estado.
 - `app/`: el artefacto interactivo.
 - `materiales/`: insumos del curso, solo lectura.
 
+## Entorno
+
+- Oracle 21c XE en el contenedor `iso-lab` (puerto local 1526, servicio `XEPDB1`), gestionado con `scripts/iso-lab.ps1`.
+- Scripts SQL con `scripts/ejecutar-sql.ps1`; la contraseña vive solo en `.env` y dentro del contenedor.
+- Artefacto en `app/` (React + Vite + TypeScript).
+- Repositorio público https://github.com/Adrian123CRff/BD-ISO27001: `materiales/clase/` nunca se versiona.
+
 ## Reglas de trabajo
 
 - No versionar secretos, wallets ni respaldos.

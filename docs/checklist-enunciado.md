@@ -82,7 +82,7 @@ Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
 
 | ID | Requisito literal | Estado |
 | --- | --- | --- |
-| HM-1 | Motor: Oracle 19c/21c XE | En curso (21c XE en Docker, contenedor `iso-lab`) |
+| HM-1 | Motor: Oracle 19c/21c XE | Cumplido: Oracle Database 21c XE 21.3.0.0.0 en el contenedor `iso-lab` (evidencia: `sql/00-entorno.sql`) |
 | HM-2 | Metodología: PHVA (Planificar-Hacer-Verificar-Actuar). | Pendiente |
 | HM-3 | Herramientas: SQL Developer | Pendiente |
 | HM-4 | Documentación: APA 7 | Pendiente |
