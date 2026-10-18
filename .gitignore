@@ -21,6 +21,7 @@ wallet/
 # Salidas locales de pruebas
 salidas/
 *.log
+.playwright-cli/
 
 # Sistema
 .DS_Store
@@ -28,6 +29,10 @@ Thumbs.db
 
 # Material de clase: solo local (el repositorio es público)
 materiales/clase/
+
+# Skills de agentes: se manejan localmente y se reinstalan desde skills-lock.json
+.claude/skills/
+.agents/
 
 # Clon duplicado del repositorio creado dentro de la carpeta
 BD-ISO27001/
