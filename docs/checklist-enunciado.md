@@ -1,0 +1,118 @@
+# Lista de cumplimiento del enunciado
+
+Cada requisito copiado **al pie de la letra** de `docs/enunciado-literal.md`. Nada se considera terminado hasta que
+su fila esté en "Cumplido" con la ubicación exacta de la evidencia. Las aclaraciones del profesor en clase
+(`docs/contexto-de-clase.md`) **complementan** estos requisitos; nunca los reemplazan.
+
+Estados: Pendiente · En curso · Cumplido.
+
+## Objetivos específicos (sección 3)
+
+| ID | Requisito literal | Dónde se cumple | Estado |
+| --- | --- | --- | --- |
+| OE-1 | Identificar y clasificar al menos 5 riesgos de confidencialidad (R-CONF) asociados a motores de BD (Oracle). | Artefacto, tabla de riesgos | Pendiente |
+| OE-2 | Mapear al menos 12 tareas críticas del DBA (gestión de usuarios, privilegios, autenticación, cifrado TDE, masking, backup, auditoría, parcheo, listener, eliminación segura, logs, clones DEV/TEST). | Artefacto, tabla de tareas | Pendiente |
+| OE-3 | Seleccionar y justificar controles del Anexo A 2022 pertinentes (A5.12, A5.15, A5.16, A5.17, A5.18, A5.33, A8.2, A8.3, A8.5, A8.10, A8.11, A8.12, A8.13, A8.15, A8.20). | Artefacto, mapeo de controles | Pendiente |
+| OE-4 | Diseñar una Matriz de Evaluación con criterios de madurez 0-4, evidencia y estado (Cumple/No cumple/Parcial). | Artefacto, matriz | Pendiente |
+| OE-5 | Proponer y ejecutar pruebas técnicas (consultas SQL, revisión de configuraciones, auditorías) que demuestren la efectividad de los controles. | `sql/` y artefacto, batería de pruebas | Pendiente |
+
+Tareas nombradas en OE-2 (las 12 deben aparecer):
+
+| # | Tarea | Estado |
+| --- | --- | --- |
+| 1 | Gestión de usuarios | Pendiente |
+| 2 | Privilegios | Pendiente |
+| 3 | Autenticación | Pendiente |
+| 4 | Cifrado TDE | Pendiente |
+| 5 | Masking | Pendiente |
+| 6 | Backup | Pendiente |
+| 7 | Auditoría | Pendiente |
+| 8 | Parcheo | Pendiente |
+| 9 | Listener | Pendiente |
+| 10 | Eliminación segura | Pendiente |
+| 11 | Logs | Pendiente |
+| 12 | Clones DEV/TEST | Pendiente |
+
+Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
+
+| # | Control | Estado |
+| --- | --- | --- |
+| 1 | A5.12 | Pendiente |
+| 2 | A5.15 | Pendiente |
+| 3 | A5.16 | Pendiente |
+| 4 | A5.17 | Pendiente |
+| 5 | A5.18 | Pendiente |
+| 6 | A5.33 | Pendiente |
+| 7 | A8.2 | Pendiente |
+| 8 | A8.3 | Pendiente |
+| 9 | A8.5 | Pendiente |
+| 10 | A8.10 | Pendiente |
+| 11 | A8.11 | Pendiente |
+| 12 | A8.12 | Pendiente |
+| 13 | A8.13 | Pendiente |
+| 14 | A8.15 | Pendiente |
+| 15 | A8.20 | Pendiente |
+
+## Marco teórico (sección 5): investigar y sintetizar brevemente (2-3 páginas)
+
+| ID | Tema literal | Estado |
+| --- | --- | --- |
+| MT-1 | Cambios ISO 27001:2022 respecto a 2013: nuevo Anexo A con 93 controles en 4 temas. | Pendiente |
+| MT-2 | Principio de mínimo privilegio y separación de funciones en el rol DBA. | Pendiente |
+| MT-3 | Defensa en profundidad y Zero Trust aplicado a bases de datos. | Pendiente |
+| MT-4 | Controles técnicos: Transparent Data Encryption (TDE), Dynamic Data Masking, Data Redaction, Row Level Security / VPD, TLS para conexiones. | Pendiente |
+| MT-5 | Data Leakage Prevention (DLP) y gestión de backups cifrados. | Pendiente |
+| MT-6 | Logging, monitoreo y correlación (SIEM). | Pendiente |
+| MT-7 | Normativa costarricense: Ley 8968 Protección de la persona frente al tratamiento de sus datos personales y su reglamento. | Pendiente |
+| MT-8 | Extensión: 2-3 páginas. | Pendiente |
+
+## Artefacto (sección 6): interactivo HTML, PDF o sitio, que contenga
+
+| ID | Contenido literal | Estado |
+| --- | --- | --- |
+| AR-1 | Tabla de riesgos R-CONF-01 a R-CONF-05 con impacto y probabilidad. | Pendiente |
+| AR-2 | Tabla de tareas del DBA. | Pendiente |
+| AR-3 | Mapeo de controles ISO con implementación sugerida y evidencia observable (ej: SELECT * FROM DBA_SYS_PRIVS, pg_hba.conf, SELECT * FROM v$encryption_wallet). | Pendiente |
+| AR-4 | Lista de 15 controles observables por auditor externo. | Pendiente |
+| AR-5 | Matriz de evaluación (Tarea \| Riesgo \| Control \| Criterio 0-4 \| Evidencia \| Estado). | Pendiente |
+| AR-6 | Batería de pruebas (ID, Tipo, Procedimiento, Resultado esperado, Herramienta). | Pendiente |
+| AR-7 | Obligatorio incluir scripts de verificación. | Pendiente |
+
+## Herramienta y metodología (sección 7)
+
+| ID | Requisito literal | Estado |
+| --- | --- | --- |
+| HM-1 | Motor: Oracle 19c/21c XE | En curso (21c XE en Docker, contenedor `iso-lab`) |
+| HM-2 | Metodología: PHVA (Planificar-Hacer-Verificar-Actuar). | Pendiente |
+| HM-3 | Herramientas: SQL Developer | Pendiente |
+| HM-4 | Documentación: APA 7 | Pendiente |
+| HM-5 | Repositorio Git institucional | En curso (https://github.com/Adrian123CRff/BD-ISO27001) |
+| HM-6 | Video explicativo 5 minutos | Pendiente |
+
+## Uso de IA (sección 8): obligatoria
+
+| ID | Requisito literal | Estado |
+| --- | --- | --- |
+| IA-1 | Incluir en el informe una sección con la tabla: Herramienta IA \| Prompt Exacto Utilizado \| Aporte de la IA \| Validación / Corrección del Estudiante \| Fuente Verificada | En curso (`docs/uso-ia.md`) |
+| IA-2 | Declaración Jurada: "Yo, [Nombre del estudiante], declaro que todo contenido generado con IA ha sido declarado en la tabla anterior, validado contra fuentes oficiales (ISO, documentación del motor de BD) y que asumo responsabilidad por su veracidad. Entiendo que omitir esta declaración constituye falta grave." | En curso (falta firma) |
+
+## Entregables (sección 10)
+
+| ID | Entregable literal | Estado |
+| --- | --- | --- |
+| EN-1 | Informe PDF con artefacto (o link a artefacto interactivo) | Pendiente |
+| EN-2 | Scripts .sql de verificación | Pendiente |
+| EN-3 | Repositorio Git | En curso (https://github.com/Adrian123CRff/BD-ISO27001) |
+| EN-4 | Video 5 minutos | Pendiente |
+| EN-5 | Tabla de uso de IA firmada | Pendiente |
+
+## Rúbrica (sección 9): autoevaluación antes de entregar
+
+| Criterio | Peso | Descripción literal | Autoevaluación |
+| --- | --- | --- | --- |
+| Identificación de Riesgos y Tareas DBA | 20% | Claridad, completitud, pertinencia técnica | Pendiente |
+| Mapeo y Justificación de Controles ISO | 20% | Selección correcta A5/A8, justificación y evidencia | Pendiente |
+| Matriz de Evaluación y Controles Observables | 20% | Criterios 0-4 bien aplicados, evidencias auditables | Pendiente |
+| Pruebas Técnicas y Scripts | 15% | Scripts funcionales, resultados esperados realistas | Pendiente |
+| Documentación de Uso de IA y Referencias APA 7 | 15% | Tabla completa, honestidad, validación | Pendiente |
+| Presentación, Video y Repositorio | 10% | Claridad, formato, entrega a tiempo | Pendiente |

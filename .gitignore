@@ -1,0 +1,33 @@
+# Dependencias y compilados
+node_modules/
+dist/
+build/
+.vite/
+
+# Secretos y material sensible de Oracle (nunca versionar)
+*.env
+.env*
+*.p12
+*.sso
+ewallet.*
+cwallet.*
+wallet/
+*.dpapi
+*.bkp
+*.dbf
+*.ctl
+*.arc
+
+# Salidas locales de pruebas
+salidas/
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Material de clase: solo local (el repositorio es público)
+materiales/clase/
+
+# Clon duplicado del repositorio creado dentro de la carpeta
+BD-ISO27001/
