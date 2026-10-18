@@ -1,0 +1,13 @@
+-- PRUEBA: P04
+-- TIPO: Escalamiento de privilegios
+-- CONTROL: A8.2
+-- RIESGO: R-CONF-02
+-- COMO: usuario:APP_WEB
+-- PROCEDIMIENTO: Con la cuenta de la aplicación (credenciales robadas, por ejemplo por inyección SQL) se intenta crear un usuario nuevo.
+-- ESPERADO: ORA-01031 privilegios insuficientes: la aplicación ya no tiene el rol DBA.
+-- PATRON: ORA-01031
+-- HERRAMIENTA: SQL*Plus
+-- LIMPIEZA_SYS: begin for u in (select username from dba_users where username = 'INTRUSO') loop execute immediate 'drop user intruso cascade'; end loop; end;
+-- La contraseña es un valor desechable de prueba (el usuario nunca debe llegar a existir); no se usa ningún secreto
+-- porque SQL*Plus repite la sentencia fallida en la salida.
+create user intruso identified by "Desechable#Prueba2026";

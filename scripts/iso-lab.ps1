@@ -8,17 +8,17 @@ param([switch]$Crear, [switch]$Iniciar, [switch]$Estado, [switch]$Detener)
 
 $ErrorActionPreference = 'Stop'
 $Nombre = 'iso-lab'
-$Imagen = 'gvenzl/oracle-xe:21-slim'
+$Imagen = 'gvenzl/oracle-xe:21'   # imagen completa: incluye RMAN (la variante -slim no lo trae)
 $Raiz = Split-Path -Parent $PSScriptRoot
 $ArchivoEnv = Join-Path $Raiz '.env'
 
 function Leer-Env {
-    if (-not (Test-Path $ArchivoEnv)) { throw "Falta $ArchivoEnv con ORACLE_PASSWORD y APP_USER_PASSWORD." }
+    if (-not (Test-Path $ArchivoEnv)) { throw "Falta $ArchivoEnv con ORACLE_PASSWORD." }
     $valores = @{}
     foreach ($linea in Get-Content $ArchivoEnv) {
         if ($linea -match '^\s*([A-Z_]+)=(.+)$') { $valores[$Matches[1]] = $Matches[2].Trim() }
     }
-    foreach ($clave in 'ORACLE_PASSWORD', 'APP_USER_PASSWORD') {
+    foreach ($clave in 'ORACLE_PASSWORD') {
         if (-not $valores.ContainsKey($clave)) { throw "Falta $clave en .env" }
     }
     return $valores
@@ -26,11 +26,10 @@ function Leer-Env {
 
 if ($Crear) {
     $env_ = Leer-Env
-    docker run -d --name $Nombre `
+    # Nombre de equipo fijo: el monedero LOCAL AUTO_LOGIN de TDE solo abre en el equipo donde se creó.
+    docker run -d --name $Nombre --hostname $Nombre `
         -p 127.0.0.1:1526:1521 `
         -e "ORACLE_PASSWORD=$($env_.ORACLE_PASSWORD)" `
-        -e APP_USER=ISO_APP `
-        -e "APP_USER_PASSWORD=$($env_.APP_USER_PASSWORD)" `
         -v iso-lab-datos:/opt/oracle/oradata `
         $Imagen | Out-Null
     Write-Host "Contenedor $Nombre creado. Esperar 'DATABASE IS READY TO USE!' con: .\scripts\iso-lab.ps1 -Estado"
