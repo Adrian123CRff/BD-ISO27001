@@ -144,7 +144,7 @@ Criterios de aceptación: Los 17 controles tienen resultado "antes" y "después"
 Entregable: Una tabla comparativa antes/después por control (estado, madurez y ruta de la evidencia) y otra por prueba, y un commit de sql/, scripts/, evidencia/ y app/src/datos/. Registra este prompt textual en docs/uso-ia.md y actualiza docs/checklist-enunciado.md.
 ```
 
-## Fase 4. Tablas del artefacto (sección 6 del enunciado)
+## Fase 4. Tablas del artefacto (sección 6 del enunciado) · hecha el 19/10/2026
 
 ```
 Rol: Auditor ISO/IEC 27001:2022 con experiencia en bases de datos Oracle.
