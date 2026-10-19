@@ -170,7 +170,7 @@ Criterios de aceptación: Los conteos (5, 12, 15) y las columnas coinciden con e
 Entregable: Los archivos de datos, docs/artefacto.md y un commit. Registra este prompt textual en docs/uso-ia.md y actualiza docs/checklist-enunciado.md.
 ```
 
-## Fase 5. Marco teórico (2-3 páginas)
+## Fase 5. Marco teórico (2-3 páginas) · hecha el 19/10/2026
 
 ```
 Rol: Docente universitario de seguridad de la información y bases de datos.

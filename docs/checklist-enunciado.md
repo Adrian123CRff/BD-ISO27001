@@ -57,14 +57,14 @@ Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
 
 | ID | Tema literal | Estado |
 | --- | --- | --- |
-| MT-1 | Cambios ISO 27001:2022 respecto a 2013: nuevo Anexo A con 93 controles en 4 temas. | Pendiente |
-| MT-2 | Principio de mínimo privilegio y separación de funciones en el rol DBA. | Pendiente |
-| MT-3 | Defensa en profundidad y Zero Trust aplicado a bases de datos. | Pendiente |
-| MT-4 | Controles técnicos: Transparent Data Encryption (TDE), Dynamic Data Masking, Data Redaction, Row Level Security / VPD, TLS para conexiones. | Pendiente |
-| MT-5 | Data Leakage Prevention (DLP) y gestión de backups cifrados. | Pendiente |
-| MT-6 | Logging, monitoreo y correlación (SIEM). | Pendiente |
-| MT-7 | Normativa costarricense: Ley 8968 Protección de la persona frente al tratamiento de sus datos personales y su reglamento. | Pendiente |
-| MT-8 | Extensión: 2-3 páginas. | Pendiente |
+| MT-1 | Cambios ISO 27001:2022 respecto a 2013: nuevo Anexo A con 93 controles en 4 temas. | En curso (esquema con ideas clave y fuentes en `docs/marco-teorico-esquema.md`; falta la redacción del estudiante) |
+| MT-2 | Principio de mínimo privilegio y separación de funciones en el rol DBA. | En curso (esquema con ideas clave y fuentes en `docs/marco-teorico-esquema.md`; falta la redacción del estudiante) |
+| MT-3 | Defensa en profundidad y Zero Trust aplicado a bases de datos. | En curso (esquema con ideas clave y fuentes en `docs/marco-teorico-esquema.md`; falta la redacción del estudiante) |
+| MT-4 | Controles técnicos: Transparent Data Encryption (TDE), Dynamic Data Masking, Data Redaction, Row Level Security / VPD, TLS para conexiones. | En curso (esquema con ideas clave y fuentes en `docs/marco-teorico-esquema.md`; falta la redacción del estudiante) |
+| MT-5 | Data Leakage Prevention (DLP) y gestión de backups cifrados. | En curso (esquema con ideas clave y fuentes en `docs/marco-teorico-esquema.md`; falta la redacción del estudiante) |
+| MT-6 | Logging, monitoreo y correlación (SIEM). | En curso (esquema con ideas clave y fuentes en `docs/marco-teorico-esquema.md`; falta la redacción del estudiante) |
+| MT-7 | Normativa costarricense: Ley 8968 Protección de la persona frente al tratamiento de sus datos personales y su reglamento. | En curso (esquema con ideas clave y fuentes en `docs/marco-teorico-esquema.md`; falta la redacción del estudiante) |
+| MT-8 | Extensión: 2-3 páginas. | En curso (esquema estimado en unas 2,5 páginas al redactar) |
 
 ## Artefacto (sección 6): interactivo HTML, PDF o sitio, que contenga
 
@@ -85,7 +85,7 @@ Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
 | HM-1 | Motor: Oracle 19c/21c XE | Cumplido: Oracle Database 21c XE 21.3.0.0.0 en el contenedor `iso-lab` (evidencia: `sql/00-entorno.sql`) |
 | HM-2 | Metodología: PHVA (Planificar-Hacer-Verificar-Actuar). | En curso (Planificar: `sql/01-escenario.sql`; Hacer: `scripts/corregir.ps1`; Verificar: `scripts/evaluar.ps1` y `scripts/pruebas.ps1` antes/después; Actuar: revisión semanal de C14; falta explicarlo en el informe) |
 | HM-3 | Herramientas: SQL Developer | En curso (guía `docs/guia-sql-developer.md`; faltan las capturas en `evidencia/sql-developer/`) |
-| HM-4 | Documentación: APA 7 | Pendiente |
+| HM-4 | Documentación: APA 7 | En curso (12 referencias en APA 7 en `docs/marco-teorico-esquema.md`, con su estado de verificación) |
 | HM-5 | Repositorio Git institucional | En curso (https://github.com/Adrian123CRff/BD-ISO27001) |
 | HM-6 | Video explicativo 5 minutos | Pendiente |
 
