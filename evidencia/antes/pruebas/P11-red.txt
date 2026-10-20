@@ -1,2 +1,2 @@
--- Evidencia: P11-red.sh | 2026-10-18 10:37:07
+-- Evidencia: P11-red.sh | 2026-10-20 11:18:16
 RESULTADO: 0 de 3 parámetros

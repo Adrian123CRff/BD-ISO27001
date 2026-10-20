@@ -1,4 +1,4 @@
--- Evidencia: V14-A8.15-registro.sql | ejecutado como auditor | 2026-10-18 10:41:57
+-- Evidencia: V14-A8.15-registro.sql | ejecutado como auditor | 2026-10-20 11:20:56
 ### Evidencia: opciones de auditoría de sentencias y de objetos
 
 AUDIT_OPTION		     SUCCESS	FAILURE
@@ -25,16 +25,16 @@ CUENTAS 															 A/A	   -/-	     -/-       -/-
 
 MOMENTO 	     USERNAME	    ACTION_NAME        OBJ_NAME       RETURNCODE
 -------------------- -------------- ------------------ -------------- ----------
-2026-10-18 16:41:57  ISO_AUDITOR    LOGON				       0
-2026-10-18 16:41:56  ISO_AUDITOR    LOGON				       0
-2026-10-18 16:41:56  ISO_AUDITOR    LOGOFF				       0
-2026-10-18 16:41:55  ISO_AUDITOR    LOGOFF				       0
-2026-10-18 16:41:52  ISO_AUDITOR    LOGON				       0
-2026-10-18 16:41:51  ISO_AUDITOR    LOGON				       0
-2026-10-18 16:41:51  ISO_AUDITOR    LOGOFF				       0
-2026-10-18 16:41:49  ISO_AUDITOR    LOGON				       0
-2026-10-18 16:41:49  ISO_AUDITOR    LOGOFF				       0
-2026-10-18 16:41:48  ISO_AUDITOR    LOGON				       0
+2026-10-20 17:20:56  ISO_AUDITOR    LOGON				       0
+2026-10-20 17:20:56  ISO_AUDITOR    LOGOFF				       0
+2026-10-20 17:20:56  ISO_AUDITOR    LOGON				       0
+2026-10-20 17:20:55  ISO_AUDITOR    LOGOFF				       0
+2026-10-20 17:20:54  ISO_AUDITOR    LOGON				       0
+2026-10-20 17:20:53  ISO_AUDITOR    LOGON				       0
+2026-10-20 17:20:53  ISO_AUDITOR    LOGOFF				       0
+2026-10-20 17:20:52  ISO_AUDITOR    LOGON				       0
+2026-10-20 17:20:52  ISO_AUDITOR    LOGOFF				       0
+2026-10-20 17:20:51  ISO_AUDITOR    LOGON				       0
 ### Criterios
 
 CRITERIO|A8.15|a|OK|La auditoría guarda el texto SQL (audit_trail = DB, EXTENDED)|audit_trail = DB, EXTENDED

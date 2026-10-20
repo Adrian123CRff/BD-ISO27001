@@ -68,7 +68,8 @@ button { font: inherit; color: inherit; }
 .riesgo__logro { font-size: var(--texto-s); color: var(--tinta-3); }
 
 /* ---- Mapa de calor ---- */
-.mapa { position: relative; display: grid; gap: var(--e-3); }
+.mapa { display: grid; gap: var(--e-3); }
+.mapa__lienzo { position: relative; }
 .mapa svg { width: 100%; height: auto; display: block; overflow: visible; }
 .mapa__eje text { fill: var(--tinta-2); font: 600 15px var(--fuente-texto); }
 .mapa__titulo-eje { fill: var(--tinta); font: 700 15px var(--fuente-texto); }

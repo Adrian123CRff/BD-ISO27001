@@ -1,4 +1,4 @@
--- Evidencia: V90-gobierno.sql | ejecutado como auditor | 2026-10-18 10:36:45
+-- Evidencia: V90-gobierno.sql | ejecutado como auditor | 2026-10-20 11:18:02
 GOBIERNO|A5.12|DOC|FALLA|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|0 procedimiento(s)
 GOBIERNO|A5.12|VER|FALLA|Revisión semanal programada con registro en los últimos 7 días|tarea inexistente, 0 registro(s) en bitácora
 GOBIERNO|A5.15|DOC|FALLA|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|0 procedimiento(s)

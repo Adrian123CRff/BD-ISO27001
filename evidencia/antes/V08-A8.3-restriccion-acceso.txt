@@ -1,4 +1,4 @@
--- Evidencia: V08-A8.3-restriccion-acceso.sql | ejecutado como auditor | 2026-10-18 10:36:28
+-- Evidencia: V08-A8.3-restriccion-acceso.sql | ejecutado como auditor | 2026-10-20 11:17:56
 ### Evidencia: políticas VPD (DBA_POLICIES) sobre FINANZAS
 ### Evidencia: privilegios de excepción
 

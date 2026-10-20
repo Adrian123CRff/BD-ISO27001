@@ -1,4 +1,4 @@
--- Evidencia: V04-A5.17-informacion-autenticacion.sql | ejecutado como auditor | 2026-10-18 10:36:20
+-- Evidencia: V04-A5.17-informacion-autenticacion.sql | ejecutado como auditor | 2026-10-20 11:17:53
 ### Evidencia: política de contraseñas efectiva de cada cuenta abierta (DBA_PROFILES + DBA_USERS)
 
 USERNAME       PROFILE		VERIFICACION		 VIGENCIA   REUSO_MAX  REUSO_DIAS

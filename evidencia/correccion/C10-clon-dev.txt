@@ -1,4 +1,4 @@
--- Evidencia: C10-clon-dev.sql | ejecutado como sys | 2026-10-18 10:38:33
+-- Evidencia: C10-clon-dev.sql | ejecutado como sys | 2026-10-20 11:19:02
 
 Table truncated.
 

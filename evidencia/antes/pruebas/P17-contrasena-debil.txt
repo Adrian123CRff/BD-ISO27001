@@ -1,4 +1,4 @@
--- Evidencia: P17-contrasena-debil.sql | ejecutado como sys | 2026-10-18 10:37:10
+-- Evidencia: P17-contrasena-debil.sql | ejecutado como sys | 2026-10-20 11:18:18
 Perfil del analista: DEFAULT
 RESULTADO: CLAVE INSEGURA ACEPTADA
 

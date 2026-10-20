@@ -39,7 +39,11 @@ interface Props {
 
 export function Resumen({ ruta, navegar }: Props) {
     const { fase, control, riesgo } = ruta;
-    const elegirRiesgo = (id: IdRiesgo): void => navegar({ riesgo: riesgo === id ? null : id });
+    const elegirRiesgo = (id: IdRiesgo): void => {
+        const nuevo = riesgo === id ? null : id;
+        const mitiga = nuevo === null || CONTROLES.find((c) => c.id === control)?.riesgos.includes(nuevo) === true;
+        navegar({ riesgo: nuevo, control: mitiga ? control : null });
+    };
     const activos: readonly IdRiesgo[] = riesgo !== null ? [riesgo] : CONTROLES.find((c) => c.id === control)?.riesgos ?? [];
     return (
         <>

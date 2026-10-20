@@ -1,4 +1,4 @@
--- Evidencia: C01-parametros-cdb.sql | ejecutado como sys-cdb | 2026-10-18 10:37:13
+-- Evidencia: C01-parametros-cdb.sql | ejecutado como sys-cdb | 2026-10-20 11:18:21
 
 System altered.
 

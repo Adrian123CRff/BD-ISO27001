@@ -1,4 +1,4 @@
--- Evidencia: V17-A8.8-vulnerabilidades.sql | ejecutado como auditor | 2026-10-18 10:36:43
+-- Evidencia: V17-A8.8-vulnerabilidades.sql | ejecutado como auditor | 2026-10-20 11:18:02
 ### Evidencia: versión y parches aplicados (DBA_REGISTRY_SQLPATCH)
 
 BANNER_FULL

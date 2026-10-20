@@ -1,4 +1,4 @@
--- Evidencia: V06-A5.33-proteccion-registros.sql | ejecutado como auditor | 2026-10-18 10:41:37
+-- Evidencia: V06-A5.33-proteccion-registros.sql | ejecutado como auditor | 2026-10-20 11:20:47
 ### Evidencia: parámetros de auditoría
 
 NAME			 VALUE

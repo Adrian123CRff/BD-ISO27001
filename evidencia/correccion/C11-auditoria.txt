@@ -1,4 +1,4 @@
--- Evidencia: C11-auditoria.sql | ejecutado como sys | 2026-10-18 10:38:35
+-- Evidencia: C11-auditoria.sql | ejecutado como sys | 2026-10-20 11:19:03
 
 Audit succeeded.
 

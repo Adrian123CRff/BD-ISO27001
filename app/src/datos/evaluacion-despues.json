@@ -1,6 +1,6 @@
 {
   "fase": "despues",
-  "fecha": "2026-10-18T10:42:04",
+  "fecha": "2026-10-20T11:21:00",
   "motor": "Oracle Database 21c Express Edition 21.3.0.0.0 (contenedor iso-lab, XEPDB1)",
   "ejecutadoComo": "ISO_AUDITOR (solo lectura del diccionario)",
   "controles": [
@@ -577,7 +577,7 @@
         {
           "id": "c",
           "ok": true,
-          "criterio": "El clon de desarrollo (FINANZAS_DEV) no contiene cédulas ni tarjetas reales",
+          "criterio": "El clon de desarrollo (FINANZAS_DEV) no contiene cédulas ni tarjetas reales (control de los últimos 7 días)",
           "observado": "0 fila(s) con datos reales",
           "script": "V11-A8.11-enmascaramiento.sql"
         }
@@ -668,8 +668,8 @@
         {
           "id": "b",
           "ok": true,
-          "criterio": "Hay al menos un respaldo completado en los últimos 7 días",
-          "observado": "3 pieza(s) de respaldo reciente(s)",
+          "criterio": "Hay al menos un respaldo de la base (datafiles) completado en los últimos 7 días",
+          "observado": "1 respaldo(s) de datafiles reciente(s)",
           "script": "V13-A8.13-respaldo.sql"
         },
         {

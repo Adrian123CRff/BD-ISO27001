@@ -26,6 +26,9 @@ foreach ($linea in Get-Content (Join-Path $Raiz '.env')) {
 }
 foreach ($clave in 'ORACLE_PASSWORD', 'AUDITOR_PASSWORD', 'LAB_USER_PASSWORD', 'TDE_PASSWORD') {
     if (-not $valores.ContainsKey($clave)) { throw "Falta $clave en .env" }
+    # Los valores se insertan entre comillas en DEFINE y CONNECT de SQL*Plus: una comilla cerraría el texto, un & abriría
+    # otra sustitución y un espacio o \ cambiaría el comando. Se rechazan antes de construir la entrada.
+    if ($valores[$clave] -match '["''&\s\\]') { throw "$clave en .env tiene caracteres no admitidos (comillas, &, espacios o \)." }
 }
 
 $servicio = 'localhost:1521/XEPDB1'

@@ -1,14 +1,8 @@
--- Evidencia: P19-proteccion-logs.sh | 2026-10-18 10:37:12
-drwxrwxr-x /opt/oracle/diag/
-drwxrwxr-x /opt/oracle/diag/afdboot
-drwxrwxr-x /opt/oracle/diag/apx
-drwxrwxr-x /opt/oracle/diag/asm
-drwxrwxr-x /opt/oracle/diag/asmcmd
--rw-r--r-- /opt/oracle/admin/XE/dpdump/fuga_clientes.csv
-drwxrwxrwx /opt/oracle/oradata/
-drwxr-xr-x /opt/oracle/oradata/dbconfig
-drwxr-xr-x /opt/oracle/oradata/dbconfig/XE
--rw-r--r-- /opt/oracle/oradata/dbconfig/XE/listener.ora
--rw-r--r-- /opt/oracle/oradata/dbconfig/XE/sqlnet.ora
-Revisados: 339 | con permisos para otros: 50
-RESULTADO: REGISTROS EXPUESTOS (50)
+-- Evidencia: P19-proteccion-logs.sh | 2026-10-20 11:18:20
+expuesto: drwxrwxr-x /opt/oracle/diag
+expuesto: drwxrwxr-x /opt/oracle/diag/afdboot
+expuesto: drwxrwxr-x /opt/oracle/diag/apx
+expuesto: drwxrwxr-x /opt/oracle/diag/asm
+expuesto: drwxrwxr-x /opt/oracle/diag/asmcmd
+Revisados: 341 | alcanzables por otros: 45 | con permisos abiertos bajo un directorio cerrado: 5
+RESULTADO: REGISTROS EXPUESTOS (45)

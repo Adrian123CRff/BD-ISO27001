@@ -150,6 +150,7 @@ export function MapaCalor({ fase, activos, alElegir }: PropsMapa) {
     const puntoSenalado = senalado === null ? undefined : actuales.get(senalado);
     return (
         <figure className="mapa">
+            <div className="mapa__lienzo">
             <svg viewBox={`0 0 ${ANCHO} ${ALTO}`} role="group" aria-label={`Mapa de calor de riesgo, fase ${fase === 'antes' ? 'antes' : 'después'}`}>
                 <Celdas />
                 <Ejes />
@@ -157,6 +158,7 @@ export function MapaCalor({ fase, activos, alElegir }: PropsMapa) {
                 <Marcadores actuales={actuales} activos={activos} alElegir={alElegir} alSenalar={setSenalado} />
             </svg>
             {senalado !== null && puntoSenalado !== undefined && <Ayuda id={senalado} punto={puntoSenalado} fase={fase} />}
+            </div>
             <figcaption className="mapa__leyenda">
                 {VALORES.map((n) => (
                     <span key={n} className="mapa__clave"><i style={{ background: `var(--riesgo-${n})` }} />{n} {NOMBRE_NIVEL[n]}</span>

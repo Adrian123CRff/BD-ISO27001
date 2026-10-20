@@ -7,6 +7,7 @@ build/
 # Secretos y material sensible de Oracle (nunca versionar)
 *.env
 .env*
+.secretos/
 *.p12
 *.sso
 ewallet.*

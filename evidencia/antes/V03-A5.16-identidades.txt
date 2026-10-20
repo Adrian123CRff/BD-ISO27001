@@ -1,18 +1,18 @@
--- Evidencia: V03-A5.16-identidades.sql | ejecutado como auditor | 2026-10-18 10:36:19
+-- Evidencia: V03-A5.16-identidades.sql | ejecutado como auditor | 2026-10-20 11:17:53
 ### Evidencia: cuentas no mantenidas por Oracle
 
 USERNAME	 ACCOUNT_STATUS       CREATED
 ---------------- -------------------- --------------------
-APP_WEB 	 OPEN		      2026-10-18 16:36
-DEV_USER	 OPEN		      2026-10-18 16:36
-FINANZAS	 OPEN		      2026-10-18 16:35
-FINANZAS_DEV	 OPEN		      2026-10-18 16:36
-ISO_AUDITOR	 OPEN		      2026-10-18 16:36
-JPEREZ		 OPEN		      2026-10-18 16:36
-MROJAS		 OPEN		      2026-10-18 16:36
+APP_WEB 	 OPEN		      2026-10-20 17:17
+DEV_USER	 OPEN		      2026-10-20 17:17
+FINANZAS	 OPEN		      2026-10-20 17:17
+FINANZAS_DEV	 OPEN		      2026-10-20 17:17
+ISO_AUDITOR	 OPEN		      2026-10-20 17:17
+JPEREZ		 OPEN		      2026-10-20 17:17
+MROJAS		 OPEN		      2026-10-20 17:17
 OPS$ORACLE	 OPEN		      2024-09-30 01:20
 PDBADMIN	 OPEN		      2024-09-30 01:20
-SOPORTE 	 OPEN		      2026-10-18 16:36
+SOPORTE 	 OPEN		      2026-10-20 17:17
 ### Criterios
 
 CRITERIO|A5.16|a|FALLA|Toda cuenta está registrada con su responsable en SEGURIDAD.REGISTRO_IDENTIDADES|No existe registro de identidades

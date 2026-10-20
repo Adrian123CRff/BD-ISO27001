@@ -1,4 +1,4 @@
--- Evidencia: C09-eliminacion.sql | ejecutado como sys | 2026-10-18 10:38:32
+-- Evidencia: C09-eliminacion.sql | ejecutado como sys | 2026-10-20 11:19:02
 
 DBA Recyclebin purged.
 

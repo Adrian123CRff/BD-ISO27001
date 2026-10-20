@@ -15,7 +15,7 @@ interface Props {
 export function CadenaMatriz({ ruta, navegar, titulo }: Props) {
     const { fase, control, riesgo } = ruta;
     return (
-        <section className="cadena" aria-labelledby="titulo-matriz">
+        <section className="cadena" {...(titulo !== undefined ? { 'aria-labelledby': 'titulo-matriz' } : { 'aria-label': 'Matriz de evaluación' })}>
             <div className="cadena__cabeza">
                 {titulo !== undefined && <h2 id="titulo-matriz" className="seccion-titulo">{titulo}</h2>}
                 {riesgo !== null && (

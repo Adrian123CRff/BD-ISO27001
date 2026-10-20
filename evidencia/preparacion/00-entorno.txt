@@ -1,4 +1,4 @@
--- Evidencia: 00-entorno.sql | ejecutado como auditor | 2026-10-18 10:36:10
+-- Evidencia: 00-entorno.sql | ejecutado como auditor | 2026-10-20 11:17:49
 === Versión del motor ===
 
 BANNER_FULL

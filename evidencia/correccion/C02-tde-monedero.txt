@@ -1,4 +1,4 @@
--- Evidencia: C02-tde-monedero.sql | ejecutado como sys-cdb | 2026-10-18 10:37:39
+-- Evidencia: C02-tde-monedero.sql | ejecutado como sys-cdb | 2026-10-20 11:18:36
 
 System altered.
 

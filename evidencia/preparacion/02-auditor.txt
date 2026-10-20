@@ -1,6 +1,9 @@
--- Evidencia: 02-auditor.sql | ejecutado como sys | 2026-10-18 10:36:08
+-- Evidencia: 02-auditor.sql | ejecutado como sys | 2026-10-20 11:17:49
 
 User created.
+
+
+Grant succeeded.
 
 
 Grant succeeded.

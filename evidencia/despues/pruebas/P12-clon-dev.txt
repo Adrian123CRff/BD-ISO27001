@@ -1,4 +1,4 @@
--- Evidencia: P12-clon-dev.sql | ejecutado como usuario:DEV_USER | 2026-10-18 10:41:10
+-- Evidencia: P12-clon-dev.sql | ejecutado como usuario:DEV_USER | 2026-10-20 11:20:33
 
 NOMBRE				 CEDULA
 -------------------------------- --------------

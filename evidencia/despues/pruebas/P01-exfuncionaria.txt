@@ -1,4 +1,4 @@
--- Evidencia: P01-exfuncionaria.sql | ejecutado como usuario:MROJAS | 2026-10-18 10:40:40
+-- Evidencia: P01-exfuncionaria.sql | ejecutado como usuario:MROJAS | 2026-10-20 11:20:17
 ERROR:
 ORA-28000: The account is locked.
 

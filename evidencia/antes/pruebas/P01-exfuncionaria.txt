@@ -1,4 +1,4 @@
--- Evidencia: P01-exfuncionaria.sql | ejecutado como usuario:MROJAS | 2026-10-18 10:36:47
+-- Evidencia: P01-exfuncionaria.sql | ejecutado como usuario:MROJAS | 2026-10-20 11:18:03
 
 CLIENTES_LEIDOS
 ---------------

@@ -1,6 +1,6 @@
 {
   "fase": "antes",
-  "fecha": "2026-10-18T10:37:12",
+  "fecha": "2026-10-20T11:18:20",
   "pruebas": [
     {
       "id": "P01",
@@ -303,20 +303,19 @@
       "control": "A5.33",
       "riesgo": "R-CONF-05",
       "procedimiento": "Se revisan los permisos del sistema operativo sobre los registros y los archivos que revelan la estructura de la base: alert log, trazas y log del listener (diag), auditoría de SYS (adump), y respaldos, archive logs, monedero y archivos de datos (oradata).",
-      "esperado": "Ningún archivo ni directorio da permisos a \"otros\" (lectura, escritura o ejecución): solo el dueño oracle y su grupo pueden abrirlos.",
+      "esperado": "Ningún archivo ni directorio es alcanzable por \"otros\": los directorios raíz están cerrados (sin permisos para otros), así que solo el dueño oracle y su grupo pueden abrir su contenido. Lo que Oracle cree después con permisos abiertos debajo de un directorio cerrado se informa aparte.",
       "herramienta": "stat sobre los directorios de Oracle (sistema operativo del servidor)",
       "ejecutadoComo": "sh",
       "script": "P19-proteccion-logs.sh",
       "paso": false,
       "obtenido": [
-        "-rw-r--r-- /opt/oracle/admin/XE/dpdump/fuga_clientes.csv",
-        "drwxrwxrwx /opt/oracle/oradata/",
-        "drwxr-xr-x /opt/oracle/oradata/dbconfig",
-        "drwxr-xr-x /opt/oracle/oradata/dbconfig/XE",
-        "-rw-r--r-- /opt/oracle/oradata/dbconfig/XE/listener.ora",
-        "-rw-r--r-- /opt/oracle/oradata/dbconfig/XE/sqlnet.ora",
-        "Revisados: 339 | con permisos para otros: 50",
-        "RESULTADO: REGISTROS EXPUESTOS (50)"
+        "expuesto: drwxrwxr-x /opt/oracle/diag",
+        "expuesto: drwxrwxr-x /opt/oracle/diag/afdboot",
+        "expuesto: drwxrwxr-x /opt/oracle/diag/apx",
+        "expuesto: drwxrwxr-x /opt/oracle/diag/asm",
+        "expuesto: drwxrwxr-x /opt/oracle/diag/asmcmd",
+        "Revisados: 341 | alcanzables por otros: 45 | con permisos abiertos bajo un directorio cerrado: 5",
+        "RESULTADO: REGISTROS EXPUESTOS (45)"
       ]
     }
   ]

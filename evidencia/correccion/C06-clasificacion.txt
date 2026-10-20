@@ -1,4 +1,4 @@
--- Evidencia: C06-clasificacion.sql | ejecutado como sys | 2026-10-18 10:37:52
+-- Evidencia: C06-clasificacion.sql | ejecutado como sys | 2026-10-20 11:18:43
 
 Table created.
 

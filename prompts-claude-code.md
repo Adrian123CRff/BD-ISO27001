@@ -263,7 +263,7 @@ Restricciones: Prioriza los hallazgos (alto, medio, bajo) y corrige solo los de 
 Entregable: docs/revision-diseno.md con los hallazgos, lo corregido y capturas antes/después, y un commit. Registra este prompt textual en docs/uso-ia.md.
 ```
 
-## Fase 9. Revisión de código y seguridad del repositorio
+## Fase 9. Revisión de código y seguridad del repositorio · hecha el 20/10/2026
 
 ```
 Usa /code-review y /security-review sobre todo el repositorio.

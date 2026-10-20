@@ -20,16 +20,26 @@ function Leer-Env {
     }
     foreach ($clave in 'ORACLE_PASSWORD') {
         if (-not $valores.ContainsKey($clave)) { throw "Falta $clave en .env" }
+        # Mismas restricciones que scripts/ejecutar-sql.ps1: SQL*Plus interpretaría comillas, & o espacios.
+        if ($valores[$clave] -match '["''&\s\\]') { throw "$clave en .env tiene caracteres no admitidos (comillas, &, espacios o \)." }
     }
     return $valores
 }
 
 if ($Crear) {
     $env_ = Leer-Env
+    # La contraseña de SYS/SYSTEM se entrega por archivo (ORACLE_PASSWORD_FILE, admitido por la imagen) y no como
+    # variable de entorno: así no queda guardada en la configuración del contenedor (docker inspect). El archivo vive
+    # en .secretos/ (ignorado por git, como .env) y se monta de solo lectura; debe existir mientras exista el contenedor.
+    $Secretos = Join-Path $Raiz '.secretos'
+    New-Item -ItemType Directory -Force $Secretos | Out-Null
+    $ArchivoClave = Join-Path $Secretos 'oracle_password'
+    [IO.File]::WriteAllText($ArchivoClave, $env_.ORACLE_PASSWORD, [Text.UTF8Encoding]::new($false))
     # Nombre de equipo fijo: el monedero LOCAL AUTO_LOGIN de TDE solo abre en el equipo donde se creó.
     docker run -d --name $Nombre --hostname $Nombre `
         -p 127.0.0.1:1526:1521 `
-        -e "ORACLE_PASSWORD=$($env_.ORACLE_PASSWORD)" `
+        -v "${ArchivoClave}:/run/secrets/oracle_password:ro" `
+        -e ORACLE_PASSWORD_FILE=/run/secrets/oracle_password `
         -v iso-lab-datos:/opt/oracle/oradata `
         $Imagen | Out-Null
     Write-Host "Contenedor $Nombre creado. Esperar 'DATABASE IS READY TO USE!' con: .\scripts\iso-lab.ps1 -Estado"

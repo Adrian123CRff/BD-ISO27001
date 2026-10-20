@@ -1,4 +1,4 @@
--- Evidencia: C05-identidades-perfiles.sql | ejecutado como sys | 2026-10-18 10:37:51
+-- Evidencia: C05-identidades-perfiles.sql | ejecutado como sys | 2026-10-20 11:18:43
 === Esquema de control SEGURIDAD (sin inicio de sesión, datos en el tablespace cifrado) ===
 
 User created.

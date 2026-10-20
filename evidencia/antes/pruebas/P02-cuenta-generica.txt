@@ -1,4 +1,4 @@
--- Evidencia: P02-cuenta-generica.sql | ejecutado como usuario:SOPORTE | 2026-10-18 10:36:48
+-- Evidencia: P02-cuenta-generica.sql | ejecutado como usuario:SOPORTE | 2026-10-20 11:18:03
 
 SESION_DE
 --------------------------------------------------------------------------------

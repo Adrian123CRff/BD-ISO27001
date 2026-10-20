@@ -1,4 +1,4 @@
--- Evidencia: P08-fuga-archivo.sql | ejecutado como usuario:JPEREZ | 2026-10-18 10:41:03
+-- Evidencia: P08-fuga-archivo.sql | ejecutado como usuario:JPEREZ | 2026-10-20 11:20:30
     f utl_file.file_type;
       *
 ERROR at line 2:

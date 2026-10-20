@@ -1,6 +1,6 @@
 {
   "fase": "despues",
-  "fecha": "2026-10-18T10:41:23",
+  "fecha": "2026-10-20T11:20:41",
   "pruebas": [
     {
       "id": "P01",
@@ -326,13 +326,13 @@
       "control": "A5.33",
       "riesgo": "R-CONF-05",
       "procedimiento": "Se revisan los permisos del sistema operativo sobre los registros y los archivos que revelan la estructura de la base: alert log, trazas y log del listener (diag), auditoría de SYS (adump), y respaldos, archive logs, monedero y archivos de datos (oradata).",
-      "esperado": "Ningún archivo ni directorio da permisos a \"otros\" (lectura, escritura o ejecución): solo el dueño oracle y su grupo pueden abrirlos.",
+      "esperado": "Ningún archivo ni directorio es alcanzable por \"otros\": los directorios raíz están cerrados (sin permisos para otros), así que solo el dueño oracle y su grupo pueden abrir su contenido. Lo que Oracle cree después con permisos abiertos debajo de un directorio cerrado se informa aparte.",
       "herramienta": "stat sobre los directorios de Oracle (sistema operativo del servidor)",
       "ejecutadoComo": "sh",
       "script": "P19-proteccion-logs.sh",
       "paso": true,
       "obtenido": [
-        "Revisados: 649 | con permisos para otros: 0",
+        "Revisados: 686 | alcanzables por otros: 0 | con permisos abiertos bajo un directorio cerrado: 0",
         "RESULTADO: REGISTROS PROTEGIDOS"
       ]
     }

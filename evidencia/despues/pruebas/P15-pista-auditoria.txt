@@ -1,4 +1,4 @@
--- Evidencia: P15-pista-auditoria.sql | ejecutado como auditor | 2026-10-18 10:41:15
+-- Evidencia: P15-pista-auditoria.sql | ejecutado como auditor | 2026-10-20 11:20:35
 
 CATEGORIA				     EVENTOS
 -------------------------------------------- -------

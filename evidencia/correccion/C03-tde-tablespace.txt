@@ -1,4 +1,4 @@
--- Evidencia: C03-tde-tablespace.sql | ejecutado como sys | 2026-10-18 10:37:42
+-- Evidencia: C03-tde-tablespace.sql | ejecutado como sys | 2026-10-20 11:18:38
 
 Tablespace created.
 

@@ -1,4 +1,4 @@
--- Evidencia: V16-A8.24-criptografia-tde.sql | ejecutado como auditor | 2026-10-18 10:41:59
+-- Evidencia: V16-A8.24-criptografia-tde.sql | ejecutado como auditor | 2026-10-20 11:20:57
 ### Evidencia: SELECT * FROM V$ENCRYPTION_WALLET
 
 WRL_TYPE WRL_PARAMETER				  STATUS	       WALLET_TYPE

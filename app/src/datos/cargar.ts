@@ -88,8 +88,9 @@ export function resultadoDe(id: IdControl, fase: Fase): ResultadoControl | undef
 }
 
 // Situación de un factor de riesgo en una fase: en "antes" está en su celda inherente; en "despues" llega a su
-// residual objetivo solo si la evaluación lo respalda (todos sus controles en Cumple, o el único faltante es un
-// riesgo aceptado formalmente, A8.8).
+// residual objetivo solo si la evaluación lo respalda: todos sus controles en Cumple, o el único faltante es un
+// riesgo aceptado formalmente y esa aceptación está demostrada por su prueba en la corrida "después" (A8.8 → P18,
+// que comprueba el RIESGO ACEPTADO en SEGURIDAD.PROCEDIMIENTOS). Sin esa evidencia, el factor queda pendiente.
 export type Logro = 'inherente' | 'alcanzado' | 'aceptado' | 'pendiente';
 
 export interface Posicion {
@@ -100,7 +101,16 @@ export interface Posicion {
     readonly sinCumplir: readonly IdControl[];
 }
 
-const RIESGO_ACEPTADO: readonly IdControl[] = ['A8.8'];
+// Controles cuyo incumplimiento se acepta formalmente, con la prueba que demuestra la aceptación.
+const PRUEBA_DE_ACEPTACION: Readonly<Partial<Record<IdControl, string>>> = { 'A8.8': 'P18' };
+
+function aceptacionDemostrada(id: IdControl): boolean {
+    const prueba = PRUEBA_DE_ACEPTACION[id];
+    if (prueba === undefined) return false;
+    const resultado = resultadoDe(id, 'despues');
+    const paso = BATERIA.despues.pruebas.find((p) => p.id === prueba)?.paso === true;
+    return paso && resultado !== undefined && resultado.estado !== 'No cumple';
+}
 
 export function posicionDe(riesgo: Riesgo, fase: Fase): Posicion {
     const inherente = { impacto: riesgo.impacto, probabilidad: riesgo.probabilidad, nivel: nivelRiesgo(riesgo.impacto, riesgo.probabilidad) };
@@ -108,7 +118,7 @@ export function posicionDe(riesgo: Riesgo, fase: Fase): Posicion {
     const sinCumplir = CONTROLES.filter((c) => c.riesgos.includes(riesgo.id))
         .filter((c) => resultadoDe(c.id, 'despues')?.estado !== 'Cumple')
         .map((c) => c.id);
-    if (sinCumplir.some((id) => !RIESGO_ACEPTADO.includes(id))) return { ...inherente, logro: 'pendiente', sinCumplir };
+    if (sinCumplir.some((id) => !aceptacionDemostrada(id))) return { ...inherente, logro: 'pendiente', sinCumplir };
     return {
         impacto: riesgo.impactoObjetivo,
         probabilidad: riesgo.probabilidadObjetivo,
