@@ -18,20 +18,20 @@ function Fila({ control, fase, seleccionado, alElegir }: { readonly control: Con
     const activo = seleccionado === control.id;
     return (
         <tr className={activo ? 'fila fila--activa' : 'fila'} onClick={() => alElegir(control.id)}>
-            <td>{tareas}</td>
-            <td className="codigo">{control.riesgos.join(', ')}</td>
-            <td>
+            <td data-etiqueta="Tarea">{tareas}</td>
+            <td data-etiqueta="Riesgo" className="codigo">{control.riesgos.join(', ')}</td>
+            <td data-etiqueta="Control">
                 <button type="button" className="fila__control" aria-pressed={activo} onClick={(e) => { e.stopPropagation(); alElegir(control.id); }}>
                     <span className="codigo">{control.id}</span> {control.titulo}
                 </button>
                 {control.complementario && <span className="etiqueta">Complementario</span>}
             </td>
-            <td>
+            <td data-etiqueta="Criterio 0-4">
                 {r && <Madurez valor={r.madurez} />}
                 {fase === 'despues' && antes && <span className="fila__antes">antes {antes.madurez}</span>}
             </td>
-            <td className="codigo fila__evidencia">{control.scriptVerificacion.slice(0, 3)}</td>
-            <td>{r && <Estado estado={r.estado} detalle={`${r.cumplidos}/${r.total}`} />}</td>
+            <td data-etiqueta="Evidencia" className="codigo fila__evidencia">{control.scriptVerificacion.slice(0, 3)}</td>
+            <td data-etiqueta="Estado">{r && <Estado estado={r.estado} detalle={`${r.cumplidos}/${r.total}`} />}</td>
         </tr>
     );
 }
@@ -40,7 +40,7 @@ export function Matriz({ fase, filtroRiesgo, seleccionado, alElegir }: Props) {
     const filas = CONTROLES.filter((c) => filtroRiesgo === null || c.riesgos.includes(filtroRiesgo));
     return (
         <div className="tabla-marco">
-            <table className="matriz">
+            <table className="matriz tabla--apilable">
                 <caption className="sr-only">Matriz de evaluación, fase {fase === 'antes' ? 'antes' : 'después'}</caption>
                 <thead>
                     <tr><th scope="col">Tarea</th><th scope="col">Riesgo</th><th scope="col">Control</th>

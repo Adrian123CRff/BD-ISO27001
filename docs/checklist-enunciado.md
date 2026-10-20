@@ -10,48 +10,48 @@ Estados: Pendiente · En curso · Cumplido.
 
 | ID | Requisito literal | Dónde se cumple | Estado |
 | --- | --- | --- | --- |
-| OE-1 | Identificar y clasificar al menos 5 riesgos de confidencialidad (R-CONF) asociados a motores de BD (Oracle). | Artefacto, tabla de riesgos | En curso: 5 factores clasificados por categoría y nivel, con impacto, probabilidad, inherente y residual objetivo (`app/src/datos/riesgos.ts`, `docs/artefacto.md` §1); falta la vista en la app |
-| OE-2 | Mapear al menos 12 tareas críticas del DBA (gestión de usuarios, privilegios, autenticación, cifrado TDE, masking, backup, auditoría, parcheo, listener, eliminación segura, logs, clones DEV/TEST). | Artefacto, tabla de tareas | En curso: las 12 tareas con sus riesgos y controles (`app/src/datos/tareas.ts`, `docs/artefacto.md` §2); falta la vista en la app |
-| OE-3 | Seleccionar y justificar controles del Anexo A 2022 pertinentes (A5.12, A5.15, A5.16, A5.17, A5.18, A5.33, A8.2, A8.3, A8.5, A8.10, A8.11, A8.12, A8.13, A8.15, A8.20). | Artefacto, mapeo de controles | En curso: los 15 tienen verificación (`sql/verificacion`), corrección (`sql/correccion`) y procedimiento aprobado (`docs/procedimientos.md`) y justificación (`app/src/datos/controles.ts`, `docs/artefacto.md` §3); falta la vista en la app |
-| OE-4 | Diseñar una Matriz de Evaluación con criterios de madurez 0-4, evidencia y estado (Cumple/No cumple/Parcial). | Artefacto, matriz | En curso: evaluación antes/después con evidencia (`app/src/datos/evaluacion-*.json`, `evidencia/antes`, `evidencia/despues`); falta presentarla en el artefacto |
-| OE-5 | Proponer y ejecutar pruebas técnicas (consultas SQL, revisión de configuraciones, auditorías) que demuestren la efectividad de los controles. | `sql/` y artefacto, batería de pruebas | En curso: 19 pruebas ejecutadas antes (0 de 19) y después (19 de 19), con evidencia en `evidencia/*/pruebas`; falta presentarlas en el artefacto |
+| OE-1 | Identificar y clasificar al menos 5 riesgos de confidencialidad (R-CONF) asociados a motores de BD (Oracle). | Artefacto, tabla de riesgos | Cumplido: 5 factores clasificados por categoría y nivel, con impacto, probabilidad, inherente y residual objetivo justificados (`app/src/datos/riesgos.ts`; app, vista Riesgos; `docs/artefacto.md` §1). Revisión del estudiante pendiente |
+| OE-2 | Mapear al menos 12 tareas críticas del DBA (gestión de usuarios, privilegios, autenticación, cifrado TDE, masking, backup, auditoría, parcheo, listener, eliminación segura, logs, clones DEV/TEST). | Artefacto, tabla de tareas | Cumplido: las 12 tareas con sus riesgos y controles (`app/src/datos/tareas.ts`; app, vista Tareas; `docs/artefacto.md` §2) |
+| OE-3 | Seleccionar y justificar controles del Anexo A 2022 pertinentes (A5.12, A5.15, A5.16, A5.17, A5.18, A5.33, A8.2, A8.3, A8.5, A8.10, A8.11, A8.12, A8.13, A8.15, A8.20). | Artefacto, mapeo de controles | Cumplido: los 15 controles con justificación, implementación sugerida y evidencia observable (`app/src/datos/controles.ts`; app, vista Mapeo; `docs/artefacto.md` §3), más A8.24 y A8.8 complementarios |
+| OE-4 | Diseñar una Matriz de Evaluación con criterios de madurez 0-4, evidencia y estado (Cumple/No cumple/Parcial). | Artefacto, matriz | Cumplido: matriz con criterio 0-4, evidencia y estado antes/después (`scripts/evaluar.ps1`; app, vistas Resumen y Matriz; `docs/artefacto.md` §5) |
+| OE-5 | Proponer y ejecutar pruebas técnicas (consultas SQL, revisión de configuraciones, auditorías) que demuestren la efectividad de los controles. | `sql/` y artefacto, batería de pruebas | Cumplido: 19 pruebas ejecutadas antes (0/19) y después (19/19) con su salida (`sql/pruebas/`, `evidencia/*/pruebas/`; app, vista Batería) |
 
 Tareas nombradas en OE-2 (las 12 deben aparecer):
 
 | # | Tarea | Estado |
 | --- | --- | --- |
-| 1 | Gestión de usuarios | En curso (V03, C05, P01, P02) |
-| 2 | Privilegios | En curso (V02, V07, C04, P03, P04) |
-| 3 | Autenticación | En curso (V04, V09, C05, P07, P17) |
-| 4 | Cifrado TDE | En curso (V16, C01-C03, P09) |
-| 5 | Masking | En curso (V11, C07, P05) |
-| 6 | Backup | En curso (V13, C13, P10) |
-| 7 | Auditoría | En curso (V14, C11, C14, P15) |
-| 8 | Parcheo | En curso (V17, C14 (riesgo aceptado), P18) |
-| 9 | Listener | En curso (V15, C12, P11) |
-| 10 | Eliminación segura | En curso (V10, C09, P14) |
-| 11 | Logs | En curso (V06, C11, C15, P13, P19) |
-| 12 | Clones DEV/TEST | En curso (V11, C10, P12) |
+| 1 | Gestión de usuarios | Cumplido (V03, C05, P01, P02) |
+| 2 | Privilegios | Cumplido (V02, V07, C04, P03, P04) |
+| 3 | Autenticación | Cumplido (V04, V09, C05, P07, P17) |
+| 4 | Cifrado TDE | Cumplido (V16, C01-C03, P09) |
+| 5 | Masking | Cumplido (V11, C07, P05) |
+| 6 | Backup | Cumplido (V13, C13, P10) |
+| 7 | Auditoría | Cumplido (V14, C11, C14, P15) |
+| 8 | Parcheo | Cumplido (V17, C14 (riesgo aceptado), P18) |
+| 9 | Listener | Cumplido (V15, C12, P11) |
+| 10 | Eliminación segura | Cumplido (V10, C09, P14) |
+| 11 | Logs | Cumplido (V06, C11, C15, P13, P19) |
+| 12 | Clones DEV/TEST | Cumplido (V11, C10, P12) |
 
 Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
 
 | # | Control | Estado |
 | --- | --- | --- |
-| 1 | A5.12 | En curso (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en `docs/artefacto.md`; falta la vista en la app) |
-| 2 | A5.15 | En curso (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en `docs/artefacto.md`; falta la vista en la app) |
-| 3 | A5.16 | En curso (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en `docs/artefacto.md`; falta la vista en la app) |
-| 4 | A5.17 | En curso (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en `docs/artefacto.md`; falta la vista en la app) |
-| 5 | A5.18 | En curso (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en `docs/artefacto.md`; falta la vista en la app) |
-| 6 | A5.33 | En curso (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en `docs/artefacto.md`; falta la vista en la app) |
-| 7 | A8.2 | En curso (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en `docs/artefacto.md`; falta la vista en la app) |
-| 8 | A8.3 | En curso (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en `docs/artefacto.md`; falta la vista en la app) |
-| 9 | A8.5 | En curso (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en `docs/artefacto.md`; falta la vista en la app) |
-| 10 | A8.10 | En curso (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en `docs/artefacto.md`; falta la vista en la app) |
-| 11 | A8.11 | En curso (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en `docs/artefacto.md`; falta la vista en la app) |
-| 12 | A8.12 | En curso (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en `docs/artefacto.md`; falta la vista en la app) |
-| 13 | A8.13 | En curso (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en `docs/artefacto.md`; falta la vista en la app) |
-| 14 | A8.15 | En curso (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en `docs/artefacto.md`; falta la vista en la app) |
-| 15 | A8.20 | En curso (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en `docs/artefacto.md`; falta la vista en la app) |
+| 1 | A5.12 | Cumplido (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en la app y en `docs/artefacto.md`) |
+| 2 | A5.15 | Cumplido (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en la app y en `docs/artefacto.md`) |
+| 3 | A5.16 | Cumplido (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en la app y en `docs/artefacto.md`) |
+| 4 | A5.17 | Cumplido (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en la app y en `docs/artefacto.md`) |
+| 5 | A5.18 | Cumplido (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en la app y en `docs/artefacto.md`) |
+| 6 | A5.33 | Cumplido (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en la app y en `docs/artefacto.md`) |
+| 7 | A8.2 | Cumplido (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en la app y en `docs/artefacto.md`) |
+| 8 | A8.3 | Cumplido (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en la app y en `docs/artefacto.md`) |
+| 9 | A8.5 | Cumplido (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en la app y en `docs/artefacto.md`) |
+| 10 | A8.10 | Cumplido (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en la app y en `docs/artefacto.md`) |
+| 11 | A8.11 | Cumplido (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en la app y en `docs/artefacto.md`) |
+| 12 | A8.12 | Cumplido (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en la app y en `docs/artefacto.md`) |
+| 13 | A8.13 | Cumplido (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en la app y en `docs/artefacto.md`) |
+| 14 | A8.15 | Cumplido (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en la app y en `docs/artefacto.md`) |
+| 15 | A8.20 | Cumplido (verificación, corrección, prueba y procedimiento; justificación y evidencia antes/después en la app y en `docs/artefacto.md`) |
 
 ## Marco teórico (sección 5): investigar y sintetizar brevemente (2-3 páginas)
 
@@ -70,13 +70,13 @@ Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
 
 | ID | Contenido literal | Estado |
 | --- | --- | --- |
-| AR-1 | Tabla de riesgos R-CONF-01 a R-CONF-05 con impacto y probabilidad. | En curso (`docs/artefacto.md` §1, `riesgos.ts`); falta la vista en la app |
-| AR-2 | Tabla de tareas del DBA. | En curso (`docs/artefacto.md` §2, `tareas.ts`); falta la vista en la app |
-| AR-3 | Mapeo de controles ISO con implementación sugerida y evidencia observable (ej: SELECT * FROM DBA_SYS_PRIVS, pg_hba.conf, SELECT * FROM v$encryption_wallet). | En curso (`docs/artefacto.md` §3, `controles.ts`); falta la vista en la app |
-| AR-4 | Lista de 15 controles observables por auditor externo. | En curso (`docs/artefacto.md` §4, `controles.ts` (campo consultaAuditor)); falta la vista en la app |
-| AR-5 | Matriz de evaluación (Tarea \| Riesgo \| Control \| Criterio 0-4 \| Evidencia \| Estado). | En curso (`docs/artefacto.md` §5, `controles.ts` + `evaluacion-*.json`); falta la vista en la app |
-| AR-6 | Batería de pruebas (ID, Tipo, Procedimiento, Resultado esperado, Herramienta). | En curso (`docs/artefacto.md` §6, `pruebas-*.json`); falta la vista en la app |
-| AR-7 | Obligatorio incluir scripts de verificación. | En curso (18 scripts en `sql/verificacion`) |
+| AR-1 | Tabla de riesgos R-CONF-01 a R-CONF-05 con impacto y probabilidad. | Cumplido: app, vista Riesgos, y `docs/artefacto.md` §1; capturas en `evidencia/app/` |
+| AR-2 | Tabla de tareas del DBA. | Cumplido: app, vista Tareas, y `docs/artefacto.md` §2; capturas en `evidencia/app/` |
+| AR-3 | Mapeo de controles ISO con implementación sugerida y evidencia observable (ej: SELECT * FROM DBA_SYS_PRIVS, pg_hba.conf, SELECT * FROM v$encryption_wallet). | Cumplido: app, vista Mapeo de controles, y `docs/artefacto.md` §3; capturas en `evidencia/app/` |
+| AR-4 | Lista de 15 controles observables por auditor externo. | Cumplido: app, vista Controles observables, y `docs/artefacto.md` §4; capturas en `evidencia/app/` |
+| AR-5 | Matriz de evaluación (Tarea \| Riesgo \| Control \| Criterio 0-4 \| Evidencia \| Estado). | Cumplido: app, vista Resumen y Matriz, y `docs/artefacto.md` §5; capturas en `evidencia/app/` |
+| AR-6 | Batería de pruebas (ID, Tipo, Procedimiento, Resultado esperado, Herramienta). | Cumplido: app, vista Batería de pruebas, y `docs/artefacto.md` §6; capturas en `evidencia/app/` |
+| AR-7 | Obligatorio incluir scripts de verificación. | Cumplido: 18 scripts en `sql/verificacion`; la app muestra el script y su salida real en cada fila de la matriz |
 
 ## Herramienta y metodología (sección 7)
 

@@ -222,7 +222,7 @@ Criterios de aceptación: Cada token tiene un nombre y un uso documentado, y los
 Entregable: Los tokens, el documento y un commit. Registra este prompt textual en docs/uso-ia.md.
 ```
 
-## Fase 7. Construcción de la app
+## Fase 7. Construcción de la app · hecha el 20/10/2026
 
 ```
 Usa la skill frontend-design y, para los gráficos, la skill dataviz.

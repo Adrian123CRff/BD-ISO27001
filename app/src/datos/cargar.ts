@@ -58,6 +58,22 @@ export function evidenciaDe(control: Control, fase: Fase): Evidencia {
     };
 }
 
+const SCRIPTS_PRUEBA = import.meta.glob<string>('../../../sql/pruebas/P*', { query: '?raw', import: 'default', eager: true });
+const SALIDAS_PRUEBA: Readonly<Record<Fase, Record<string, string>>> = {
+    antes: import.meta.glob<string>('../../../evidencia/antes/pruebas/P*.txt', { query: '?raw', import: 'default', eager: true }),
+    despues: import.meta.glob<string>('../../../evidencia/despues/pruebas/P*.txt', { query: '?raw', import: 'default', eager: true }),
+};
+
+export function evidenciaDePrueba(script: string, fase: Fase): Evidencia {
+    const salida = script.replace(/\.(sql|sh)$/, '.txt');
+    return {
+        rutaScript: `sql/pruebas/${script}`,
+        script: buscarPorNombre(SCRIPTS_PRUEBA, script),
+        rutaSalida: `evidencia/${fase}/pruebas/${salida}`,
+        salida: buscarPorNombre(SALIDAS_PRUEBA[fase], salida),
+    };
+}
+
 export function resultadoDe(id: IdControl, fase: Fase): ResultadoControl | undefined {
     return EVALUACION[fase].controles.find((r) => r.control === id);
 }

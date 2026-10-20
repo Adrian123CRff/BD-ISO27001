@@ -1,21 +1,14 @@
 // Pantalla principal: la historia del proyecto en una vista. Arriba, el nivel de riesgo y el mapa de calor (los cinco
 // factores pasan de inherente a residual al cambiar de fase); abajo, la matriz conectada con su evidencia.
 import { NOMBRE_NIVEL, RIESGO_INHERENTE_CLASE, RIESGO_RESIDUAL_ACEPTADO } from '../datos/escalas.ts';
-import { BATERIA, CONTROLES, EVALUACION, nivelGlobal, riesgoPorId, type Fase } from '../datos/cargar.ts';
+import { BATERIA, CONTROLES, EVALUACION, nivelGlobal, type Fase } from '../datos/cargar.ts';
 import type { IdRiesgo } from '../datos/tipos.ts';
-import { InterruptorFase } from '../componentes/InterruptorFase.tsx';
+import { CabeceraVista } from '../componentes/CabeceraVista.tsx';
+import { CadenaMatriz } from '../componentes/CadenaMatriz.tsx';
 import { ListaRiesgos } from '../componentes/ListaRiesgos.tsx';
 import { MapaCalor } from '../componentes/MapaCalor.tsx';
-import { Matriz } from '../componentes/Matriz.tsx';
-import { PanelEvidencia } from '../componentes/PanelEvidencia.tsx';
-import { Icono } from '../componentes/Icono.tsx';
 import type { Ruta } from '../ruta.ts';
-
-function fecha(iso: string): string {
-    const [d, h = ''] = iso.split('T');
-    const [a, m, dia] = (d ?? '').split('-');
-    return `${dia}/${m}/${a} ${h.slice(0, 5)}`;
-}
+import { fechaCorta } from '../utilidades.ts';
 
 function Cifra({ fase }: { readonly fase: Fase }) {
     const nivel = nivelGlobal(fase);
@@ -50,13 +43,9 @@ export function Resumen({ ruta, navegar }: Props) {
     const activos: readonly IdRiesgo[] = riesgo !== null ? [riesgo] : CONTROLES.find((c) => c.id === control)?.riesgos ?? [];
     return (
         <>
-            <header className="vista-cabeza">
-                <div>
-                    <h1 className="vista-cabeza__titulo">Riesgo de confidencialidad</h1>
-                    <p className="vista-cabeza__sub">Cooperativa Financiera del Valle (ficticia) · evaluación {fase === 'antes' ? 'antes' : 'después'} de los controles · {fecha(EVALUACION[fase].fecha)}</p>
-                </div>
-                <InterruptorFase fase={fase} alCambiar={(f) => navegar({ fase: f })} />
-            </header>
+            <CabeceraVista titulo="Riesgo de confidencialidad" fase={fase} alCambiarFase={(f) => navegar({ fase: f })}>
+                <p className="vista-cabeza__sub">Cooperativa Financiera del Valle (ficticia) · evaluación {fase === 'antes' ? 'antes' : 'después'} de los controles · {fechaCorta(EVALUACION[fase].fecha)}</p>
+            </CabeceraVista>
             <section className="historia" aria-label="Nivel de riesgo y mapa de calor">
                 <div className="historia__texto">
                     <Cifra fase={fase} />
@@ -64,22 +53,7 @@ export function Resumen({ ruta, navegar }: Props) {
                 </div>
                 <MapaCalor fase={fase} activos={activos} alElegir={elegirRiesgo} />
             </section>
-            <section className="cadena" aria-labelledby="titulo-matriz">
-                <div className="cadena__cabeza">
-                    <h2 id="titulo-matriz" className="seccion-titulo">Matriz de evaluación</h2>
-                    {riesgo !== null && (
-                        <button type="button" className="filtro" onClick={() => navegar({ riesgo: null })}>
-                            Solo {riesgo} · {riesgoPorId(riesgo).nombre} <Icono nombre="cerrar" tamano={14} />
-                            <span className="sr-only">Quitar filtro</span>
-                        </button>
-                    )}
-                    {control === null && <p className="cadena__ayuda">Elige un control para ver el script que lo verifica y la salida real que lo respalda.</p>}
-                </div>
-                <div className={control === null ? 'cadena__cuerpo' : 'cadena__cuerpo cadena__cuerpo--con-panel'}>
-                    <Matriz fase={fase} filtroRiesgo={riesgo} seleccionado={control} alElegir={(id) => navegar({ control: id })} />
-                    {control !== null && <PanelEvidencia fase={fase} control={control} alCerrar={() => navegar({ control: null })} />}
-                </div>
-            </section>
+            <CadenaMatriz ruta={ruta} navegar={navegar} titulo="Matriz de evaluación" />
         </>
     );
 }

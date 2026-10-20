@@ -24,9 +24,10 @@ export interface Ruta {
     readonly fase: Fase;
     readonly control: IdControl | null;
     readonly riesgo: IdRiesgo | null;
+    readonly prueba: string | null;
 }
 
-const RUTA_INICIAL: Ruta = { seccion: 'resumen', fase: 'despues', control: null, riesgo: null };
+const RUTA_INICIAL: Ruta = { seccion: 'resumen', fase: 'despues', control: null, riesgo: null, prueba: null };
 
 function leerHash(hash: string): Ruta {
     const [camino = '', consulta = ''] = hash.replace(/^#\/?/, '').split('?');
@@ -35,13 +36,15 @@ function leerHash(hash: string): Ruta {
     const fase: Fase = p.get('fase') === 'antes' ? 'antes' : 'despues';
     const control = CONTROLES.find((c) => c.id === p.get('control'))?.id ?? null;
     const riesgo = RIESGOS.find((r) => r.id === p.get('riesgo'))?.id ?? null;
-    return { seccion, fase, control, riesgo };
+    const prueba = /^P\d{2}$/.test(p.get('prueba') ?? '') ? p.get('prueba') : null;
+    return { seccion, fase, control, riesgo, prueba };
 }
 
 function escribirHash(r: Ruta): string {
     const p = new URLSearchParams({ fase: r.fase });
     if (r.control !== null) p.set('control', r.control);
     if (r.riesgo !== null) p.set('riesgo', r.riesgo);
+    if (r.prueba !== null) p.set('prueba', r.prueba);
     return `#/${r.seccion}?${p.toString()}`;
 }
 
