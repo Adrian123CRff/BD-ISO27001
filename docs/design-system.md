@@ -90,7 +90,7 @@ Las cifras usan números tabulares cuando se alinean en columnas.
 | Navegación lateral | `componentes/Navegacion.tsx` | Las seis partes del artefacto, metodología y uso de IA; cambio de tema |
 | Interruptor Antes/Después | `componentes/InterruptorFase.tsx` | Grupo de radio; flechas del teclado |
 | Insignia de estado y madurez | `componentes/Estado.tsx` | Ícono + texto + borde |
-| Mapa de calor | `componentes/MapaCalor.tsx` | Marcadores con teclado y tooltip; aro punteado = posición inherente |
+| Mapa de calor | `componentes/MapaCalor.tsx` | Marcadores con teclado y tooltip; aro punteado = posición inherente; varios factores en una celda se acomodan en rejilla dentro de ella (radio 17, 15 o 12 px; objetivo táctil ≥ 28 px) |
 | Lista de factores | `componentes/ListaRiesgos.tsx` | Vista en tabla del mapa y filtro de la matriz |
 | Matriz | `componentes/Matriz.tsx` | Columnas literales del enunciado |
 | Panel de evidencia | `componentes/PanelEvidencia.tsx` | Criterios, script SQL y salida real |

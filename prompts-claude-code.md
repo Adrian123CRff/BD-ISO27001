@@ -251,7 +251,7 @@ Criterios de aceptación: npm run build y npm run lint terminan sin errores ni a
 Entregable: La app funcionando, capturas de cada vista (360 px y escritorio) tomadas con la skill playwright-cli en evidencia/app/, y un commit. Registra este prompt textual en docs/uso-ia.md y actualiza docs/checklist-enunciado.md.
 ```
 
-## Fase 8. Crítica de diseño y accesibilidad
+## Fase 8. Crítica de diseño y accesibilidad · hecha el 20/10/2026
 
 ```
 Usa la skill impeccable para la crítica de diseño y de los textos, fixing-accessibility para WCAG, break-ui para los casos extremos y playwright-cli para comprobar cada corrección en el navegador.

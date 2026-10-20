@@ -1,0 +1,28 @@
+{
+  "color-contrast": {
+    "impacto": "serious",
+    "ayuda": "Elements must meet minimum color contrast ratio thresholds",
+    "donde": [
+      "claro:#/resumen(1)"
+    ],
+    "ejemplo": ".fila--activa > td[data-etiqueta=\"Criterio 0-4\"] > .fila__antes :: contraste 4.14 (#64748b sobre #e0f2fe, 13px); se esperaba 4.5:1"
+  },
+  "landmark-complementary-is-top-level": {
+    "impacto": "moderate",
+    "ayuda": "Aside should not be contained in another landmark",
+    "donde": [
+      "claro:#/resumen(1)",
+      "oscuro:#/resumen(1)"
+    ],
+    "ejemplo": "aside :: el landmark complementario está dentro de otro landmark"
+  },
+  "heading-order": {
+    "impacto": "moderate",
+    "ayuda": "Heading levels should only increase by one",
+    "donde": [
+      "claro:#/observables(1)",
+      "oscuro:#/observables(1)"
+    ],
+    "ejemplo": ".observable__cuerpo > h3 :: orden de encabezados inválido"
+  }
+}

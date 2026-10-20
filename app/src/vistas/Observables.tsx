@@ -34,6 +34,7 @@ export function Observables({ ruta }: { readonly ruta: Ruta }) {
         <>
             <CabeceraVista titulo="4 · Controles observables" enunciado="Lista de 15 controles observables por auditor externo." />
             <p className="parrafo">Cada control se comprueba con una consulta de solo lectura al diccionario de datos, ejecutada como <span className="codigo">ISO_AUDITOR</span>: el mismo privilegio que tendría un auditor externo, que no puede leer los datos de negocio ni modificar nada.</p>
+            <h2 className="seccion-titulo">Los 15 controles del enunciado</h2>
             <ol className="observables">
                 {delEnunciado.map((c, i) => <Item key={c.id} c={c} numero={i + 1} ruta={ruta} />)}
             </ol>

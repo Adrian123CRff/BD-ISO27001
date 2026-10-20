@@ -1,9 +1,10 @@
 // Carga única de los datos del artefacto (regla 3: todo se carga al inicio y no crece). Los resultados vienen de los
 // JSON que generan scripts/evaluar.ps1 y scripts/pruebas.ps1; los scripts SQL y sus salidas se leen de sql/ y
 // evidencia/ tal como están en el repositorio. Todo pasa por validarArtefacto antes de mostrarse (regla 5).
-import { CONTROLES } from './controles.ts';
+import { CONTROLES as CONTROLES_REALES } from './controles.ts';
 import { nivelRiesgo } from './escalas.ts';
-import { RIESGOS } from './riesgos.ts';
+import { conjuntoExtremo, type Conjunto } from './extremo.ts';
+import { RIESGOS as RIESGOS_REALES } from './riesgos.ts';
 import { TAREAS } from './tareas.ts';
 import type { Bateria, Control, Evaluacion, IdControl, IdRiesgo, ResultadoControl, Riesgo, Valor15 } from './tipos.ts';
 import { validarArtefacto } from './validar.ts';
@@ -15,14 +16,22 @@ import pruebasDespues from './pruebas-despues.json';
 export type Fase = 'antes' | 'despues';
 
 // Los JSON se validan campo por campo en validarArtefacto; aquí solo se les da su tipo declarado.
-export const EVALUACION: Readonly<Record<Fase, Evaluacion>> = {
-    antes: evaluacionAntes as unknown as Evaluacion,
-    despues: evaluacionDespues as unknown as Evaluacion,
+const REAL: Conjunto = {
+    riesgos: RIESGOS_REALES,
+    controles: CONTROLES_REALES,
+    evaluacion: { antes: evaluacionAntes as unknown as Evaluacion, despues: evaluacionDespues as unknown as Evaluacion },
+    bateria: { antes: pruebasAntes as unknown as Bateria, despues: pruebasDespues as unknown as Bateria },
 };
-export const BATERIA: Readonly<Record<Fase, Bateria>> = {
-    antes: pruebasAntes as unknown as Bateria,
-    despues: pruebasDespues as unknown as Bateria,
-};
+
+// Prueba de casos extremos (break-ui): solo en desarrollo y con ?datos=extremo; en producción esta rama no existe.
+const DATOS: Conjunto = import.meta.env.DEV && new URLSearchParams(window.location.search).get('datos') === 'extremo'
+    ? conjuntoExtremo(REAL)
+    : REAL;
+
+export const RIESGOS: readonly Riesgo[] = DATOS.riesgos;
+export const CONTROLES: readonly Control[] = DATOS.controles;
+export const EVALUACION: Readonly<Record<Fase, Evaluacion>> = DATOS.evaluacion;
+export const BATERIA: Readonly<Record<Fase, Bateria>> = DATOS.bateria;
 
 export const ERRORES_DE_DATOS: readonly string[] = validarArtefacto(
     { riesgos: RIESGOS, tareas: TAREAS, controles: CONTROLES },
@@ -120,4 +129,4 @@ export function riesgoPorId(id: IdRiesgo): Riesgo {
     return r;
 }
 
-export { CONTROLES, RIESGOS, TAREAS };
+export { TAREAS };

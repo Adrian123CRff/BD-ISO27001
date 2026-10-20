@@ -12,7 +12,7 @@ import { Resumen } from './vistas/Resumen.tsx';
 import { Riesgos } from './vistas/Riesgos.tsx';
 import { Tareas } from './vistas/Tareas.tsx';
 import { UsoIA } from './vistas/UsoIA.tsx';
-import { useRuta, type Ruta } from './ruta.ts';
+import { SECCIONES, useRuta, type Ruta } from './ruta.ts';
 
 function temaInicial(): Tema {
     try {
@@ -53,7 +53,11 @@ export default function App() {
         document.documentElement.dataset.tema = tema;
         try { window.localStorage.setItem('tema', tema); } catch { /* preferencia solo de esta sesión */ }
     }, [tema]);
-    useEffect(() => { window.scrollTo(0, 0); }, [ruta.seccion]);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        const titulo = SECCIONES.find((s) => s.id === ruta.seccion)?.titulo ?? '';
+        document.title = `${titulo} · Evaluador de confidencialidad`;
+    }, [ruta.seccion]);
     if (ERRORES_DE_DATOS.length > 0) return <ErroresDeDatos />;
     return (
         <div className="app">

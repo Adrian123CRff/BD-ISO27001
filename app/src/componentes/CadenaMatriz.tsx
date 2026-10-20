@@ -26,6 +26,7 @@ export function CadenaMatriz({ ruta, navegar, titulo }: Props) {
                 )}
                 {control === null && <p className="cadena__ayuda">Elige un control para ver el script que lo verifica y la salida real que lo respalda.</p>}
             </div>
+            <p className="sr-only" aria-live="polite">{control === null ? '' : `Evidencia de ${control} abierta junto a la matriz.`}</p>
             <div className={control === null ? 'cadena__cuerpo' : 'cadena__cuerpo cadena__cuerpo--con-panel'}>
                 <Matriz fase={fase} filtroRiesgo={riesgo} seleccionado={control} alElegir={(id) => navegar({ control: id })} />
                 {control !== null && <PanelEvidencia fase={fase} control={control} alCerrar={() => navegar({ control: null })} />}

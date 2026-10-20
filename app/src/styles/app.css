@@ -76,6 +76,7 @@ button { font: inherit; color: inherit; }
 .marcador__zona { fill: transparent; }
 .marcador__punto { fill: var(--marcador); stroke: var(--superficie); stroke-width: 3; }
 .marcador__texto { fill: var(--marcador-texto); font: 500 14px var(--fuente-codigo); pointer-events: none; }
+.marcador__texto--chico { font-size: 11px; }
 .marcador--activo .marcador__punto, .marcador:focus-visible .marcador__punto { stroke: var(--acento); stroke-width: 4; }
 .mapa__rastro-fondo { stroke: var(--superficie); stroke-width: 5; opacity: 0.7; }
 .mapa__rastro { stroke: var(--marcador); stroke-width: 2; stroke-dasharray: 5 5; }
@@ -104,7 +105,7 @@ button { font: inherit; color: inherit; }
 .fila--activa, .fila--activa:hover { background: var(--acento-suave); box-shadow: inset 3px 0 0 var(--acento); }
 .fila__control { display: block; padding: 0; border: 0; background: none; text-align: left; font-weight: 600; cursor: pointer; }
 .fila__control:hover { text-decoration: underline; }
-.fila__antes { display: block; font-size: var(--texto-xs); color: var(--tinta-3); margin-top: 2px; }
+.fila__antes { display: block; font-size: var(--texto-xs); color: var(--tinta-2); margin-top: 2px; }
 .fila__evidencia { color: var(--acento); font-weight: 500; }
 .etiqueta { display: inline-block; margin-top: 4px; padding: 0 6px; border: 1px solid var(--borde-fuerte); border-radius: 4px; font-size: var(--texto-xs); color: var(--tinta-2); }
 
@@ -195,7 +196,7 @@ a { color: var(--acento); }
 .observable__cuerpo { display: grid; gap: var(--e-2); min-width: 0; flex: 1; }
 .observable__titulo { font: 600 var(--texto-l) / 1.3 var(--fuente-titulo); }
 .observable__pie { display: flex; flex-wrap: wrap; align-items: center; gap: var(--e-3); color: var(--tinta-2); font-size: var(--texto-s); }
-.observable__estados { display: inline-flex; align-items: center; gap: var(--e-1); }
+.observable__estados { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--e-1); }
 .detalle { background: var(--superficie); border: 1px solid var(--borde); border-radius: var(--radio-m); padding: var(--e-3) var(--e-4); }
 .detalle summary { cursor: pointer; font-weight: 700; min-height: 32px; }
 .detalle[open] { display: grid; gap: var(--e-3); }
@@ -227,6 +228,7 @@ a { color: var(--acento); }
   .rejilla-2, .phva { grid-template-columns: minmax(0, 1fr); }
   .rejilla-tarjetas { grid-template-columns: minmax(0, 1fr); }
   .escala__fila { grid-template-columns: minmax(0, 1fr); gap: var(--e-1); }
+  .observable { flex-direction: column; gap: var(--e-2); }
 }
 
 /* Movimiento reducido: los marcadores saltan a su posición sin animación. */

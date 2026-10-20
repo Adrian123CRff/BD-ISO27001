@@ -23,7 +23,7 @@ function PanelPrueba({ p, fase, alCerrar }: { readonly p: ResultadoPrueba; reado
         return () => window.removeEventListener('keydown', conEscape);
     }, [p.id, alCerrar]);
     return (
-        <aside ref={ref} tabIndex={-1} className="panel panel--cajon" aria-label={`Prueba ${p.id}`}>
+        <section ref={ref} tabIndex={-1} className="panel panel--cajon" aria-label={`Prueba ${p.id}`}>
             <header className="panel__cabeza">
                 <div>
                     <p className="panel__meta">{p.id} · {p.control} · {p.riesgo} · ejecutada como {p.ejecutadoComo}</p>
@@ -42,7 +42,7 @@ function PanelPrueba({ p, fase, alCerrar }: { readonly p: ResultadoPrueba; reado
             <pre className="codigo-bloque" tabIndex={0}>{ev.script}</pre>
             <p className="panel__ruta codigo">{ev.rutaSalida}</p>
             <pre className="codigo-bloque" tabIndex={0}>{ev.salida}</pre>
-        </aside>
+        </section>
     );
 }
 
@@ -58,7 +58,7 @@ function Tabla({ fase, elegida, alElegir }: { readonly fase: Fase; readonly eleg
                     {BATERIA[fase].pruebas.map((p) => (
                         <tr key={p.id} className={elegida === p.id ? 'fila fila--activa' : 'fila'} onClick={() => alElegir(p.id)}>
                             <td data-etiqueta="ID">
-                                <button type="button" className="fila__control codigo" aria-pressed={elegida === p.id}
+                                <button type="button" className="fila__control codigo" data-prueba={p.id} aria-pressed={elegida === p.id}
                                         onClick={(e) => { e.stopPropagation(); alElegir(p.id); }}>{p.id}</button>
                                 <span className="tabla__nota codigo">{p.control}</span>
                             </td>
@@ -79,7 +79,12 @@ export function Bateria({ ruta, navegar }: { readonly ruta: Ruta; readonly naveg
     const pruebas = BATERIA[ruta.fase].pruebas;
     const elegida = pruebas.find((p) => p.id === ruta.prueba);
     const pasan = pruebas.filter((p) => p.paso).length;
-    const cerrar = useCallback(() => navegar({ prueba: null }), [navegar]);
+    const abierta = ruta.prueba;
+    // Al cerrar el cajón, el foco vuelve a la prueba que lo abrió.
+    const cerrar = useCallback(() => {
+        navegar({ prueba: null });
+        requestAnimationFrame(() => document.querySelector<HTMLButtonElement>(`button[data-prueba="${abierta ?? ''}"]`)?.focus());
+    }, [navegar, abierta]);
     return (
         <>
             <CabeceraVista titulo="6 · Batería de pruebas" fase={ruta.fase} alCambiarFase={(f) => navegar({ fase: f })}

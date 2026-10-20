@@ -15,17 +15,17 @@ export function PanelEvidencia({ fase, control, alCerrar }: Props) {
     const c = CONTROLES.find((x) => x.id === control);
     if (c === undefined) {
         return (
-            <aside className="panel panel--vacio" aria-label="Evidencia">
+            <section className="panel panel--vacio" aria-label="Evidencia">
                 <Icono nombre="codigo" tamano={28} />
                 <p>Elige un control de la matriz para ver el script que lo verifica y la salida real que lo respalda.</p>
-            </aside>
+            </section>
         );
     }
     const r = resultadoDe(c.id, fase);
     const antes = resultadoDe(c.id, 'antes');
     const ev = evidenciaDe(c, fase);
     return (
-        <aside className="panel" aria-label={`Evidencia de ${c.id}`}>
+        <section className="panel" aria-label={`Evidencia de ${c.id}`}>
             <header className="panel__cabeza">
                 <div>
                     <p className="panel__meta">{c.id} · {c.tema}{c.complementario ? ' · complementario' : ''}</p>
@@ -53,6 +53,6 @@ export function PanelEvidencia({ fase, control, alCerrar }: Props) {
             <pre className="codigo-bloque" tabIndex={0}>{ev.script}</pre>
             <p className="panel__ruta codigo">{ev.rutaSalida}</p>
             <pre className="codigo-bloque" tabIndex={0}>{ev.salida}</pre>
-        </aside>
+        </section>
     );
 }

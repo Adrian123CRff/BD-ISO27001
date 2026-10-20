@@ -21,16 +21,29 @@ const xCelda = (p: number): number => IZQ + (p - 1) * (CELDA + HUECO);
 const yCelda = (i: number): number => SUP + (5 - i) * (CELDA + HUECO);
 const etiqueta = (id: IdRiesgo): string => id.slice(-2);
 
-interface Punto { readonly x: number; readonly y: number }
+interface Punto { readonly x: number; readonly y: number; readonly r: number }
 
-// Reparte los marcadores que caen en la misma celda para que no se tapen (como máximo 2 por celda en estos datos).
+// Rejilla dentro de la celda según cuántos factores comparten valores: 1-2 en fila, 3-4 en 2×2, 5 en 3+2 (máximo
+// posible con 5 factores). Así ningún marcador sale de su celda, que haría leer un valor equivocado (prueba break-ui).
+function rejilla(n: number): { readonly columnas: number; readonly r: number } {
+    if (n <= 2) return { columnas: Math.max(n, 1), r: 17 };
+    if (n <= 4) return { columnas: 2, r: 15 };
+    return { columnas: 3, r: 12 };
+}
+
 function ubicar(coords: readonly { readonly id: IdRiesgo; readonly i: number; readonly p: number }[]): Map<IdRiesgo, Punto> {
     const puntos = new Map<IdRiesgo, Punto>();
     for (const c of coords) {
         const vecinos = coords.filter((o) => o.i === c.i && o.p === c.p);
         const k = vecinos.findIndex((o) => o.id === c.id);
-        const dx = (k - (vecinos.length - 1) / 2) * 38;
-        puntos.set(c.id, { x: xCelda(c.p) + CELDA / 2 + dx, y: yCelda(c.i) + CELDA / 2 });
+        const { columnas, r } = rejilla(vecinos.length);
+        const paso = 2 * r + 4;
+        const fila = Math.floor(k / columnas);
+        const filas = Math.ceil(vecinos.length / columnas);
+        const enFila = Math.min(columnas, vecinos.length - fila * columnas);
+        const dx = ((k % columnas) - (enFila - 1) / 2) * paso;
+        const dy = (fila - (filas - 1) / 2) * paso;
+        puntos.set(c.id, { x: xCelda(c.p) + CELDA / 2 + dx, y: yCelda(c.i) + CELDA / 2 + dy, r });
     }
     return puntos;
 }
@@ -80,9 +93,9 @@ function Marcadores({ actuales, activos, alElegir, alSenalar }: PropsMarcadores)
                onClick={() => alElegir(r.id)} onKeyDown={(e) => conTeclado(e, r.id)}
                onMouseEnter={() => alSenalar(r.id)} onMouseLeave={() => alSenalar(null)}
                onFocus={() => alSenalar(r.id)} onBlur={() => alSenalar(null)}>
-                <circle r={22} className="marcador__zona" />
-                <circle r={17} className="marcador__punto" />
-                <text y={5} textAnchor="middle" className="marcador__texto">{etiqueta(r.id)}</text>
+                <circle r={p.r + 2} className="marcador__zona" />
+                <circle r={p.r} className="marcador__punto" />
+                <text y={p.r < 15 ? 4 : 5} textAnchor="middle" className={p.r < 15 ? 'marcador__texto marcador__texto--chico' : 'marcador__texto'}>{etiqueta(r.id)}</text>
             </g>
         );
     });
@@ -101,7 +114,7 @@ function Rastros({ fase, actuales }: { readonly fase: Fase; readonly actuales: M
                     <g key={r.id}>
                         <line x1={a.x} y1={a.y} x2={b.x} y2={b.y} className="mapa__rastro-fondo" />
                         <line x1={a.x} y1={a.y} x2={b.x} y2={b.y} className="mapa__rastro" />
-                        <circle cx={a.x} cy={a.y} r={15} className="mapa__fantasma" />
+                        <circle cx={a.x} cy={a.y} r={a.r - 2} className="mapa__fantasma" />
                     </g>
                 );
             })}
