@@ -34,5 +34,8 @@ materiales/clase/
 .claude/skills/
 .agents/
 
+# Exploración de diseño descartada (bocetos de la skill impeccable)
+.impeccable/
+
 # Clon duplicado del repositorio creado dentro de la carpeta
 BD-ISO27001/

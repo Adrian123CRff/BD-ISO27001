@@ -198,7 +198,7 @@ Criterios de aceptación: Los 7 temas del enunciado aparecen con su título lite
 Entregable: docs/marco-teorico-esquema.md. Registra este prompt textual en docs/uso-ia.md y actualiza docs/checklist-enunciado.md.
 ```
 
-## Fase 6. Sistema de diseño de la app
+## Fase 6. Sistema de diseño de la app · hecha el 20/10/2026 (con UI UX Pro Max)
 
 ```
 Usa la skill impeccable y, para elegir paleta y tipografía, la skill ui-ux-pro-max.

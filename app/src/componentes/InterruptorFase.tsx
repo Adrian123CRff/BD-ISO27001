@@ -1,0 +1,28 @@
+// Interruptor Antes / Después: cambia toda la pantalla a la vez (cifras, mapa de calor, matriz y evidencia).
+// Grupo de radio accesible: Tab entra al grupo, las flechas cambian de opción.
+import type { KeyboardEvent } from 'react';
+import type { Fase } from '../datos/cargar.ts';
+
+const OPCIONES: readonly { readonly fase: Fase; readonly texto: string }[] = [
+    { fase: 'antes', texto: 'Antes' },
+    { fase: 'despues', texto: 'Después' },
+];
+
+export function InterruptorFase({ fase, alCambiar }: { readonly fase: Fase; readonly alCambiar: (f: Fase) => void }) {
+    const conTeclado = (e: KeyboardEvent<HTMLDivElement>): void => {
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+            e.preventDefault();
+            alCambiar(fase === 'antes' ? 'despues' : 'antes');
+        }
+    };
+    return (
+        <div className="fase" role="radiogroup" aria-label="Fase de la evaluación" onKeyDown={conTeclado}>
+            {OPCIONES.map((o) => (
+                <button key={o.fase} type="button" role="radio" aria-checked={fase === o.fase}
+                        tabIndex={fase === o.fase ? 0 : -1} className="fase__opcion" onClick={() => alCambiar(o.fase)}>
+                    {o.texto}
+                </button>
+            ))}
+        </div>
+    );
+}

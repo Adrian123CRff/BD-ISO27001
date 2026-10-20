@@ -1,0 +1,129 @@
+/* Tokens del sistema de diseño (docs/design-system.md). Los componentes usan solo estos nombres, nunca colores
+   sueltos. Base "institucional clara" de UI UX Pro Max (sector público, alto contraste); tipografía Lexend +
+   Source Sans 3 (legibles proyectadas) y Fira Code para códigos, SQL y salidas. Contraste de texto >= 4.5:1. */
+@import '@fontsource/lexend/500.css';
+@import '@fontsource/lexend/600.css';
+@import '@fontsource/source-sans-3/400.css';
+@import '@fontsource/source-sans-3/600.css';
+@import '@fontsource/source-sans-3/700.css';
+@import '@fontsource/fira-code/400.css';
+@import '@fontsource/fira-code/500.css';
+
+:root {
+  color-scheme: light;
+  /* Superficies */
+  --fondo: #f8fafc;
+  --superficie: #ffffff;
+  --superficie-2: #eef2f6;
+  --navegacion: #0f172a;
+  --navegacion-activa: rgba(255, 255, 255, 0.14);
+  /* Tinta */
+  --tinta: #0f172a;
+  --tinta-2: #475569;
+  --tinta-3: #64748b;
+  --tinta-sobre-oscuro: #ffffff;
+  /* Bordes */
+  --borde: #e2e8f0;
+  --borde-fuerte: #cbd5e1;
+  /* Acción y foco */
+  --acento: #0369a1;
+  --acento-suave: #e0f2fe;
+  --foco: #0369a1;
+  /* Estados del enunciado (siempre con ícono y texto, nunca solo color) */
+  --cumple: #047857;
+  --parcial: #b45309;
+  --no-cumple: #b91c1c;
+  /* Nivel de riesgo 1-5: un solo tono, claro → oscuro (validado con el script de dataviz) */
+  --riesgo-1: #86b6ef;
+  --riesgo-2: #5598e7;
+  --riesgo-3: #2a78d6;
+  --riesgo-4: #1c5cab;
+  --riesgo-5: #104281;
+  --marcador: #0f172a;
+  --marcador-texto: #ffffff;
+  /* Tipografía */
+  --fuente-titulo: 'Lexend', system-ui, sans-serif;
+  --fuente-texto: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --fuente-codigo: 'Fira Code', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  --texto-xs: 0.8125rem;
+  --texto-s: 0.875rem;
+  --texto-m: 1rem;
+  --texto-l: 1.125rem;
+  --texto-xl: 1.375rem;
+  --texto-2xl: 1.75rem;
+  --texto-hero: 4rem;
+  /* Espacio (densidad de tablero) */
+  --e-1: 4px;
+  --e-2: 8px;
+  --e-3: 12px;
+  --e-4: 16px;
+  --e-5: 24px;
+  --e-6: 32px;
+  --e-7: 48px;
+  /* Forma y movimiento */
+  --radio-s: 6px;
+  --radio-m: 10px;
+  --sombra: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --mov-rapido: 160ms;
+  --mov-medio: 600ms;
+  --curva: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Modo oscuro: pasos propios, no una inversión automática. Gana el interruptor de la app (data-tema). */
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-tema='claro'])) {
+    color-scheme: dark;
+    --fondo: #0b1220;
+    --superficie: #111827;
+    --superficie-2: #1f2937;
+    --navegacion: #020617;
+    --navegacion-activa: rgba(255, 255, 255, 0.12);
+    --tinta: #f1f5f9;
+    --tinta-2: #cbd5e1;
+    --tinta-3: #94a3b8;
+    --borde: #1f2937;
+    --borde-fuerte: #334155;
+    --acento: #38bdf8;
+    --acento-suave: rgba(56, 189, 248, 0.14);
+    --foco: #38bdf8;
+    --cumple: #34d399;
+    --parcial: #fbbf24;
+    --no-cumple: #f87171;
+    --riesgo-1: #184f95;
+    --riesgo-2: #256abf;
+    --riesgo-3: #3987e5;
+    --riesgo-4: #6da7ec;
+    --riesgo-5: #9ec5f4;
+    --marcador: #f1f5f9;
+    --marcador-texto: #0f172a;
+    --sombra: none;
+  }
+}
+
+:root[data-tema='oscuro'] {
+  color-scheme: dark;
+  --fondo: #0b1220;
+  --superficie: #111827;
+  --superficie-2: #1f2937;
+  --navegacion: #020617;
+  --navegacion-activa: rgba(255, 255, 255, 0.12);
+  --tinta: #f1f5f9;
+  --tinta-2: #cbd5e1;
+  --tinta-3: #94a3b8;
+  --borde: #1f2937;
+  --borde-fuerte: #334155;
+  --acento: #38bdf8;
+  --acento-suave: rgba(56, 189, 248, 0.14);
+  --foco: #38bdf8;
+  --cumple: #34d399;
+  --parcial: #fbbf24;
+  --no-cumple: #f87171;
+  --riesgo-1: #184f95;
+  --riesgo-2: #256abf;
+  --riesgo-3: #3987e5;
+  --riesgo-4: #6da7ec;
+  --riesgo-5: #9ec5f4;
+  --marcador: #f1f5f9;
+  --marcador-texto: #0f172a;
+  --sombra: none;
+}
