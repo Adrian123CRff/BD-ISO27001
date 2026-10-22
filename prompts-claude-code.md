@@ -275,7 +275,7 @@ Restricciones: No reescribas el historial de git sin preguntarme primero. Si enc
 Entregable: La lista de hallazgos verificados, las correcciones aplicadas y un commit. Registra este prompt textual en docs/uso-ia.md.
 ```
 
-## Fase 10. Informe final
+## Fase 10. Informe final · hecha el 22/10/2026
 
 ```
 Usa la skill pdf para generar el PDF.

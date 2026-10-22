@@ -17,10 +17,18 @@ Motor: Oracle Database 21c XE (Docker). Artefacto: React + Vite + TypeScript.
 
 ## Puesta en marcha
 
-1. Crear `.env` en la raíz (no se versiona) con `ORACLE_PASSWORD=...` y `APP_USER_PASSWORD=...`.
+1. Crear `.env` en la raíz (no se versiona) con `ORACLE_PASSWORD`, `AUDITOR_PASSWORD`, `LAB_USER_PASSWORD` y
+   `TDE_PASSWORD` (sin comillas, `&`, espacios ni `\`).
 2. `.\scripts\iso-lab.ps1 -Crear` y esperar a que `.\scripts\iso-lab.ps1 -Estado` diga `Base lista: True`.
-   Conexión desde SQL Developer: `localhost`, puerto `1526`, servicio `XEPDB1`.
-3. Ejecutar un script de verificación: `.\scripts\ejecutar-sql.ps1 sql\00-entorno.sql` (la salida queda en `salidas/`).
-4. Artefacto: `cd app`, `npm install`, `npm run dev`.
+   Conexión desde SQL Developer: `localhost`, puerto `1526`, servicio `XEPDB1` (ver `docs/guia-sql-developer.md`).
+3. Ciclo PHVA:
+   - Planificar: `.\scripts\ejecutar-sql.ps1 sql-escenario.sql -Como sys` y `sql-auditor.sql -Como sys`.
+   - Verificar (antes): `.\scripts\evaluar.ps1 -Fase antes` y `.\scripts\pruebas.ps1 -Fase antes`.
+   - Hacer: `.\scripts\corregir.ps1` (C01-C15).
+   - Verificar (después): `.\scripts\pruebas.ps1 -Fase despues` y `.\scripts\evaluar.ps1 -Fase despues`.
+   - Actuar: revisión semanal programada; para adelantarla, `sql\mantenimiento\M02-revision-semanal.sql -Como sys`.
+4. Artefacto: `cd app`, `npm install`, `npm run build` y `npx vite preview` (http://localhost:4173).
+5. Documentos generados desde los datos: `node scripts/generar-artefacto.mts` (`docs/artefacto.md`) y
+   `node scripts/generar-informe.mts` (`docs/informe.md` y `docs/informe.pdf`).
 
-Estado: en preparación. Avance de requisitos en `docs/checklist-enunciado.md`.
+Avance de requisitos en `docs/checklist-enunciado.md`.

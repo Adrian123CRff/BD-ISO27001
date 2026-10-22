@@ -83,26 +83,26 @@ Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
 | ID | Requisito literal | Estado |
 | --- | --- | --- |
 | HM-1 | Motor: Oracle 19c/21c XE | Cumplido: Oracle Database 21c XE 21.3.0.0.0 en el contenedor `iso-lab` (evidencia: `sql/00-entorno.sql`) |
-| HM-2 | Metodología: PHVA (Planificar-Hacer-Verificar-Actuar). | En curso (Planificar: `sql/01-escenario.sql`; Hacer: `scripts/corregir.ps1`; Verificar: `scripts/evaluar.ps1` y `scripts/pruebas.ps1` antes/después; Actuar: revisión semanal de C14; falta explicarlo en el informe) |
-| HM-3 | Herramientas: SQL Developer | En curso (guía `docs/guia-sql-developer.md`; faltan las capturas en `evidencia/sql-developer/`) |
-| HM-4 | Documentación: APA 7 | En curso (12 referencias en APA 7 en `docs/marco-teorico-esquema.md`, con su estado de verificación) |
-| HM-5 | Repositorio Git institucional | En curso (https://github.com/Adrian123CRff/BD-ISO27001) |
+| HM-2 | Metodología: PHVA (Planificar-Hacer-Verificar-Actuar). | Cumplido: explicada en el informe, sección 7.2 (Planificar: `sql/01-escenario.sql`; Hacer: `scripts/corregir.ps1`; Verificar: `scripts/evaluar.ps1` y `scripts/pruebas.ps1` antes/después; Actuar: revisión semanal de C14 y `sql/mantenimiento/M02-revision-semanal.sql`) |
+| HM-3 | Herramientas: SQL Developer | En curso: guía `docs/guia-sql-developer.md` y lugar en el informe (sección 7.3, que inserta las capturas solas al regenerarlo); faltan las capturas del estudiante en `evidencia/sql-developer/` |
+| HM-4 | Documentación: APA 7 | En curso: 12 referencias en APA 7 en el informe, sección 12; falta que el estudiante confirme los títulos de ISO/IEC 27001 y 27002 y el DOI de Saltzer y Schroeder |
+| HM-5 | Repositorio Git institucional | Cumplido: https://github.com/Adrian123CRff/BD-ISO27001 (publicado el 22/10/2026) |
 | HM-6 | Video explicativo 5 minutos | Pendiente |
 
 ## Uso de IA (sección 8): obligatoria
 
 | ID | Requisito literal | Estado |
 | --- | --- | --- |
-| IA-1 | Incluir en el informe una sección con la tabla: Herramienta IA \| Prompt Exacto Utilizado \| Aporte de la IA \| Validación / Corrección del Estudiante \| Fuente Verificada | En curso (`docs/uso-ia.md`) |
-| IA-2 | Declaración Jurada: "Yo, [Nombre del estudiante], declaro que todo contenido generado con IA ha sido declarado en la tabla anterior, validado contra fuentes oficiales (ISO, documentación del motor de BD) y que asumo responsabilidad por su veracidad. Entiendo que omitir esta declaración constituye falta grave." | En curso (falta firma) |
+| IA-1 | Incluir en el informe una sección con la tabla: Herramienta IA \| Prompt Exacto Utilizado \| Aporte de la IA \| Validación / Corrección del Estudiante \| Fuente Verificada | Cumplido: informe, sección 11, con las cinco columnas literales, generada desde `docs/uso-ia.md`; la columna de validación la completa el estudiante |
+| IA-2 | Declaración Jurada: "Yo, [Nombre del estudiante], declaro que todo contenido generado con IA ha sido declarado en la tabla anterior, validado contra fuentes oficiales (ISO, documentación del motor de BD) y que asumo responsabilidad por su veracidad. Entiendo que omitir esta declaración constituye falta grave." | En curso: texto literal en el informe, sección 11, con el nombre del estudiante; falta la firma |
 
 ## Entregables (sección 10)
 
 | ID | Entregable literal | Estado |
 | --- | --- | --- |
-| EN-1 | Informe PDF con artefacto (o link a artefacto interactivo) | Pendiente |
+| EN-1 | Informe PDF con artefacto (o link a artefacto interactivo) | En curso: `docs/informe.pdf` (34 páginas) con el artefacto completo en la sección 6 y el enlace al código; faltan la introducción, el marco teórico, el análisis y las conclusiones que redacta el estudiante, y el enlace al video |
 | EN-2 | Scripts .sql de verificación | Cumplido: `sql/verificacion` (18), `sql/correccion` (15) y `sql/pruebas` (19), ejecutados en una corrida limpia con su salida en `evidencia/` |
-| EN-3 | Repositorio Git | En curso (https://github.com/Adrian123CRff/BD-ISO27001) |
+| EN-3 | Repositorio Git | Cumplido: https://github.com/Adrian123CRff/BD-ISO27001 |
 | EN-4 | Video 5 minutos | Pendiente |
 | EN-5 | Tabla de uso de IA firmada | Pendiente |
 
