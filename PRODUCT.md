@@ -41,7 +41,7 @@ el script y la salida que la producen.
 - Contenido obligatorio (sección 6 del enunciado): tabla de riesgos R-CONF-01 a 05 con impacto y probabilidad; tabla de
   tareas del DBA; mapeo de controles ISO con implementación sugerida y evidencia observable; lista de 15 controles
   observables por auditor externo; matriz (Tarea | Riesgo | Control | Criterio 0-4 | Evidencia | Estado); batería de
-  pruebas (ID, Tipo, Procedimiento, Resultado esperado, Herramienta). Además, metodología PHVA y uso de IA.
+  pruebas (ID, Tipo, Procedimiento, Resultado esperado, Herramienta). Además, metodología PHVA. El uso de IA (sección 8) va en el informe, no en el artefacto.
 - Datos: `app/src/datos/` (dominio tipado y JSON generados por `scripts/evaluar.ps1` y `scripts/pruebas.ps1`); scripts
   en `sql/` y salidas en `evidencia/`. Nada se escribe a mano en los componentes.
 - Reglas de código: `docs/reglas-de-codigo.md` (Power of 10 adaptadas): TypeScript estricto, funciones cortas, sin

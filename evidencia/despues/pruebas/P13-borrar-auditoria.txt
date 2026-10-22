@@ -1,4 +1,4 @@
--- Evidencia: P13-borrar-auditoria.sql | ejecutado como usuario:SOPORTE | 2026-10-20 11:20:34
+-- Evidencia: P13-borrar-auditoria.sql | ejecutado como usuario:SOPORTE | 2026-10-22 10:02:51
 ERROR:
 ORA-28000: The account is locked.
 

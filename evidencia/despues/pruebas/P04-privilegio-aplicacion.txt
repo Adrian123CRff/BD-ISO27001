@@ -1,4 +1,4 @@
--- Evidencia: P04-privilegio-aplicacion.sql | ejecutado como usuario:APP_WEB | 2026-10-20 11:20:19
+-- Evidencia: P04-privilegio-aplicacion.sql | ejecutado como usuario:APP_WEB | 2026-10-22 10:02:33
 create user intruso identified by "Desechable#Prueba2026"
 *
 ERROR at line 1:

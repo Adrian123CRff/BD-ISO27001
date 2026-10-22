@@ -11,7 +11,6 @@ import { Observables } from './vistas/Observables.tsx';
 import { Resumen } from './vistas/Resumen.tsx';
 import { Riesgos } from './vistas/Riesgos.tsx';
 import { Tareas } from './vistas/Tareas.tsx';
-import { UsoIA } from './vistas/UsoIA.tsx';
 import { SECCIONES, useRuta, type Ruta } from './ruta.ts';
 
 function temaInicial(): Tema {
@@ -42,7 +41,6 @@ function Vista({ ruta, navegar }: { readonly ruta: Ruta; readonly navegar: (c: P
         case 'matriz': return <MatrizVista ruta={ruta} navegar={navegar} />;
         case 'pruebas': return <Bateria ruta={ruta} navegar={navegar} />;
         case 'metodologia': return <Metodologia />;
-        case 'ia': return <UsoIA />;
     }
 }
 

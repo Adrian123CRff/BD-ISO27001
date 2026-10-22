@@ -1,4 +1,4 @@
--- Evidencia: V10-A8.10-eliminacion.sql | ejecutado como auditor | 2026-10-20 11:20:52
+-- Evidencia: V10-A8.10-eliminacion.sql | ejecutado como auditor | 2026-10-22 10:03:10
 ### Evidencia: papelera de reciclaje (DBA_RECYCLEBIN) de los esquemas de negocio
 ### Evidencia: tarea programada de purga
 

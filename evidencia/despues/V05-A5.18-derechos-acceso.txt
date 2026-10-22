@@ -1,14 +1,14 @@
--- Evidencia: V05-A5.18-derechos-acceso.sql | ejecutado como auditor | 2026-10-20 11:20:47
+-- Evidencia: V05-A5.18-derechos-acceso.sql | ejecutado como auditor | 2026-10-22 10:03:05
 ### Evidencia: estado y último ingreso de las cuentas no mantenidas por Oracle
 
 USERNAME	 ACCOUNT_STATUS       ULTIMO_INGRESO
 ---------------- -------------------- --------------------
-APP_WEB 	 OPEN		      2026-10-20 17:20
-DEV_USER	 OPEN		      2026-10-20 17:20
+APP_WEB 	 OPEN		      2026-10-22 16:02
+DEV_USER	 OPEN		      2026-10-22 16:02
 FINANZAS	 LOCKED 	      (nunca)
 FINANZAS_DEV	 LOCKED 	      (nunca)
-ISO_AUDITOR	 OPEN		      2026-10-20 17:20
-JPEREZ		 OPEN		      2026-10-20 17:20
+ISO_AUDITOR	 OPEN		      2026-10-22 16:03
+JPEREZ		 OPEN		      2026-10-22 16:02
 MROJAS		 LOCKED 	      2026-10-20 17:18
 OPS$ORACLE	 OPEN		      (nunca)
 PDBADMIN	 LOCKED 	      (nunca)

@@ -1,0 +1,20 @@
+-- Evidencia: M02-revision-semanal.sql | ejecutado como sys | 2026-10-22 10:02:20
+
+PL/SQL procedure successfully completed.
+
+
+ID_REVISION FECHA		 INTENTOS_FALLIDOS ACCESOS_DENEGADOS LECTURAS_CLIENTES CAMBIOS_PRIVILEGIOS
+----------- -------------------- ----------------- ----------------- ----------------- -------------------
+	  1 2026-10-20 17:20			 0		   0		     0			 0
+	  2 2026-10-22 16:02			10		   1		     2			 1
+
+2 rows selected.
+
+
+FECHA		     FILAS_REALES
+-------------------- ------------
+2026-10-22 16:02		0
+
+1 row selected.
+
+=== Revisión semanal ejecutada ===

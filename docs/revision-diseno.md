@@ -65,7 +65,7 @@ de la batería cortadas por el panel (ahora cajón lateral) y un enlace "Saltar 
 | B3 | Los bloques de código desplazables se pueden enfocar pero no tienen nombre propio; la ruta del archivo está justo encima | `aria-label` con la ruta del archivo |
 | B4 | En móvil las tablas se muestran como tarjetas y los lectores de pantalla pierden la semántica de tabla (cada dato conserva su etiqueta visible) | Aceptable; alternativa: `role="table"` explícito en el modo tarjeta |
 | B5 | El nivel de cada celda del mapa solo está en su `<title>` (no alcanzable con teclado) | La leyenda y la lista de factores ya dan la misma información; no es necesario |
-| B6 | La vista Uso de IA es muy larga (17 registros) | Índice o filtro por fecha |
+| B6 | ~~La vista Uso de IA es muy larga (17 registros)~~ | Resuelto el 22/10/2026: la vista se quitó del artefacto; el uso de IA va solo en el informe (sección 8 del enunciado) |
 | B7 | Las capturas de `evidencia/app/` pesan unos 10 MB | Comprimirlas a WebP si el tamaño del repositorio importa |
 
 ## Textos

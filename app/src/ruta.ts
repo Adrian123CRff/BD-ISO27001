@@ -14,7 +14,6 @@ export const SECCIONES = [
     { id: 'matriz', titulo: '5 · Matriz de evaluación' },
     { id: 'pruebas', titulo: '6 · Batería de pruebas' },
     { id: 'metodologia', titulo: 'Metodología PHVA' },
-    { id: 'ia', titulo: 'Uso de IA' },
 ] as const;
 
 export type IdSeccion = (typeof SECCIONES)[number]['id'];

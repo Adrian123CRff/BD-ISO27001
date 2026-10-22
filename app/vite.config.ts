@@ -8,11 +8,11 @@ export default defineConfig({
   plugins: [react()],
   base: './',
   // Solo lo que la app lee: nunca toda la carpeta (materiales/clase/ y salidas/ no deben quedar al alcance del servidor).
-  server: { fs: { allow: ['.', '../sql', '../evidencia', '../docs'] } },
+  server: { fs: { allow: ['.', '../sql', '../evidencia'] } },
   // El texto de los scripts y de su evidencia va en su propio fragmento, separado del código de la app.
   build: {
     rolldownOptions: {
-      output: { codeSplitting: { groups: [{ name: 'evidencia', test: /[\\/](sql|evidencia|docs)[\\/]/ }] } },
+      output: { codeSplitting: { groups: [{ name: 'evidencia', test: /[\\/](sql|evidencia)[\\/]/ }] } },
     },
   },
 })

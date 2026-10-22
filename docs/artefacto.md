@@ -116,7 +116,7 @@ Complementarios (tareas "cifrado TDE" y "parcheo"):
 
 ## 5. Matriz de evaluación (Tarea | Riesgo | Control | Criterio 0-4 | Evidencia | Estado)
 
-Antes: 2026-10-20T11:18:03 · Después: 2026-10-20T11:21:00 · Oracle Database 21c Express Edition 21.3.0.0.0 (contenedor iso-lab, XEPDB1) · Ejecutado como ISO_AUDITOR (solo lectura del diccionario).
+Antes: 2026-10-20T11:18:03 · Después: 2026-10-22T10:03:19 · Oracle Database 21c Express Edition 21.3.0.0.0 (contenedor iso-lab, XEPDB1) · Ejecutado como ISO_AUDITOR (solo lectura del diccionario).
 
 | Tarea | Riesgo | Control | Criterio 0-4 (antes → después) | Evidencia | Estado (antes → después) |
 | --- | --- | --- | --- | --- | --- |

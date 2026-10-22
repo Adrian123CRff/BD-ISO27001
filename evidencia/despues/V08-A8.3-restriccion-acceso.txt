@@ -1,4 +1,4 @@
--- Evidencia: V08-A8.3-restriccion-acceso.sql | ejecutado como auditor | 2026-10-20 11:20:49
+-- Evidencia: V08-A8.3-restriccion-acceso.sql | ejecutado como auditor | 2026-10-22 10:03:08
 ### Evidencia: políticas VPD (DBA_POLICIES) sobre FINANZAS
 
 OBJECT_OWNER OBJECT_NAME    POLICY_NAME 	     FUNCTION			  ENABLE

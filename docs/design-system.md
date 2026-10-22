@@ -87,7 +87,7 @@ Las cifras usan números tabulares cuando se alinean en columnas.
 
 | Componente | Archivo | Notas |
 | --- | --- | --- |
-| Navegación lateral | `componentes/Navegacion.tsx` | Las seis partes del artefacto, metodología y uso de IA; cambio de tema |
+| Navegación lateral | `componentes/Navegacion.tsx` | Las seis partes del artefacto y la metodología; cambio de tema (el uso de IA va solo en el informe) |
 | Interruptor Antes/Después | `componentes/InterruptorFase.tsx` | Grupo de radio; flechas del teclado |
 | Insignia de estado y madurez | `componentes/Estado.tsx` | Ícono + texto + borde |
 | Mapa de calor | `componentes/MapaCalor.tsx` | Marcadores con teclado y tooltip; aro punteado = posición inherente; varios factores en una celda se acomodan en rejilla dentro de ella (radio 17, 15 o 12 px; objetivo táctil ≥ 28 px) |

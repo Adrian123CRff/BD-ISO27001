@@ -1,4 +1,4 @@
--- Evidencia: V03-A5.16-identidades.sql | ejecutado como auditor | 2026-10-20 11:20:45
+-- Evidencia: V03-A5.16-identidades.sql | ejecutado como auditor | 2026-10-22 10:03:03
 ### Evidencia: cuentas no mantenidas por Oracle
 
 USERNAME	 ACCOUNT_STATUS       CREATED

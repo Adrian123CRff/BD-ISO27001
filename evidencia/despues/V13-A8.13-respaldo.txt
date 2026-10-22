@@ -1,4 +1,4 @@
--- Evidencia: V13-A8.13-respaldo.sql | ejecutado como auditor | 2026-10-20 11:20:55
+-- Evidencia: V13-A8.13-respaldo.sql | ejecutado como auditor | 2026-10-22 10:03:14
 ### Evidencia: configuración de RMAN (V$RMAN_CONFIGURATION, vacía = valores por defecto)
 
 NAME				   VALUE

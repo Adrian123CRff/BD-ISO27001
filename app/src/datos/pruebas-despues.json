@@ -1,6 +1,6 @@
 {
   "fase": "despues",
-  "fecha": "2026-10-20T11:20:41",
+  "fecha": "2026-10-22T10:02:59",
   "pruebas": [
     {
       "id": "P01",
@@ -332,7 +332,7 @@
       "script": "P19-proteccion-logs.sh",
       "paso": true,
       "obtenido": [
-        "Revisados: 686 | alcanzables por otros: 0 | con permisos abiertos bajo un directorio cerrado: 0",
+        "Revisados: 889 | alcanzables por otros: 0 | con permisos abiertos bajo un directorio cerrado: 8",
         "RESULTADO: REGISTROS PROTEGIDOS"
       ]
     }

@@ -1,3 +1,3 @@
--- Evidencia: P19-proteccion-logs.sh | 2026-10-20 11:20:41
-Revisados: 686 | alcanzables por otros: 0 | con permisos abiertos bajo un directorio cerrado: 0
+-- Evidencia: P19-proteccion-logs.sh | 2026-10-22 10:02:59
+Revisados: 889 | alcanzables por otros: 0 | con permisos abiertos bajo un directorio cerrado: 8
 RESULTADO: REGISTROS PROTEGIDOS

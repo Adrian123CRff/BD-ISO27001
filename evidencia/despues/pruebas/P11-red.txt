@@ -1,4 +1,4 @@
--- Evidencia: P11-red.sh | 2026-10-20 11:20:33
+-- Evidencia: P11-red.sh | 2026-10-22 10:02:50
 /opt/oracle/homes/OraDBHome21cXE/network/admin/sqlnet.ora:SQLNET.ENCRYPTION_SERVER = REQUIRED
 /opt/oracle/homes/OraDBHome21cXE/network/admin/sqlnet.ora:SQLNET.ENCRYPTION_TYPES_SERVER = (AES256)
 /opt/oracle/homes/OraDBHome21cXE/network/admin/sqlnet.ora:SQLNET.CRYPTO_CHECKSUM_SERVER = REQUIRED

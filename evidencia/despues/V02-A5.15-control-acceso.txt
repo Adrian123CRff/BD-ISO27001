@@ -1,4 +1,4 @@
--- Evidencia: V02-A5.15-control-acceso.sql | ejecutado como auditor | 2026-10-20 11:20:42
+-- Evidencia: V02-A5.15-control-acceso.sql | ejecutado como auditor | 2026-10-22 10:03:00
 ### Evidencia: SELECT * FROM DBA_TAB_PRIVS sobre los esquemas de negocio
 
 GRANTEE 		 OWNER		TABLE_NAME		 PRIVILEGE
