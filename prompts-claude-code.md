@@ -293,7 +293,7 @@ Criterios de aceptación: Cada sección del enunciado tiene su lugar en el infor
 Entregable: docs/informe.md, el PDF y un commit. Registra este prompt textual en docs/uso-ia.md.
 ```
 
-## Fase 11. Guion del video (5 minutos)
+## Fase 11. Guion del video (5 minutos) · hecha el 22/10/2026
 
 ```
 Tarea: Escribe en docs/guion-video.md un guion de 5 minutos, con tiempos por bloque:

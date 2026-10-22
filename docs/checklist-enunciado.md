@@ -87,7 +87,7 @@ Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
 | HM-3 | Herramientas: SQL Developer | En curso: guía `docs/guia-sql-developer.md` y lugar en el informe (sección 7.3, que inserta las capturas solas al regenerarlo); faltan las capturas del estudiante en `evidencia/sql-developer/` |
 | HM-4 | Documentación: APA 7 | En curso: 12 referencias en APA 7 en el informe, sección 12; falta que el estudiante confirme los títulos de ISO/IEC 27001 y 27002 y el DOI de Saltzer y Schroeder |
 | HM-5 | Repositorio Git institucional | Cumplido: https://github.com/Adrian123CRff/BD-ISO27001 (publicado el 22/10/2026) |
-| HM-6 | Video explicativo 5 minutos | Pendiente |
+| HM-6 | Video explicativo 5 minutos | En curso: guion con tiempos, pantallas y comandos en `docs/guion-video.md`; falta grabarlo y poner el enlace en el informe |
 
 ## Uso de IA (sección 8): obligatoria
 
@@ -103,7 +103,7 @@ Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
 | EN-1 | Informe PDF con artefacto (o link a artefacto interactivo) | En curso: `docs/informe.pdf` (34 páginas) con el artefacto completo en la sección 6 y el enlace al código; faltan la introducción, el marco teórico, el análisis y las conclusiones que redacta el estudiante, y el enlace al video |
 | EN-2 | Scripts .sql de verificación | Cumplido: `sql/verificacion` (18), `sql/correccion` (15) y `sql/pruebas` (19), ejecutados en una corrida limpia con su salida en `evidencia/` |
 | EN-3 | Repositorio Git | Cumplido: https://github.com/Adrian123CRff/BD-ISO27001 |
-| EN-4 | Video 5 minutos | Pendiente |
+| EN-4 | Video 5 minutos | En curso: guion en `docs/guion-video.md`; falta grabarlo |
 | EN-5 | Tabla de uso de IA firmada | Pendiente |
 
 ## Rúbrica (sección 9): autoevaluación antes de entregar
