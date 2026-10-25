@@ -1,0 +1,8 @@
+-- Evidencia: P12-clon-dev.sql | ejecutado como usuario:DEV_USER | 2026-10-25 11:53:38
+
+NOMBRE				 CEDULA
+-------------------------------- --------------
+Cliente de prueba 200		 0-0200-0000
+
+1 row selected.
+

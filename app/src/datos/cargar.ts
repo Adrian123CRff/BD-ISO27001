@@ -6,12 +6,13 @@ import { nivelRiesgo } from './escalas.ts';
 import { conjuntoExtremo, type Conjunto } from './extremo.ts';
 import { RIESGOS as RIESGOS_REALES } from './riesgos.ts';
 import { TAREAS } from './tareas.ts';
-import type { Bateria, Control, Evaluacion, IdControl, IdRiesgo, ResultadoControl, Riesgo, Valor15 } from './tipos.ts';
+import type { Bateria, Control, Evaluacion, Historial, IdControl, IdRiesgo, ResultadoControl, Riesgo, Valor15 } from './tipos.ts';
 import { validarArtefacto } from './validar.ts';
 import evaluacionAntes from './evaluacion-antes.json';
 import evaluacionDespues from './evaluacion-despues.json';
 import pruebasAntes from './pruebas-antes.json';
 import pruebasDespues from './pruebas-despues.json';
+import historial from './historial.json';
 
 export type Fase = 'antes' | 'despues';
 
@@ -32,11 +33,15 @@ export const RIESGOS: readonly Riesgo[] = DATOS.riesgos;
 export const CONTROLES: readonly Control[] = DATOS.controles;
 export const EVALUACION: Readonly<Record<Fase, Evaluacion>> = DATOS.evaluacion;
 export const BATERIA: Readonly<Record<Fase, Bateria>> = DATOS.bateria;
+// Historial de mediciones con fecha (vista "Evolución"); se valida junto con lo demás y debe contener las evaluaciones
+// y baterías oficiales. Con los datos extremos de desarrollo no aplica (sus fechas no son las del historial).
+export const HISTORIAL: Historial = historial as unknown as Historial;
 
 export const ERRORES_DE_DATOS: readonly string[] = validarArtefacto(
     { riesgos: RIESGOS, tareas: TAREAS, controles: CONTROLES },
     [EVALUACION.antes, EVALUACION.despues],
     [BATERIA.antes, BATERIA.despues],
+    DATOS === REAL ? HISTORIAL : undefined,
 );
 
 const SCRIPTS = import.meta.glob<string>('../../../sql/verificacion/*.sql', { query: '?raw', import: 'default', eager: true });
@@ -102,7 +107,7 @@ export interface Posicion {
 }
 
 // Controles cuyo incumplimiento se acepta formalmente, con la prueba que demuestra la aceptación.
-const PRUEBA_DE_ACEPTACION: Readonly<Partial<Record<IdControl, string>>> = { 'A8.8': 'P18' };
+export const PRUEBA_DE_ACEPTACION: Readonly<Partial<Record<IdControl, string>>> = { 'A8.8': 'P18' };
 
 function aceptacionDemostrada(id: IdControl): boolean {
     const prueba = PRUEBA_DE_ACEPTACION[id];

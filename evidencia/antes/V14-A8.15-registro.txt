@@ -1,4 +1,4 @@
--- Evidencia: V14-A8.15-registro.sql | ejecutado como auditor | 2026-10-20 11:18:00
+-- Evidencia: V14-A8.15-registro.sql | ejecutado como auditor | 2026-10-25 11:45:48
 ### Evidencia: opciones de auditoría de sentencias y de objetos
 ### Evidencia: últimos registros en la pista (DBA_AUDIT_TRAIL)
 ### Criterios

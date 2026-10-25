@@ -1,8 +1,8 @@
--- Evidencia: C15-proteccion-logs.sh | 2026-10-20 11:20:17
+-- Evidencia: C15-proteccion-logs.sh | 2026-10-25 11:59:53
 === Permisos resultantes ===
-drwxr-x--- 1 oracle oinstall 4096 Oct 20 17:20 /opt/oracle/admin/XE/adump
-drwxrwx--- 1 oracle oinstall 4096 Sep 30  2024 /opt/oracle/diag
-drwxrwx--- 6 oracle oinstall 4096 Oct 20 17:18 /opt/oracle/oradata
-drwxr-x--- 3 oracle oinstall 4096 Oct 20 17:18 /opt/oracle/oradata/fra
-drwxr-x--- 3 oracle oinstall 4096 Oct 20 17:18 /opt/oracle/oradata/wallet
+drwxr-x--- 1 oracle oinstall 12288 Oct 25 17:59 /opt/oracle/admin/XE/adump
+drwxrwx--- 1 oracle oinstall  4096 Sep 30  2024 /opt/oracle/diag
+drwxrwx--- 6 oracle oinstall  4096 Oct 25 17:46 /opt/oracle/oradata
+drwxr-x--- 3 oracle oinstall  4096 Oct 25 17:46 /opt/oracle/oradata/fra
+drwxr-x--- 3 oracle oinstall  4096 Oct 25 17:46 /opt/oracle/oradata/wallet
 === Registros protegidos ===

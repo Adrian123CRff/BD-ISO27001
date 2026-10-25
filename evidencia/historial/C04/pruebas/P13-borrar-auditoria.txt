@@ -1,0 +1,10 @@
+-- Evidencia: P13-borrar-auditoria.sql | ejecutado como usuario:SOPORTE | 2026-10-25 11:49:35
+delete from sys.aud$ where 1 = 0
+                *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+
+Rollback complete.
+

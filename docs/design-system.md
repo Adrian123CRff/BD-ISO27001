@@ -45,6 +45,7 @@ estos nombres, nunca colores ni medidas sueltas.
 | `--no-cumple` | `#b91c1c` | `#f87171` | Estado No cumple (6.5:1 / 6.4:1) |
 | `--riesgo-1` … `--riesgo-5` | `#86b6ef` → `#104281` | `#184f95` → `#9ec5f4` | Nivel de riesgo 1-5 en el mapa (un solo tono) |
 | `--marcador` / `--marcador-texto` | `#0f172a` / blanco | `#f1f5f9` / `#0f172a` | Marcadores de los factores R-CONF |
+| `--serie-1` … `--serie-5` | `#2a78d6`, `#eb6834`, `#1baf7a`, `#eda100`, `#e87ba4` | `#3987e5`, `#d95926`, `#199e70`, `#c98500`, `#d55181` | Líneas de la vista Evolución (paleta categórica de dataviz, validada con su script: separación para daltonismo ≥ 8,4; en claro, tres colores bajo 3:1 contra el fondo, compensados con etiqueta directa, leyenda y tabla) |
 
 ## Estados: distinguibles en escala de grises
 
@@ -87,13 +88,16 @@ Las cifras usan números tabulares cuando se alinean en columnas.
 
 | Componente | Archivo | Notas |
 | --- | --- | --- |
-| Navegación lateral | `componentes/Navegacion.tsx` | Las seis partes del artefacto y la metodología; cambio de tema (el uso de IA va solo en el informe) |
+| Navegación lateral | `componentes/Navegacion.tsx` | Las seis partes del artefacto, la evolución y la metodología; cambio de tema (el uso de IA va solo en el informe) |
 | Interruptor Antes/Después | `componentes/InterruptorFase.tsx` | Grupo de radio; flechas del teclado |
 | Insignia de estado y madurez | `componentes/Estado.tsx` | Ícono + texto + borde |
 | Mapa de calor | `componentes/MapaCalor.tsx` | Marcadores con teclado y tooltip; aro punteado = posición inherente; varios factores en una celda se acomodan en rejilla dentro de ella (radio 17, 15 o 12 px; objetivo táctil ≥ 28 px) |
 | Lista de factores | `componentes/ListaRiesgos.tsx` | Vista en tabla del mapa y filtro de la matriz |
 | Matriz | `componentes/Matriz.tsx` | Columnas literales del enunciado |
 | Panel de evidencia | `componentes/PanelEvidencia.tsx` | Criterios, script SQL y salida real |
+| Gráfico de evolución | `componentes/GraficoEvolucion.tsx` | Líneas escalonadas (el valor se mantiene entre mediciones), eje X con la fecha real de cada medición, línea vertical con detalle por puntero o flechas; mide su contenedor para que el texto no se achique en móvil |
+| Navegador de fechas | `componentes/NavegadorFechas.tsx` | Miniatura de todo el historial; arrastrar elige el tramo; botones de rango para teclado |
+| Selector de series | `componentes/SelectorSeries.tsx` | "Todos" (con estado intermedio), una casilla por elemento y filtros rápidos por estado; señalar un elemento lo resalta en el gráfico |
 
 ## Adaptación
 

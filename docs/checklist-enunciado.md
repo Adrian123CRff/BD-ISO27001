@@ -106,6 +106,14 @@ Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
 | EN-4 | Video 5 minutos | En curso: guion en `docs/guion-video.md`; falta grabarlo |
 | EN-5 | Tabla de uso de IA firmada | Pendiente |
 
+## Mejoras pedidas por el profesor (revisión del avance)
+
+No son requisitos del enunciado, pero el profesor las pidió al revisar el artefacto.
+
+| ID | Pedido | Dónde se cumple | Estado |
+| --- | --- | --- | --- |
+| PR-1 | Un gráfico en el tiempo, con fechas, en el que se elige qué ver (todos o uno por uno) y cambia según la elección (boceto en `materiales/revision-avance/boceto-mejora-evolucion.jpeg`) | App, vista Evolución: controles, riesgos y pruebas; casillas, filtros por estado y navegador de fechas; historial real de `scripts/medir.ps1` (`app/src/datos/historial.json`, evidencia en `evidencia/historial/`) | Cumplido: corrida limpia del 25/10/2026 con 17 mediciones (antes, C01-C15, después); vista revisada en claro, oscuro y 360 px, sin errores de axe; informe, sección 6.9 |
+
 ## Rúbrica (sección 9): autoevaluación antes de entregar
 
 | Criterio | Peso | Descripción literal | Autoevaluación |

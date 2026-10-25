@@ -41,6 +41,13 @@
   --riesgo-5: #104281;
   --marcador: #0f172a;
   --marcador-texto: #ffffff;
+  /* Series categóricas (vista Evolución): 5 ranuras de la paleta de dataviz, validadas con su script sobre #ffffff.
+     Tres quedan bajo 3:1 contra el fondo: por eso llevan etiqueta directa, leyenda y tabla (alivio que pide dataviz). */
+  --serie-1: #2a78d6;
+  --serie-2: #eb6834;
+  --serie-3: #1baf7a;
+  --serie-4: #eda100;
+  --serie-5: #e87ba4;
   /* Tipografía */
   --fuente-titulo: 'Lexend', system-ui, sans-serif;
   --fuente-texto: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -96,6 +103,12 @@
     --riesgo-5: #9ec5f4;
     --marcador: #f1f5f9;
     --marcador-texto: #0f172a;
+    /* Mismas 5 ranuras en sus pasos para fondo oscuro, validadas sobre #111827 (todas >= 3:1). */
+    --serie-1: #3987e5;
+    --serie-2: #d95926;
+    --serie-3: #199e70;
+    --serie-4: #c98500;
+    --serie-5: #d55181;
     --sombra: none;
   }
 }
@@ -125,5 +138,11 @@
   --riesgo-5: #9ec5f4;
   --marcador: #f1f5f9;
   --marcador-texto: #0f172a;
+  /* Mismas 5 ranuras en sus pasos para fondo oscuro, validadas sobre #111827 (todas >= 3:1). */
+  --serie-1: #3987e5;
+  --serie-2: #d95926;
+  --serie-3: #199e70;
+  --serie-4: #c98500;
+  --serie-5: #d55181;
   --sombra: none;
 }

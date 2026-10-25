@@ -1,0 +1,3559 @@
+{
+  "evaluaciones": [
+    {
+      "etapa": "antes",
+      "fecha": "2026-10-25T11:45:52",
+      "evidencia": "evidencia/antes",
+      "controles": [
+        {
+          "control": "A5.12",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A5.15",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A5.16",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 2
+        },
+        {
+          "control": "A5.17",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 4
+        },
+        {
+          "control": "A5.18",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 3
+        },
+        {
+          "control": "A5.33",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.2",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 4
+        },
+        {
+          "control": "A8.3",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.5",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.8",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.10",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 3
+        },
+        {
+          "control": "A8.11",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.12",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.13",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.15",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 5
+        },
+        {
+          "control": "A8.20",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 2
+        },
+        {
+          "control": "A8.24",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        }
+      ]
+    },
+    {
+      "etapa": "C01",
+      "fecha": "2026-10-25T11:46:59",
+      "evidencia": "evidencia/historial/C01",
+      "controles": [
+        {
+          "control": "A5.12",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A5.15",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A5.16",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 2
+        },
+        {
+          "control": "A5.17",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 4
+        },
+        {
+          "control": "A5.18",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 3
+        },
+        {
+          "control": "A5.33",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 3
+        },
+        {
+          "control": "A8.2",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 4
+        },
+        {
+          "control": "A8.3",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.5",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.8",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.10",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 3
+        },
+        {
+          "control": "A8.11",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.12",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.13",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.15",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 5
+        },
+        {
+          "control": "A8.20",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 2
+        },
+        {
+          "control": "A8.24",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        }
+      ]
+    },
+    {
+      "etapa": "C02",
+      "fecha": "2026-10-25T11:47:52",
+      "evidencia": "evidencia/historial/C02",
+      "controles": [
+        {
+          "control": "A5.12",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A5.15",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A5.16",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 2
+        },
+        {
+          "control": "A5.17",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 4
+        },
+        {
+          "control": "A5.18",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 3
+        },
+        {
+          "control": "A5.33",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 3
+        },
+        {
+          "control": "A8.2",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 4
+        },
+        {
+          "control": "A8.3",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.5",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.8",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.10",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 3
+        },
+        {
+          "control": "A8.11",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.12",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.13",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.15",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 5
+        },
+        {
+          "control": "A8.20",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 2
+        },
+        {
+          "control": "A8.24",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        }
+      ]
+    },
+    {
+      "etapa": "C03",
+      "fecha": "2026-10-25T11:48:43",
+      "evidencia": "evidencia/historial/C03",
+      "controles": [
+        {
+          "control": "A5.12",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A5.15",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A5.16",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 2
+        },
+        {
+          "control": "A5.17",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 4
+        },
+        {
+          "control": "A5.18",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 3
+        },
+        {
+          "control": "A5.33",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 3
+        },
+        {
+          "control": "A8.2",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 4
+        },
+        {
+          "control": "A8.3",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.5",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.8",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.10",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.11",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.12",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.13",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.15",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 5
+        },
+        {
+          "control": "A8.20",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 2
+        },
+        {
+          "control": "A8.24",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        }
+      ]
+    },
+    {
+      "etapa": "C04",
+      "fecha": "2026-10-25T11:49:21",
+      "evidencia": "evidencia/historial/C04",
+      "controles": [
+        {
+          "control": "A5.12",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A5.15",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.16",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 2
+        },
+        {
+          "control": "A5.17",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 4
+        },
+        {
+          "control": "A5.18",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 1,
+          "total": 3
+        },
+        {
+          "control": "A5.33",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.2",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A8.3",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.5",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.8",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.10",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.11",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.12",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.13",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.15",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 5
+        },
+        {
+          "control": "A8.20",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 2
+        },
+        {
+          "control": "A8.24",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        }
+      ]
+    },
+    {
+      "etapa": "C05",
+      "fecha": "2026-10-25T11:49:56",
+      "evidencia": "evidencia/historial/C05",
+      "controles": [
+        {
+          "control": "A5.12",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A5.15",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.16",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 2,
+          "total": 2
+        },
+        {
+          "control": "A5.17",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A5.18",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.33",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.2",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A8.3",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.5",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.8",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.10",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.11",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.12",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.13",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.15",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 5
+        },
+        {
+          "control": "A8.20",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 2
+        },
+        {
+          "control": "A8.24",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        }
+      ]
+    },
+    {
+      "etapa": "C06",
+      "fecha": "2026-10-25T11:50:28",
+      "evidencia": "evidencia/historial/C06",
+      "controles": [
+        {
+          "control": "A5.12",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.15",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.16",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 2,
+          "total": 2
+        },
+        {
+          "control": "A5.17",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A5.18",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.33",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.2",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A8.3",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.5",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.8",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.10",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.11",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.12",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.13",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.15",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 5
+        },
+        {
+          "control": "A8.20",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 2
+        },
+        {
+          "control": "A8.24",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        }
+      ]
+    },
+    {
+      "etapa": "C07",
+      "fecha": "2026-10-25T11:51:02",
+      "evidencia": "evidencia/historial/C07",
+      "controles": [
+        {
+          "control": "A5.12",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.15",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.16",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 2,
+          "total": 2
+        },
+        {
+          "control": "A5.17",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A5.18",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.33",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.2",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A8.3",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.5",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.8",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.10",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.11",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.12",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.13",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.15",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 5
+        },
+        {
+          "control": "A8.20",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 2
+        },
+        {
+          "control": "A8.24",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        }
+      ]
+    },
+    {
+      "etapa": "C08",
+      "fecha": "2026-10-25T11:52:14",
+      "evidencia": "evidencia/historial/C08",
+      "controles": [
+        {
+          "control": "A5.12",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.15",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.16",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 2,
+          "total": 2
+        },
+        {
+          "control": "A5.17",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A5.18",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.33",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.2",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A8.3",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.5",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.8",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.10",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.11",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.12",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.13",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.15",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 5
+        },
+        {
+          "control": "A8.20",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 2
+        },
+        {
+          "control": "A8.24",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        }
+      ]
+    },
+    {
+      "etapa": "C09",
+      "fecha": "2026-10-25T11:52:52",
+      "evidencia": "evidencia/historial/C09",
+      "controles": [
+        {
+          "control": "A5.12",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.15",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.16",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 2,
+          "total": 2
+        },
+        {
+          "control": "A5.17",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A5.18",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.33",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.2",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A8.3",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.5",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.8",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.10",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.11",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.12",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.13",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.15",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 5
+        },
+        {
+          "control": "A8.20",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 2
+        },
+        {
+          "control": "A8.24",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        }
+      ]
+    },
+    {
+      "etapa": "C10",
+      "fecha": "2026-10-25T11:53:26",
+      "evidencia": "evidencia/historial/C10",
+      "controles": [
+        {
+          "control": "A5.12",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.15",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.16",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 2,
+          "total": 2
+        },
+        {
+          "control": "A5.17",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A5.18",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.33",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.2",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A8.3",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.5",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.8",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.10",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.11",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.12",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.13",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.15",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 5
+        },
+        {
+          "control": "A8.20",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 2
+        },
+        {
+          "control": "A8.24",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        }
+      ]
+    },
+    {
+      "etapa": "C11",
+      "fecha": "2026-10-25T11:54:03",
+      "evidencia": "evidencia/historial/C11",
+      "controles": [
+        {
+          "control": "A5.12",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.15",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.16",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 2,
+          "total": 2
+        },
+        {
+          "control": "A5.17",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A5.18",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.33",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.2",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A8.3",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.5",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.8",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.10",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.11",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.12",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.13",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.15",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 5,
+          "total": 5
+        },
+        {
+          "control": "A8.20",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 2
+        },
+        {
+          "control": "A8.24",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        }
+      ]
+    },
+    {
+      "etapa": "C12",
+      "fecha": "2026-10-25T11:54:51",
+      "evidencia": "evidencia/historial/C12",
+      "controles": [
+        {
+          "control": "A5.12",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.15",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.16",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 2,
+          "total": 2
+        },
+        {
+          "control": "A5.17",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A5.18",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.33",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.2",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A8.3",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.5",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.8",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.10",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.11",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.12",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.13",
+          "estado": "No cumple",
+          "madurez": 0,
+          "cumplidos": 0,
+          "total": 3
+        },
+        {
+          "control": "A8.15",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 5,
+          "total": 5
+        },
+        {
+          "control": "A8.20",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 2,
+          "total": 2
+        },
+        {
+          "control": "A8.24",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        }
+      ]
+    },
+    {
+      "etapa": "C13",
+      "fecha": "2026-10-25T11:57:51",
+      "evidencia": "evidencia/historial/C13",
+      "controles": [
+        {
+          "control": "A5.12",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.15",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.16",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 2,
+          "total": 2
+        },
+        {
+          "control": "A5.17",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A5.18",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.33",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.2",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A8.3",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.5",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.8",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.10",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.11",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.12",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.13",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.15",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 5,
+          "total": 5
+        },
+        {
+          "control": "A8.20",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 2,
+          "total": 2
+        },
+        {
+          "control": "A8.24",
+          "estado": "Cumple",
+          "madurez": 2,
+          "cumplidos": 3,
+          "total": 3
+        }
+      ]
+    },
+    {
+      "etapa": "C14",
+      "fecha": "2026-10-25T11:59:10",
+      "evidencia": "evidencia/historial/C14",
+      "controles": [
+        {
+          "control": "A5.12",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.15",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.16",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 2,
+          "total": 2
+        },
+        {
+          "control": "A5.17",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A5.18",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.33",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.2",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A8.3",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.5",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.8",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.10",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.11",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.12",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.13",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.15",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 5,
+          "total": 5
+        },
+        {
+          "control": "A8.20",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 2,
+          "total": 2
+        },
+        {
+          "control": "A8.24",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        }
+      ]
+    },
+    {
+      "etapa": "C15",
+      "fecha": "2026-10-25T12:00:25",
+      "evidencia": "evidencia/historial/C15",
+      "controles": [
+        {
+          "control": "A5.12",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.15",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.16",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 2,
+          "total": 2
+        },
+        {
+          "control": "A5.17",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A5.18",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.33",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.2",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A8.3",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.5",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.8",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.10",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.11",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.12",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.13",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.15",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 5,
+          "total": 5
+        },
+        {
+          "control": "A8.20",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 2,
+          "total": 2
+        },
+        {
+          "control": "A8.24",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        }
+      ]
+    },
+    {
+      "etapa": "despues",
+      "fecha": "2026-10-25T12:02:11",
+      "evidencia": "evidencia/despues",
+      "controles": [
+        {
+          "control": "A5.12",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.15",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.16",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 2,
+          "total": 2
+        },
+        {
+          "control": "A5.17",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A5.18",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A5.33",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.2",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 4,
+          "total": 4
+        },
+        {
+          "control": "A8.3",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.5",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.8",
+          "estado": "Parcial",
+          "madurez": 1,
+          "cumplidos": 2,
+          "total": 3
+        },
+        {
+          "control": "A8.10",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.11",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.12",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.13",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        },
+        {
+          "control": "A8.15",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 5,
+          "total": 5
+        },
+        {
+          "control": "A8.20",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 2,
+          "total": 2
+        },
+        {
+          "control": "A8.24",
+          "estado": "Cumple",
+          "madurez": 4,
+          "cumplidos": 3,
+          "total": 3
+        }
+      ]
+    }
+  ],
+  "baterias": [
+    {
+      "etapa": "antes",
+      "fecha": "2026-10-25T11:46:17",
+      "evidencia": "evidencia/antes/pruebas",
+      "pruebas": [
+        {
+          "id": "P01",
+          "paso": false
+        },
+        {
+          "id": "P02",
+          "paso": false
+        },
+        {
+          "id": "P03",
+          "paso": false
+        },
+        {
+          "id": "P04",
+          "paso": false
+        },
+        {
+          "id": "P05",
+          "paso": false
+        },
+        {
+          "id": "P06",
+          "paso": false
+        },
+        {
+          "id": "P07",
+          "paso": false
+        },
+        {
+          "id": "P08",
+          "paso": false
+        },
+        {
+          "id": "P09",
+          "paso": false
+        },
+        {
+          "id": "P10",
+          "paso": false
+        },
+        {
+          "id": "P11",
+          "paso": false
+        },
+        {
+          "id": "P12",
+          "paso": false
+        },
+        {
+          "id": "P13",
+          "paso": false
+        },
+        {
+          "id": "P14",
+          "paso": false
+        },
+        {
+          "id": "P15",
+          "paso": false
+        },
+        {
+          "id": "P16",
+          "paso": false
+        },
+        {
+          "id": "P17",
+          "paso": false
+        },
+        {
+          "id": "P18",
+          "paso": false
+        },
+        {
+          "id": "P19",
+          "paso": false
+        }
+      ]
+    },
+    {
+      "etapa": "C01",
+      "fecha": "2026-10-25T11:47:24",
+      "evidencia": "evidencia/historial/C01/pruebas",
+      "pruebas": [
+        {
+          "id": "P01",
+          "paso": false
+        },
+        {
+          "id": "P02",
+          "paso": false
+        },
+        {
+          "id": "P03",
+          "paso": false
+        },
+        {
+          "id": "P04",
+          "paso": false
+        },
+        {
+          "id": "P05",
+          "paso": false
+        },
+        {
+          "id": "P06",
+          "paso": false
+        },
+        {
+          "id": "P07",
+          "paso": false
+        },
+        {
+          "id": "P08",
+          "paso": false
+        },
+        {
+          "id": "P09",
+          "paso": false
+        },
+        {
+          "id": "P10",
+          "paso": false
+        },
+        {
+          "id": "P11",
+          "paso": false
+        },
+        {
+          "id": "P12",
+          "paso": false
+        },
+        {
+          "id": "P13",
+          "paso": false
+        },
+        {
+          "id": "P14",
+          "paso": false
+        },
+        {
+          "id": "P15",
+          "paso": false
+        },
+        {
+          "id": "P16",
+          "paso": false
+        },
+        {
+          "id": "P17",
+          "paso": false
+        },
+        {
+          "id": "P18",
+          "paso": false
+        },
+        {
+          "id": "P19",
+          "paso": false
+        }
+      ]
+    },
+    {
+      "etapa": "C02",
+      "fecha": "2026-10-25T11:48:15",
+      "evidencia": "evidencia/historial/C02/pruebas",
+      "pruebas": [
+        {
+          "id": "P01",
+          "paso": false
+        },
+        {
+          "id": "P02",
+          "paso": false
+        },
+        {
+          "id": "P03",
+          "paso": false
+        },
+        {
+          "id": "P04",
+          "paso": false
+        },
+        {
+          "id": "P05",
+          "paso": false
+        },
+        {
+          "id": "P06",
+          "paso": false
+        },
+        {
+          "id": "P07",
+          "paso": false
+        },
+        {
+          "id": "P08",
+          "paso": false
+        },
+        {
+          "id": "P09",
+          "paso": false
+        },
+        {
+          "id": "P10",
+          "paso": false
+        },
+        {
+          "id": "P11",
+          "paso": false
+        },
+        {
+          "id": "P12",
+          "paso": false
+        },
+        {
+          "id": "P13",
+          "paso": false
+        },
+        {
+          "id": "P14",
+          "paso": false
+        },
+        {
+          "id": "P15",
+          "paso": false
+        },
+        {
+          "id": "P16",
+          "paso": false
+        },
+        {
+          "id": "P17",
+          "paso": false
+        },
+        {
+          "id": "P18",
+          "paso": false
+        },
+        {
+          "id": "P19",
+          "paso": false
+        }
+      ]
+    },
+    {
+      "etapa": "C03",
+      "fecha": "2026-10-25T11:49:04",
+      "evidencia": "evidencia/historial/C03/pruebas",
+      "pruebas": [
+        {
+          "id": "P01",
+          "paso": false
+        },
+        {
+          "id": "P02",
+          "paso": false
+        },
+        {
+          "id": "P03",
+          "paso": false
+        },
+        {
+          "id": "P04",
+          "paso": false
+        },
+        {
+          "id": "P05",
+          "paso": false
+        },
+        {
+          "id": "P06",
+          "paso": false
+        },
+        {
+          "id": "P07",
+          "paso": false
+        },
+        {
+          "id": "P08",
+          "paso": false
+        },
+        {
+          "id": "P09",
+          "paso": true
+        },
+        {
+          "id": "P10",
+          "paso": false
+        },
+        {
+          "id": "P11",
+          "paso": false
+        },
+        {
+          "id": "P12",
+          "paso": false
+        },
+        {
+          "id": "P13",
+          "paso": false
+        },
+        {
+          "id": "P14",
+          "paso": true
+        },
+        {
+          "id": "P15",
+          "paso": false
+        },
+        {
+          "id": "P16",
+          "paso": false
+        },
+        {
+          "id": "P17",
+          "paso": false
+        },
+        {
+          "id": "P18",
+          "paso": false
+        },
+        {
+          "id": "P19",
+          "paso": false
+        }
+      ]
+    },
+    {
+      "etapa": "C04",
+      "fecha": "2026-10-25T11:49:44",
+      "evidencia": "evidencia/historial/C04/pruebas",
+      "pruebas": [
+        {
+          "id": "P01",
+          "paso": false
+        },
+        {
+          "id": "P02",
+          "paso": false
+        },
+        {
+          "id": "P03",
+          "paso": false
+        },
+        {
+          "id": "P04",
+          "paso": true
+        },
+        {
+          "id": "P05",
+          "paso": false
+        },
+        {
+          "id": "P06",
+          "paso": false
+        },
+        {
+          "id": "P07",
+          "paso": false
+        },
+        {
+          "id": "P08",
+          "paso": false
+        },
+        {
+          "id": "P09",
+          "paso": true
+        },
+        {
+          "id": "P10",
+          "paso": false
+        },
+        {
+          "id": "P11",
+          "paso": false
+        },
+        {
+          "id": "P12",
+          "paso": false
+        },
+        {
+          "id": "P13",
+          "paso": true
+        },
+        {
+          "id": "P14",
+          "paso": true
+        },
+        {
+          "id": "P15",
+          "paso": false
+        },
+        {
+          "id": "P16",
+          "paso": false
+        },
+        {
+          "id": "P17",
+          "paso": false
+        },
+        {
+          "id": "P18",
+          "paso": false
+        },
+        {
+          "id": "P19",
+          "paso": false
+        }
+      ]
+    },
+    {
+      "etapa": "C05",
+      "fecha": "2026-10-25T11:50:17",
+      "evidencia": "evidencia/historial/C05/pruebas",
+      "pruebas": [
+        {
+          "id": "P01",
+          "paso": true
+        },
+        {
+          "id": "P02",
+          "paso": true
+        },
+        {
+          "id": "P03",
+          "paso": false
+        },
+        {
+          "id": "P04",
+          "paso": true
+        },
+        {
+          "id": "P05",
+          "paso": false
+        },
+        {
+          "id": "P06",
+          "paso": false
+        },
+        {
+          "id": "P07",
+          "paso": true
+        },
+        {
+          "id": "P08",
+          "paso": false
+        },
+        {
+          "id": "P09",
+          "paso": true
+        },
+        {
+          "id": "P10",
+          "paso": false
+        },
+        {
+          "id": "P11",
+          "paso": false
+        },
+        {
+          "id": "P12",
+          "paso": false
+        },
+        {
+          "id": "P13",
+          "paso": true
+        },
+        {
+          "id": "P14",
+          "paso": true
+        },
+        {
+          "id": "P15",
+          "paso": false
+        },
+        {
+          "id": "P16",
+          "paso": false
+        },
+        {
+          "id": "P17",
+          "paso": true
+        },
+        {
+          "id": "P18",
+          "paso": false
+        },
+        {
+          "id": "P19",
+          "paso": false
+        }
+      ]
+    },
+    {
+      "etapa": "C06",
+      "fecha": "2026-10-25T11:50:49",
+      "evidencia": "evidencia/historial/C06/pruebas",
+      "pruebas": [
+        {
+          "id": "P01",
+          "paso": true
+        },
+        {
+          "id": "P02",
+          "paso": true
+        },
+        {
+          "id": "P03",
+          "paso": false
+        },
+        {
+          "id": "P04",
+          "paso": true
+        },
+        {
+          "id": "P05",
+          "paso": false
+        },
+        {
+          "id": "P06",
+          "paso": false
+        },
+        {
+          "id": "P07",
+          "paso": true
+        },
+        {
+          "id": "P08",
+          "paso": false
+        },
+        {
+          "id": "P09",
+          "paso": true
+        },
+        {
+          "id": "P10",
+          "paso": false
+        },
+        {
+          "id": "P11",
+          "paso": false
+        },
+        {
+          "id": "P12",
+          "paso": false
+        },
+        {
+          "id": "P13",
+          "paso": true
+        },
+        {
+          "id": "P14",
+          "paso": true
+        },
+        {
+          "id": "P15",
+          "paso": false
+        },
+        {
+          "id": "P16",
+          "paso": true
+        },
+        {
+          "id": "P17",
+          "paso": true
+        },
+        {
+          "id": "P18",
+          "paso": false
+        },
+        {
+          "id": "P19",
+          "paso": false
+        }
+      ]
+    },
+    {
+      "etapa": "C07",
+      "fecha": "2026-10-25T11:51:23",
+      "evidencia": "evidencia/historial/C07/pruebas",
+      "pruebas": [
+        {
+          "id": "P01",
+          "paso": true
+        },
+        {
+          "id": "P02",
+          "paso": true
+        },
+        {
+          "id": "P03",
+          "paso": false
+        },
+        {
+          "id": "P04",
+          "paso": true
+        },
+        {
+          "id": "P05",
+          "paso": false
+        },
+        {
+          "id": "P06",
+          "paso": true
+        },
+        {
+          "id": "P07",
+          "paso": true
+        },
+        {
+          "id": "P08",
+          "paso": false
+        },
+        {
+          "id": "P09",
+          "paso": true
+        },
+        {
+          "id": "P10",
+          "paso": false
+        },
+        {
+          "id": "P11",
+          "paso": false
+        },
+        {
+          "id": "P12",
+          "paso": false
+        },
+        {
+          "id": "P13",
+          "paso": true
+        },
+        {
+          "id": "P14",
+          "paso": true
+        },
+        {
+          "id": "P15",
+          "paso": false
+        },
+        {
+          "id": "P16",
+          "paso": true
+        },
+        {
+          "id": "P17",
+          "paso": true
+        },
+        {
+          "id": "P18",
+          "paso": false
+        },
+        {
+          "id": "P19",
+          "paso": false
+        }
+      ]
+    },
+    {
+      "etapa": "C08",
+      "fecha": "2026-10-25T11:52:37",
+      "evidencia": "evidencia/historial/C08/pruebas",
+      "pruebas": [
+        {
+          "id": "P01",
+          "paso": true
+        },
+        {
+          "id": "P02",
+          "paso": true
+        },
+        {
+          "id": "P03",
+          "paso": true
+        },
+        {
+          "id": "P04",
+          "paso": true
+        },
+        {
+          "id": "P05",
+          "paso": true
+        },
+        {
+          "id": "P06",
+          "paso": true
+        },
+        {
+          "id": "P07",
+          "paso": true
+        },
+        {
+          "id": "P08",
+          "paso": true
+        },
+        {
+          "id": "P09",
+          "paso": true
+        },
+        {
+          "id": "P10",
+          "paso": false
+        },
+        {
+          "id": "P11",
+          "paso": false
+        },
+        {
+          "id": "P12",
+          "paso": false
+        },
+        {
+          "id": "P13",
+          "paso": true
+        },
+        {
+          "id": "P14",
+          "paso": true
+        },
+        {
+          "id": "P15",
+          "paso": false
+        },
+        {
+          "id": "P16",
+          "paso": true
+        },
+        {
+          "id": "P17",
+          "paso": true
+        },
+        {
+          "id": "P18",
+          "paso": false
+        },
+        {
+          "id": "P19",
+          "paso": false
+        }
+      ]
+    },
+    {
+      "etapa": "C09",
+      "fecha": "2026-10-25T11:53:13",
+      "evidencia": "evidencia/historial/C09/pruebas",
+      "pruebas": [
+        {
+          "id": "P01",
+          "paso": true
+        },
+        {
+          "id": "P02",
+          "paso": true
+        },
+        {
+          "id": "P03",
+          "paso": true
+        },
+        {
+          "id": "P04",
+          "paso": true
+        },
+        {
+          "id": "P05",
+          "paso": true
+        },
+        {
+          "id": "P06",
+          "paso": true
+        },
+        {
+          "id": "P07",
+          "paso": true
+        },
+        {
+          "id": "P08",
+          "paso": true
+        },
+        {
+          "id": "P09",
+          "paso": true
+        },
+        {
+          "id": "P10",
+          "paso": false
+        },
+        {
+          "id": "P11",
+          "paso": false
+        },
+        {
+          "id": "P12",
+          "paso": false
+        },
+        {
+          "id": "P13",
+          "paso": true
+        },
+        {
+          "id": "P14",
+          "paso": true
+        },
+        {
+          "id": "P15",
+          "paso": false
+        },
+        {
+          "id": "P16",
+          "paso": true
+        },
+        {
+          "id": "P17",
+          "paso": true
+        },
+        {
+          "id": "P18",
+          "paso": false
+        },
+        {
+          "id": "P19",
+          "paso": false
+        }
+      ]
+    },
+    {
+      "etapa": "C10",
+      "fecha": "2026-10-25T11:53:47",
+      "evidencia": "evidencia/historial/C10/pruebas",
+      "pruebas": [
+        {
+          "id": "P01",
+          "paso": true
+        },
+        {
+          "id": "P02",
+          "paso": true
+        },
+        {
+          "id": "P03",
+          "paso": true
+        },
+        {
+          "id": "P04",
+          "paso": true
+        },
+        {
+          "id": "P05",
+          "paso": true
+        },
+        {
+          "id": "P06",
+          "paso": true
+        },
+        {
+          "id": "P07",
+          "paso": true
+        },
+        {
+          "id": "P08",
+          "paso": true
+        },
+        {
+          "id": "P09",
+          "paso": true
+        },
+        {
+          "id": "P10",
+          "paso": false
+        },
+        {
+          "id": "P11",
+          "paso": false
+        },
+        {
+          "id": "P12",
+          "paso": true
+        },
+        {
+          "id": "P13",
+          "paso": true
+        },
+        {
+          "id": "P14",
+          "paso": true
+        },
+        {
+          "id": "P15",
+          "paso": false
+        },
+        {
+          "id": "P16",
+          "paso": true
+        },
+        {
+          "id": "P17",
+          "paso": true
+        },
+        {
+          "id": "P18",
+          "paso": false
+        },
+        {
+          "id": "P19",
+          "paso": false
+        }
+      ]
+    },
+    {
+      "etapa": "C11",
+      "fecha": "2026-10-25T11:54:26",
+      "evidencia": "evidencia/historial/C11/pruebas",
+      "pruebas": [
+        {
+          "id": "P01",
+          "paso": true
+        },
+        {
+          "id": "P02",
+          "paso": true
+        },
+        {
+          "id": "P03",
+          "paso": true
+        },
+        {
+          "id": "P04",
+          "paso": true
+        },
+        {
+          "id": "P05",
+          "paso": true
+        },
+        {
+          "id": "P06",
+          "paso": true
+        },
+        {
+          "id": "P07",
+          "paso": true
+        },
+        {
+          "id": "P08",
+          "paso": true
+        },
+        {
+          "id": "P09",
+          "paso": true
+        },
+        {
+          "id": "P10",
+          "paso": false
+        },
+        {
+          "id": "P11",
+          "paso": false
+        },
+        {
+          "id": "P12",
+          "paso": true
+        },
+        {
+          "id": "P13",
+          "paso": true
+        },
+        {
+          "id": "P14",
+          "paso": true
+        },
+        {
+          "id": "P15",
+          "paso": true
+        },
+        {
+          "id": "P16",
+          "paso": true
+        },
+        {
+          "id": "P17",
+          "paso": true
+        },
+        {
+          "id": "P18",
+          "paso": false
+        },
+        {
+          "id": "P19",
+          "paso": false
+        }
+      ]
+    },
+    {
+      "etapa": "C12",
+      "fecha": "2026-10-25T11:55:28",
+      "evidencia": "evidencia/historial/C12/pruebas",
+      "pruebas": [
+        {
+          "id": "P01",
+          "paso": true
+        },
+        {
+          "id": "P02",
+          "paso": true
+        },
+        {
+          "id": "P03",
+          "paso": true
+        },
+        {
+          "id": "P04",
+          "paso": true
+        },
+        {
+          "id": "P05",
+          "paso": true
+        },
+        {
+          "id": "P06",
+          "paso": true
+        },
+        {
+          "id": "P07",
+          "paso": true
+        },
+        {
+          "id": "P08",
+          "paso": true
+        },
+        {
+          "id": "P09",
+          "paso": true
+        },
+        {
+          "id": "P10",
+          "paso": false
+        },
+        {
+          "id": "P11",
+          "paso": true
+        },
+        {
+          "id": "P12",
+          "paso": true
+        },
+        {
+          "id": "P13",
+          "paso": true
+        },
+        {
+          "id": "P14",
+          "paso": true
+        },
+        {
+          "id": "P15",
+          "paso": true
+        },
+        {
+          "id": "P16",
+          "paso": true
+        },
+        {
+          "id": "P17",
+          "paso": true
+        },
+        {
+          "id": "P18",
+          "paso": false
+        },
+        {
+          "id": "P19",
+          "paso": false
+        }
+      ]
+    },
+    {
+      "etapa": "C13",
+      "fecha": "2026-10-25T11:58:34",
+      "evidencia": "evidencia/historial/C13/pruebas",
+      "pruebas": [
+        {
+          "id": "P01",
+          "paso": true
+        },
+        {
+          "id": "P02",
+          "paso": true
+        },
+        {
+          "id": "P03",
+          "paso": true
+        },
+        {
+          "id": "P04",
+          "paso": true
+        },
+        {
+          "id": "P05",
+          "paso": true
+        },
+        {
+          "id": "P06",
+          "paso": true
+        },
+        {
+          "id": "P07",
+          "paso": true
+        },
+        {
+          "id": "P08",
+          "paso": true
+        },
+        {
+          "id": "P09",
+          "paso": true
+        },
+        {
+          "id": "P10",
+          "paso": true
+        },
+        {
+          "id": "P11",
+          "paso": true
+        },
+        {
+          "id": "P12",
+          "paso": true
+        },
+        {
+          "id": "P13",
+          "paso": true
+        },
+        {
+          "id": "P14",
+          "paso": true
+        },
+        {
+          "id": "P15",
+          "paso": true
+        },
+        {
+          "id": "P16",
+          "paso": true
+        },
+        {
+          "id": "P17",
+          "paso": true
+        },
+        {
+          "id": "P18",
+          "paso": false
+        },
+        {
+          "id": "P19",
+          "paso": false
+        }
+      ]
+    },
+    {
+      "etapa": "C14",
+      "fecha": "2026-10-25T11:59:53",
+      "evidencia": "evidencia/historial/C14/pruebas",
+      "pruebas": [
+        {
+          "id": "P01",
+          "paso": true
+        },
+        {
+          "id": "P02",
+          "paso": true
+        },
+        {
+          "id": "P03",
+          "paso": true
+        },
+        {
+          "id": "P04",
+          "paso": true
+        },
+        {
+          "id": "P05",
+          "paso": true
+        },
+        {
+          "id": "P06",
+          "paso": true
+        },
+        {
+          "id": "P07",
+          "paso": true
+        },
+        {
+          "id": "P08",
+          "paso": true
+        },
+        {
+          "id": "P09",
+          "paso": true
+        },
+        {
+          "id": "P10",
+          "paso": true
+        },
+        {
+          "id": "P11",
+          "paso": true
+        },
+        {
+          "id": "P12",
+          "paso": true
+        },
+        {
+          "id": "P13",
+          "paso": true
+        },
+        {
+          "id": "P14",
+          "paso": true
+        },
+        {
+          "id": "P15",
+          "paso": true
+        },
+        {
+          "id": "P16",
+          "paso": true
+        },
+        {
+          "id": "P17",
+          "paso": true
+        },
+        {
+          "id": "P18",
+          "paso": true
+        },
+        {
+          "id": "P19",
+          "paso": false
+        }
+      ]
+    },
+    {
+      "etapa": "C15",
+      "fecha": "2026-10-25T12:01:06",
+      "evidencia": "evidencia/historial/C15/pruebas",
+      "pruebas": [
+        {
+          "id": "P01",
+          "paso": true
+        },
+        {
+          "id": "P02",
+          "paso": true
+        },
+        {
+          "id": "P03",
+          "paso": true
+        },
+        {
+          "id": "P04",
+          "paso": true
+        },
+        {
+          "id": "P05",
+          "paso": true
+        },
+        {
+          "id": "P06",
+          "paso": true
+        },
+        {
+          "id": "P07",
+          "paso": true
+        },
+        {
+          "id": "P08",
+          "paso": true
+        },
+        {
+          "id": "P09",
+          "paso": true
+        },
+        {
+          "id": "P10",
+          "paso": true
+        },
+        {
+          "id": "P11",
+          "paso": true
+        },
+        {
+          "id": "P12",
+          "paso": true
+        },
+        {
+          "id": "P13",
+          "paso": true
+        },
+        {
+          "id": "P14",
+          "paso": true
+        },
+        {
+          "id": "P15",
+          "paso": true
+        },
+        {
+          "id": "P16",
+          "paso": true
+        },
+        {
+          "id": "P17",
+          "paso": true
+        },
+        {
+          "id": "P18",
+          "paso": true
+        },
+        {
+          "id": "P19",
+          "paso": true
+        }
+      ]
+    },
+    {
+      "etapa": "despues",
+      "fecha": "2026-10-25T12:01:46",
+      "evidencia": "evidencia/despues/pruebas",
+      "pruebas": [
+        {
+          "id": "P01",
+          "paso": true
+        },
+        {
+          "id": "P02",
+          "paso": true
+        },
+        {
+          "id": "P03",
+          "paso": true
+        },
+        {
+          "id": "P04",
+          "paso": true
+        },
+        {
+          "id": "P05",
+          "paso": true
+        },
+        {
+          "id": "P06",
+          "paso": true
+        },
+        {
+          "id": "P07",
+          "paso": true
+        },
+        {
+          "id": "P08",
+          "paso": true
+        },
+        {
+          "id": "P09",
+          "paso": true
+        },
+        {
+          "id": "P10",
+          "paso": true
+        },
+        {
+          "id": "P11",
+          "paso": true
+        },
+        {
+          "id": "P12",
+          "paso": true
+        },
+        {
+          "id": "P13",
+          "paso": true
+        },
+        {
+          "id": "P14",
+          "paso": true
+        },
+        {
+          "id": "P15",
+          "paso": true
+        },
+        {
+          "id": "P16",
+          "paso": true
+        },
+        {
+          "id": "P17",
+          "paso": true
+        },
+        {
+          "id": "P18",
+          "paso": true
+        },
+        {
+          "id": "P19",
+          "paso": true
+        }
+      ]
+    }
+  ]
+}

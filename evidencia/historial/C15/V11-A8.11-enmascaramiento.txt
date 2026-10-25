@@ -1,0 +1,19 @@
+-- Evidencia: V11-A8.11-enmascaramiento.sql | ejecutado como auditor | 2026-10-25 12:00:14
+### Evidencia: políticas de Data Redaction (REDACTION_POLICIES y REDACTION_COLUMNS)
+
+OBJECT_OWNER OBJECT_NAME    POLICY_NAME 	       ENABLE
+------------ -------------- -------------------------- ------
+FINANZAS     CLIENTES	    RED_CLIENTES_DATOS_PERSONA YES
+			    LES
+
+
+OBJECT_OWNER OBJECT_NAME    COLUMN_NAME      FUNCTION_TYPE
+------------ -------------- ---------------- ----------------------
+FINANZAS     CLIENTES	    NUMERO_TARJETA   PARTIAL REDACTION
+FINANZAS     CLIENTES	    CEDULA	     PARTIAL REDACTION
+FINANZAS     CLIENTES	    SALARIO	     FULL REDACTION
+### Criterios
+
+CRITERIO|A8.11|a|OK|Hay una política de Data Redaction activa sobre FINANZAS.CLIENTES|1 política(s) activa(s)
+CRITERIO|A8.11|b|OK|La redacción cubre cédula, salario y número de tarjeta|3 de 3 columnas cubiertas
+CRITERIO|A8.11|c|OK|El clon de desarrollo (FINANZAS_DEV) no contiene cédulas ni tarjetas reales (control de los últimos 7 días)|0 fila(s) con datos reales

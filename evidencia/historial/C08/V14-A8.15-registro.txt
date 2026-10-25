@@ -1,0 +1,16 @@
+-- Evidencia: V14-A8.15-registro.sql | ejecutado como auditor | 2026-10-25 11:52:11
+### Evidencia: opciones de auditoría de sentencias y de objetos
+### Evidencia: últimos registros en la pista (DBA_AUDIT_TRAIL)
+
+MOMENTO 	     USERNAME	    ACTION_NAME        OBJ_NAME       RETURNCODE
+-------------------- -------------- ------------------ -------------- ----------
+2026-10-25 17:48:58  SOPORTE	    DELETE	       AUD$		       0
+2026-10-25 17:48:06  SOPORTE	    DELETE	       AUD$		       0
+2026-10-25 17:47:16  SOPORTE	    DELETE	       AUD$		       0
+### Criterios
+
+CRITERIO|A8.15|a|OK|La auditoría guarda el texto SQL (audit_trail = DB, EXTENDED)|audit_trail = DB, EXTENDED
+CRITERIO|A8.15|b|FALLA|Se auditan los inicios de sesión, exitosos y fallidos (CREATE SESSION)|No auditado
+CRITERIO|A8.15|c|FALLA|Se audita la lectura de datos personales (SELECT sobre FINANZAS.CLIENTES)|No auditado
+CRITERIO|A8.15|d|FALLA|Se auditan los cambios de cuentas y privilegios (USER, ROLE, SYSTEM GRANT)|0 de 3 opciones
+CRITERIO|A8.15|e|OK|La pista contiene registros de las últimas 24 horas|3 registro(s)

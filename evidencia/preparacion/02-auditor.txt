@@ -1,4 +1,4 @@
--- Evidencia: 02-auditor.sql | ejecutado como sys | 2026-10-20 11:17:49
+-- Evidencia: 02-auditor.sql | ejecutado como sys | 2026-10-25 11:45:25
 
 User created.
 

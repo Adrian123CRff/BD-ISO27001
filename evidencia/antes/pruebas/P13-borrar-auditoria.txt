@@ -1,4 +1,4 @@
--- Evidencia: P13-borrar-auditoria.sql | ejecutado como usuario:SOPORTE | 2026-10-20 11:18:16
+-- Evidencia: P13-borrar-auditoria.sql | ejecutado como usuario:SOPORTE | 2026-10-25 11:46:10
 
 0 rows deleted.
 

@@ -1,0 +1,4 @@
+-- Evidencia: P04-privilegio-aplicacion.sql | ejecutado como usuario:APP_WEB | 2026-10-25 11:47:54
+
+User created.
+

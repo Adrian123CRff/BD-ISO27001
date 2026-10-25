@@ -1,6 +1,6 @@
 {
   "fase": "antes",
-  "fecha": "2026-10-20T11:18:03",
+  "fecha": "2026-10-25T11:45:52",
   "motor": "Oracle Database 21c Express Edition 21.3.0.0.0 (contenedor iso-lab, XEPDB1)",
   "ejecutadoComo": "ISO_AUDITOR (solo lectura del diccionario)",
   "controles": [

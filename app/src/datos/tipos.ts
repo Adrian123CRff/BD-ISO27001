@@ -106,3 +106,33 @@ export interface Bateria {
     readonly fecha: string;
     readonly pruebas: readonly ResultadoPrueba[];
 }
+
+// ---- Historial de mediciones (vista "Evolución"): scripts/historial.ps1 agrega un registro por evaluación y por
+// batería, con su fecha, en app/src/datos/historial.json ----
+
+export interface MedicionControl {
+    readonly control: IdControl;
+    readonly estado: Estado;
+    readonly madurez: Madurez;
+    readonly cumplidos: number;
+    readonly total: number;
+}
+
+export interface MedicionEvaluacion {
+    readonly etapa: string;
+    readonly fecha: string;
+    readonly evidencia: string;
+    readonly controles: readonly MedicionControl[];
+}
+
+export interface MedicionBateria {
+    readonly etapa: string;
+    readonly fecha: string;
+    readonly evidencia: string;
+    readonly pruebas: readonly { readonly id: string; readonly paso: boolean }[];
+}
+
+export interface Historial {
+    readonly evaluaciones: readonly MedicionEvaluacion[];
+    readonly baterias: readonly MedicionBateria[];
+}

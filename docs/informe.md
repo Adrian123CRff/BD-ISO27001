@@ -308,7 +308,7 @@ Complementarios (tareas "cifrado TDE" y "parcheo"):
 
 ### 6.7 Matriz de evaluación (Tarea | Riesgo | Control | Criterio 0-4 | Evidencia | Estado)
 
-Antes: 2026-10-20T11:18:03 · Después: 2026-10-22T10:03:19 · Oracle Database 21c Express Edition 21.3.0.0.0 (contenedor iso-lab, XEPDB1) · Ejecutado como ISO_AUDITOR (solo lectura del diccionario).
+Antes: 2026-10-25T11:45:52 · Después: 2026-10-25T12:02:11 · Oracle Database 21c Express Edition 21.3.0.0.0 (contenedor iso-lab, XEPDB1) · Ejecutado como ISO_AUDITOR (solo lectura del diccionario).
 
 | Tarea | Riesgo | Control | Criterio 0-4 (antes → después) | Evidencia | Estado (antes → después) |
 | --- | --- | --- | --- | --- | --- |
@@ -361,6 +361,27 @@ Antes: 0 de 19 con el resultado esperado · Después: 19 de 19. Evidencia en `ev
 
 <!-- /generado: artefacto -->
 
+### 6.9 Evolución en el tiempo (mejora pedida por el profesor)
+
+Al revisar el avance, el profesor pidió un gráfico en el tiempo en el que se elige qué ver y que muestre las fechas.
+
+![Boceto del profesor con la mejora pedida](../materiales/revision-avance/boceto-mejora-evolucion.jpeg)
+
+El artefacto lo incluye en la vista **Evolución**:
+
+- **Qué graficar:** controles (madurez 0-4), factores de riesgo (nivel 1-5, con la meta de 2) o pruebas (cuántas
+  obtienen el resultado esperado).
+- **Cuáles:** "Todos", una casilla por elemento y filtros rápidos por estado (por ejemplo, solo los controles que
+  aún no cumplen).
+- **Cuándo:** el eje horizontal es la fecha y hora de cada medición; una miniatura de todo el historial permite
+  elegir el tramo que se amplía.
+- **De dónde salen los datos:** de mediciones reales, no de valores interpolados. `scripts/corregir.ps1` ejecuta
+  `scripts/medir.ps1` después de cada corrección (C01-C15): los 18 scripts de verificación y las 19 pruebas, con su
+  evidencia en `evidencia/historial/<etapa>/`. Cada medición queda en `app/src/datos/historial.json`, que la
+  aplicación valida al cargar (incluye las evaluaciones oficiales antes y después con la misma fecha).
+
+![Vista Evolución: madurez de los controles en cada medición](../evidencia/informe/07-evolucion-controles.png)
+
 ## 7. Herramienta y metodología
 
 ### 7.1 Motor
@@ -404,7 +425,7 @@ ISO_AUDITOR (usuario de solo lectura). El procedimiento está en `docs/guia-sql-
 
 <!-- generado: comparativa -->
 
-Evaluación antes: 20/10/2026 11:18 · después: 22/10/2026 10:03 · Oracle Database 21c Express Edition 21.3.0.0.0 (contenedor iso-lab, XEPDB1) · verificado como ISO_AUDITOR (solo lectura del diccionario).
+Evaluación antes: 25/10/2026 11:45 · después: 25/10/2026 12:02 · Oracle Database 21c Express Edition 21.3.0.0.0 (contenedor iso-lab, XEPDB1) · verificado como ISO_AUDITOR (solo lectura del diccionario).
 
 | Indicador | Antes | Después |
 | --- | --- | --- |
@@ -504,6 +525,8 @@ con número y fecha, es `docs/uso-ia.md`.
 | Claude (Claude Code) (20, 22/10/2026) | "hola volvi, podrias levantar nuevamente la app"<br>"Mira, necesito que levantes el local y dos preguntas. Primero, ¿por qué en el formato ese hay un apartado de uso de IA? Eso no debería ir ahí. Realmente eso solamente es en documentación, no en la parte de avance, digamos. Yo siento que a no ser que el documento no lo pida, eso no tendría que ir ahí. O sea, podremos dejarlo solamente para documentación, no en el momento de exposición. Otra cosa, al parecer yo creo que ya habíamos terminado. Necesito que me ayudes a entender cómo, o sea, cómo podría yo exponer eso, dado el caso que me tocara exponer. Ayúdame a explícamelo y para entenderlo, y luego ayúdame a hacer como un guión o algo así parecido para poder yo exponer." | Se confirmó en el enunciado que la tabla de uso de IA va "en el informe" (sección 8) y no entre los 6 puntos del artefacto (sección 6); se quitó la vista "Uso de IA" de la app (la tabla sigue en `docs/uso-ia.md` para el informe). Explicación del trabajo y apoyo para exponer en `docs/guion-exposicion.md` (idea central, guion de 8 y de 3 minutos, preguntas probables), contrastado con la evidencia | _Pendiente_ | `docs/enunciado-literal.md` (secciones 6 y 8); `evidencia/antes` y `evidencia/despues` |
 | Claude (Claude Code) (21, 22/10/2026) | "adelante con la fase 10" (activa el prompt de la Fase 10, transcrito textualmente en `prompts-claude-code.md`) | Estructura del informe (`docs/informe.md`) con todas las secciones del enunciado; generador `scripts/generar-informe.mts` que inserta el artefacto, la comparativa antes/después, las capturas y la tabla de uso de IA desde los mismos datos de la app y produce `docs/informe.pdf`. Introducción, marco teórico, análisis y conclusiones quedan con el recuadro "REDACTA EL ESTUDIANTE" y viñetas de apoyo, sin texto redactado | _Pendiente_ | `docs/enunciado-literal.md` (secciones 1 a 10); `docs/marco-teorico-esquema.md` |
 | Claude (Claude Code) (22, 22/10/2026) | "adelante con la fase 11" (activa el prompt de la Fase 11, transcrito textualmente en `prompts-claude-code.md`) | Guion del video de 5 minutos (`docs/guion-video.md`) en seis bloques con tiempos, qué mostrar en la app y qué comando correr; demostración en vivo de P01 (la exfuncionaria recibe ORA-28000) comprobada contra el laboratorio; texto de unas 450 palabras (unos 3,5 minutos hablados) | _Pendiente_ | Evidencia de `evidencia/antes` y `evidencia/despues`; ejecución de P01 en `iso-lab` |
+| Claude (Claude Code) (23, 22/10/2026) | "sí, haz el commit y sigue con la fase 12" (activa el prompt de la Fase 12, transcrito textualmente en `prompts-claude-code.md`) | Verificación final de solo lectura contra `docs/enunciado-literal.md`, sin fiarse de la checklist: tabla requisito → evidencia → nota estimada → mejora sugerida, con la calificación estimada según la rúbrica de la sección 9 | _Pendiente_ | `docs/enunciado-literal.md`; contenido del repositorio y de `evidencia/` |
+| Claude (Claude Code) (24, 25/10/2026) | "Despues continuamos con la parte de los documentos y videos o los puntos que faltan referencia al artifac, me gustaria que me ayudaras con algo, mira el profesor evaluo la aplicacion, y esta fue la peticion de mejora que sugirio, Necesito que mires la imagen que se llama "[Image #1] " esa es la peticion que me pidio, basicamente es agregar un grafico en el que se pueda ver por ejemplo(aui tengo dudas, si es con los controles, los riesgos, o las purebas que se tiene que realizar el grafico, pero basicamente un grafico en el que podamos verlo con diferentes opciones ejemplo, seleccionar todos, los que no se han realizar, etc etc etc, ya sea una opcion y dependiendo de que eliges muestra un grafico de lo que se eligio, ademas que aparezca las fechas etc en que se realiza, pero necesito hablarlo contigo sobre ese grafico por que no lo entendi muy bien" (con la foto del boceto del profesor, `materiales/revision-avance/boceto-mejora-evolucion.jpeg`)<br>"sí, controles, riesgos y pruebas, vista nueva Evolución, adelante" | Interpretación del boceto (selector, casillas "todos", eje Y = calificación, eje X = fechas, miniatura para elegir el tramo) y propuesta de datos reales: medir después de cada corrección C01-C15 y guardar un historial con fecha. Scripts `scripts/medir.ps1` y `scripts/historial.ps1`, cambios en `evaluar.ps1`, `pruebas.ps1` y `corregir.ps1`; vista "Evolución" en la app (controles, riesgos y pruebas; filtros por estado; navegador de fechas; tabla) con la paleta validada por el script de dataviz | _Pendiente_ | Boceto del profesor; salidas de la corrida limpia en `evidencia/historial/` |
 
 <div class="declaracion">
 

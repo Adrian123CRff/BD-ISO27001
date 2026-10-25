@@ -1,4 +1,4 @@
--- Evidencia: P14-papelera.sql | ejecutado como auditor | 2026-10-22 10:02:51
+-- Evidencia: P14-papelera.sql | ejecutado como auditor | 2026-10-25 12:01:32
 
 RESULTADO: NADA RECUPERABLE
 

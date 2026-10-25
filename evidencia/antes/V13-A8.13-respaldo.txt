@@ -1,4 +1,4 @@
--- Evidencia: V13-A8.13-respaldo.sql | ejecutado como auditor | 2026-10-20 11:18:00
+-- Evidencia: V13-A8.13-respaldo.sql | ejecutado como auditor | 2026-10-25 11:45:47
 ### Evidencia: configuración de RMAN (V$RMAN_CONFIGURATION, vacía = valores por defecto)
 ### Evidencia: piezas de respaldo disponibles, cifradas y fecha de la más reciente
 ### Evidencia: conjuntos de respaldo por tipo (D datafiles, I incremental, L archivelogs)

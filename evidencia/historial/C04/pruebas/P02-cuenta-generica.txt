@@ -1,0 +1,8 @@
+-- Evidencia: P02-cuenta-generica.sql | ejecutado como usuario:SOPORTE | 2026-10-25 11:49:22
+
+SESION_DE
+--------------------------------------------------------------------------------
+SOPORTE
+
+1 row selected.
+

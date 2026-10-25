@@ -1,0 +1,16 @@
+-- Evidencia: V16-A8.24-criptografia-tde.sql | ejecutado como auditor | 2026-10-25 11:54:48
+### Evidencia: SELECT * FROM V$ENCRYPTION_WALLET
+
+WRL_TYPE WRL_PARAMETER				  STATUS	       WALLET_TYPE
+-------- ---------------------------------------- -------------------- --------------
+FILE						  OPEN		       PASSWORD
+### Evidencia: tablespaces que contienen datos de negocio
+
+TABLESPACE_NAM ENCRYPTED
+-------------- ----------
+DATOS_FIN_CIF  YES
+### Criterios
+
+CRITERIO|A8.24|a|OK|El monedero (keystore) de TDE está abierto|OPEN
+CRITERIO|A8.24|b|OK|El monedero abre solo al reiniciar (AUTOLOGIN) o está gestionado por contraseña con procedimiento|PASSWORD
+CRITERIO|A8.24|c|OK|Todos los tablespaces con datos de negocio están cifrados con TDE|0 de 1 sin cifrar

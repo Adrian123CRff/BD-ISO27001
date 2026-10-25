@@ -2,7 +2,9 @@
 # evidencia/correccion/. Incluye el reinicio de la instancia que exigen los parámetros estáticos de C01.
 # Ejecutar una sola vez, después de .\scripts\evaluar.ps1 -Fase antes y .\scripts\pruebas.ps1 -Fase antes.
 # -Desde Cnn permite reanudar desde un paso si uno anterior falló y ya se corrigió.
-param([string]$Desde = 'C01')
+# Después de cada corrección toma una medición (scripts/medir.ps1): así el historial de la vista "Evolución" muestra
+# en qué momento sube cada control. -SinMedir la omite (solo para depurar un paso; la corrida oficial siempre mide).
+param([string]$Desde = 'C01', [switch]$SinMedir)
 $ErrorActionPreference = 'Stop'
 $Raiz = Split-Path -Parent $PSScriptRoot
 $Evidencia = 'evidencia\correccion'
@@ -27,6 +29,12 @@ function Paso-Sh([string]$Archivo) {
     if ($codigo -ne 0) { throw "Falló $Archivo (código $codigo)" }
 }
 
+function Medir([string]$Archivo) {
+    $etapa = $Archivo.Substring(0, 3)
+    if ($SinMedir -or $etapa -lt $Desde) { return }
+    & (Join-Path $PSScriptRoot 'medir.ps1') -Etapa $etapa
+}
+
 function Esperar-Base([datetime]$Desde) {
     for ($i = 0; $i -lt 60; $i++) {
         Start-Sleep 5
@@ -47,20 +55,18 @@ if ($Desde -le 'C01') {
     docker restart iso-lab | Out-Null
     Esperar-Base $inicio
 }
+Medir 'C01-parametros-cdb.sql'
 
-Paso-Sql 'C02-tde-monedero.sql' 'sys-cdb'
-Paso-Sql 'C03-tde-tablespace.sql' 'sys'
-Paso-Sql 'C04-roles-privilegios.sql' 'sys'
-Paso-Sql 'C05-identidades-perfiles.sql' 'sys'
-Paso-Sql 'C06-clasificacion.sql' 'sys'
-Paso-Sql 'C07-redaccion-vpd.sql' 'sys'
-Paso-Sql 'C08-fuga-datos.sql' 'sys'
-Paso-Sql 'C09-eliminacion.sql' 'sys'
-Paso-Sql 'C10-clon-dev.sql' 'sys'
-Paso-Sql 'C11-auditoria.sql' 'sys'
-Paso-Sh 'C12-red.sh'
-Paso-Sh 'C13-respaldo.sh'
-Paso-Sql 'C14-gobierno.sql' 'sys'
-# Al final, para que también queden protegidos los respaldos y archive logs que creó C13.
-Paso-Sh 'C15-proteccion-logs.sh'
+# C15 va al final para que también queden protegidos los respaldos y archive logs que creó C13.
+$pasos = @(
+    @('C02-tde-monedero.sql', 'sys-cdb'), @('C03-tde-tablespace.sql', 'sys'), @('C04-roles-privilegios.sql', 'sys'),
+    @('C05-identidades-perfiles.sql', 'sys'), @('C06-clasificacion.sql', 'sys'), @('C07-redaccion-vpd.sql', 'sys'),
+    @('C08-fuga-datos.sql', 'sys'), @('C09-eliminacion.sql', 'sys'), @('C10-clon-dev.sql', 'sys'),
+    @('C11-auditoria.sql', 'sys'), @('C12-red.sh', 'sh'), @('C13-respaldo.sh', 'sh'),
+    @('C14-gobierno.sql', 'sys'), @('C15-proteccion-logs.sh', 'sh')
+)
+foreach ($paso in $pasos) {
+    if ($paso[1] -eq 'sh') { Paso-Sh $paso[0] } else { Paso-Sql $paso[0] $paso[1] }
+    Medir $paso[0]
+}
 Write-Host 'Correcciones aplicadas. Siguiente: .\scripts\pruebas.ps1 -Fase despues y .\scripts\evaluar.ps1 -Fase despues'

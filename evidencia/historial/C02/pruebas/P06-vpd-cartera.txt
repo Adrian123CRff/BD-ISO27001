@@ -1,0 +1,6 @@
+-- Evidencia: P06-vpd-cartera.sql | ejecutado como usuario:JPEREZ | 2026-10-25 11:47:56
+
+CLIENTES_VISIBLES=200
+
+1 row selected.
+

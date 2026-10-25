@@ -1,0 +1,8 @@
+-- Evidencia: P19-proteccion-logs.sh | 2026-10-25 11:50:17
+expuesto: drwxrwxr-x /opt/oracle/diag
+expuesto: drwxrwxr-x /opt/oracle/diag/afdboot
+expuesto: drwxrwxr-x /opt/oracle/diag/apx
+expuesto: drwxrwxr-x /opt/oracle/diag/asm
+expuesto: drwxrwxr-x /opt/oracle/diag/asmcmd
+Revisados: 547 | alcanzables por otros: 48 | con permisos abiertos bajo un directorio cerrado: 10
+RESULTADO: REGISTROS EXPUESTOS (48)

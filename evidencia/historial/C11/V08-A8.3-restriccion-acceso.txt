@@ -1,0 +1,27 @@
+-- Evidencia: V08-A8.3-restriccion-acceso.sql | ejecutado como auditor | 2026-10-25 11:53:54
+### Evidencia: políticas VPD (DBA_POLICIES) sobre FINANZAS
+
+OBJECT_OWNER OBJECT_NAME    POLICY_NAME 	     FUNCTION			  ENABLE
+------------ -------------- ------------------------ ---------------------------- ------
+FINANZAS     CLIENTES	    VPD_CARTERA_ANALISTA     FN_VPD_CARTERA		  YES
+### Evidencia: privilegios de excepción
+
+GRANTEE 	     PRIVILEGE
+-------------------- ----------------------------
+DATAPUMP_IMP_FULL_DA SELECT ANY TABLE
+TABASE
+
+DBA		     SELECT ANY TABLE
+EXP_FULL_DATABASE    SELECT ANY TABLE
+EXP_FULL_DATABASE    EXEMPT REDACTION POLICY
+GGSYS		     SELECT ANY TABLE
+GSMADMIN_INTERNAL    SELECT ANY TABLE
+GSMUSER_ROLE	     EXEMPT ACCESS POLICY
+IMP_FULL_DATABASE    SELECT ANY TABLE
+SYS		     SELECT ANY TABLE
+SYSTEM		     SELECT ANY TABLE
+### Criterios
+
+CRITERIO|A8.3|a|OK|Hay una política VPD activa que restringe por fila los datos de FINANZAS|1 política(s) activa(s)
+CRITERIO|A8.3|b|OK|Solo los roles de negocio (ROL_*) y el esquema de control SEGURIDAD (bloqueado) leen FINANZAS.CLIENTES|0 destinatario(s) no autorizado(s)
+CRITERIO|A8.3|c|OK|Ninguna cuenta o rol de negocio puede saltarse las políticas (EXEMPT ACCESS/REDACTION POLICY, SELECT ANY TABLE)|0 concesión(es) de excepción

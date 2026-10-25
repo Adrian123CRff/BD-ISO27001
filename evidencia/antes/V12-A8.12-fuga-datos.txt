@@ -1,4 +1,4 @@
--- Evidencia: V12-A8.12-fuga-datos.sql | ejecutado como auditor | 2026-10-20 11:17:58
+-- Evidencia: V12-A8.12-fuga-datos.sql | ejecutado como auditor | 2026-10-25 11:45:44
 ### Evidencia: privilegios sobre directorios y paquetes de salida
 
 GRANTEE 		     TABLE_NAME       PRIVILEGE 		   TYPE

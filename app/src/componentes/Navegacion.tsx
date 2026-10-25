@@ -1,11 +1,12 @@
-// Navegación lateral: las seis partes del artefacto que pide el enunciado (sección 6), más la metodología. El uso de IA
-// (sección 8) va solo en el informe: el enunciado lo pide ahí, no en el artefacto.
+// Navegación lateral: las seis partes del artefacto que pide el enunciado (sección 6), más la evolución en el tiempo
+// (mejora pedida por el profesor) y la metodología. El uso de IA (sección 8) va solo en el informe: el enunciado lo
+// pide ahí, no en el artefacto.
 import { enlace, SECCIONES, type IdSeccion, type Ruta } from '../ruta.ts';
 import { Icono, type NombreIcono } from './Icono.tsx';
 
 const ICONO: Readonly<Record<IdSeccion, NombreIcono>> = {
     resumen: 'resumen', riesgos: 'riesgo', tareas: 'tabla', mapeo: 'tabla', observables: 'tabla',
-    matriz: 'tabla', pruebas: 'prueba', metodologia: 'metodo',
+    matriz: 'tabla', pruebas: 'prueba', evolucion: 'evolucion', metodologia: 'metodo',
 };
 
 export type Tema = 'claro' | 'oscuro';

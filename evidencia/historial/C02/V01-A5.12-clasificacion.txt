@@ -1,0 +1,19 @@
+-- Evidencia: V01-A5.12-clasificacion.sql | ejecutado como auditor | 2026-10-25 11:47:27
+### Evidencia: comentarios de clasificación en las columnas de FINANZAS.CLIENTES
+
+OWNER	     TABLE_NAME       COLUMN_NAME      COMMENTS
+------------ ---------------- ---------------- ----------------------------------------------------------------------
+FINANZAS     CLIENTES	      CEDULA	       (sin clasificar)
+FINANZAS     CLIENTES	      CORREO	       (sin clasificar)
+FINANZAS     CLIENTES	      FECHA_REGISTRO   (sin clasificar)
+FINANZAS     CLIENTES	      ID_CLIENTE       (sin clasificar)
+FINANZAS     CLIENTES	      NOMBRE	       (sin clasificar)
+FINANZAS     CLIENTES	      NUMERO_TARJETA   (sin clasificar)
+FINANZAS     CLIENTES	      SALARIO	       (sin clasificar)
+FINANZAS     CLIENTES	      TELEFONO	       (sin clasificar)
+### Evidencia: inventario de clasificación (tabla SEGURIDAD.CLASIFICACION_DATOS)
+### Criterios
+
+CRITERIO|A5.12|a|FALLA|Existe un inventario de clasificación de datos (SEGURIDAD.CLASIFICACION_DATOS)|0 inventario(s)
+CRITERIO|A5.12|b|FALLA|Las 5 columnas personales de CLIENTES (cédula, correo, teléfono, salario, tarjeta) llevan etiqueta de clasificación|0 de 5 etiquetadas
+CRITERIO|A5.12|c|FALLA|Las 3 tablas de negocio (clientes, cuentas, movimientos) tienen nivel de clasificación|0 de 3 clasificadas

@@ -1,4 +1,4 @@
--- Evidencia: P05-enmascaramiento.sql | ejecutado como usuario:JPEREZ | 2026-10-20 11:18:05
+-- Evidencia: P05-enmascaramiento.sql | ejecutado como usuario:JPEREZ | 2026-10-25 11:45:57
 
 CEDULA		  SALARIO NUMERO_TARJETA
 -------------- ---------- --------------------

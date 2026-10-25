@@ -27,6 +27,8 @@ Motor: Oracle Database 21c XE (Docker). Artefacto: React + Vite + TypeScript.
    - Hacer: `.\scripts\corregir.ps1` (C01-C15).
    - Verificar (después): `.\scripts\pruebas.ps1 -Fase despues` y `.\scripts\evaluar.ps1 -Fase despues`.
    - Actuar: revisión semanal programada; para adelantarla, `sql\mantenimiento\M02-revision-semanal.sql -Como sys`.
+   - Seguimiento: `.\scripts\medir.ps1` agrega una medición con fecha al historial de la vista Evolución
+     (`corregir.ps1` ya mide después de cada corrección).
 4. Artefacto: `cd app`, `npm install`, `npm run build` y `npx vite preview` (http://localhost:4173).
 5. Documentos generados desde los datos: `node scripts/generar-artefacto.mts` (`docs/artefacto.md`) y
    `node scripts/generar-informe.mts` (`docs/informe.md` y `docs/informe.pdf`).

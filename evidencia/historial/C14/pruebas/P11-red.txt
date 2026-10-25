@@ -1,0 +1,8 @@
+-- Evidencia: P11-red.sh | 2026-10-25 11:59:36
+/opt/oracle/homes/OraDBHome21cXE/network/admin/sqlnet.ora:SQLNET.ENCRYPTION_SERVER = REQUIRED
+/opt/oracle/homes/OraDBHome21cXE/network/admin/sqlnet.ora:SQLNET.ENCRYPTION_TYPES_SERVER = (AES256)
+/opt/oracle/homes/OraDBHome21cXE/network/admin/sqlnet.ora:SQLNET.CRYPTO_CHECKSUM_SERVER = REQUIRED
+/opt/oracle/homes/OraDBHome21cXE/network/admin/sqlnet.ora:SQLNET.CRYPTO_CHECKSUM_TYPES_SERVER = (SHA256)
+/opt/oracle/homes/OraDBHome21cXE/network/admin/sqlnet.ora:SQLNET.ALLOWED_LOGON_VERSION_SERVER = 12a
+/opt/oracle/homes/OraDBHome21cXE/network/admin/listener.ora:ADMIN_RESTRICTIONS_LISTENER = ON
+RESULTADO: RED CIFRADA

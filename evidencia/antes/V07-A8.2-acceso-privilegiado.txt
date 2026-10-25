@@ -1,4 +1,4 @@
--- Evidencia: V07-A8.2-acceso-privilegiado.sql | ejecutado como auditor | 2026-10-20 11:17:55
+-- Evidencia: V07-A8.2-acceso-privilegiado.sql | ejecutado como auditor | 2026-10-25 11:45:39
 ### Evidencia: SELECT * FROM DBA_SYS_PRIVS (cuentas y roles no mantenidos por Oracle)
 
 GRANTEE 	     PRIVILEGE			    ADMIN_

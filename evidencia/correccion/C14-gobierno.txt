@@ -1,4 +1,4 @@
--- Evidencia: C14-gobierno.sql | ejecutado como sys | 2026-10-20 11:20:16
+-- Evidencia: C14-gobierno.sql | ejecutado como sys | 2026-10-25 11:58:35
 
 Table created.
 
@@ -79,8 +79,8 @@ ID_REVISION FECHA	       INTENTOS_FALLIDOS ACCESOS_DENEGADOS
 ----------- ------------------ ----------------- -----------------
 LECTURAS_CLIENTES CAMBIOS_PRIVILEGIOS
 ----------------- -------------------
-	  1 20-OCT-26			       0		 0
-		0		    0
+	  1 25-OCT-26			      30		 3
+		6		    3
 
 
 1 row selected.

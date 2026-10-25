@@ -1,0 +1,21 @@
+-- Evidencia: V02-A5.15-control-acceso.sql | ejecutado como auditor | 2026-10-25 11:50:50
+### Evidencia: SELECT * FROM DBA_TAB_PRIVS sobre los esquemas de negocio
+
+GRANTEE 		 OWNER		TABLE_NAME		 PRIVILEGE
+------------------------ -------------- ------------------------ ------------
+ROL_ANALISTA_CREDITO	 FINANZAS	CLIENTES		 SELECT
+ROL_ANALISTA_CREDITO	 FINANZAS	CUENTAS 		 SELECT
+ROL_APP_WEB		 FINANZAS	CLIENTES		 INSERT
+ROL_APP_WEB		 FINANZAS	CLIENTES		 UPDATE
+ROL_APP_WEB		 FINANZAS	CLIENTES		 SELECT
+ROL_APP_WEB		 FINANZAS	CUENTAS 		 INSERT
+ROL_APP_WEB		 FINANZAS	CUENTAS 		 UPDATE
+ROL_APP_WEB		 FINANZAS	CUENTAS 		 SELECT
+ROL_APP_WEB		 FINANZAS	MOVIMIENTOS		 INSERT
+ROL_APP_WEB		 FINANZAS	MOVIMIENTOS		 SELECT
+ROL_DESARROLLO		 FINANZAS_DEV	CLIENTES		 SELECT
+### Criterios
+
+CRITERIO|A5.15|a|OK|Ningún privilegio sobre datos de negocio está concedido a PUBLIC|0 privilegio(s) a PUBLIC
+CRITERIO|A5.15|b|OK|Las personas no reciben privilegios directos sobre FINANZAS: el acceso pasa por roles|0 privilegio(s) directo(s) a usuarios
+CRITERIO|A5.15|c|OK|Existen roles de negocio (ROL_*) con privilegios definidos sobre FINANZAS|2 rol(es) de negocio con privilegios

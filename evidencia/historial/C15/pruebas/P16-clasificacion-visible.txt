@@ -1,0 +1,6 @@
+-- Evidencia: P16-clasificacion-visible.sql | ejecutado como usuario:JPEREZ | 2026-10-25 12:00:55
+
+ETIQUETADAS=5
+
+1 row selected.
+

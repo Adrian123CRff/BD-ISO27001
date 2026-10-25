@@ -1,0 +1,30 @@
+-- Evidencia: V07-A8.2-acceso-privilegiado.sql | ejecutado como auditor | 2026-10-25 12:00:08
+### Evidencia: SELECT * FROM DBA_SYS_PRIVS (cuentas y roles no mantenidos por Oracle)
+
+GRANTEE 	     PRIVILEGE			    ADMIN_
+-------------------- ------------------------------ ------
+APP_WEB 	     CREATE SESSION		    NO
+DEV_USER	     CREATE SESSION		    NO
+FINANZAS	     CREATE PROCEDURE		    NO
+FINANZAS	     CREATE SEQUENCE		    NO
+FINANZAS	     CREATE SESSION		    NO
+FINANZAS	     CREATE TABLE		    NO
+FINANZAS	     CREATE VIEW		    NO
+ISO_AUDITOR	     CREATE SESSION		    NO
+JPEREZ		     CREATE SESSION		    NO
+MROJAS		     CREATE SESSION		    NO
+SEGURIDAD	     CREATE JOB 		    NO
+SEGURIDAD	     PURGE DBA_RECYCLEBIN	    NO
+SOPORTE 	     CREATE SESSION		    NO
+### Evidencia: quién tiene el rol DBA
+
+GRANTEE 	     PRIVILEGE			    ADMIN_
+-------------------- ------------------------------ ------
+SYS		     DBA			    YES
+SYSTEM		     DBA			    NO
+### Criterios
+
+CRITERIO|A8.2|a|OK|El rol DBA solo lo tienen las cuentas administrativas (SYS, SYSTEM)|0 cuenta(s) adicional(es) con DBA
+CRITERIO|A8.2|b|OK|Ninguna cuenta o rol de negocio tiene privilegios ANY|0 privilegio(s) ANY fuera de Oracle
+CRITERIO|A8.2|c|OK|Solo SYS figura con privilegios administrativos en el archivo de contraseñas (V$PWFILE_USERS)|0 cuenta(s) adicional(es)
+CRITERIO|A8.2|d|OK|Las cuentas dueñas de esquemas (FINANZAS, FINANZAS_DEV, SEGURIDAD) no permiten iniciar sesión|0 cuenta(s) dueña(s) abierta(s)

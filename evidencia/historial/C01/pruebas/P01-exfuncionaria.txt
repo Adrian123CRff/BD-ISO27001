@@ -1,0 +1,8 @@
+-- Evidencia: P01-exfuncionaria.sql | ejecutado como usuario:MROJAS | 2026-10-25 11:46:59
+
+CLIENTES_LEIDOS
+---------------
+	    200
+
+1 row selected.
+

@@ -1,4 +1,4 @@
--- Evidencia: V01-A5.12-clasificacion.sql | ejecutado como auditor | 2026-10-22 10:02:59
+-- Evidencia: V01-A5.12-clasificacion.sql | ejecutado como auditor | 2026-10-25 12:01:47
 ### Evidencia: comentarios de clasificación en las columnas de FINANZAS.CLIENTES
 
 OWNER	     TABLE_NAME       COLUMN_NAME      COMMENTS

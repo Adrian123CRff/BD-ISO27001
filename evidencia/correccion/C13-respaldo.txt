@@ -1,4 +1,4 @@
--- Evidencia: C13-respaldo.sh | 2026-10-20 11:20:16
+-- Evidencia: C13-respaldo.sh | 2026-10-25 11:57:08
 Database closed.
 Database dismounted.
 ORACLE instance shut down.
@@ -23,7 +23,7 @@ Pluggable database altered.
 Pluggable database altered.
 
 
-Recovery Manager: Release 21.0.0.0.0 - Production on Tue Oct 20 17:19:21 2026
+Recovery Manager: Release 21.0.0.0.0 - Production on Sun Oct 25 17:55:50 2026
 Version 21.3.0.0.0
 
 Copyright (c) 1982, 2021, Oracle and/or its affiliates.  All rights reserved.
@@ -53,20 +53,20 @@ new RMAN configuration parameters are successfully stored
 
 RMAN> 
 
-Starting backup at 20-OCT-26
+Starting backup at 25-OCT-26
 current log archived
 allocated channel: ORA_DISK_1
-channel ORA_DISK_1: SID=275 device type=DISK
+channel ORA_DISK_1: SID=49 device type=DISK
 channel ORA_DISK_1: starting archived log backup set
 channel ORA_DISK_1: specifying archived log(s) in backup set
-input archived log thread=1 sequence=15 RECID=1 STAMP=1247159967
-channel ORA_DISK_1: starting piece 1 at 20-OCT-26
-channel ORA_DISK_1: finished piece 1 at 20-OCT-26
-piece handle=/opt/oracle/oradata/fra/XE/backupset/2026_10_20/o1_mf_annnn_TAG20261020T171928_ofh8o067_.bkp tag=TAG20261020T171928 comment=NONE
+input archived log thread=1 sequence=16 RECID=1 STAMP=1247594160
+channel ORA_DISK_1: starting piece 1 at 25-OCT-26
+channel ORA_DISK_1: finished piece 1 at 25-OCT-26
+piece handle=/opt/oracle/oradata/fra/XE/backupset/2026_10_25/o1_mf_annnn_TAG20261025T175601_ofwjol2n_.bkp tag=TAG20261025T175601 comment=NONE
 channel ORA_DISK_1: backup set complete, elapsed time: 00:00:01
-Finished backup at 20-OCT-26
+Finished backup at 25-OCT-26
 
-Starting backup at 20-OCT-26
+Starting backup at 25-OCT-26
 using channel ORA_DISK_1
 channel ORA_DISK_1: starting full datafile backup set
 channel ORA_DISK_1: specifying datafile(s) in backup set
@@ -74,9 +74,9 @@ input datafile file number=00001 name=/opt/oracle/oradata/XE/system01.dbf
 input datafile file number=00003 name=/opt/oracle/oradata/XE/sysaux01.dbf
 input datafile file number=00015 name=/opt/oracle/oradata/XE/undotbs01.dbf
 input datafile file number=00007 name=/opt/oracle/oradata/XE/users01.dbf
-channel ORA_DISK_1: starting piece 1 at 20-OCT-26
-channel ORA_DISK_1: finished piece 1 at 20-OCT-26
-piece handle=/opt/oracle/oradata/fra/XE/backupset/2026_10_20/o1_mf_nnndf_TAG20261020T171929_ofh8o22j_.bkp tag=TAG20261020T171929 comment=NONE
+channel ORA_DISK_1: starting piece 1 at 25-OCT-26
+channel ORA_DISK_1: finished piece 1 at 25-OCT-26
+piece handle=/opt/oracle/oradata/fra/XE/backupset/2026_10_25/o1_mf_nnndf_TAG20261025T175603_ofwjon5c_.bkp tag=TAG20261025T175603 comment=NONE
 channel ORA_DISK_1: backup set complete, elapsed time: 00:00:15
 channel ORA_DISK_1: starting full datafile backup set
 channel ORA_DISK_1: specifying datafile(s) in backup set
@@ -85,57 +85,57 @@ input datafile file number=00009 name=/opt/oracle/oradata/XE/XEPDB1/system01.dbf
 input datafile file number=00021 name=/opt/oracle/oradata/XE/XEPDB1/datos_fin_cif01.dbf
 input datafile file number=00019 name=/opt/oracle/oradata/XE/XEPDB1/undotbs01.dbf
 input datafile file number=00012 name=/opt/oracle/oradata/XE/XEPDB1/users01.dbf
-channel ORA_DISK_1: starting piece 1 at 20-OCT-26
-channel ORA_DISK_1: finished piece 1 at 20-OCT-26
-piece handle=/opt/oracle/oradata/fra/XE/234D00C564120B31E0630F02000AE5F6/backupset/2026_10_20/o1_mf_nnndf_TAG20261020T171929_ofh8okbv_.bkp tag=TAG20261020T171929 comment=NONE
-channel ORA_DISK_1: backup set complete, elapsed time: 00:00:07
+channel ORA_DISK_1: starting piece 1 at 25-OCT-26
+channel ORA_DISK_1: finished piece 1 at 25-OCT-26
+piece handle=/opt/oracle/oradata/fra/XE/234D00C564120B31E0630F02000AE5F6/backupset/2026_10_25/o1_mf_nnndf_TAG20261025T175603_ofwjp3ws_.bkp tag=TAG20261025T175603 comment=NONE
+channel ORA_DISK_1: backup set complete, elapsed time: 00:00:15
 channel ORA_DISK_1: starting full datafile backup set
 channel ORA_DISK_1: specifying datafile(s) in backup set
 input datafile file number=00006 name=/opt/oracle/oradata/XE/pdbseed/sysaux01.dbf
 input datafile file number=00005 name=/opt/oracle/oradata/XE/pdbseed/system01.dbf
 input datafile file number=00017 name=/opt/oracle/oradata/XE/pdbseed/undotbs01.dbf
-channel ORA_DISK_1: starting piece 1 at 20-OCT-26
-channel ORA_DISK_1: finished piece 1 at 20-OCT-26
-piece handle=/opt/oracle/oradata/fra/XE/234CF01FEADC074FE0630F02000AA33B/backupset/2026_10_20/o1_mf_nnndf_TAG20261020T171929_ofh8or56_.bkp tag=TAG20261020T171929 comment=NONE
+channel ORA_DISK_1: starting piece 1 at 25-OCT-26
+channel ORA_DISK_1: finished piece 1 at 25-OCT-26
+piece handle=/opt/oracle/oradata/fra/XE/234CF01FEADC074FE0630F02000AA33B/backupset/2026_10_25/o1_mf_nnndf_TAG20261025T175603_ofwjplsw_.bkp tag=TAG20261025T175603 comment=NONE
 channel ORA_DISK_1: backup set complete, elapsed time: 00:00:07
-Finished backup at 20-OCT-26
+Finished backup at 25-OCT-26
 
-Starting backup at 20-OCT-26
+Starting backup at 25-OCT-26
 current log archived
 using channel ORA_DISK_1
 channel ORA_DISK_1: starting archived log backup set
 channel ORA_DISK_1: specifying archived log(s) in backup set
-input archived log thread=1 sequence=16 RECID=2 STAMP=1247159999
-channel ORA_DISK_1: starting piece 1 at 20-OCT-26
-channel ORA_DISK_1: finished piece 1 at 20-OCT-26
-piece handle=/opt/oracle/oradata/fra/XE/backupset/2026_10_20/o1_mf_annnn_TAG20261020T171959_ofh8ozqo_.bkp tag=TAG20261020T171959 comment=NONE
+input archived log thread=1 sequence=17 RECID=2 STAMP=1247594202
+channel ORA_DISK_1: starting piece 1 at 25-OCT-26
+channel ORA_DISK_1: finished piece 1 at 25-OCT-26
+piece handle=/opt/oracle/oradata/fra/XE/backupset/2026_10_25/o1_mf_annnn_TAG20261025T175642_ofwjptmw_.bkp tag=TAG20261025T175642 comment=NONE
 channel ORA_DISK_1: backup set complete, elapsed time: 00:00:01
-Finished backup at 20-OCT-26
+Finished backup at 25-OCT-26
 
-Starting Control File and SPFILE Autobackup at 20-OCT-26
-piece handle=/opt/oracle/oradata/fra/XE/autobackup/2026_10_20/o1_mf_s_1247160000_ofh8p1nk_.bkp comment=NONE
-Finished Control File and SPFILE Autobackup at 20-OCT-26
+Starting Control File and SPFILE Autobackup at 25-OCT-26
+piece handle=/opt/oracle/oradata/fra/XE/autobackup/2026_10_25/o1_mf_s_1247594204_ofwjpwmz_.bkp comment=NONE
+Finished Control File and SPFILE Autobackup at 25-OCT-26
 
 RMAN> 
-Starting restore at 20-OCT-26
+Starting restore at 25-OCT-26
 using channel ORA_DISK_1
 
 channel ORA_DISK_1: starting validation of datafile backup set
-channel ORA_DISK_1: reading from backup piece /opt/oracle/oradata/fra/XE/backupset/2026_10_20/o1_mf_nnndf_TAG20261020T171929_ofh8o22j_.bkp
-channel ORA_DISK_1: piece handle=/opt/oracle/oradata/fra/XE/backupset/2026_10_20/o1_mf_nnndf_TAG20261020T171929_ofh8o22j_.bkp tag=TAG20261020T171929
+channel ORA_DISK_1: reading from backup piece /opt/oracle/oradata/fra/XE/backupset/2026_10_25/o1_mf_nnndf_TAG20261025T175603_ofwjon5c_.bkp
+channel ORA_DISK_1: piece handle=/opt/oracle/oradata/fra/XE/backupset/2026_10_25/o1_mf_nnndf_TAG20261025T175603_ofwjon5c_.bkp tag=TAG20261025T175603
 channel ORA_DISK_1: restored backup piece 1
-channel ORA_DISK_1: validation complete, elapsed time: 00:00:07
+channel ORA_DISK_1: validation complete, elapsed time: 00:00:15
 channel ORA_DISK_1: starting validation of datafile backup set
-channel ORA_DISK_1: reading from backup piece /opt/oracle/oradata/fra/XE/234D00C564120B31E0630F02000AE5F6/backupset/2026_10_20/o1_mf_nnndf_TAG20261020T171929_ofh8okbv_.bkp
-channel ORA_DISK_1: piece handle=/opt/oracle/oradata/fra/XE/234D00C564120B31E0630F02000AE5F6/backupset/2026_10_20/o1_mf_nnndf_TAG20261020T171929_ofh8okbv_.bkp tag=TAG20261020T171929
+channel ORA_DISK_1: reading from backup piece /opt/oracle/oradata/fra/XE/234D00C564120B31E0630F02000AE5F6/backupset/2026_10_25/o1_mf_nnndf_TAG20261025T175603_ofwjp3ws_.bkp
+channel ORA_DISK_1: piece handle=/opt/oracle/oradata/fra/XE/234D00C564120B31E0630F02000AE5F6/backupset/2026_10_25/o1_mf_nnndf_TAG20261025T175603_ofwjp3ws_.bkp tag=TAG20261025T175603
 channel ORA_DISK_1: restored backup piece 1
 channel ORA_DISK_1: validation complete, elapsed time: 00:00:03
 channel ORA_DISK_1: starting validation of datafile backup set
-channel ORA_DISK_1: reading from backup piece /opt/oracle/oradata/fra/XE/234CF01FEADC074FE0630F02000AA33B/backupset/2026_10_20/o1_mf_nnndf_TAG20261020T171929_ofh8or56_.bkp
-channel ORA_DISK_1: piece handle=/opt/oracle/oradata/fra/XE/234CF01FEADC074FE0630F02000AA33B/backupset/2026_10_20/o1_mf_nnndf_TAG20261020T171929_ofh8or56_.bkp tag=TAG20261020T171929
+channel ORA_DISK_1: reading from backup piece /opt/oracle/oradata/fra/XE/234CF01FEADC074FE0630F02000AA33B/backupset/2026_10_25/o1_mf_nnndf_TAG20261025T175603_ofwjplsw_.bkp
+channel ORA_DISK_1: piece handle=/opt/oracle/oradata/fra/XE/234CF01FEADC074FE0630F02000AA33B/backupset/2026_10_25/o1_mf_nnndf_TAG20261025T175603_ofwjplsw_.bkp tag=TAG20261025T175603
 channel ORA_DISK_1: restored backup piece 1
 channel ORA_DISK_1: validation complete, elapsed time: 00:00:03
-Finished restore at 20-OCT-26
+Finished restore at 25-OCT-26
 
 RMAN> 
 
@@ -143,12 +143,12 @@ List of Backups
 ===============
 Key     TY LV S Device Type Completion Time #Pieces #Copies Compressed Tag
 ------- -- -- - ----------- --------------- ------- ------- ---------- ---
-1       B  A  A DISK        20-OCT-26       1       1       NO         TAG20261020T171928
-2       B  F  A DISK        20-OCT-26       1       1       NO         TAG20261020T171929
-3       B  F  A DISK        20-OCT-26       1       1       NO         TAG20261020T171929
-4       B  F  A DISK        20-OCT-26       1       1       NO         TAG20261020T171929
-5       B  A  A DISK        20-OCT-26       1       1       NO         TAG20261020T171959
-6       B  F  A DISK        20-OCT-26       1       1       NO         TAG20261020T172000
+1       B  A  A DISK        25-OCT-26       1       1       NO         TAG20261025T175601
+2       B  F  A DISK        25-OCT-26       1       1       NO         TAG20261025T175603
+3       B  F  A DISK        25-OCT-26       1       1       NO         TAG20261025T175603
+4       B  F  A DISK        25-OCT-26       1       1       NO         TAG20261025T175603
+5       B  A  A DISK        25-OCT-26       1       1       NO         TAG20261025T175642
+6       B  F  A DISK        25-OCT-26       1       1       NO         TAG20261025T175643
 
 RMAN> 
 

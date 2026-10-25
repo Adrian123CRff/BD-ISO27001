@@ -1,0 +1,7 @@
+-- Evidencia: P01-exfuncionaria.sql | ejecutado como usuario:MROJAS | 2026-10-25 11:49:22
+select count(*) as clientes_leidos from finanzas.clientes
+                                                 *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+

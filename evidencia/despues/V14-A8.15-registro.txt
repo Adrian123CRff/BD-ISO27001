@@ -1,4 +1,4 @@
--- Evidencia: V14-A8.15-registro.sql | ejecutado como auditor | 2026-10-22 10:03:15
+-- Evidencia: V14-A8.15-registro.sql | ejecutado como auditor | 2026-10-25 12:02:05
 ### Evidencia: opciones de auditoría de sentencias y de objetos
 
 AUDIT_OPTION		     SUCCESS	FAILURE
@@ -25,20 +25,20 @@ CUENTAS 															 A/A	   -/-	     -/-       -/-
 
 MOMENTO 	     USERNAME	    ACTION_NAME        OBJ_NAME       RETURNCODE
 -------------------- -------------- ------------------ -------------- ----------
-2026-10-22 16:03:15  ISO_AUDITOR    LOGON				       0
-2026-10-22 16:03:15  ISO_AUDITOR    LOGOFF				       0
-2026-10-22 16:03:15  ISO_AUDITOR    LOGON				       0
-2026-10-22 16:03:14  ISO_AUDITOR    LOGOFF				       0
-2026-10-22 16:03:12  ISO_AUDITOR    LOGON				       0
-2026-10-22 16:03:12  ISO_AUDITOR    LOGON				       0
-2026-10-22 16:03:12  ISO_AUDITOR    LOGOFF				       0
-2026-10-22 16:03:11  ISO_AUDITOR    LOGOFF				       0
-2026-10-22 16:03:11  ISO_AUDITOR    LOGON				       0
-2026-10-22 16:03:10  ISO_AUDITOR    LOGON				       0
+2026-10-25 18:02:06  ISO_AUDITOR    LOGON				       0
+2026-10-25 18:02:05  ISO_AUDITOR    LOGON				       0
+2026-10-25 18:02:05  ISO_AUDITOR    LOGOFF				       0
+2026-10-25 18:02:04  ISO_AUDITOR    LOGOFF				       0
+2026-10-25 18:02:03  ISO_AUDITOR    LOGON				       0
+2026-10-25 18:02:02  ISO_AUDITOR    LOGON				       0
+2026-10-25 18:02:02  ISO_AUDITOR    LOGOFF				       0
+2026-10-25 18:02:01  ISO_AUDITOR    LOGON				       0
+2026-10-25 18:02:01  ISO_AUDITOR    LOGOFF				       0
+2026-10-25 18:02:00  ISO_AUDITOR    LOGOFF				       0
 ### Criterios
 
 CRITERIO|A8.15|a|OK|La auditoría guarda el texto SQL (audit_trail = DB, EXTENDED)|audit_trail = DB, EXTENDED
 CRITERIO|A8.15|b|OK|Se auditan los inicios de sesión, exitosos y fallidos (CREATE SESSION)|Auditado
 CRITERIO|A8.15|c|OK|Se audita la lectura de datos personales (SELECT sobre FINANZAS.CLIENTES)|Auditado
 CRITERIO|A8.15|d|OK|Se auditan los cambios de cuentas y privilegios (USER, ROLE, SYSTEM GRANT)|3 de 3 opciones
-CRITERIO|A8.15|e|OK|La pista contiene registros de las últimas 24 horas|63 registro(s)
+CRITERIO|A8.15|e|OK|La pista contiene registros de las últimas 24 horas|426 registro(s)

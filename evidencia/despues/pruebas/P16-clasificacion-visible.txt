@@ -1,4 +1,4 @@
--- Evidencia: P16-clasificacion-visible.sql | ejecutado como usuario:JPEREZ | 2026-10-22 10:02:53
+-- Evidencia: P16-clasificacion-visible.sql | ejecutado como usuario:JPEREZ | 2026-10-25 12:01:34
 
 ETIQUETADAS=5
 

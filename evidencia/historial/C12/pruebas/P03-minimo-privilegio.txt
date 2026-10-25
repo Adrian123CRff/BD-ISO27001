@@ -1,0 +1,7 @@
+-- Evidencia: P03-minimo-privilegio.sql | ejecutado como usuario:JPEREZ | 2026-10-25 11:54:54
+select count(*) as movimientos_leidos from finanzas.movimientos
+                                                    *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+

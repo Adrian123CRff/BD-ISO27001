@@ -1,6 +1,6 @@
 {
   "fase": "antes",
-  "fecha": "2026-10-20T11:18:20",
+  "fecha": "2026-10-25T11:46:17",
   "pruebas": [
     {
       "id": "P01",
@@ -314,7 +314,7 @@
         "expuesto: drwxrwxr-x /opt/oracle/diag/apx",
         "expuesto: drwxrwxr-x /opt/oracle/diag/asm",
         "expuesto: drwxrwxr-x /opt/oracle/diag/asmcmd",
-        "Revisados: 341 | alcanzables por otros: 45 | con permisos abiertos bajo un directorio cerrado: 5",
+        "Revisados: 338 | alcanzables por otros: 45 | con permisos abiertos bajo un directorio cerrado: 6",
         "RESULTADO: REGISTROS EXPUESTOS (45)"
       ]
     }

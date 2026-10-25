@@ -1,4 +1,4 @@
--- Evidencia: C07-redaccion-vpd.sql | ejecutado como sys | 2026-10-20 11:18:44
+-- Evidencia: C07-redaccion-vpd.sql | ejecutado como sys | 2026-10-25 11:50:49
 === Data Redaction sobre FINANZAS.CLIENTES ===
 
 PL/SQL procedure successfully completed.

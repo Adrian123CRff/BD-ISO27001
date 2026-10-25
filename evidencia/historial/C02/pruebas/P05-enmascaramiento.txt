@@ -1,0 +1,8 @@
+-- Evidencia: P05-enmascaramiento.sql | ejecutado como usuario:JPEREZ | 2026-10-25 11:47:55
+
+CEDULA		  SALARIO NUMERO_TARJETA
+-------------- ---------- --------------------
+1-0037-0091	   935863 4111-0013-0017-0001
+
+1 row selected.
+

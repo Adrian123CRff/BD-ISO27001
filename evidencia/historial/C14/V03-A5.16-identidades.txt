@@ -1,0 +1,20 @@
+-- Evidencia: V03-A5.16-identidades.sql | ejecutado como auditor | 2026-10-25 11:58:44
+### Evidencia: cuentas no mantenidas por Oracle
+
+USERNAME	 ACCOUNT_STATUS       CREATED
+---------------- -------------------- --------------------
+APP_WEB 	 OPEN		      2026-10-25 17:45
+DEV_USER	 OPEN		      2026-10-25 17:45
+FINANZAS	 LOCKED 	      2026-10-25 17:45
+FINANZAS_DEV	 LOCKED 	      2026-10-25 17:45
+ISO_AUDITOR	 OPEN		      2026-10-25 17:45
+JPEREZ		 OPEN		      2026-10-25 17:45
+MROJAS		 LOCKED 	      2026-10-25 17:45
+OPS$ORACLE	 OPEN		      2024-09-30 01:20
+PDBADMIN	 LOCKED 	      2024-09-30 01:20
+SEGURIDAD	 LOCKED 	      2026-10-25 17:49
+SOPORTE 	 LOCKED 	      2026-10-25 17:45
+### Criterios
+
+CRITERIO|A5.16|a|OK|Toda cuenta está registrada con su responsable en SEGURIDAD.REGISTRO_IDENTIDADES|0 cuenta(s) sin responsable
+CRITERIO|A5.16|b|OK|No hay cuentas genéricas o compartidas abiertas (SOPORTE, ADMIN, TEST, GUEST, TEMP)|0 cuenta(s) genérica(s) abierta(s)

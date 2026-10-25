@@ -1,0 +1,20 @@
+-- Evidencia: V05-A5.18-derechos-acceso.sql | ejecutado como auditor | 2026-10-25 11:49:09
+### Evidencia: estado y último ingreso de las cuentas no mantenidas por Oracle
+
+USERNAME	 ACCOUNT_STATUS       ULTIMO_INGRESO
+---------------- -------------------- --------------------
+APP_WEB 	 OPEN		      2026-10-25 17:48
+DEV_USER	 OPEN		      2026-10-25 17:48
+FINANZAS	 LOCKED 	      (nunca)
+FINANZAS_DEV	 LOCKED 	      (nunca)
+ISO_AUDITOR	 OPEN		      2026-10-25 17:49
+JPEREZ		 OPEN		      2026-10-25 17:49
+MROJAS		 OPEN		      2026-10-25 17:48
+OPS$ORACLE	 OPEN		      (nunca)
+PDBADMIN	 OPEN		      (nunca)
+SOPORTE 	 OPEN		      2026-10-25 17:48
+### Criterios
+
+CRITERIO|A5.18|a|FALLA|Hay una revisión de derechos de acceso registrada en los últimos 180 días|No existe registro de revisión
+CRITERIO|A5.18|b|FALLA|Las cuentas dadas de baja (exfuncionarios) están bloqueadas|Sin registro: no se puede saber quién es baja
+CRITERIO|A5.18|c|OK|No hay cuentas abiertas sin uso en más de 90 días|0 cuenta(s) inactiva(s) abierta(s)

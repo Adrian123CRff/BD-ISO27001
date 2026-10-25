@@ -1,4 +1,4 @@
--- Evidencia: P03-minimo-privilegio.sql | ejecutado como usuario:JPEREZ | 2026-10-22 10:02:32
+-- Evidencia: P03-minimo-privilegio.sql | ejecutado como usuario:JPEREZ | 2026-10-25 12:01:09
 select count(*) as movimientos_leidos from finanzas.movimientos
                                                     *
 ERROR at line 1:

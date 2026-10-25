@@ -3,11 +3,19 @@
 # se compara la salida con el PATRON del resultado esperado y se genera app/src/datos/pruebas-<fase>.json.
 #
 # Uso: .\scripts\pruebas.ps1 -Fase antes | despues
-param([Parameter(Mandatory)][ValidateSet('antes', 'despues')][string]$Fase)
+#      .\scripts\pruebas.ps1 -Fase historial -Etapa C04   (medición intermedia: evidencia en evidencia/historial/C04/pruebas/)
+# Toda batería se agrega además a app/src/datos/historial.json (vista "Evolución", ver scripts/historial.ps1).
+param(
+    [Parameter(Mandatory)][ValidateSet('antes', 'despues', 'historial')][string]$Fase,
+    [ValidatePattern('^[A-Za-z0-9-]+$')][string]$Etapa = $Fase
+)
 
 $ErrorActionPreference = 'Stop'
 $Raiz = Split-Path -Parent $PSScriptRoot
-$Carpeta = Join-Path $Raiz "evidencia\$Fase\pruebas"
+. (Join-Path $PSScriptRoot 'historial.ps1')
+if ($Fase -eq 'historial' -and $Etapa -eq 'historial') { throw 'Indicar -Etapa para una medición del historial' }
+$SalidaRelativa = if ($Fase -eq 'historial') { "evidencia\historial\$Etapa\pruebas" } else { "evidencia\$Fase\pruebas" }
+$Carpeta = Join-Path $Raiz $SalidaRelativa
 New-Item -ItemType Directory -Force $Carpeta | Out-Null
 $archivos = Get-ChildItem (Join-Path $Raiz 'sql\pruebas') -File | Where-Object { $_.Name -match '^P\d{2}-' } | Sort-Object Name
 if ($archivos.Count -ne 19) { throw "Se esperaban 19 pruebas y hay $($archivos.Count)" }
@@ -38,7 +46,7 @@ foreach ($archivo in $archivos) {
         @("-- Evidencia: $($archivo.Name) | $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')") + $salida | Set-Content $destino -Encoding UTF8
     }
     else {
-        $salida = & (Join-Path $PSScriptRoot 'ejecutar-sql.ps1') $archivo.FullName -Como $meta.COMO -Salida "evidencia\$Fase\pruebas" 2>&1
+        $salida = & (Join-Path $PSScriptRoot 'ejecutar-sql.ps1') $archivo.FullName -Como $meta.COMO -Salida $SalidaRelativa 2>&1
     }
     if ($meta.ContainsKey('LIMPIEZA_SYS')) { Limpiar $meta.LIMPIEZA_SYS }
     $texto = ($salida | ForEach-Object { "$_" }) -join "`n"
@@ -54,8 +62,16 @@ foreach ($archivo in $archivos) {
     Write-Host ("  {0}" -f $(if ($paso) { 'Resultado esperado obtenido' } else { 'NO se obtuvo el resultado esperado' }))
 }
 
-$json = [ordered]@{ fase = $Fase; fecha = (Get-Date -Format 'yyyy-MM-ddTHH:mm:ss'); pruebas = $resultados }
-$destinoJson = Join-Path $Raiz "app\src\datos\pruebas-$Fase.json"
-$json | ConvertTo-Json -Depth 5 | Set-Content -Path $destinoJson -Encoding UTF8
+$fecha = Get-Date -Format 'yyyy-MM-ddTHH:mm:ss'
+if ($Fase -ne 'historial') {
+    $json = [ordered]@{ fase = $Fase; fecha = $fecha; pruebas = $resultados }
+    $destinoJson = Join-Path $Raiz "app\src\datos\pruebas-$Fase.json"
+    $json | ConvertTo-Json -Depth 5 | Set-Content -Path $destinoJson -Encoding UTF8
+    Write-Host "Batería '$Fase' guardada en $destinoJson"
+}
+Agregar-AlHistorial $Raiz 'baterias' ([ordered]@{
+    etapa = $Etapa; fecha = $fecha; evidencia = ($SalidaRelativa -replace '\\', '/')
+    pruebas = @($resultados | ForEach-Object { [ordered]@{ id = $_.id; paso = $_.paso } })
+})
 $aprobadas = @($resultados | Where-Object { $_.paso }).Count
-Write-Host "Batería '$Fase': $aprobadas de $($resultados.Count) con el resultado esperado. Guardado en $destinoJson"
+Write-Host "Batería '$Etapa': $aprobadas de $($resultados.Count) con el resultado esperado (agregada al historial)"

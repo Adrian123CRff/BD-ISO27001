@@ -1,0 +1,35 @@
+-- Evidencia: V90-gobierno.sql | ejecutado como auditor | 2026-10-25 11:52:14
+GOBIERNO|A5.12|DOC|FALLA|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|0 procedimiento(s)
+GOBIERNO|A5.12|VER|FALLA|Revisión semanal programada con registro en los últimos 7 días|tarea inexistente, 0 registro(s) en bitácora
+GOBIERNO|A5.15|DOC|FALLA|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|0 procedimiento(s)
+GOBIERNO|A5.15|VER|FALLA|Revisión semanal programada con registro en los últimos 7 días|tarea inexistente, 0 registro(s) en bitácora
+GOBIERNO|A5.16|DOC|FALLA|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|0 procedimiento(s)
+GOBIERNO|A5.16|VER|FALLA|Revisión semanal programada con registro en los últimos 7 días|tarea inexistente, 0 registro(s) en bitácora
+GOBIERNO|A5.17|DOC|FALLA|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|0 procedimiento(s)
+GOBIERNO|A5.17|VER|FALLA|Revisión semanal programada con registro en los últimos 7 días|tarea inexistente, 0 registro(s) en bitácora
+GOBIERNO|A5.18|DOC|FALLA|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|0 procedimiento(s)
+GOBIERNO|A5.18|VER|FALLA|Revisión semanal programada con registro en los últimos 7 días|tarea inexistente, 0 registro(s) en bitácora
+GOBIERNO|A5.33|DOC|FALLA|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|0 procedimiento(s)
+GOBIERNO|A5.33|VER|FALLA|Revisión semanal programada con registro en los últimos 7 días|tarea inexistente, 0 registro(s) en bitácora
+GOBIERNO|A8.2|DOC|FALLA|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|0 procedimiento(s)
+GOBIERNO|A8.2|VER|FALLA|Revisión semanal programada con registro en los últimos 7 días|tarea inexistente, 0 registro(s) en bitácora
+GOBIERNO|A8.3|DOC|FALLA|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|0 procedimiento(s)
+GOBIERNO|A8.3|VER|FALLA|Revisión semanal programada con registro en los últimos 7 días|tarea inexistente, 0 registro(s) en bitácora
+GOBIERNO|A8.5|DOC|FALLA|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|0 procedimiento(s)
+GOBIERNO|A8.5|VER|FALLA|Revisión semanal programada con registro en los últimos 7 días|tarea inexistente, 0 registro(s) en bitácora
+GOBIERNO|A8.10|DOC|FALLA|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|0 procedimiento(s)
+GOBIERNO|A8.10|VER|FALLA|Revisión semanal programada con registro en los últimos 7 días|tarea inexistente, 0 registro(s) en bitácora
+GOBIERNO|A8.11|DOC|FALLA|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|0 procedimiento(s)
+GOBIERNO|A8.11|VER|FALLA|Revisión semanal programada con registro en los últimos 7 días|tarea inexistente, 0 registro(s) en bitácora
+GOBIERNO|A8.12|DOC|FALLA|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|0 procedimiento(s)
+GOBIERNO|A8.12|VER|FALLA|Revisión semanal programada con registro en los últimos 7 días|tarea inexistente, 0 registro(s) en bitácora
+GOBIERNO|A8.13|DOC|FALLA|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|0 procedimiento(s)
+GOBIERNO|A8.13|VER|FALLA|Revisión semanal programada con registro en los últimos 7 días|tarea inexistente, 0 registro(s) en bitácora
+GOBIERNO|A8.15|DOC|FALLA|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|0 procedimiento(s)
+GOBIERNO|A8.15|VER|FALLA|Revisión semanal programada con registro en los últimos 7 días|tarea inexistente, 0 registro(s) en bitácora
+GOBIERNO|A8.20|DOC|FALLA|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|0 procedimiento(s)
+GOBIERNO|A8.20|VER|FALLA|Revisión semanal programada con registro en los últimos 7 días|tarea inexistente, 0 registro(s) en bitácora
+GOBIERNO|A8.24|DOC|FALLA|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|0 procedimiento(s)
+GOBIERNO|A8.24|VER|FALLA|Revisión semanal programada con registro en los últimos 7 días|tarea inexistente, 0 registro(s) en bitácora
+GOBIERNO|A8.8|DOC|FALLA|Procedimiento aprobado en SEGURIDAD.PROCEDIMIENTOS|0 procedimiento(s)
+GOBIERNO|A8.8|VER|FALLA|Revisión semanal programada con registro en los últimos 7 días|tarea inexistente, 0 registro(s) en bitácora

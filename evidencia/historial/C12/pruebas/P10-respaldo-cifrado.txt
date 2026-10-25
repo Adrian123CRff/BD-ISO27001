@@ -1,0 +1,2 @@
+-- Evidencia: P10-respaldo-cifrado.sh | 2026-10-25 11:55:13
+RESULTADO: SIN RESPALDOS

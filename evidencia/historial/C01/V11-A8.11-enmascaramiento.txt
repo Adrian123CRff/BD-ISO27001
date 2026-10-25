@@ -1,0 +1,7 @@
+-- Evidencia: V11-A8.11-enmascaramiento.sql | ejecutado como auditor | 2026-10-25 11:46:54
+### Evidencia: políticas de Data Redaction (REDACTION_POLICIES y REDACTION_COLUMNS)
+### Criterios
+
+CRITERIO|A8.11|a|FALLA|Hay una política de Data Redaction activa sobre FINANZAS.CLIENTES|0 política(s) activa(s)
+CRITERIO|A8.11|b|FALLA|La redacción cubre cédula, salario y número de tarjeta|0 de 3 columnas cubiertas
+CRITERIO|A8.11|c|FALLA|El clon de desarrollo (FINANZAS_DEV) no contiene cédulas ni tarjetas reales (control de los últimos 7 días)|No existe control sobre el clon

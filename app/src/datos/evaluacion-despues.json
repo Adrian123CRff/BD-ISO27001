@@ -1,6 +1,6 @@
 {
   "fase": "despues",
-  "fecha": "2026-10-22T10:03:19",
+  "fecha": "2026-10-25T12:02:11",
   "motor": "Oracle Database 21c Express Edition 21.3.0.0.0 (contenedor iso-lab, XEPDB1)",
   "ejecutadoComo": "ISO_AUDITOR (solo lectura del diccionario)",
   "controles": [
@@ -48,7 +48,7 @@
           "id": "VER",
           "ok": true,
           "criterio": "Revisión semanal programada con registro en los últimos 7 días",
-          "observado": "tarea activa, 2 registro(s) en bitácora",
+          "observado": "tarea activa, 1 registro(s) en bitácora",
           "script": "V90-gobierno.sql"
         }
       ]
@@ -97,7 +97,7 @@
           "id": "VER",
           "ok": true,
           "criterio": "Revisión semanal programada con registro en los últimos 7 días",
-          "observado": "tarea activa, 2 registro(s) en bitácora",
+          "observado": "tarea activa, 1 registro(s) en bitácora",
           "script": "V90-gobierno.sql"
         }
       ]
@@ -139,7 +139,7 @@
           "id": "VER",
           "ok": true,
           "criterio": "Revisión semanal programada con registro en los últimos 7 días",
-          "observado": "tarea activa, 2 registro(s) en bitácora",
+          "observado": "tarea activa, 1 registro(s) en bitácora",
           "script": "V90-gobierno.sql"
         }
       ]
@@ -195,7 +195,7 @@
           "id": "VER",
           "ok": true,
           "criterio": "Revisión semanal programada con registro en los últimos 7 días",
-          "observado": "tarea activa, 2 registro(s) en bitácora",
+          "observado": "tarea activa, 1 registro(s) en bitácora",
           "script": "V90-gobierno.sql"
         }
       ]
@@ -244,7 +244,7 @@
           "id": "VER",
           "ok": true,
           "criterio": "Revisión semanal programada con registro en los últimos 7 días",
-          "observado": "tarea activa, 2 registro(s) en bitácora",
+          "observado": "tarea activa, 1 registro(s) en bitácora",
           "script": "V90-gobierno.sql"
         }
       ]
@@ -293,7 +293,7 @@
           "id": "VER",
           "ok": true,
           "criterio": "Revisión semanal programada con registro en los últimos 7 días",
-          "observado": "tarea activa, 2 registro(s) en bitácora",
+          "observado": "tarea activa, 1 registro(s) en bitácora",
           "script": "V90-gobierno.sql"
         }
       ]
@@ -349,7 +349,7 @@
           "id": "VER",
           "ok": true,
           "criterio": "Revisión semanal programada con registro en los últimos 7 días",
-          "observado": "tarea activa, 2 registro(s) en bitácora",
+          "observado": "tarea activa, 1 registro(s) en bitácora",
           "script": "V90-gobierno.sql"
         }
       ]
@@ -398,7 +398,7 @@
           "id": "VER",
           "ok": true,
           "criterio": "Revisión semanal programada con registro en los últimos 7 días",
-          "observado": "tarea activa, 2 registro(s) en bitácora",
+          "observado": "tarea activa, 1 registro(s) en bitácora",
           "script": "V90-gobierno.sql"
         }
       ]
@@ -447,7 +447,7 @@
           "id": "VER",
           "ok": true,
           "criterio": "Revisión semanal programada con registro en los últimos 7 días",
-          "observado": "tarea activa, 2 registro(s) en bitácora",
+          "observado": "tarea activa, 1 registro(s) en bitácora",
           "script": "V90-gobierno.sql"
         }
       ]
@@ -496,7 +496,7 @@
           "id": "VER",
           "ok": true,
           "criterio": "Revisión semanal programada con registro en los últimos 7 días",
-          "observado": "tarea activa, 2 registro(s) en bitácora",
+          "observado": "tarea activa, 1 registro(s) en bitácora",
           "script": "V90-gobierno.sql"
         }
       ]
@@ -545,7 +545,7 @@
           "id": "VER",
           "ok": true,
           "criterio": "Revisión semanal programada con registro en los últimos 7 días",
-          "observado": "tarea activa, 2 registro(s) en bitácora",
+          "observado": "tarea activa, 1 registro(s) en bitácora",
           "script": "V90-gobierno.sql"
         }
       ]
@@ -594,7 +594,7 @@
           "id": "VER",
           "ok": true,
           "criterio": "Revisión semanal programada con registro en los últimos 7 días",
-          "observado": "tarea activa, 2 registro(s) en bitácora",
+          "observado": "tarea activa, 1 registro(s) en bitácora",
           "script": "V90-gobierno.sql"
         }
       ]
@@ -643,7 +643,7 @@
           "id": "VER",
           "ok": true,
           "criterio": "Revisión semanal programada con registro en los últimos 7 días",
-          "observado": "tarea activa, 2 registro(s) en bitácora",
+          "observado": "tarea activa, 1 registro(s) en bitácora",
           "script": "V90-gobierno.sql"
         }
       ]
@@ -692,7 +692,7 @@
           "id": "VER",
           "ok": true,
           "criterio": "Revisión semanal programada con registro en los últimos 7 días",
-          "observado": "tarea activa, 2 registro(s) en bitácora",
+          "observado": "tarea activa, 1 registro(s) en bitácora",
           "script": "V90-gobierno.sql"
         }
       ]
@@ -739,7 +739,7 @@
           "id": "e",
           "ok": true,
           "criterio": "La pista contiene registros de las últimas 24 horas",
-          "observado": "63 registro(s)",
+          "observado": "426 registro(s)",
           "script": "V14-A8.15-registro.sql"
         }
       ],
@@ -755,7 +755,7 @@
           "id": "VER",
           "ok": true,
           "criterio": "Revisión semanal programada con registro en los últimos 7 días",
-          "observado": "tarea activa, 2 registro(s) en bitácora",
+          "observado": "tarea activa, 1 registro(s) en bitácora",
           "script": "V90-gobierno.sql"
         }
       ]
@@ -797,7 +797,7 @@
           "id": "VER",
           "ok": true,
           "criterio": "Revisión semanal programada con registro en los últimos 7 días",
-          "observado": "tarea activa, 2 registro(s) en bitácora",
+          "observado": "tarea activa, 1 registro(s) en bitácora",
           "script": "V90-gobierno.sql"
         }
       ]
@@ -846,7 +846,7 @@
           "id": "VER",
           "ok": true,
           "criterio": "Revisión semanal programada con registro en los últimos 7 días",
-          "observado": "tarea activa, 2 registro(s) en bitácora",
+          "observado": "tarea activa, 1 registro(s) en bitácora",
           "script": "V90-gobierno.sql"
         }
       ]

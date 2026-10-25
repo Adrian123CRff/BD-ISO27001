@@ -1,4 +1,4 @@
--- Evidencia: C04-roles-privilegios.sql | ejecutado como sys | 2026-10-20 11:18:41
+-- Evidencia: C04-roles-privilegios.sql | ejecutado como sys | 2026-10-25 11:49:04
 === Retiro de privilegios excesivos ===
 
 Revoke succeeded.

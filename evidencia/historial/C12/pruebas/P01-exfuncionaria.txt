@@ -1,0 +1,6 @@
+-- Evidencia: P01-exfuncionaria.sql | ejecutado como usuario:MROJAS | 2026-10-25 11:54:52
+ERROR:
+ORA-28000: The account is locked.
+
+
+SP2-0640: Not connected

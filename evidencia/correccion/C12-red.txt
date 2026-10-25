@@ -1,4 +1,4 @@
--- Evidencia: C12-red.sh | 2026-10-20 11:19:04
+-- Evidencia: C12-red.sh | 2026-10-25 11:54:27
 === sqlnet.ora ===
 SQLNET.ENCRYPTION_SERVER = REQUIRED
 SQLNET.ENCRYPTION_TYPES_SERVER = (AES256)

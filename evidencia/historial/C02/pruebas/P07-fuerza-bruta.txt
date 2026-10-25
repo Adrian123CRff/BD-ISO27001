@@ -1,0 +1,32 @@
+-- Evidencia: P07-fuerza-bruta.sql | ejecutado como ninguno | 2026-10-25 11:47:56
+ERROR:
+ORA-01017: invalid username/password; logon denied
+
+
+ERROR:
+ORA-01017: invalid username/password; logon denied
+
+
+ERROR:
+ORA-01017: invalid username/password; logon denied
+
+
+ERROR:
+ORA-01017: invalid username/password; logon denied
+
+
+ERROR:
+ORA-01017: invalid username/password; logon denied
+
+
+ERROR:
+ORA-01017: invalid username/password; logon denied
+
+
+
+RESULTADO
+--------------
+SESION ABIERTA
+
+1 row selected.
+

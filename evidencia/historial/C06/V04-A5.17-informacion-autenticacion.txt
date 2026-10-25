@@ -1,0 +1,23 @@
+-- Evidencia: V04-A5.17-informacion-autenticacion.sql | ejecutado como auditor | 2026-10-25 11:50:20
+### Evidencia: política de contraseñas efectiva de cada cuenta abierta (DBA_PROFILES + DBA_USERS)
+
+USERNAME       PROFILE		VERIFICACION		 VIGENCIA   REUSO_MAX  REUSO_DIAS
+-------------- ---------------- ------------------------ ---------- ---------- ----------
+APP_WEB        PERFIL_USUARIOS	ORA12C_STRONG_VERIFY_FUN 90	    5	       365
+				CTION
+
+DEV_USER       PERFIL_USUARIOS	ORA12C_STRONG_VERIFY_FUN 90	    5	       365
+				CTION
+
+ISO_AUDITOR    PERFIL_USUARIOS	ORA12C_STRONG_VERIFY_FUN 90	    5	       365
+				CTION
+
+JPEREZ	       PERFIL_USUARIOS	ORA12C_STRONG_VERIFY_FUN 90	    5	       365
+				CTION
+
+### Criterios
+
+CRITERIO|A5.17|a|OK|Toda cuenta abierta tiene función de complejidad de contraseña|0 cuenta(s) sin verificación
+CRITERIO|A5.17|b|OK|La vigencia de la contraseña es de 90 días o menos|0 cuenta(s) con vigencia mayor o ilimitada
+CRITERIO|A5.17|c|OK|Se impide reutilizar contraseñas (REUSE_MAX y REUSE_TIME limitados)|0 cuenta(s) que pueden reutilizar
+CRITERIO|A5.17|d|OK|Ninguna cuenta abierta usa contraseña por defecto (DBA_USERS_WITH_DEFPWD)|0 cuenta(s) con contraseña por defecto

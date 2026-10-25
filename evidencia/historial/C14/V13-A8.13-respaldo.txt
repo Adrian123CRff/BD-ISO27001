@@ -1,0 +1,25 @@
+-- Evidencia: V13-A8.13-respaldo.sql | ejecutado como auditor | 2026-10-25 11:59:04
+### Evidencia: configuración de RMAN (V$RMAN_CONFIGURATION, vacía = valores por defecto)
+
+NAME				   VALUE
+---------------------------------- ----------------------------------------
+ENCRYPTION FOR DATABASE 	   ON
+ENCRYPTION ALGORITHM		   'AES256'
+CONTROLFILE AUTOBACKUP		   ON
+RETENTION POLICY		   TO REDUNDANCY 2
+### Evidencia: piezas de respaldo disponibles, cifradas y fecha de la más reciente
+
+ENCRYPTED  PIEZAS INICIO
+---------- ------ --------------------
+YES		3 2026-10-25 17:56
+### Evidencia: conjuntos de respaldo por tipo (D datafiles, I incremental, L archivelogs)
+
+T CF   CONJUNTOS ULTIMO
+- --- ---------- ----------------
+D NO	       1 2026-10-25 17:56
+L NO	       2 2026-10-25 17:56
+### Criterios
+
+CRITERIO|A8.13|a|OK|RMAN está configurado para cifrar los respaldos (ENCRYPTION FOR DATABASE ON)|Cifrado activo
+CRITERIO|A8.13|b|OK|Hay al menos un respaldo de la base (datafiles) completado en los últimos 7 días|1 respaldo(s) de datafiles reciente(s)
+CRITERIO|A8.13|c|OK|Todas las piezas de respaldo disponibles están cifradas|0 de 3 pieza(s) sin cifrar

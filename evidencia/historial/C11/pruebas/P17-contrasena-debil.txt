@@ -1,0 +1,7 @@
+-- Evidencia: P17-contrasena-debil.sql | ejecutado como sys | 2026-10-25 11:54:19
+Perfil del analista: PERFIL_USUARIOS
+RESULTADO: CLAVE RECHAZADA (ORA-28003: password verification for the specified
+password failed)
+
+PL/SQL procedure successfully completed.
+

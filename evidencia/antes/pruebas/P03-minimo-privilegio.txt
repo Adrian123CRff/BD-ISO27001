@@ -1,4 +1,4 @@
--- Evidencia: P03-minimo-privilegio.sql | ejecutado como usuario:JPEREZ | 2026-10-20 11:18:04
+-- Evidencia: P03-minimo-privilegio.sql | ejecutado como usuario:JPEREZ | 2026-10-25 11:45:54
 
 MOVIMIENTOS_LEIDOS
 ------------------

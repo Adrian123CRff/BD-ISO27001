@@ -1,0 +1,19 @@
+-- Evidencia: V09-A8.5-autenticacion-segura.sql | ejecutado como auditor | 2026-10-25 11:46:52
+### Evidencia: intentos fallidos, tiempo de bloqueo y versión del verificador por cuenta abierta
+
+USERNAME       PROFILE		INTENTOS   BLOQUEO    PASSWORD_VERSIONS
+-------------- ---------------- ---------- ---------- ------------------
+APP_WEB        DEFAULT		UNLIMITED  1	      11G 12C
+DEV_USER       DEFAULT		UNLIMITED  1	      11G 12C
+FINANZAS       DEFAULT		UNLIMITED  1	      11G 12C
+FINANZAS_DEV   DEFAULT		UNLIMITED  1	      11G 12C
+ISO_AUDITOR    DEFAULT		UNLIMITED  1	      11G 12C
+JPEREZ	       DEFAULT		UNLIMITED  1	      11G 12C
+MROJAS	       DEFAULT		UNLIMITED  1	      11G 12C
+PDBADMIN       DEFAULT		UNLIMITED  1	      11G 12C
+SOPORTE        DEFAULT		UNLIMITED  1	      11G 12C
+### Criterios
+
+CRITERIO|A8.5|a|FALLA|La cuenta se bloquea tras 5 intentos fallidos o menos|9 cuenta(s) con intentos ilimitados o mayores
+CRITERIO|A8.5|b|OK|El bloqueo por intentos fallidos dura al menos 30 minutos|0 cuenta(s) con bloqueo menor
+CRITERIO|A8.5|c|OK|Ninguna cuenta conserva el verificador antiguo 10G (solo 11G/12C)|0 cuenta(s) con verificador 10G

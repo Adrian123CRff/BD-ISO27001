@@ -1,0 +1,8 @@
+-- Evidencia: P12-clon-dev.sql | ejecutado como usuario:DEV_USER | 2026-10-25 11:48:58
+
+NOMBRE				 CEDULA
+-------------------------------- --------------
+TESTIGO CONFIDENCIAL ISO27001	 9-0999-0999
+
+1 row selected.
+

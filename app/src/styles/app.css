@@ -216,6 +216,64 @@ a { color: var(--acento); }
 /* Cajón lateral (batería): el panel se superpone a la derecha y la tabla conserva todo su ancho. */
 .panel--cajon { position: fixed; top: 0; right: 0; bottom: 0; width: min(460px, 100%); max-height: none; border-radius: 0; border-width: 0 0 0 1px; box-shadow: -12px 0 32px rgba(15, 23, 42, 0.18); z-index: 5; }
 
+/* Vista Evolución: filtros en una fila arriba (qué graficar + rango de fechas), lista a la izquierda, gráfico a la derecha. */
+.evo__filtros { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: var(--e-4); }
+.evo { display: grid; grid-template-columns: minmax(260px, 320px) minmax(0, 1fr); gap: var(--e-5); align-items: start; }
+.evo__figura { margin: 0; display: grid; gap: var(--e-3); background: var(--superficie); border: 1px solid var(--borde); border-radius: var(--radio-m); padding: var(--e-4); box-shadow: var(--sombra); min-width: 0; }
+.evo__lienzo { position: relative; }
+.evo__lienzo svg { width: 100%; height: auto; display: block; overflow: visible; }
+.evo__lienzo svg:focus-visible { outline: 3px solid var(--foco); outline-offset: 4px; border-radius: var(--radio-s); }
+.evo__eje text { fill: var(--tinta-2); font: 600 13px var(--fuente-texto); }
+.evo__titulo-eje { fill: var(--tinta); font: 700 14px var(--fuente-texto); }
+.evo__rejilla { stroke: var(--borde); stroke-width: 1; }
+.evo__meta line { stroke: var(--tinta-2); stroke-width: 1.5; }
+.evo__meta text { fill: var(--tinta); font: 700 12px var(--fuente-texto); }
+.evo__halo { fill: none; stroke: var(--superficie); stroke-width: 6; stroke-linejoin: round; }
+.evo__linea { fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round; }
+.evo__punto { fill: currentColor; stroke: var(--superficie); stroke-width: 2; }
+.evo__serie--gris .evo__halo { display: none; }
+.evo__serie--gris .evo__linea { stroke-width: 1.25; opacity: 0.45; }
+.evo__serie--resumen .evo__linea, .evo__serie--destacada .evo__linea { stroke-width: 3; }
+.evo__etiquetas text { fill: var(--tinta); font: 700 13px var(--fuente-codigo); }
+.evo__cruz { stroke: var(--tinta-2); stroke-width: 1; }
+.evo__captura { fill: transparent; cursor: crosshair; }
+.evo__ayuda { position: absolute; top: 8px; transform: translateX(-50%); display: grid; gap: 2px; min-width: 240px; max-width: 340px; padding: var(--e-2) var(--e-3); background: var(--superficie); color: var(--tinta); border: 1px solid var(--borde-fuerte); border-radius: var(--radio-s); box-shadow: 0 6px 18px rgba(15, 23, 42, 0.16); font-size: var(--texto-s); pointer-events: none; z-index: 2; }
+.evo__ayuda-fecha { font-weight: 700; }
+.evo__ayuda-fila { display: flex; align-items: center; gap: 6px; color: var(--tinta-2); }
+.evo__ayuda-fila b { color: var(--tinta); min-width: 2.2ch; }
+.evo__ayuda-fila i { flex: none; width: 14px; height: 3px; border-radius: 2px; }
+.evo__ayuda-extra { color: var(--tinta-2); border-top: 1px solid var(--borde); padding-top: 4px; margin-top: 2px; }
+.evo__leyenda { display: flex; flex-wrap: wrap; gap: var(--e-2) var(--e-4); font-size: var(--texto-s); color: var(--tinta-2); }
+.evo__clave { display: inline-flex; align-items: center; gap: 6px; }
+.evo__clave i { flex: none; width: 18px; height: 3px; border-radius: 2px; }
+.evo__clave--gris { background: var(--tinta-3); opacity: 0.6; }
+.evo__vacio { padding: var(--e-6); text-align: center; color: var(--tinta-2); }
+.evo__tabla summary { cursor: pointer; font-weight: 600; color: var(--acento); min-height: 44px; display: flex; align-items: center; }
+.evo__tabla .tabla td { white-space: nowrap; }
+.evo__nota { font-size: var(--texto-s); }
+.navegador { display: grid; gap: var(--e-2); width: min(100%, 360px); }
+.navegador__rangos { display: flex; flex-wrap: wrap; gap: var(--e-1); }
+.navegador__rango, .selector__rapido { min-height: 36px; padding: 0 var(--e-3); border: 1px solid var(--borde-fuerte); border-radius: var(--radio-s); background: var(--superficie); color: var(--tinta-2); font-weight: 600; cursor: pointer; }
+.navegador__rango[aria-pressed='true'] { background: var(--acento-suave); border-color: var(--acento); color: var(--tinta); }
+.selector__rapido:disabled { opacity: 0.5; cursor: not-allowed; }
+.navegador__lienzo { width: 100%; height: auto; display: block; cursor: col-resize; touch-action: none; border-radius: var(--radio-s); }
+.navegador__fondo { fill: var(--superficie-2); }
+.navegador__linea { fill: none; stroke: var(--tinta-3); stroke-width: 1.5; }
+.navegador__tramo { fill: var(--acento-suave); stroke: var(--acento); stroke-width: 1.5; }
+.navegador__ayuda { font-size: var(--texto-xs); color: var(--tinta-3); }
+.selector { margin: 0; padding: var(--e-4); background: var(--superficie); border: 1px solid var(--borde); border-radius: var(--radio-m); box-shadow: var(--sombra); display: grid; gap: var(--e-3); min-width: 0; }
+.selector__titulo { font: 600 var(--texto-m) var(--fuente-titulo); padding: 0 var(--e-1); }
+.selector__rapidos { display: flex; flex-wrap: wrap; gap: var(--e-1); }
+.selector__lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; max-height: 520px; overflow-y: auto; }
+.selector__item { display: grid; grid-template-columns: auto 18px minmax(0, 1fr); align-items: center; gap: var(--e-2); min-height: 40px; padding: 2px var(--e-2); border-radius: var(--radio-s); cursor: pointer; font-size: var(--texto-s); }
+.selector__item:hover { background: var(--superficie-2); }
+.selector__item input { width: 18px; height: 18px; accent-color: var(--acento); }
+.selector__item--todos { grid-template-columns: auto minmax(0, 1fr); font-weight: 700; border-bottom: 1px solid var(--borde); border-radius: 0; }
+.selector__clave { width: 18px; height: 3px; border-radius: 2px; background: transparent; }
+.selector__nombre { overflow-wrap: anywhere; }
+.selector__grupo { grid-column: 3; font-size: var(--texto-xs); color: var(--tinta-3); }
+@media (max-width: 1080px) { .evo { grid-template-columns: minmax(0, 1fr); } .selector__lista { max-height: 280px; } }
+
 @media (max-width: 1240px) { .phva { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 /* Tablas como tarjetas apiladas en pantallas angostas: cada celda muestra su encabezado (data-etiqueta). */

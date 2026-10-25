@@ -1,0 +1,15 @@
+-- Evidencia: P15-pista-auditoria.sql | ejecutado como auditor | 2026-10-25 11:50:42
+
+CATEGORIA				     EVENTOS
+-------------------------------------------- -------
+Inicios de sesión fallidos o bloqueados            0
+Accesos denegados (ORA-00942 / ORA-01031)	   0
+Lecturas de FINANZAS.CLIENTES			   0
+
+3 rows selected.
+
+
+RESULTADO: FALTAN EVENTOS EN LA PISTA
+
+1 row selected.
+

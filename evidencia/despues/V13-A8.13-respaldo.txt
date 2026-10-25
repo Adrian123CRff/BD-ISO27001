@@ -1,4 +1,4 @@
--- Evidencia: V13-A8.13-respaldo.sql | ejecutado como auditor | 2026-10-22 10:03:14
+-- Evidencia: V13-A8.13-respaldo.sql | ejecutado como auditor | 2026-10-25 12:02:04
 ### Evidencia: configuración de RMAN (V$RMAN_CONFIGURATION, vacía = valores por defecto)
 
 NAME				   VALUE
@@ -11,13 +11,13 @@ RETENTION POLICY		   TO REDUNDANCY 2
 
 ENCRYPTED  PIEZAS INICIO
 ---------- ------ --------------------
-YES		3 2026-10-20 17:19
+YES		3 2026-10-25 17:56
 ### Evidencia: conjuntos de respaldo por tipo (D datafiles, I incremental, L archivelogs)
 
 T CF   CONJUNTOS ULTIMO
 - --- ---------- ----------------
-D NO	       1 2026-10-20 17:19
-L NO	       2 2026-10-20 17:19
+D NO	       1 2026-10-25 17:56
+L NO	       2 2026-10-25 17:56
 ### Criterios
 
 CRITERIO|A8.13|a|OK|RMAN está configurado para cifrar los respaldos (ENCRYPTION FOR DATABASE ON)|Cifrado activo

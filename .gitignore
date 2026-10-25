@@ -27,6 +27,8 @@ salidas/
 # Sistema
 .DS_Store
 Thumbs.db
+# Archivos temporales que dejan Word, Acrobat y otros editores mientras un documento está abierto
+~$*
 
 # Material de clase: solo local (el repositorio es público)
 materiales/clase/

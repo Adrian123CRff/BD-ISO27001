@@ -1,6 +1,6 @@
 {
   "fase": "despues",
-  "fecha": "2026-10-22T10:02:59",
+  "fecha": "2026-10-25T12:01:46",
   "pruebas": [
     {
       "id": "P01",
@@ -261,9 +261,9 @@
       "paso": true,
       "obtenido": [
         "CATEGORIA\t\t\t\t     EVENTOS",
-        "Inicios de sesión fallidos o bloqueados           10",
-        "Accesos denegados (ORA-00942 / ORA-01031)\t   1",
-        "Lecturas de FINANZAS.CLIENTES\t\t\t   2",
+        "Inicios de sesión fallidos o bloqueados           60",
+        "Accesos denegados (ORA-00942 / ORA-01031)\t   6",
+        "Lecturas de FINANZAS.CLIENTES\t\t\t  12",
         "RESULTADO: EVENTOS REGISTRADOS"
       ]
     },
@@ -332,7 +332,7 @@
       "script": "P19-proteccion-logs.sh",
       "paso": true,
       "obtenido": [
-        "Revisados: 889 | alcanzables por otros: 0 | con permisos abiertos bajo un directorio cerrado: 8",
+        "Revisados: 826 | alcanzables por otros: 0 | con permisos abiertos bajo un directorio cerrado: 0",
         "RESULTADO: REGISTROS PROTEGIDOS"
       ]
     }

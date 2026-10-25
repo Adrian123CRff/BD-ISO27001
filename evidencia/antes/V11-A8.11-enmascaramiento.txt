@@ -1,4 +1,4 @@
--- Evidencia: V11-A8.11-enmascaramiento.sql | ejecutado como auditor | 2026-10-20 11:17:58
+-- Evidencia: V11-A8.11-enmascaramiento.sql | ejecutado como auditor | 2026-10-25 11:45:43
 ### Evidencia: políticas de Data Redaction (REDACTION_POLICIES y REDACTION_COLUMNS)
 ### Criterios
 

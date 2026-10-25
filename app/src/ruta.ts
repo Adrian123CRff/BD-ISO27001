@@ -13,6 +13,7 @@ export const SECCIONES = [
     { id: 'observables', titulo: '4 · Controles observables' },
     { id: 'matriz', titulo: '5 · Matriz de evaluación' },
     { id: 'pruebas', titulo: '6 · Batería de pruebas' },
+    { id: 'evolucion', titulo: 'Evolución' },
     { id: 'metodologia', titulo: 'Metodología PHVA' },
 ] as const;
 

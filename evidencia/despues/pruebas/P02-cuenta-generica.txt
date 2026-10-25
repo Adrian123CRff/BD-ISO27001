@@ -1,4 +1,4 @@
--- Evidencia: P02-cuenta-generica.sql | ejecutado como usuario:SOPORTE | 2026-10-22 10:02:31
+-- Evidencia: P02-cuenta-generica.sql | ejecutado como usuario:SOPORTE | 2026-10-25 12:01:08
 ERROR:
 ORA-28000: The account is locked.
 

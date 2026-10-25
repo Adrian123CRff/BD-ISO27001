@@ -1,0 +1,20 @@
+-- Evidencia: V17-A8.8-vulnerabilidades.sql | ejecutado como auditor | 2026-10-25 11:49:20
+### Evidencia: versión y parches aplicados (DBA_REGISTRY_SQLPATCH)
+
+BANNER_FULL
+--------------------------------------------------------------------------------
+Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+### Evidencia: cuentas mantenidas por Oracle que siguen abiertas
+
+USERNAME		 ACCOUNT_STATUS       AUTHENTI
+------------------------ -------------------- --------
+SYS			 OPEN		      PASSWORD
+SYSRAC			 OPEN		      NONE
+SYSTEM			 OPEN		      PASSWORD
+### Criterios
+
+CRITERIO|A8.8|a|FALLA|El motor tiene aplicado al menos un parche de seguridad (Release Update)|0 parche(s) aplicado(s)
+CRITERIO|A8.8|b|OK|Las cuentas internas de Oracle que admiten contraseña, salvo SYS y SYSTEM, están cerradas|0 cuenta(s) interna(s) abierta(s)
+CRITERIO|A8.8|c|OK|Ninguna cuenta abierta conserva contraseña por defecto|0 cuenta(s)

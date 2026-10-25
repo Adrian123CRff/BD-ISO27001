@@ -1,0 +1,7 @@
+-- Evidencia: P04-privilegio-aplicacion.sql | ejecutado como usuario:APP_WEB | 2026-10-25 11:53:27
+create user intruso identified by "Desechable#Prueba2026"
+*
+ERROR at line 1:
+ORA-01031: insufficient privileges
+
+

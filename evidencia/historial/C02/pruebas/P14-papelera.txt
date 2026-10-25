@@ -1,0 +1,6 @@
+-- Evidencia: P14-papelera.sql | ejecutado como auditor | 2026-10-25 11:48:07
+
+RESULTADO: 1 objeto(s) recuperable(s): CLIENTES_RESPALDO_2025
+
+1 row selected.
+

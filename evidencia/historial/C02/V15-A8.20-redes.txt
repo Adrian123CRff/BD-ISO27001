@@ -1,0 +1,16 @@
+-- Evidencia: V15-A8.20-redes.sql | ejecutado como auditor | 2026-10-25 11:47:50
+### Evidencia: servicios de red de la sesión actual (V$SESSION_CONNECT_INFO)
+
+NETWORK_SERVICE_BANNER
+------------------------------------------------------------------------------------------
+TCP/IP NT Protocol Adapter for Linux: Version 21.0.0.0.0 - Production
+Encryption service for Linux: Version 21.0.1.0.0 - Production
+Crypto-checksumming service for Linux: Version 21.0.1.0.0 - Production
+
+PROTOCOLO
+----------
+tcp
+### Criterios
+
+CRITERIO|A8.20|a|FALLA|La sesión viaja cifrada con AES (cifrado nativo de Oracle Net)|Sin cifrado de red
+CRITERIO|A8.20|b|FALLA|La sesión tiene control de integridad criptográfico (SHA)|Sin control de integridad

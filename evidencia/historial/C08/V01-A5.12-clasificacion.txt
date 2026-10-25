@@ -1,0 +1,25 @@
+-- Evidencia: V01-A5.12-clasificacion.sql | ejecutado como auditor | 2026-10-25 11:51:59
+### Evidencia: comentarios de clasificación en las columnas de FINANZAS.CLIENTES
+
+OWNER	     TABLE_NAME       COLUMN_NAME      COMMENTS
+------------ ---------------- ---------------- ----------------------------------------------------------------------
+FINANZAS     CLIENTES         CEDULA           RESTRINGIDO | Ley 8968: acceso restringido | redacción parcial
+FINANZAS     CLIENTES	      CORREO	       RESTRINGIDO | Ley 8968: acceso restringido
+FINANZAS     CLIENTES	      FECHA_REGISTRO   (sin clasificar)
+FINANZAS     CLIENTES	      ID_CLIENTE       (sin clasificar)
+FINANZAS     CLIENTES         NOMBRE           INTERNO | Identificación del cliente
+FINANZAS     CLIENTES         NUMERO_TARJETA   CONFIDENCIAL | Ley 8968: acceso restringido | redacción parcial
+FINANZAS     CLIENTES         SALARIO          CONFIDENCIAL | Ley 8968: acceso restringido | redacción total
+FINANZAS     CLIENTES	      TELEFONO	       RESTRINGIDO | Ley 8968: acceso restringido
+### Evidencia: inventario de clasificación (tabla SEGURIDAD.CLASIFICACION_DATOS)
+
+OWNER	     TABLE_NAME
+------------ ----------------
+SEGURIDAD    CLASIFICACION_DA
+	     TOS
+
+### Criterios
+
+CRITERIO|A5.12|a|OK|Existe un inventario de clasificación de datos (SEGURIDAD.CLASIFICACION_DATOS)|1 inventario(s)
+CRITERIO|A5.12|b|OK|Las 5 columnas personales de CLIENTES (cédula, correo, teléfono, salario, tarjeta) llevan etiqueta de clasificación|5 de 5 etiquetadas
+CRITERIO|A5.12|c|OK|Las 3 tablas de negocio (clientes, cuentas, movimientos) tienen nivel de clasificación|3 de 3 clasificadas

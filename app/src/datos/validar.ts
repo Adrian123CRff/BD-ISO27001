@@ -2,7 +2,7 @@
 // referencias cruzadas sin huecos y coherencia con los resultados que generan los scripts. Devuelve la lista de
 // errores; vacía significa datos válidos.
 import { nivelRiesgo, RIESGO_INHERENTE_CLASE, RIESGO_RESIDUAL_ACEPTADO } from './escalas.ts';
-import type { Bateria, Control, Evaluacion, ResultadoControl, Riesgo, Tarea } from './tipos.ts';
+import type { Bateria, Control, Evaluacion, Historial, MedicionBateria, MedicionControl, MedicionEvaluacion, ResultadoControl, Riesgo, Tarea } from './tipos.ts';
 
 export interface Dominio {
     readonly riesgos: readonly Riesgo[];
@@ -112,8 +112,69 @@ function validarBateria(d: Dominio, b: Bateria): string[] {
     return errores;
 }
 
-export function validarArtefacto(d: Dominio, evaluaciones: readonly Evaluacion[], baterias: readonly Bateria[]): string[] {
+// ---- Historial (vista "Evolución") ----
+
+const ETAPA = /^[A-Za-z0-9-]+$/;
+
+function revisarMedicion(quien: string, m: MedicionControl): string[] {
+    if (m.total < 1 || m.cumplidos < 0 || m.cumplidos > m.total) return [`${quien}: ${m.cumplidos}/${m.total} fuera de rango`];
+    const errores: string[] = [];
+    const estado = m.cumplidos === m.total ? 'Cumple' : m.cumplidos > 0 ? 'Parcial' : 'No cumple';
+    if (m.estado !== estado) errores.push(`${quien}: estado ${m.estado} no coincide con ${m.cumplidos}/${m.total} criterios`);
+    const madurezValida = m.cumplidos === 0 ? m.madurez === 0 : m.cumplidos < m.total ? m.madurez === 1 : m.madurez >= 2 && m.madurez <= 4;
+    if (!madurezValida) errores.push(`${quien}: madurez ${m.madurez} incoherente con ${m.cumplidos}/${m.total} criterios`);
+    return errores;
+}
+
+function enOrden(fechas: readonly string[], que: string): string[] {
+    const tiempos = fechas.map((f) => Date.parse(f));
+    if (tiempos.some((t) => Number.isNaN(t))) return [`${que}: hay una fecha inválida`];
+    return tiempos.some((t, i) => i > 0 && t < (tiempos[i - 1] ?? t)) ? [`${que}: las fechas no están en orden`] : [];
+}
+
+function validarMedicionEvaluacion(d: Dominio, e: MedicionEvaluacion): string[] {
+    const quien = `Historial, evaluación ${e.etapa}`;
+    const ids = e.controles.map((c) => c.control);
+    const errores = ETAPA.test(e.etapa) ? sinRepetidos(ids, `${quien}: control`) : [`${quien}: etapa con caracteres no válidos`];
+    for (const c of d.controles) if (!ids.includes(c.id)) errores.push(`${quien}: falta ${c.id}`);
+    for (const m of e.controles) {
+        if (!d.controles.some((c) => c.id === m.control)) errores.push(`${quien}: control desconocido ${m.control}`);
+        errores.push(...revisarMedicion(`${quien}, ${m.control}`, m));
+    }
+    return errores;
+}
+
+function validarMedicionBateria(d: Dominio, b: MedicionBateria): string[] {
+    const quien = `Historial, batería ${b.etapa}`;
+    const esperadas = d.controles.flatMap((c) => c.pruebas);
+    const ids = b.pruebas.map((p) => p.id);
+    const errores = ETAPA.test(b.etapa) ? sinRepetidos(ids, `${quien}: prueba`) : [`${quien}: etapa con caracteres no válidos`];
+    for (const p of esperadas) if (!ids.includes(p)) errores.push(`${quien}: falta ${p}`);
+    for (const p of ids) if (!esperadas.includes(p)) errores.push(`${quien}: prueba desconocida ${p}`);
+    return errores;
+}
+
+// El historial debe contener, con la misma fecha, las evaluaciones y baterías oficiales (antes y después): así el
+// gráfico de evolución nunca contradice la matriz ni la batería.
+function validarHistorial(d: Dominio, h: Historial, evaluaciones: readonly Evaluacion[], baterias: readonly Bateria[]): string[] {
+    if (h.evaluaciones.length === 0 || h.baterias.length === 0) return ['Historial: no tiene mediciones'];
+    const errores = enOrden(h.evaluaciones.map((e) => e.fecha), 'Historial de evaluaciones')
+        .concat(enOrden(h.baterias.map((b) => b.fecha), 'Historial de baterías'));
+    for (const e of h.evaluaciones) errores.push(...validarMedicionEvaluacion(d, e));
+    for (const b of h.baterias) errores.push(...validarMedicionBateria(d, b));
+    for (const e of evaluaciones) {
+        if (!h.evaluaciones.some((m) => m.etapa === e.fase && m.fecha === e.fecha)) errores.push(`Historial: no registra la evaluación ${e.fase} del ${e.fecha}`);
+    }
+    for (const b of baterias) {
+        if (!h.baterias.some((m) => m.etapa === b.fase && m.fecha === b.fecha)) errores.push(`Historial: no registra la batería ${b.fase} del ${b.fecha}`);
+    }
+    return errores;
+}
+
+export function validarArtefacto(d: Dominio, evaluaciones: readonly Evaluacion[], baterias: readonly Bateria[],
+                                 historial?: Historial): string[] {
     return validarCantidades(d).concat(
+        historial === undefined ? [] : validarHistorial(d, historial, evaluaciones, baterias),
         validarReferencias(d),
         validarNiveles(d),
         ...evaluaciones.map((e) => validarEvaluacion(d, e)),

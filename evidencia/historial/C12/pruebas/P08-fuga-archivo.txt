@@ -1,0 +1,10 @@
+-- Evidencia: P08-fuga-archivo.sql | ejecutado como usuario:JPEREZ | 2026-10-25 11:55:10
+    f utl_file.file_type;
+      *
+ERROR at line 2:
+ORA-06550: line 2, column 7:
+PLS-00201: identifier 'UTL_FILE' must be declared
+ORA-06550: line 0, column 0:
+PL/SQL: Compilation unit analysis terminated
+
+

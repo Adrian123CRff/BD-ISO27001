@@ -1,4 +1,4 @@
--- Evidencia: P18-parcheo.sql | ejecutado como auditor | 2026-10-20 11:18:18
+-- Evidencia: P18-parcheo.sql | ejecutado como auditor | 2026-10-25 11:46:13
 Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
 Version
 21.3.0.0.0

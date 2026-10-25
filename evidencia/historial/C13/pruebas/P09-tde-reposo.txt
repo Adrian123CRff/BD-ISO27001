@@ -1,0 +1,3 @@
+-- Evidencia: P09-tde-reposo.sh | 2026-10-25 11:58:14
+datos_fin_cif01.dbf: 0 coincidencia(s)
+RESULTADO: SIN TEXTO CLARO

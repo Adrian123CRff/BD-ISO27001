@@ -1,0 +1,29 @@
+-- Evidencia: V06-A5.33-proteccion-registros.sql | ejecutado como auditor | 2026-10-25 11:57:24
+### Evidencia: parámetros de auditoría
+
+NAME			 VALUE
+------------------------ --------------------
+audit_sys_operations	 TRUE
+audit_trail		 DB, EXTENDED
+### Evidencia: privilegios cuyo uso se audita (DBA_PRIV_AUDIT_OPTS)
+
+PRIVILEGE	     SUCCESS	FAILURE
+-------------------- ---------- ----------
+CREATE SESSION	     BY ACCESS	BY ACCESS
+DELETE ANY TABLE     BY ACCESS	BY ACCESS
+UPDATE ANY TABLE     BY ACCESS	BY ACCESS
+### Evidencia: quién puede borrar la pista (DELETE sobre SYS.AUD$ o DELETE ANY TABLE)
+
+GRANTEE 		 PRIVILEGE	      OBJETO
+------------------------ -------------------- --------------
+DATAPUMP_IMP_FULL_DATABA DELETE ANY TABLE     (cualquiera)
+SE
+
+DBA			 DELETE ANY TABLE     (cualquiera)
+IMP_FULL_DATABASE	 DELETE ANY TABLE     (cualquiera)
+SYS			 DELETE ANY TABLE     (cualquiera)
+### Criterios
+
+CRITERIO|A5.33|a|OK|La pista de auditoría está habilitada (audit_trail distinto de NONE)|audit_trail = DB, EXTENDED
+CRITERIO|A5.33|b|OK|Ninguna cuenta o rol ajeno a Oracle puede borrar la pista de auditoría|0 concesión(es) peligrosa(s)
+CRITERIO|A5.33|c|OK|Se audita el uso de DELETE/UPDATE ANY TABLE y las operaciones de SYS (audit_sys_operations)|2 de 2 privilegios auditados, audit_sys_operations = TRUE

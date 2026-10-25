@@ -1,0 +1,6 @@
+-- Evidencia: P14-papelera.sql | ejecutado como auditor | 2026-10-25 11:53:05
+
+RESULTADO: NADA RECUPERABLE
+
+1 row selected.
+

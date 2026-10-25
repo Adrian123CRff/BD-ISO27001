@@ -1,0 +1,7 @@
+-- Evidencia: P13-borrar-auditoria.sql | ejecutado como usuario:SOPORTE | 2026-10-25 11:51:14
+ERROR:
+ORA-28000: The account is locked.
+
+
+SP2-0640: Not connected
+SP2-0640: Not connected

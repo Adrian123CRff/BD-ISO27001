@@ -1,0 +1,8 @@
+-- Evidencia: V10-A8.10-eliminacion.sql | ejecutado como auditor | 2026-10-25 11:50:23
+### Evidencia: papelera de reciclaje (DBA_RECYCLEBIN) de los esquemas de negocio
+### Evidencia: tarea programada de purga
+### Criterios
+
+CRITERIO|A8.10|a|OK|La papelera de reciclaje no conserva objetos con datos de negocio|0 objeto(s) recuperable(s)
+CRITERIO|A8.10|b|OK|No hay copias ad hoc de tablas de negocio (*RESPALDO*, *BAK*, *COPIA*)|0 copia(s)
+CRITERIO|A8.10|c|FALLA|Hay una purga periódica programada y activa (PURGA_PAPELERA)|Sin tarea de purga

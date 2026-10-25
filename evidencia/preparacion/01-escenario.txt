@@ -1,4 +1,4 @@
--- Evidencia: 01-escenario.sql | ejecutado como sys | 2026-10-20 11:17:43
+-- Evidencia: 01-escenario.sql | ejecutado como sys | 2026-10-25 11:45:15
 === Tablespace de datos del negocio (sin cifrar) ===
 
 Tablespace created.
