@@ -100,7 +100,7 @@ Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
 
 | ID | Entregable literal | Estado |
 | --- | --- | --- |
-| EN-1 | Informe PDF con artefacto (o link a artefacto interactivo) | En curso: `docs/informe.pdf` (34 páginas) con el artefacto completo en la sección 6 y el enlace al código; faltan la introducción, el marco teórico, el análisis y las conclusiones que redacta el estudiante, y el enlace al video |
+| EN-1 | Informe PDF con artefacto (o link a artefacto interactivo) | En curso: `docs/informe.pdf` (45 páginas) con el artefacto completo en la sección 6 y el enlace al código; faltan la introducción, el marco teórico, el análisis y las conclusiones que redacta el estudiante, y el enlace al video |
 | EN-2 | Scripts .sql de verificación | Cumplido: `sql/verificacion` (18), `sql/correccion` (15) y `sql/pruebas` (19), ejecutados en una corrida limpia con su salida en `evidencia/` |
 | EN-3 | Repositorio Git | Cumplido: https://github.com/Adrian123CRff/BD-ISO27001 |
 | EN-4 | Video 5 minutos | En curso: guion en `docs/guion-video.md`; falta grabarlo |

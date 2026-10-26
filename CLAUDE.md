@@ -1,5 +1,9 @@
 # Proyecto: Controles ISO 27001:2022 para la confidencialidad en la administración de bases de datos
 
+> Instrucciones de trabajo para Claude Code, la IA que se usó en el desarrollo (las lee automáticamente al abrir la
+> carpeta). Se dejan en el repositorio por transparencia. El uso de IA está declarado en `docs/uso-ia.md` y en el
+> informe, sección 11.
+
 Responder siempre en español. Proyecto **individual** de Adrián Fernández Fernández (UNA, Administración de Bases de
 Datos II, II ciclo 2026, Prof. Johnny Villalobos Murillo). Se revisa originalidad (Turnitin e IA): el estudiante debe
 poder defender todo lo entregado, así que explicar el porqué de cada decisión y no generar contenido que él no entienda.
@@ -13,8 +17,10 @@ poder defender todo lo entregado, así que explicar el porqué de cada decisión
 3. `docs/contexto-de-clase.md`: lo que aclaró el profesor en clase y los "tres mundos". Complementa el enunciado,
    nunca lo reemplaza.
 4. `docs/reglas-de-codigo.md`: reglas de código ("Power of 10" de NASA/JPL adaptadas) y de seguridad. Son obligatorias.
-5. `docs/uso-ia.md`: registro obligatorio de prompts. **Agregar cada prompt relevante del estudiante, textual**, con
-   el aporte de la IA; la columna de validación la completa el estudiante.
+5. `docs/uso-ia.md`: tabla de la sección 8 del enunciado. Solo lleva **los prompts por fase de
+   `prompts-claude-code.md`, textuales**, y los pocos prompts fuera de las fases que generaron contenido entregado
+   (el enunciado exige declarar todo contenido generado con IA). No se registran conversaciones, confirmaciones ni
+   preguntas. La columna de validación la completa el estudiante.
 
 Materiales originales (no modificar): `materiales/enunciado/` y `materiales/clase/` (transcripción, notas y fotos de
 la pizarra).

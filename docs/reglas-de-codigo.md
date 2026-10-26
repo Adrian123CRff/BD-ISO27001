@@ -28,7 +28,8 @@ scripts de verificación). Las reglas originales están parafraseadas; ver la re
   (ver `.gitignore`).
 - **Toda afirmación del artefacto tiene evidencia**: cada control marcado "Cumple" enlaza el script SQL y la salida
   que lo demuestra.
-- **Trazabilidad del uso de IA**: cada prompt relevante se registra textualmente en `docs/uso-ia.md` el mismo día.
+- **Trazabilidad del uso de IA**: cada prompt de fase (`prompts-claude-code.md`) se registra textualmente en
+  `docs/uso-ia.md`; las conversaciones no se registran.
 
 ## Referencia
 
