@@ -57,14 +57,14 @@ Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
 
 | ID | Tema literal | Estado |
 | --- | --- | --- |
-| MT-1 | Cambios ISO 27001:2022 respecto a 2013: nuevo Anexo A con 93 controles en 4 temas. | En curso (esquema con ideas clave y fuentes en `docs/marco-teorico-esquema.md`; falta la redacción del estudiante) |
-| MT-2 | Principio de mínimo privilegio y separación de funciones en el rol DBA. | En curso (esquema con ideas clave y fuentes en `docs/marco-teorico-esquema.md`; falta la redacción del estudiante) |
-| MT-3 | Defensa en profundidad y Zero Trust aplicado a bases de datos. | En curso (esquema con ideas clave y fuentes en `docs/marco-teorico-esquema.md`; falta la redacción del estudiante) |
-| MT-4 | Controles técnicos: Transparent Data Encryption (TDE), Dynamic Data Masking, Data Redaction, Row Level Security / VPD, TLS para conexiones. | En curso (esquema con ideas clave y fuentes en `docs/marco-teorico-esquema.md`; falta la redacción del estudiante) |
-| MT-5 | Data Leakage Prevention (DLP) y gestión de backups cifrados. | En curso (esquema con ideas clave y fuentes en `docs/marco-teorico-esquema.md`; falta la redacción del estudiante) |
-| MT-6 | Logging, monitoreo y correlación (SIEM). | En curso (esquema con ideas clave y fuentes en `docs/marco-teorico-esquema.md`; falta la redacción del estudiante) |
-| MT-7 | Normativa costarricense: Ley 8968 Protección de la persona frente al tratamiento de sus datos personales y su reglamento. | En curso (esquema con ideas clave y fuentes en `docs/marco-teorico-esquema.md`; falta la redacción del estudiante) |
-| MT-8 | Extensión: 2-3 páginas. | En curso (esquema estimado en unas 2,5 páginas al redactar) |
+| MT-1 | Cambios ISO 27001:2022 respecto a 2013: nuevo Anexo A con 93 controles en 4 temas. | Cumplido: redactado por el estudiante en el informe, sección 5.1, con citas APA 7 |
+| MT-2 | Principio de mínimo privilegio y separación de funciones en el rol DBA. | Cumplido: redactado por el estudiante en el informe, sección 5.2, con citas APA 7 |
+| MT-3 | Defensa en profundidad y Zero Trust aplicado a bases de datos. | Cumplido: redactado por el estudiante en el informe, sección 5.3, con citas APA 7 |
+| MT-4 | Controles técnicos: Transparent Data Encryption (TDE), Dynamic Data Masking, Data Redaction, Row Level Security / VPD, TLS para conexiones. | Cumplido: redactado por el estudiante en el informe, sección 5.4, con citas APA 7 |
+| MT-5 | Data Leakage Prevention (DLP) y gestión de backups cifrados. | Cumplido: redactado por el estudiante en el informe, sección 5.5, con citas APA 7 |
+| MT-6 | Logging, monitoreo y correlación (SIEM). | Cumplido: redactado por el estudiante en el informe, sección 5.6, con citas APA 7 |
+| MT-7 | Normativa costarricense: Ley 8968 Protección de la persona frente al tratamiento de sus datos personales y su reglamento. | Cumplido: redactado por el estudiante en el informe, sección 5.7, con citas APA 7 |
+| MT-8 | Extensión: 2-3 páginas. | Cumplido: los 7 temas suman 1 359 palabras, unas 2,5-3 páginas en `docs/informe.pdf` |
 
 ## Artefacto (sección 6): interactivo HTML, PDF o sitio, que contenga
 
@@ -86,7 +86,7 @@ Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
 | HM-2 | Metodología: PHVA (Planificar-Hacer-Verificar-Actuar). | Cumplido: explicada en el informe, sección 7.2 (Planificar: `sql/01-escenario.sql`; Hacer: `scripts/corregir.ps1`; Verificar: `scripts/evaluar.ps1` y `scripts/pruebas.ps1` antes/después; Actuar: revisión semanal de C14 y `sql/mantenimiento/M02-revision-semanal.sql`) |
 | HM-3 | Herramientas: SQL Developer | En curso: guía `docs/guia-sql-developer.md` y lugar en el informe (sección 7.3, que inserta las capturas solas al regenerarlo); faltan las capturas del estudiante en `evidencia/sql-developer/` |
 | HM-4 | Documentación: APA 7 | En curso: 12 referencias en APA 7 en el informe, sección 12; falta que el estudiante confirme los títulos de ISO/IEC 27001 y 27002 y el DOI de Saltzer y Schroeder |
-| HM-5 | Repositorio Git institucional | Cumplido: https://github.com/Adrian123CRff/BD-ISO27001 (publicado el 22/10/2026) |
+| HM-5 | Repositorio Git institucional | En curso: el repositorio existe y está publicado (https://github.com/Adrian123CRff/BD-ISO27001, desde el 22/10/2026), pero en una cuenta personal de GitHub (los commits van firmados con el correo institucional); falta confirmar con el profesor si lo acepta como "institucional" o si debe estar en un espacio de la UNA |
 | HM-6 | Video explicativo 5 minutos | En curso: guion con tiempos, pantallas y comandos en `docs/guion-video.md`; falta grabarlo y poner el enlace en el informe |
 
 ## Uso de IA (sección 8): obligatoria
@@ -100,7 +100,7 @@ Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
 
 | ID | Entregable literal | Estado |
 | --- | --- | --- |
-| EN-1 | Informe PDF con artefacto (o link a artefacto interactivo) | En curso: `docs/informe.pdf` (45 páginas) con el artefacto completo en la sección 6 y el enlace al código; faltan la introducción, el marco teórico, el análisis y las conclusiones que redacta el estudiante, y el enlace al video |
+| EN-1 | Informe PDF con artefacto (o link a artefacto interactivo) | En curso: `docs/informe.pdf` (40 páginas) con el artefacto completo en la sección 6 y el enlace al código; introducción, marco teórico, análisis y conclusiones redactados por el estudiante (27/10/2026); faltan el enlace al video y las capturas de SQL Developer |
 | EN-2 | Scripts .sql de verificación | Cumplido: `sql/verificacion` (18), `sql/correccion` (15) y `sql/pruebas` (19), ejecutados en una corrida limpia con su salida en `evidencia/` |
 | EN-3 | Repositorio Git | Cumplido: https://github.com/Adrian123CRff/BD-ISO27001 |
 | EN-4 | Video 5 minutos | En curso: guion en `docs/guion-video.md`; falta grabarlo |

@@ -17,7 +17,7 @@ scripts de verificación). Las reglas originales están parafraseadas; ver la re
 | 7 | Revisar el valor de retorno de toda función y validar parámetros | Sin promesas sin manejar; todo `fetch`/lectura con manejo de error visible. En SQL, `WHENEVER SQLERROR EXIT FAILURE` en los scripts de verificación |
 | 8 | Preprocesador limitado a lo mínimo | Sin metaprogramación ni generación de código en tiempo de ejecución (nada de `eval` ni SQL dinámico armado con texto del usuario); `EXECUTE IMMEDIATE` solo con valores controlados y justificado |
 | 9 | Punteros restringidos: un solo nivel de indirección y sin punteros a función | Estructuras de datos planas y legibles; evitar cadenas largas de `a?.b?.c?.d` y callbacks anidados; sin `any` en TypeScript |
-| 10 | Compilar con todas las advertencias activas desde el primer día, cero advertencias, análisis estático diario | TypeScript en modo `strict`, ESLint sin advertencias, compilación y pruebas antes de cada commit. Los scripts SQL se ejecutan contra la base de laboratorio antes de entregarse |
+| 10 | Compilar con todas las advertencias activas desde el primer día, cero advertencias, análisis estático diario | TypeScript en modo `strict`, linter (oxlint) sin advertencias, compilación y pruebas antes de cada commit. **Adaptación:** el artículo pide análisis estático diario; aquí se ejecuta antes de cada commit, no por calendario. Los scripts SQL se ejecutan contra la base de laboratorio antes de entregarse |
 
 ## Reglas propias del proyecto (seguridad y confidencialidad)
 

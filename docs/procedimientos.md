@@ -1,4 +1,4 @@
-waw # Procedimientos de control de confidencialidad
+# Procedimientos de control de confidencialidad
 
 **Estado: APROBADO por Adrián Fernández Fernández, 18/10/2026.** `sql/correccion/C14-gobierno.sql` registra estos
 procedimientos como `APROBADO` en `SEGURIDAD.PROCEDIMIENTOS` (A8.8 como `RIESGO ACEPTADO`).
