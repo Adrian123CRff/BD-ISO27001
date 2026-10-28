@@ -10,13 +10,13 @@ Profesor: Johnny Villalobos Murillo
 
 Estudiante: **Adrián Fernández Fernández**
 
-Fecha de entrega: ____________
+Fecha de entrega: 27/10/2026
 
 | Recurso | Enlace |
 | --- | --- |
 | Repositorio Git | https://github.com/Adrian123CRff/BD-ISO27001 |
 | Artefacto interactivo | Carpeta `app/` del repositorio (ver la sección 6.1) |
-| Video explicativo (5 minutos) | ____________ |
+| Video explicativo (5 minutos) | https://drive.google.com/drive/folders/15f6wydlgg1q_uCNiyVX90Y0_xvRK88x0?usp=sharing |
 
 </div>
 
@@ -460,10 +460,12 @@ ISO_AUDITOR (usuario de solo lectura). El procedimiento está en `docs/guia-sql-
 
 <!-- generado: sql-developer -->
 
-> **PENDIENTE DEL ESTUDIANTE**
->
-> Faltan las capturas de SQL Developer en `evidencia/sql-developer/`: `V07-A8.2-sql-developer.png`, `V16-A8.24-sql-developer.png`, `V15-A8.20-sql-developer.png`.
-> Se toman siguiendo `docs/guia-sql-developer.md` y se vuelve a ejecutar `node scripts/generar-informe.mts`.
+![Verificación V07-A8.2 en SQL Developer](../evidencia/sql-developer/V07-A8.2-sql-developer.png)
+
+![Verificación V16-A8.24 en SQL Developer](../evidencia/sql-developer/V16-A8.24-sql-developer.png)
+
+![Verificación V15-A8.20 en SQL Developer](../evidencia/sql-developer/V15-A8.20-sql-developer.png)
+
 
 <!-- /generado: sql-developer -->
 
@@ -471,7 +473,7 @@ ISO_AUDITOR (usuario de solo lectura). El procedimiento está en `docs/guia-sql-
 
 - Referencias en formato APA 7 (sección 12).
 - Repositorio Git: https://github.com/Adrian123CRff/BD-ISO27001
-- Video explicativo de 5 minutos: ____________
+- Video explicativo de 5 minutos: https://drive.google.com/drive/folders/15f6wydlgg1q_uCNiyVX90Y0_xvRK88x0?usp=sharing
 
 ## 8. Resultados: comparativa antes y después
 
@@ -605,7 +607,7 @@ Yo, Adrián Fernández Fernández, declaro que todo contenido generado con IA ha
 validado contra fuentes oficiales (ISO, documentación del motor de BD) y que asumo responsabilidad por su
 veracidad. Entiendo que omitir esta declaración constituye falta grave.
 
-Firma: ______________________  Fecha: ____________
+Firma: ______________________  Fecha: 27/10/2026
 
 </div>
 
@@ -616,6 +618,8 @@ Firma: ______________________  Fecha: ____________
 Asamblea Legislativa de la República de Costa Rica. (2011). *Ley de Protección de la Persona frente al Tratamiento de
 sus Datos Personales* (Ley N.° 8968). Sistema Costarricense de Información Jurídica.
 https://pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?param1=NRTC&nValor1=1&nValor2=70975&nValor3=85989&strTipM=TC
+
+Holzmann, G. J. (2006). The power of 10: Rules for developing safety-critical code. *Computer, 39*(6), 95-97.
 
 International Organization for Standardization & International Electrotechnical Commission. (2022a). *Information
 security, cybersecurity and privacy protection — Information security management systems — Requirements*
@@ -650,12 +654,10 @@ Rose, S., Borchert, O., Mitchell, S., & Connelly, S. (2020). *Zero trust archite
 800-207). National Institute of Standards and Technology. https://doi.org/10.6028/NIST.SP.800-207
 
 Saltzer, J. H., & Schroeder, M. D. (1975). The protection of information in computer systems. *Proceedings of the
-IEEE, 63*(9), 1278-1308.
+IEEE, 63*(9), 1278-1308. https://doi.org/10.1109/PROC.1975.9939
 
-> **PENDIENTE DEL ESTUDIANTE**
->
-> Antes de entregar: confirmar con la norma el título exacto de ISO/IEC 27001:2022 y 27002:2022, y el DOI de Saltzer
-> y Schroeder (1975). Quitar las referencias que no se citen en el texto final.
+World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 2.2*. W3C Recommendation.
+https://www.w3.org/TR/WCAG22/
 
 ## Anexo A. Entregables
 
@@ -664,7 +666,7 @@ IEEE, 63*(9), 1278-1308.
 | 1. Informe PDF con artefacto (o link a artefacto interactivo) | Este documento (`docs/informe.pdf`), con el artefacto en la sección 6 y el código en `app/`. |
 | 2. Scripts .sql de verificación | `sql/verificacion/` (18), además de `sql/correccion/` (15) y `sql/pruebas/` (19), con su salida en `evidencia/`. |
 | 3. Repositorio Git | https://github.com/Adrian123CRff/BD-ISO27001 |
-| 4. Video 5 minutos | ____________ |
+| 4. Video 5 minutos | https://drive.google.com/drive/folders/15f6wydlgg1q_uCNiyVX90Y0_xvRK88x0?usp=sharing |
 | 5. Tabla de uso de IA firmada | Sección 11, con la declaración jurada firmada. |
 
 ## Anexo B. Correspondencia con la rúbrica

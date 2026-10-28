@@ -84,27 +84,27 @@ Controles nombrados en OE-3 (los 15 deben seleccionarse y justificarse):
 | --- | --- | --- |
 | HM-1 | Motor: Oracle 19c/21c XE | Cumplido: Oracle Database 21c XE 21.3.0.0.0 en el contenedor `iso-lab` (evidencia: `sql/00-entorno.sql`) |
 | HM-2 | Metodología: PHVA (Planificar-Hacer-Verificar-Actuar). | Cumplido: explicada en el informe, sección 7.2 (Planificar: `sql/01-escenario.sql`; Hacer: `scripts/corregir.ps1`; Verificar: `scripts/evaluar.ps1` y `scripts/pruebas.ps1` antes/después; Actuar: revisión semanal de C14 y `sql/mantenimiento/M02-revision-semanal.sql`) |
-| HM-3 | Herramientas: SQL Developer | En curso: guía `docs/guia-sql-developer.md` y lugar en el informe (sección 7.3, que inserta las capturas solas al regenerarlo); faltan las capturas del estudiante en `evidencia/sql-developer/` |
-| HM-4 | Documentación: APA 7 | En curso: 12 referencias en APA 7 en el informe, sección 12; falta que el estudiante confirme los títulos de ISO/IEC 27001 y 27002 y el DOI de Saltzer y Schroeder |
+| HM-3 | Herramientas: SQL Developer | Cumplido: V07, V16 y V15 ejecutados en SQL Developer 26.2 como ISO_AUDITOR el 27/10/2026, todos los criterios en OK; capturas en `evidencia/sql-developer/` e informe, sección 7.3 |
+| HM-4 | Documentación: APA 7 | Cumplido: 14 referencias en APA 7 (informe, sección 12), todas citadas en el texto o en la tabla de uso de IA; títulos de ISO/IEC 27001 y 27002 y DOI de Saltzer y Schroeder confirmados por el estudiante el 27/10/2026 |
 | HM-5 | Repositorio Git institucional | En curso: el repositorio existe y está publicado (https://github.com/Adrian123CRff/BD-ISO27001, desde el 22/10/2026), pero en una cuenta personal de GitHub (los commits van firmados con el correo institucional); falta confirmar con el profesor si lo acepta como "institucional" o si debe estar en un espacio de la UNA |
-| HM-6 | Video explicativo 5 minutos | En curso: guion con tiempos, pantallas y comandos en `docs/guion-video.md`; falta grabarlo y poner el enlace en el informe |
+| HM-6 | Video explicativo 5 minutos | Cumplido: grabado por el estudiante con el guion de `docs/guion-video.md` (incluye P01 en vivo y la vista Evolución); publicado en Google Drive (https://drive.google.com/drive/folders/15f6wydlgg1q_uCNiyVX90Y0_xvRK88x0?usp=sharing) y enlazado en la portada, la sección 7.4 y el Anexo A del informe |
 
 ## Uso de IA (sección 8): obligatoria
 
 | ID | Requisito literal | Estado |
 | --- | --- | --- |
 | IA-1 | Incluir en el informe una sección con la tabla: Herramienta IA \| Prompt Exacto Utilizado \| Aporte de la IA \| Validación / Corrección del Estudiante \| Fuente Verificada | Cumplido: informe, sección 11, con las cinco columnas literales, generada desde `docs/uso-ia.md`; la columna de validación la completa el estudiante |
-| IA-2 | Declaración Jurada: "Yo, [Nombre del estudiante], declaro que todo contenido generado con IA ha sido declarado en la tabla anterior, validado contra fuentes oficiales (ISO, documentación del motor de BD) y que asumo responsabilidad por su veracidad. Entiendo que omitir esta declaración constituye falta grave." | En curso: texto literal en el informe, sección 11, con el nombre del estudiante; falta la firma |
+| IA-2 | Declaración Jurada: "Yo, [Nombre del estudiante], declaro que todo contenido generado con IA ha sido declarado en la tabla anterior, validado contra fuentes oficiales (ISO, documentación del motor de BD) y que asumo responsabilidad por su veracidad. Entiendo que omitir esta declaración constituye falta grave." | En curso: texto literal en el informe, sección 11, con el nombre del estudiante y la fecha 27/10/2026; la firma la pone el estudiante en el PDF que entrega |
 
 ## Entregables (sección 10)
 
 | ID | Entregable literal | Estado |
 | --- | --- | --- |
-| EN-1 | Informe PDF con artefacto (o link a artefacto interactivo) | En curso: `docs/informe.pdf` (40 páginas) con el artefacto completo en la sección 6 y el enlace al código; introducción, marco teórico, análisis y conclusiones redactados por el estudiante (27/10/2026); faltan el enlace al video y las capturas de SQL Developer |
+| EN-1 | Informe PDF con artefacto (o link a artefacto interactivo) | Cumplido: `docs/informe.pdf` (41 páginas) con el artefacto completo en la sección 6 y el enlace al código; introducción, marco teórico, análisis y conclusiones redactados por el estudiante (27/10/2026) |
 | EN-2 | Scripts .sql de verificación | Cumplido: `sql/verificacion` (18), `sql/correccion` (15) y `sql/pruebas` (19), ejecutados en una corrida limpia con su salida en `evidencia/` |
 | EN-3 | Repositorio Git | Cumplido: https://github.com/Adrian123CRff/BD-ISO27001 |
-| EN-4 | Video 5 minutos | En curso: guion en `docs/guion-video.md`; falta grabarlo |
-| EN-5 | Tabla de uso de IA firmada | Pendiente |
+| EN-4 | Video 5 minutos | Cumplido: https://drive.google.com/drive/folders/15f6wydlgg1q_uCNiyVX90Y0_xvRK88x0?usp=sharing |
+| EN-5 | Tabla de uso de IA firmada | En curso: tabla completa (19 filas, todas validadas) y declaración fechada el 27/10/2026; falta la firma del estudiante en el PDF que entrega |
 
 ## Mejoras pedidas por el profesor (revisión del avance)
 

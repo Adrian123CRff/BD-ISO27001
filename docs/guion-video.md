@@ -80,7 +80,7 @@ para las pausas.
 - Actuar: una revisión semanal programada en la base.
 - Todo corre con scripts, sin pasos manuales.
 
-## 5. La evaluación "después" (3:30-4:30)
+## 5. La evaluación "después" (3:30-4:15)
 
 **Pantalla:** `#/matriz?fase=despues&control=A5.18`, luego la terminal, luego `#/pruebas?fase=despues&prueba=P01`.
 
@@ -99,7 +99,18 @@ evidencia).
 - *(Volver a la app, P01 en "Después".)* Es el mismo resultado que guardó la evaluación.
 - Y así con las 19 pruebas: las 19 resisten el ataque.
 
-## 6. Cierre (4:30-5:00)
+## 6. La evolución en el tiempo (4:15-4:40)
+
+**Pantalla:** `#/evolucion`, con "Controles" elegido; luego cambiar a "Pruebas".
+
+- Esta es la mejora que pidió el profesor.
+- Cada punto es una medición real, con su fecha y su hora.
+- Medí después de cada corrección, de C01 a C15.
+- La madurez promedio sube poco a poco, de 0,4 a 1,9.
+- *(Señalar el salto en C14.)* Y salta a 3,8 cuando se aprueban los procedimientos y corre la revisión semanal.
+- *(Cambiar a "Pruebas".)* Las pruebas pasan de 0 a 19.
+
+## 7. Cierre (4:40-5:00)
 
 **Pantalla:** `#/resumen?fase=despues`; cambiar una vez a "Antes" y volver a "Después".
 

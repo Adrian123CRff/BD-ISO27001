@@ -33,4 +33,4 @@ Yo, Adrián Fernández Fernández, declaro que todo contenido generado con IA ha
 validado contra fuentes oficiales (ISO, documentación del motor de BD) y que asumo responsabilidad por su
 veracidad. Entiendo que omitir esta declaración constituye falta grave.
 
-Firma: ______________________  Fecha: ____________
+Firma: ______________________  Fecha: 27/10/2026

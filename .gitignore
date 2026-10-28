@@ -21,6 +21,8 @@ wallet/
 
 # Salidas locales de pruebas
 salidas/
+salida/
+*.mp4
 *.log
 .playwright-cli/
 
