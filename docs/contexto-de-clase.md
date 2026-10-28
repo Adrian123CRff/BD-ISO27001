@@ -63,3 +63,39 @@ inherente al residual.
   el profesor sugirió React).
 - **Repositorio**: https://github.com/Adrian123CRff/BD-ISO27001 (público). Por ser público, el material de clase
   (`materiales/clase/`: transcripción, notas y fotos) queda solo en el equipo local y fuera de git.
+
+## Clase del lunes 26/10/2026: la función de evaluación en el tiempo
+
+Fuente: transcripción de la clase aportada por el estudiante (no se versiona, como el resto del material de clase).
+
+**Qué pidió el profesor de la herramienta.** "La evaluación es una función […] de los controles observables de uno
+hasta el control observable [n], y en este caso son 15":
+
+- Cada control observable (CO₁ … CO₁₅) toma un valor **entre 0 y 1**; recomendó no usar solo 0 o 1, "porque si lo
+  haces binario no vemos tanto el efecto de los gráficos".
+- Un **catálogo de evaluaciones** de la empresa en el tiempo (E1, E2, E3…), que **puede ser simulado**: "le pido que me
+  simule 17 evaluaciones con los controles y le dé valores y me los guarda en una tabla".
+- Cada evaluación se clasifica en **rojo, amarillo o verde**, y se ve si la empresa mejora o se deteriora.
+- **Pesos:** una evaluación puede salir en rojo aunque casi todos los controles estén bien, "porque [el] peso de este
+  control es muy fuerte".
+- Una vista **global** (la empresa) y una **específica** (cada control), para explicar qué control falla y hacer la
+  **recomendación del auditor**: "aplicarle al control tal una mejora".
+- Escenarios de simulación que muestren **mejora** o **deterioro**.
+
+**Por qué importa.** "Si su herramienta no tiene esto, […] pasa de una simple estructura. Los que no quieran defender
+esta herramienta, máximo pueden llegar a un siete siempre y cuando funcione. Los que ya la quieran defender realmente
+es que sean capaces de explicar esto con la herramienta."
+
+**Cómo se cumple.** Vista "Función de evaluación" del artefacto e informe, sección 6.10 (checklist, PR-2): COᵢ =
+criterios cumplidos / total; pesos por impacto × probabilidad de los riesgos que mitiga cada control; E(t) ponderada
+con semáforo (verde ≥ 0,80, amarillo ≥ 0,50) y regla de veto; catálogo real (17 mediciones) y tres simulados
+(mejora, deterioro y mixto); diagnóstico con la recomendación por control.
+
+**Otras indicaciones de esa clase:**
+
+- El video debe mostrar "rápidamente la estructura y luego cómo se utiliza la evaluación".
+- En este proyecto sí se piden las fuentes y los prompts, "de acuerdo al documento".
+- Después de la entrega vienen las **defensas**: lunes y jueves de 9:00 a 12:00.
+- El **siguiente proyecto** (auditoría, 10 % del curso, individual) se define después de esta entrega: activar la
+  auditoría de Oracle (`AUDIT`) para demostrar con evidencia una violación de la política de seguridad, por ejemplo
+  privilegios excedidos o heredados de un rol sobre una tabla.
