@@ -5,6 +5,7 @@ import { ERRORES_DE_DATOS } from './datos/cargar.ts';
 import { Navegacion, type Tema } from './componentes/Navegacion.tsx';
 import { Bateria } from './vistas/Bateria.tsx';
 import { Evolucion } from './vistas/Evolucion.tsx';
+import { FuncionEvaluacion } from './vistas/FuncionEvaluacion.tsx';
 import { Mapeo } from './vistas/Mapeo.tsx';
 import { MatrizVista } from './vistas/MatrizVista.tsx';
 import { Metodologia } from './vistas/Metodologia.tsx';
@@ -42,6 +43,7 @@ function Vista({ ruta, navegar }: { readonly ruta: Ruta; readonly navegar: (c: P
         case 'matriz': return <MatrizVista ruta={ruta} navegar={navegar} />;
         case 'pruebas': return <Bateria ruta={ruta} navegar={navegar} />;
         case 'evolucion': return <Evolucion />;
+        case 'evaluacion': return <FuncionEvaluacion />;
         case 'metodologia': return <Metodologia />;
     }
 }

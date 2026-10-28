@@ -434,6 +434,31 @@ El artefacto lo incluye en la vista **Evolución**:
 
 ![Vista Evolución: madurez de los controles en cada medición](../evidencia/informe/07-evolucion-controles.png)
 
+### 6.10 Función de evaluación E(t) (indicación del profesor en clase)
+
+En clase, el profesor pidió que la herramienta trate cada evaluación de la empresa como una función de los 15
+controles observables, con valores entre 0 y 1, un catálogo de evaluaciones en el tiempo con semáforo y la
+explicación de qué controles causan el resultado. La vista "Función de evaluación" del artefacto lo implementa así:
+
+| Elemento | Definición |
+| --- | --- |
+| COᵢ(t) | Criterios cumplidos / criterios del control i en la evaluación t (salida de su script de verificación). |
+| wᵢ | Suma de impacto × probabilidad / 5 de los riesgos que mitiga el control: pesa más el que protege más riesgo. Peso alto: por encima del promedio (controles de R-CONF-02 y R-CONF-04, impacto 5). |
+| E(t) | Σ wᵢ · COᵢ(t) / Σ wᵢ. |
+| Semáforo | Verde si E ≥ 0,80; amarillo si E ≥ 0,50; rojo si E < 0,50. |
+| Veto | Si un control de peso alto está en rojo, la evaluación no puede ser verde aunque el promedio lo sea. |
+| Catálogo | Las 17 mediciones reales (sección 6.9) y tres catálogos simulados de 17 evaluaciones semanales (mejora, deterioro y mixto), generados con semilla fija y marcados como simulados. |
+| Diagnóstico | Para la evaluación elegida, cada control con su COᵢ, su semáforo, su peso y lo que resta a E(t), y la recomendación del auditor para los que no están en verde (su implementación y su script de corrección). |
+
+Con las mediciones reales, E(t) pasa de 0,12 (rojo) a 1,00 (verde); en C11 y C12 el promedio ya supera 0,80, pero
+queda en amarillo por veto porque A8.13 (respaldo, peso alto) seguía en 0 hasta C13. El catálogo mixto muestra el caso que
+explicó el profesor: E(t) mejora hasta 0,86, pero A5.15 y A8.2 se deterioran y la evaluación queda en amarillo; el
+diagnóstico recomienda revisar los roles y privilegios (C04).
+
+![Función de evaluación: E(t) y los dos controles que más restan en el catálogo mixto](../evidencia/informe/08-funcion-evaluacion.png)
+
+![Diagnóstico de la última evaluación del catálogo mixto](../evidencia/informe/09-diagnostico.png)
+
 ## 7. Herramienta y metodología
 
 ### 7.1 Motor
@@ -598,6 +623,7 @@ con número y fecha, es `docs/uso-ia.md`.
 | Claude (Claude Code) (17, 22/10/2026) | Prompt de la Fase 12 (`prompts-claude-code.md`):<br>"Rol: Profesor que califica esta asignación con la rúbrica del enunciado.<br><br>Tarea: Recorre docs/enunciado-literal.md requisito por requisito. Para cada uno, verifica en el repositorio que exista y esté completo; no te fíes del checklist. Califícalo con la rúbrica de la sección 9 como lo haría el profesor e indica qué le faltaría para la nota máxima.<br><br>Restricciones: Solo lectura. No corrijas nada en esta fase.<br><br>Entregable: Una tabla requisito → evidencia → nota estimada → mejora sugerida, para llevarla a la revisión con el profesor antes de la entrega final. Registra este prompt textual en docs/uso-ia.md." | Verificación final de solo lectura contra `docs/enunciado-literal.md`, sin fiarse de la checklist: tabla requisito → evidencia → nota estimada → mejora sugerida, con la calificación estimada según la rúbrica de la sección 9 | Revisé los pendientes que aparecen en la checklist y los comparé con lo que estoy completando. Además, identifiqué HM-5 para revisarlo, porque la evidencia disponible no confirma que el repositorio utilizado sea institucional. | `docs/checklist-enunciado.md` |
 | Claude (Claude Code) (18, 25/10/2026) | "Despues continuamos con la parte de los documentos y videos o los puntos que faltan referencia al artifac, me gustaria que me ayudaras con algo, mira el profesor evaluo la aplicacion, y esta fue la peticion de mejora que sugirio, Necesito que mires la imagen que se llama "[Image #1] " esa es la peticion que me pidio, basicamente es agregar un grafico en el que se pueda ver por ejemplo(aui tengo dudas, si es con los controles, los riesgos, o las purebas que se tiene que realizar el grafico, pero basicamente un grafico en el que podamos verlo con diferentes opciones ejemplo, seleccionar todos, los que no se han realizar, etc etc etc, ya sea una opcion y dependiendo de que eliges muestra un grafico de lo que se eligio, ademas que aparezca las fechas etc en que se realiza, pero necesito hablarlo contigo sobre ese grafico por que no lo entendi muy bien" (con la foto del boceto del profesor, `materiales/revision-avance/boceto-mejora-evolucion.jpeg`)<br>"sí, controles, riesgos y pruebas, vista nueva Evolución, adelante" | Interpretación del boceto (selector, casillas "todos", eje Y = calificación, eje X = fechas, miniatura para elegir el tramo) y propuesta de datos reales: medir después de cada corrección C01-C15 y guardar un historial con fecha. Scripts `scripts/medir.ps1` y `scripts/historial.ps1`, cambios en `evaluar.ps1`, `pruebas.ps1` y `corregir.ps1`; vista "Evolución" en la app (controles, riesgos y pruebas; filtros por estado; navegador de fechas; tabla) con la paleta validada por el script de dataviz | Partí del boceto del profesor y elegí mostrar la evolución de controles, riesgos y pruebas. Comparé el resultado con el boceto y revisé que el gráfico use las 17 mediciones registradas el 25/10: no son puntos inventados ni interpolados. | Captura de la vista Evolución en `evidencia/app/`; `app/src/datos/historial.json`; `docs/artefacto.md` |
 | Extensión de IA (asistente) (19, 27/10/2026) | Guía de validación de las filas 5 a 18 preparada por Claude Code, con la petición de ayudar a redactar las validaciones (no se conservó el texto exacto de la petición) | Redacción de las validaciones de las filas 5 a 18 a partir de la guía, con notas sobre las afirmaciones que el estudiante debía confirmar. Claude Code contrastó el resultado con el repositorio: quitó una afirmación no comprobada (fila 8), corrigió una fuente (fila 7) y precisó quién hizo una corrección (fila 14) | Utilicé una extensión de IA para ayudarme a revisar las validaciones que se necesitaban del documento; con base en una guía realicé cada una de las validaciones. | Guía de validación de Claude Code; `docs/`, `evidencia/` y la documentación oficial citada en cada fila |
+| Claude (Claude Code) (20, 27/10/2026) | "mira lo que dice el profesor en la clase del lunes," (con la transcripción de la clase pegada)<br>"la entrega es hoy dentro de dos horas literalmente."<br>"ya subi algo con la firma, pero podemops intentar hacer las correciones" | Lectura de la indicación del profesor (evaluación como función de los 15 controles observables, valores de 0 a 1, catálogo en el tiempo con semáforo, pesos y diagnóstico) y comparación con la herramienta. Vista "Función de evaluación" (`app/src/datos/funcion-evaluacion.ts`, `app/src/vistas/FuncionEvaluacion.tsx`): COᵢ = criterios cumplidos / total, pesos por impacto × probabilidad de los riesgos, E(t) ponderada, semáforo 0,80 / 0,50, regla de veto, catálogo real y tres simulados (mejora, deterioro, mixto) y recomendaciones por control; sección 6.10 del informe | _Pendiente_ | Transcripción de la clase del lunes 26/10/2026; `app/src/datos/historial.json` y `evidencia/historial/` |
 
 <div class="declaracion">
 

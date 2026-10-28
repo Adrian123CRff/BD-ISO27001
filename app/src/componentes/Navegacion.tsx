@@ -6,7 +6,7 @@ import { Icono, type NombreIcono } from './Icono.tsx';
 
 const ICONO: Readonly<Record<IdSeccion, NombreIcono>> = {
     resumen: 'resumen', riesgos: 'riesgo', tareas: 'tabla', mapeo: 'tabla', observables: 'tabla',
-    matriz: 'tabla', pruebas: 'prueba', evolucion: 'evolucion', metodologia: 'metodo',
+    matriz: 'tabla', pruebas: 'prueba', evolucion: 'evolucion', evaluacion: 'resumen', metodologia: 'metodo',
 };
 
 export type Tema = 'claro' | 'oscuro';

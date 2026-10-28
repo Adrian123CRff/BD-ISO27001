@@ -113,6 +113,7 @@ No son requisitos del enunciado, pero el profesor las pidió al revisar el artef
 | ID | Pedido | Dónde se cumple | Estado |
 | --- | --- | --- | --- |
 | PR-1 | Un gráfico en el tiempo, con fechas, en el que se elige qué ver (todos o uno por uno) y cambia según la elección (boceto en `materiales/revision-avance/boceto-mejora-evolucion.jpeg`) | App, vista Evolución: controles, riesgos y pruebas; casillas, filtros por estado y navegador de fechas; historial real de `scripts/medir.ps1` (`app/src/datos/historial.json`, evidencia en `evidencia/historial/`) | Cumplido: corrida limpia del 25/10/2026 con 17 mediciones (antes, C01-C15, después); vista revisada en claro, oscuro y 360 px, sin errores de axe; informe, sección 6.9 |
+| PR-2 | Evaluación como función de los 15 controles observables (valores de 0 a 1), catálogo de evaluaciones en el tiempo con semáforo rojo/amarillo/verde, pesos y diagnóstico del control que falla (clase del lunes 26/10/2026) | App, vista "Función de evaluación"; informe, sección 6.10 | Cumplido: catálogo real (17 mediciones) y tres simulados; E(t) ponderada con veto; diagnóstico y recomendación por control; build y lint limpios, revisado en el navegador sin errores |
 
 ## Rúbrica (sección 9): autoevaluación antes de entregar
 
