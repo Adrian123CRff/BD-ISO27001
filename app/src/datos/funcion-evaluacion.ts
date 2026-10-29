@@ -11,7 +11,7 @@
 // Además del catálogo real hay tres catálogos simulados (mejora, deterioro y mixto), marcados como tales.
 import { CONTROLES, HISTORIAL, RIESGOS } from './cargar.ts';
 import { nombreEtapa } from './evolucion.ts';
-import type { Control, IdControl } from './tipos.ts';
+import type { Control, IdControl, IdRiesgo } from './tipos.ts';
 
 export type Color = 'Verde' | 'Amarillo' | 'Rojo';
 export type IdCatalogo = 'real' | 'mejora' | 'deterioro' | 'mixto';
@@ -127,4 +127,11 @@ export const CONTROLES_PESADOS: readonly IdControl[] = PESADOS;
 
 export function formato2(v: number): string {
     return v.toLocaleString('es-CR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+// E de un solo riesgo: la misma función restringida a los controles que lo mitigan (vista específica por riesgo).
+export function evaluarRiesgo(ev: Evaluacion, riesgo: IdRiesgo): number {
+    const suyos = OBSERVABLES.filter((c) => c.riesgos.includes(riesgo));
+    const suma = suyos.reduce((s, c) => s + (PESO.get(c.id) ?? 0), 0);
+    return suma === 0 ? 0 : suyos.reduce((s, c) => s + (PESO.get(c.id) ?? 0) * (ev.co.get(c.id) ?? 0), 0) / suma;
 }

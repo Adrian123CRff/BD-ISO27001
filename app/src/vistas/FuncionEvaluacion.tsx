@@ -2,11 +2,12 @@
 // diagnóstico de la evaluación elegida (qué controles la bajan y qué recomienda el auditor).
 import { useState } from 'react';
 import { CabeceraVista } from '../componentes/CabeceraVista.tsx';
-import { GraficoEvolucion, type Trazo } from '../componentes/GraficoEvolucion.tsx';
+import { GraficoPorEtapa, type SerieEtapa } from '../componentes/GraficoPorEtapa.tsx';
 import { Icono } from '../componentes/Icono.tsx';
-import { fechaCorta, type Eje, type Punto, type Serie } from '../datos/evolucion.ts';
+import { RIESGOS } from '../datos/cargar.ts';
+import { MARCADOR_RIESGO, etiquetaEtapa, fechaCorta, type Eje, type Punto, type Serie } from '../datos/evolucion.ts';
 import {
-    CATALOGOS, PESO_PROMEDIO, UMBRAL_AMARILLO, UMBRAL_VERDE, evaluar, formato2,
+    CATALOGOS, PESO_PROMEDIO, UMBRAL_AMARILLO, UMBRAL_VERDE, evaluar, evaluarRiesgo, formato2,
     type Color, type Evaluacion, type IdCatalogo, type Resultado,
 } from '../datos/funcion-evaluacion.ts';
 
@@ -28,25 +29,27 @@ const EJE_E: Eje = {
         { valor: 0, texto: '0' }, { valor: UMBRAL_AMARILLO, texto: '0,50 · rojo debajo' },
         { valor: UMBRAL_VERDE, texto: '0,80 · verde arriba' }, { valor: 1, texto: '1' },
     ],
-    meta: { valor: UMBRAL_VERDE, texto: 'Verde ≥ 0,80' },
+    // Las líneas de umbral van sin texto propio: el eje ya los rotula y así no chocan con las etiquetas de las series.
+    meta: { valor: UMBRAL_VERDE, texto: '' },
+    metas: [{ valor: UMBRAL_AMARILLO, texto: '' }],
 };
 
+// Cada punto se ubica en t = índice de la evaluación (eje por etapa).
 function serieDe(id: string, nombre: string, evs: readonly Evaluacion[], valor: (ev: Evaluacion) => number): Serie {
     return {
         id, nombre,
-        puntos: evs.map((ev): Punto => ({ t: ev.t, fecha: ev.fecha, etapa: ev.nombre, evidencia: '', valor: valor(ev), grupo: '' })),
+        puntos: evs.map((ev, i): Punto => ({ t: i, fecha: ev.fecha, etapa: ev.nombre, evidencia: '', valor: valor(ev), grupo: '' })),
     };
 }
 
-function trazosDe(evs: readonly Evaluacion[], resultado: Resultado): Trazo[] {
-    const e = serieDe('E(t)', 'E(t) de la empresa', evs, (ev) => evaluar(ev).e);
-    const peores = resultado.controles.filter((r) => r.color !== 'Verde').slice(0, 2);
+// Global (línea gruesa) y específico: E(t) restringida a los controles de cada riesgo.
+function seriesDe(evs: readonly Evaluacion[]): SerieEtapa[] {
     return [
-        { serie: e, color: 'var(--tinta)', clase: 'resumen', etiqueta: true },
-        ...peores.map((r, i): Trazo => ({
-            serie: serieDe(r.control.id, `${r.control.id} ${r.control.titulo}`, evs, (ev) => ev.co.get(r.control.id) ?? 0),
-            color: `var(--serie-${i === 0 ? 2 : 4})`, clase: 'color', etiqueta: true,
+        ...RIESGOS.map((r, i): SerieEtapa => ({
+            serie: serieDe(r.id, r.id, evs, (ev) => evaluarRiesgo(ev, r.id)),
+            color: `var(--serie-${i + 1})`, marcador: MARCADOR_RIESGO[i] ?? 'circulo',
         })),
+        { serie: serieDe('E(t)', 'E(t) global', evs, (ev) => evaluar(ev).e), color: 'var(--tinta)', marcador: 'circulo', gruesa: true },
     ];
 }
 
@@ -124,7 +127,6 @@ export function FuncionEvaluacion() {
     const ev = evs[i];
     if (ev === undefined) return null;
     const r = evaluar(ev);
-    const rango: readonly [number, number] = [evs[0]?.t ?? ev.t, evs.at(-1)?.t ?? ev.t];
     return (
         <>
             <CabeceraVista titulo="Función de evaluación E(t)">
@@ -145,11 +147,9 @@ export function FuncionEvaluacion() {
                 ))}
             </div>
             {catalogo !== 'real' && <p className="parrafo">Catálogo simulado (valores generados con semilla fija para ver el comportamiento de la función); no son mediciones del laboratorio.</p>}
-            <figure className="evo__figura">
-                <GraficoEvolucion eje={EJE_E} trazos={trazosDe(evs, r)} rango={rango} formato={formato2}
-                                  detalle={(k) => { const x = evs[k]; return x === undefined ? undefined : `Semáforo: ${evaluar(x).color}`; }} />
-                <figcaption className="evo__leyenda">E(t) en negro; en color, los dos controles que más restan en la evaluación elegida. La línea «Verde ≥ 0,80» marca el umbral verde.</figcaption>
-            </figure>
+            <GraficoPorEtapa key={catalogo} series={seriesDe(evs)} etapas={evs.map((x) => etiquetaEtapa(x.id))} eje={EJE_E} formato={formato2}
+                             seleccion={i} detalle={(k) => { const x = evs[k]; return x === undefined ? undefined : `Semáforo: ${evaluar(x).color}`; }}
+                             nota="E(t) global en la línea gruesa; cada riesgo con su color y su forma (la misma función con solo sus controles). Las líneas horizontales son los umbrales del semáforo; la vertical punteada, la evaluación del diagnóstico. Cada punto es una evaluación; la línea solo las une." />
             <Catalogo evs={evs} elegida={i} alElegir={setElegida} />
             <Diagnostico ev={ev} r={r} />
         </>

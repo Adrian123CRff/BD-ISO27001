@@ -28,6 +28,8 @@ export interface Eje {
     readonly max: number;
     readonly marcas: readonly { readonly valor: number; readonly texto: string }[];
     readonly meta?: { readonly valor: number; readonly texto: string };
+    // Umbrales adicionales (por ejemplo, el límite rojo/amarillo de la función de evaluación).
+    readonly metas?: readonly { readonly valor: number; readonly texto: string }[];
 }
 
 // Agrupación para los filtros rápidos ("los que no cumplen", etc.), según la última medición de cada serie.
@@ -180,3 +182,31 @@ export function fechaCorta(fecha: string): string {
     const m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}:\d{2})/.exec(fecha);
     return m === null ? fecha : `${m[3]}/${m[2]}/${m[1]} ${m[4]}`;
 }
+
+// Rótulo corto de una etapa para el eje X por evaluación.
+export function etiquetaEtapa(etapa: string): string {
+    if (etapa === 'antes') return 'Antes';
+    if (etapa === 'despues') return 'Después';
+    return etapa.startsWith('revision') ? 'Rev.' : etapa;
+}
+
+// Madurez media de los controles que mitigan cada riesgo, en cada medición real (t = índice de la medición), más el
+// promedio de los 17 controles. Muestra qué corrección movió cada riesgo.
+export function madurezPorRiesgo(): { readonly etapas: readonly string[]; readonly riesgos: readonly Serie[]; readonly promedio: Serie } {
+    const evs = HISTORIAL.evaluaciones;
+    const media = (e: MedicionEvaluacion, ids: readonly string[]): number => {
+        const m = e.controles.filter((c) => ids.includes(c.control)).map((c) => c.madurez as number);
+        return m.length === 0 ? 0 : m.reduce((a, b) => a + b, 0) / m.length;
+    };
+    const serie = (id: string, nombre: string, ids: readonly string[]): Serie => ({
+        id, nombre, puntos: evs.map((e, i) => ({ t: i, fecha: e.fecha, etapa: e.etapa, evidencia: e.evidencia, valor: media(e, ids), grupo: '' })),
+    });
+    return {
+        etapas: evs.map((e) => etiquetaEtapa(e.etapa)),
+        riesgos: RIESGOS.map((r) => serie(r.id, `${r.id} ${r.nombre}`, CONTROLES.filter((c) => c.riesgos.includes(r.id)).map((c) => c.id))),
+        promedio: serie('agregado', 'Promedio de los 17 controles', CONTROLES.map((c) => c.id)),
+    };
+}
+
+// Forma del marcador de cada riesgo (R-CONF-01 a 05), la misma en todos los gráficos por etapa.
+export const MARCADOR_RIESGO = ['cuadrado', 'rombo', 'triangulo', 'triangulo-inv', 'circulo'] as const;

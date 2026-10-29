@@ -4,10 +4,11 @@
 import { useRef, useState, type KeyboardEvent } from 'react';
 import { CabeceraVista } from '../componentes/CabeceraVista.tsx';
 import { GraficoEvolucion, type Trazo } from '../componentes/GraficoEvolucion.tsx';
+import { GraficoPorEtapa, type SerieEtapa } from '../componentes/GraficoPorEtapa.tsx';
 import { NavegadorFechas, type Rango } from '../componentes/NavegadorFechas.tsx';
 import { SelectorSeries } from '../componentes/SelectorSeries.tsx';
 import { EVALUACION, HISTORIAL } from '../datos/cargar.ts';
-import { EJE, RANURAS, SERIES, agregado, asignarColores, ejePruebas, fechaCorta, nombreEtapa, type Dimension, type Serie } from '../datos/evolucion.ts';
+import { EJE, MARCADOR_RIESGO, RANURAS, SERIES, agregado, asignarColores, ejePruebas, fechaCorta, madurezPorRiesgo, nombreEtapa, type Dimension, type Serie } from '../datos/evolucion.ts';
 
 const DIMENSIONES: readonly { readonly id: Dimension; readonly texto: string }[] = [
     { id: 'controles', texto: 'Controles' }, { id: 'riesgos', texto: 'Riesgos' }, { id: 'pruebas', texto: 'Pruebas' },
@@ -119,6 +120,22 @@ function Tabla({ series, resumen, rango, texto }: PropsTabla) {
     );
 }
 
+// Madurez media de los controles de cada riesgo en cada medición, con el eje por etapa (Antes, C01…C15, Después).
+function PorRiesgo() {
+    const { etapas, riesgos, promedio } = madurezPorRiesgo();
+    const series: SerieEtapa[] = [
+        ...riesgos.map((s, i): SerieEtapa => ({ serie: s, color: `var(--serie-${i + 1})`, marcador: MARCADOR_RIESGO[i] ?? 'circulo' })),
+        { serie: promedio, color: 'var(--tinta)', marcador: 'circulo', gruesa: true },
+    ];
+    return (
+        <section className="evo__seccion" aria-labelledby="por-riesgo">
+            <h2 id="por-riesgo" className="tarjeta__titulo">Madurez media por riesgo, tras cada corrección</h2>
+            <GraficoPorEtapa series={series} etapas={etapas} eje={EJE.controles} formato={formato}
+                             nota="Cada punto es una medición real (scripts/medir.ps1): nada se calcula entre etapas. Cada línea es la madurez media de los controles que mitigan ese riesgo; la gruesa, el promedio de los 17 controles. Se ve qué corrección movió cada riesgo, por ejemplo C14, que aprueba los procedimientos y corre la revisión semanal." />
+        </section>
+    );
+}
+
 function Resumen({ serie, rango }: { readonly serie: Serie | undefined; readonly rango: readonly [number, number] }) {
     const puntos = serie?.puntos.filter((p) => p.t >= rango[0] && p.t <= rango[1]) ?? [];
     const primero = puntos[0];
@@ -168,6 +185,7 @@ export function Evolucion() {
                     <Resumen serie={agregado(dim, elegidas)} rango={rango} />
                 </figure>
             </div>
+            <PorRiesgo />
             <Tabla series={elegidas} resumen={agregado(dim, elegidas)} rango={rango}
                    texto={(s, v) => (dim === 'pruebas' && s.id !== 'agregado' ? (v === 1 ? 'Sí' : 'No') : formato(v))} />
             <p className="parrafo evo__nota">Cada punto es una medición real con su fecha y su evidencia (<span className="codigo">scripts/medir.ps1</span>, que ejecuta los 18 scripts de verificación y las 19 pruebas); entre dos mediciones el valor se mantiene, por eso las líneas son escalonadas. En riesgos, el nivel de cada factor baja a su residual solo cuando todos sus controles cumplen. Las líneas con el mismo valor se superponen: el detalle (al señalar el gráfico) y la tabla muestran cada valor.</p>
